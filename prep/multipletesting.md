@@ -4,4 +4,4 @@ As a preparation for the Multiple Hypothesis Testing convocation, make yourself 
 
 1. Watch the [Video Lecture on Multiple Hypothesis Testing](https://www.youtube.com/watch?v=2WE9XTDiCl8)
 2. Read up Storey&Tibshirani on [Statistical significance for genomewide studies](https://www.pnas.org/content/100/16/9440)
-[comment]: <> (4. Investigate the jupyter notebook on [Linear Models])  
+4. Have a look at the example code in the jupyter [notebook](../nb/multiplehypo/)
