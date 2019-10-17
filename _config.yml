@@ -1,3 +1,19 @@
 theme: jekyll-theme-slate
 title: Course repository for CB2030 -- Systems statisticalbiotechnology
 description: Here we store material for the Data Analysis part of the course.
+
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - README.md
+  - nb/clustering/readme.md
+  - nb/linear/readme.md
+  - nb/multiplehypo/readme.md
+  - nb/pca/readme.md
+  - prep/clustering.md
+  - prep/hypothesistesting.md
+  - prep/linearmodels.md
+  - prep/multipletesting.md
