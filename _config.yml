@@ -17,3 +17,9 @@ include:
   - prep/hypothesistesting.md
   - prep/linearmodels.md
   - prep/multipletesting.md
+ - nb/clustering/cluster_brca.ipynb
+ - nb/enrichment/gsea.ipynb
+ - nb/linear/KNAP2.ipynb
+ - nb/multiplehypo/qvalue.ipynb
+ - nb/pca/PCAofCarcinomas.ipynb
+ - nb/pca/PCAofMultiNormal.ipynb
