@@ -2,7 +2,8 @@
 
 Here we keep the material to prepare for the questions and answers lectures
 
-[clustering](clustering)
-[hypothesistesting](hypothesistesting)
-[linearmodels](linearmodels)
-[multipletesting](multipletesting)
+* [Hypothesis Testing](hypothesistesting)
+* [Linear Models](linearmodels)
+* [Multiple Testing](multipletesting)
+* [Supervised Learning](supervised)
+* [Clustering](clustering)
