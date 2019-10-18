@@ -17,6 +17,7 @@ include:
   - nb/pca/readme.md
   - prep/clustering.md
   - prep/pca.md
+  - prep/pathway.md
   - prep/supervised.md
   - prep/hypothesistesting.md
   - prep/linearmodels.md
