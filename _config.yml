@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
-title: "CB2030 -- Systems Biology"
-description: "Here we store material for the Data Analysis part of the course."
+title: "CB2030"
+description: "Here we store material for the Data Analysis part of the CB2030, Systems Biology course."
 logo: img/kth_logo.png
 
 plugins:
@@ -16,6 +16,7 @@ include:
   - nb/multiplehypo/readme.md
   - nb/pca/readme.md
   - prep/clustering.md
+  - prep/supervised.md
   - prep/hypothesistesting.md
   - prep/linearmodels.md
   - prep/multipletesting.md

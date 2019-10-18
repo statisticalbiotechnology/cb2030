@@ -4,7 +4,7 @@ As a preparation for the Linear Models convocation, make yourself acquainted wit
 
 1. Watch the [Video Lecture on Linear Models](https://www.youtube.com/watch?v=F9qB1FBNZ3k)
 2. Read up VaderPlas on [Simple Linear Regression](https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html#Simple-Linear-Regression) (Just that section).
-3. Read page 109-119 of [Introduction to Statistical Learning with Applications in R](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf), also look at this [python interpretation](http://www.science.smith.edu/~jcrouser/SDS293/labs/lab2-py.html)
+3. Read page 59-90 of [Introduction to Statistical Learning with Applications in R](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf) (Non mandatory, you can also look at the books excersices in a [python interpretation](http://www.science.smith.edu/~jcrouser/SDS293/labs/lab2-py.html) )
 4. Investigate the jupyter notebook on [Linear Models](../nb/linear/readme.md)  
 
 
