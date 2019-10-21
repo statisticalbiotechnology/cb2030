@@ -1,5 +1,5 @@
- | Code | Day  | Date  | Timepoint  | Teach | Location | Content       |
- |--------|-------|--------|---------------|--------|------------|------------------------------------|
+ | Code | Day  | Date  | Timepoint  | Teach | Location | The content of the Convocation |
+ |--------|-------|--------|---------------|--------|------------|----------------------------------------|
  | L1         | Mon | 28/10 | 10-12 | All | FB53 | Intro  |
  | L2         | Wed | 30/10 | 08-10 | LK | FB52 | Hypothesis Testing  |
  | L3         | Fri | 1/11 | 10-12 | LK | FB53 | Multiple Hypothesis Testing  |
