@@ -15,6 +15,7 @@ include:
   - nb/linear/readme.md
   - nb/multiplehypo/readme.md
   - nb/pca/readme.md
+  - prep/readme.md
   - prep/clustering.md
   - prep/pca.md
   - prep/pathway.md
@@ -28,3 +29,4 @@ include:
   - nb/multiplehypo/qvalue.ipynb
   - nb/pca/PCAofCarcinomas.ipynb
   - nb/pca/PCAofMultiNormal.ipynb
+  - general/schedule.md
