@@ -2,7 +2,7 @@
 
 As a preparation for the Pathway Analysis convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
 
-1. Watch the [Video Lecture on Pathway Analysis]()
+1. Watch the [Video Lecture on Pathway Analysis](https://youtu.be/ki1DBBnRoWg)
 2. Read Subramanian *et al*, [Gene set enrichment analysis: A knowledge-based
 approach for interpreting genome-wide
 expression profiles](http://software.broadinstitute.org/gsea/doc/subramanian_tamayo_gsea_pnas.pdf)
