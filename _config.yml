@@ -14,6 +14,7 @@ include:
   - nb/clustering/readme.md
   - nb/linear/readme.md
   - nb/multiplehypo/readme.md
+  - nb/testing/readme.md
   - nb/pca/readme.md
   - nb/readme.md
   - nb/clustering/cluster_brca.ipynb
