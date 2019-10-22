@@ -30,3 +30,4 @@ include:
   - nb/pca/PCAofCarcinomas.ipynb
   - nb/pca/PCAofMultiNormal.ipynb
   - general/schedule.md
+  - lab/readme.md
