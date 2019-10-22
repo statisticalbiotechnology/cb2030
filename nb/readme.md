@@ -1,5 +1,7 @@
 # Jupyter Notebooks
 
+Here you can find jupyter notebooks for the Seminars on
+
 * [Hypothesis Testing](testing/readme.md)  
 * [Multiple Hypothesis Testing](multiplehypo/readme.md)  
 * [Linear Models](linear/readme.md)  
