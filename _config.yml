@@ -15,6 +15,13 @@ include:
   - nb/linear/readme.md
   - nb/multiplehypo/readme.md
   - nb/pca/readme.md
+  - nb/readme.md
+  - nb/clustering/cluster_brca.ipynb
+  - nb/enrichment/gsea.ipynb
+  - nb/linear/KNAP2.ipynb
+  - nb/multiplehypo/qvalue.ipynb
+  - nb/pca/PCAofCarcinomas.ipynb
+  - nb/pca/PCAofMultiNormal.ipynb
   - prep/readme.md
   - prep/clustering.md
   - prep/pca.md
@@ -23,11 +30,5 @@ include:
   - prep/hypothesistesting.md
   - prep/linearmodels.md
   - prep/multipletesting.md
-  - nb/clustering/cluster_brca.ipynb
-  - nb/enrichment/gsea.ipynb
-  - nb/linear/KNAP2.ipynb
-  - nb/multiplehypo/qvalue.ipynb
-  - nb/pca/PCAofCarcinomas.ipynb
-  - nb/pca/PCAofMultiNormal.ipynb
   - general/schedule.md
   - lab/readme.md
