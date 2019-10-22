@@ -1,10 +1,11 @@
 # Jupyter Notebooks
 
-[Clustering](clustering/readme.md)
-[Enrichment](enrichment/readme.md)
-[Linear Models](linear/readme.md)
-[Multiple Hypothesis Testing](multiplehypo/readme.md)
-[PCA](pca/readme.md)
+* [Hypothesis Testing](testing/readme.md)  
+* [Multiple Hypothesis Testing](multiplehypo/readme.md)  
+* [Linear Models](linear/readme.md)  
+* [Clustering](clustering/readme.md)  
+* [PCA](pca/readme.md)  
+* [Enrichment](enrichment/readme.md)  
 
 ## On-line usage
 
