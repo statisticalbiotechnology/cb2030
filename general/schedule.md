@@ -35,5 +35,5 @@
 > LK = Lukas Käll
 > GJ = Gustavo Jeuken
 > CZ = Chen Zhang
-> FE = Fredik Edfors
+> FE = Fredik Edfors  
 > Lectures (L*) are given at Albanova, while computer labs (C*) are in the D-building on the KTH Main Campus.
