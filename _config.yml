@@ -16,6 +16,7 @@ include:
   - nb/multiplehypo/readme.md
   - nb/testing/readme.md
   - nb/pca/readme.md
+  - nb/enrichment/readme.md
   - nb/readme.md
   - nb/clustering/cluster_brca.ipynb
   - nb/enrichment/gsea.ipynb
