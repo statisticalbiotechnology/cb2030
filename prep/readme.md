@@ -9,3 +9,4 @@ Here we keep the material to prepare for the questions and answers lectures
 - [Clustering](clustering)  
 - [Principal Component Analysis](pca)  
 - [Pathway Analysis](pathway)  
+- [Network Analysis](network)
