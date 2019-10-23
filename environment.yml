@@ -7,6 +7,7 @@ dependencies:
   - certifi=2019.9.11
   - cycler=0.10.0
   - freetype=2.9.1
+  - gseapy=0.9.16
   - intel-openmp=2019.4
   - joblib=0.13.2
   - kiwisolver=1.1.0
@@ -43,4 +44,3 @@ dependencies:
   - xz=5.2.4
   - zlib=1.2.11
 prefix: //anaconda3/envs/p37
-
