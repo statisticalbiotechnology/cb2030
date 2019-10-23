@@ -16,6 +16,7 @@ include:
   - nb/multiplehypo/readme.md
   - nb/testing/readme.md
   - nb/pca/readme.md
+  - nb/supervised/readme.md
   - nb/enrichment/readme.md
   - nb/readme.md
   - nb/clustering/cluster_brca.ipynb
@@ -24,6 +25,7 @@ include:
   - nb/multiplehypo/qvalue.ipynb
   - nb/pca/PCAofCarcinomas.ipynb
   - nb/pca/PCAofMultiNormal.ipynb
+  - nb/supervised/supervisedML.ipynb
   - prep/readme.md
   - prep/clustering.md
   - prep/pca.md

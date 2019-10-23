@@ -28,7 +28,9 @@ def get_expression_data(path,url,file):
 def get_clinical_data(path,url,file):
     df = get_data(path,url,file).T
     df.columns = df.iloc[2]
-    df.drop(columns=["A unique sample identifier.","STRING","1","SAMPLE_ID"], inplace=True)
+    df.drop(columns=["A unique sample identifier.","STRING","1","SAMPLE_ID",'TCGA-BH-A1ES-01'], inplace=True)
+    if 'TCGA-BH-A1ES-01' in df.columns:
+        df.drop(columns=['TCGA-BH-A1ES-01'], inplace=True) 
     df.drop(index=["Unnamed: 0","#Patient Identifier","Sample Identifier","Other Sample ID"], inplace=True)
     df = df.reindex(sorted(df.columns), axis=1)
     return df

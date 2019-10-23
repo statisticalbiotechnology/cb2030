@@ -13,15 +13,15 @@
  |         |     |     |           |       |      |       |
  | L8         | Mon | 18/11 | 10-12 | LK | FA32 | Pathway Analysis   |
  | L9         | Thu | 21/11 | 08-10 | LK | FA32 | Graph Algorithms  |
- | L10         | Fri | 22/11 | 10-12 | CZ | FA32 | Cheng 1  |
+ | L10         | Fri | 22/11 | 10-12 | CZ | FA32 | Introduction of genome-scale metabolic models  |
  |         |     |     |           |       |      |       |
- | L11         | Mon | 25/11 | 10-12 | CZ | FA32 | Cheng 2  |
+ | L11         | Mon | 25/11 | 10-12 | CZ | FA32 | Flux balance analysis  |
  | C2         | Wed | 27/11 | 13-17 | TA | 5O1 Spelhallen (Spelhallen) | Machine Learning   |
- | L12         | Thu | 28/11 | 08-10 | CZ | FA32 | Cheng 3  |
- | L13         | Fri | 29/11 | 10-12 | CZ | FA32 | Cheng 4  |
+ | L12         | Thu | 28/11 | 08-10 | CZ | FA32 | Application of genome-scale metabolic models  |
+ | L13         | Fri | 29/11 | 10-12 | CZ | FA32 | Next-generation genome-scale metabolic modelling |
  |         |     |     |           |       |      |       |
  | L14         | Mon | 2/12 | 10-12 | FE | FA32 | Models of gene regulation   |
- | C3         | Wed | 4/12 | 15-19 | TA | 5O1 Spelhallen (Spelhallen) | Computer Excercise 3 - Cheng   |
+ | C3         | Wed | 4/12 | 15-19 | TA | 5O1 Spelhallen (Spelhallen) | Computational modelling using genome-scale metabolic models     |
  | L15         | Thu | 5/12 | 08-10 | FE | FB52 | Co-regulation of genes |
  | L16         | Fri | 6/12 | 10-12 | FE | FB52 | Expression Quantitative Trait Loci (eQTLs) |
  |         |     |     |           |       |      |       |
