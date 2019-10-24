@@ -2,6 +2,7 @@ theme: jekyll-theme-minimal
 title: "CB2030"
 description: "Here we store material for the Data Analysis part of the CB2030, Systems Biology course."
 logo: assets/image/kth_logo.png
+google_analytics: UA-150816058-1
 
 plugins:
   - jekyll-relative-links
