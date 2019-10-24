@@ -12,7 +12,7 @@
  | L7         | Thu | 14/11 | 08-10 | LK | FA32 | PCA  |
  |         |     |     |           |       |      |       |
  | L8         | Mon | 18/11 | 10-12 | LK | FA32 | Pathway Analysis   |
- | L9         | Thu | 21/11 | 08-10 | LK | FA32 | Graph Algorithms  |
+ | L9         | Thu | 21/11 | 08-10 | GJ | FA32 | Graph Algorithms  |
  | L10         | Fri | 22/11 | 10-12 | CZ | FA32 | Introduction of genome-scale metabolic models  |
  |         |     |     |           |       |      |       |
  | L11         | Mon | 25/11 | 10-12 | CZ | FA32 | Flux balance analysis  |
