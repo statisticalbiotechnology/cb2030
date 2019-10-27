@@ -35,5 +35,6 @@ include:
   - prep/hypothesistesting.md
   - prep/linearmodels.md
   - prep/multipletesting.md
+  - prep/network.md
   - general/schedule.md
   - lab/readme.md
