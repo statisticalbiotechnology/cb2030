@@ -12,13 +12,17 @@
 
   How does the "observed differences in observed means" relate to the p-value here, or can that be interpreted as p-value?  
 
-> A: This is a mistake in presentation. In the fictive example, I should say "the observed differences in observed means as being large." That is very much the oposite to what was recorded in the video.
+> A: This is indeed a mistake in presentation. In the fictive example, I should say "the observed differences in observed means as being large." That is very much the oposite to what was recorded in the video.
 
-## Definition of $p$ value
+## Definition of *p* value
 
 * Q: Could someone clarify how to calculate the p-value? I hope it will help me to understand the difference between p-value and probability.
+> A: A $p$ value **is a** probability. Specifically, it is the probability that an outcome as extreme or more extreme than the one encountered given the null hypthesis being true.
 
 * Q: Until now, if someone would have asked me: "What is p-value?" I would have answered that "it is the probability of the observed difference between the two populations to be due to chance". However, I did not find this definition in the reading material. Would this definition be wrong?
+> A: Yes, your definition is problematic.  
+> 1. In testing, we observe samples not populations. The hypotheses, however, are statement about populations.  
+> 2. The definition of "due" is vague. Do you mean given the observed difference what is the probability that the observations happened by chance? Or do you mean the probability of the difference and that the outcome happened by chance?  
 
 * Q: Could you clarify a bit about why the p-value is uniformly distributed if the null hypothesis is true? Also what happens if the null hypothesis is false (the Wikipedia article mentions that the distribution then depends on sample size and the true value of the parameter)?  
   Q: In the video, you said 'when the null hypothesis is true, we are equally likely to observe a p-value of 0.1 as 0.3 as 0.9.'  I don't understand it, could you give me a more detailed explanation of it?
@@ -93,20 +97,19 @@ Q: What are the differences between one side p value and two side p value? Can y
 
 * Q: I would appreciate further clarifications on the differences between parametric and non-parametric tests. What are the different assumptions underlying these tests?
 
+## *p* value hacking
 
-
-## $p$ value hacking
+* Q: Like other statistical based sciences, biology is struggling with p-hacking and a replicate crisis. How is p-hacking performed (just out of curiosity) and how can it be revealed and identified?
 
 * Q: Are there any examples of when it would be justified to perform some sort of Post-Hoc tuning?
 
 * Q: What is considered p-hacking? For example, BLAST sites report separate p-values for each alignment which is calculated after alignment rather than us (necessarily) setting a predetermined p value against which alignments are rejected. And we usually just include that value as a p-value for our findings. I ask because of this quote in the reading material: "It also does not mean that you can choose your p-value after you run the test."
 
-* Q: Like other statistical based sciences, biology is struggling with p-hacking and a replicate crisis. How is p-hacking performed (just out of curiosity) and how can it be revealed and identified?
 
 
-## Null hypothesis ($H_0$)
+## Null hypothesis (*H<sub>0</sub>*)
 
-* Q: Why do we need null hypothesis, why cannot analysis whether or not the data fit the alternative hypothesis directly? If we calculate P(data|H1), and compared with significance level, can we get result to reject H1 or fail to reject H1?
+* Q: Why do we need null hypothesis, why cannot analysis whether or not the data fit the alternative hypothesis directly? If we calculate P(data\|H1), and compared with significance level, can we get result to reject H1 or fail to reject H1?
 
 * Q: How to ensure the null hypotheis when using t-test? How to define "the situation we are not interested in"? Does it have a impact on the selection of formula?
 
