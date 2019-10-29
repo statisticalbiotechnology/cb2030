@@ -12,7 +12,7 @@
 
   How does the "observed differences in observed means" relate to the p-value here, or can that be interpreted as p-value?  
 
-> A: This is indeed a mistake in presentation. In the fictive example, I should say "the observed differences in observed means as being large." That is very much the oposite to what was recorded in the video.
+  > A: This is indeed a mistake in presentation. In the fictive example, I should say "the observed differences in observed means as being large." That is very much the oposite to what was recorded in the video.
 
 ## Definition of *p* value
 
@@ -42,14 +42,13 @@
 * Q: The [Wikipedia entry](https://en.wikipedia.org/wiki/P-value) for p-value talks about representing the data using the random variable X and using conditional probability to define the statistical significance. However, it states that X is valid only in non-continuous data sets and the simple definition needs to be modified in order to accommodate the continuous data sets.
 
   What are examples of both the continuous and non-continuous data sets and how does the definition change when it comes to continuous data sets? Further, if we talk about having a normal distribution of the data then doesn't that itself constitute a continuous data set?
-
-> A: The wikipedia entry tries to build up a rational for why the defintion of the $p$ value does include a greater or equal sign instead of just an equal sign. See the [defintion](https://en.wikipedia.org/wiki/P-value#Definition_and_interpretation) of a $p$ value in the subsequent section.
-
-> Alt answer: Non-continuous data can only assume discrete values and you can depict them like clearly separated dots. For instance age (in years) is a type of non-continuous distribution.
->
-> As opposite, continuous data can assume every possible values within a limited or unlimited range: it means that the possible values are infinite and you can always have one more value between other two. For instance height is a type of continuous data.
->
-> So you see that in a non-continuous distribution you can have a certain probability for X to assume a specific value, because the possible values are "limited": you can, for instance, count the number of persons having a certain age. On the other hand, in a continuous distribution the probability for X to assume one specific value is one over infinite (=0): what is the probability for a person to be 173.67809223... cm tall? The only thing you can define is the probability for that person to be, for instance, taller/shorter than 173 cm or to be between 173.0 and 173.5 cm.
+  > A: The wikipedia entry tries to build up a rational for why the defintion of the $p$ value does include a greater or equal sign instead of just an equal sign. See the [defintion](https://en.wikipedia.org/wiki/P-value#Definition_and_interpretation) of a $p$ value in the subsequent section.
+  >  
+  > Alt answer: Non-continuous data can only assume discrete values and you can depict them like clearly separated dots. For instance age (in years) is a type of non-continuous distribution.  
+  >  
+  > As opposite, continuous data can assume every possible values within a limited or unlimited range: it means that the possible values are infinite and you can always have one more value between other two. For instance height is a type of continuous data.  
+  >  
+  > So you see that in a non-continuous distribution you can have a certain probability for X to assume a specific value, because the possible values are "limited": you can, for instance, count the number of persons having a certain age. On the other hand, in a continuous distribution the probability for X to assume one specific value is one over infinite (=0): what is the probability for a person to be 173.67809223... cm tall? The only thing you can define is the probability for that person to be, for instance, taller/shorter than 173 cm or to be between 173.0 and 173.5 cm.
 
 
 ## Critical values and significance levels
@@ -99,7 +98,8 @@ Q: What are the differences between one side p value and two side p value? Can y
 
 ## *p* value hacking
 
-* Q: Like other statistical based sciences, biology is struggling with p-hacking and a replicate crisis. How is p-hacking performed (just out of curiosity) and how can it be revealed and identified?
+* Q: Like other statistical based sciences, biology is struggling with p-hacking and a replicate crisis. How is p-hacking performed (just out of curiosity) and how can it be revealed and identified?  
+> A: [XKCD](https://www.explainxkcd.com/wiki/index.php/882:_Significant)
 
 * Q: Are there any examples of when it would be justified to perform some sort of Post-Hoc tuning?
 
