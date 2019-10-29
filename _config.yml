@@ -26,6 +26,8 @@ include:
   - nb/pca/PCAofCarcinomas.ipynb
   - nb/pca/PCAofMultiNormal.ipynb
   - nb/supervised/supervisedML.ipynb
+  - qa/readme.md
+  - qa/testing.md
   - prep/readme.md
   - prep/clustering.md
   - prep/pca.md
