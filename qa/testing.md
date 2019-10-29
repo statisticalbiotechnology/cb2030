@@ -17,7 +17,7 @@
 ## Definition of *p* value
 
 * Q: Could someone clarify how to calculate the p-value? I hope it will help me to understand the difference between p-value and probability.
-> A: A $p$ value **is a** probability. Specifically, it is the probability that an outcome as extreme or more extreme than the one encountered given the null hypthesis being true.
+> A: A *p* value **is a** probability. Specifically, it is the probability that an outcome as extreme or more extreme than the one encountered given the null hypthesis being true.
 
 * Q: Until now, if someone would have asked me: "What is p-value?" I would have answered that "it is the probability of the observed difference between the two populations to be due to chance". However, I did not find this definition in the reading material. Would this definition be wrong?
 > A: Yes, your definition is problematic.  
@@ -26,6 +26,7 @@
 
 * Q: Could you clarify a bit about why the p-value is uniformly distributed if the null hypothesis is true? Also what happens if the null hypothesis is false (the Wikipedia article mentions that the distribution then depends on sample size and the true value of the parameter)?  
   Q: In the video, you said 'when the null hypothesis is true, we are equally likely to observe a p-value of 0.1 as 0.3 as 0.9.'  I don't understand it, could you give me a more detailed explanation of it?
+  > A: The uniformity follows from the definition of a *p* value. If Xobs is generated under H0, the probability Pr(X>=Xobs|H0) is just Pr(X>=Xobs). The null p values are uniform just the same way that it would have had if Xobs was drawn from any distribution you could imagine.
 
 * Q: According to the Wikipedia article, there are two main issues with using the p-value;
     1. The alternative hypothesis for any p-value less than 0.05, without other support, is accepted
@@ -55,7 +56,7 @@
 
 * Q: Could you clearify the concept of using critical values? When do you use this instead of p-values, and what is the difference?  
   Q: What is the difference between p-value and critical value? When do use which one?
-
+  > A: A critical value is the Xobs that corresponds to a $p$ value of a the significance level we decided up front.
 
 * Q: In the Wikipedia article it is mentioned that some argue against the use of significance thresholds, that it could be sufficient to interpret the p-value directly. What makes the use of significance thresholds important, other than to be able to state if a hypothesis can be rejected or not?
 
@@ -69,11 +70,11 @@
 
 ## Type I vs. Type II errors
 
-* Q: Both type I and type II errors are commonly present in the statistic analysis and when interpreting the results the errors should be taken into account since the significant levels that are set make the existance of an error probable. Could such an error be detected and is there a way to avoid false possitives or false negatives with the already established significance levels?
+* Q: Both type I and type II errors are commonly present in the statistic analysis and when interpreting the results the errors should be taken into account since the significant levels that are set make the existence of an error probable. Could such an error be detected and is there a way to avoid false positives or false negatives with the already established significance levels?
 
-> A: No. That is the point of the whole point of significance testing. Regardless how you select your treshold, there will always be errors. The question is just if you prefer errors of one kind over the other.
+> A: No. That is the point of the whole point of significance testing. Regardless how you select your threshold, there will always be errors. The question is just if you prefer errors of one kind over the other.
 
-* Q: How can we get low levels of both type I and type II errors? In which situations would we want to priotize low type I errors over type II errors (and viceversa)?
+* Q: How can we get low levels of both type I and type II errors? In which situations would we want to prioritise low type I errors over type II errors (and vice versa)?
 
 * Q: Why are type I errors usually considered more dramatic than type II errors?
 
@@ -88,7 +89,7 @@ Q: What are the differences between one side p value and two side p value? Can y
 > For instance if you are interested in the differential expression between two samples, you usually want to know only when a gene is expressed at different levels, without considering whether it is over-expressed or under-expressed. In this example the significant  "over-expression outcomes" (i.e. when the average difference is positive) would fall in the extreme right of the distribution, while the significant "under-expression outcomes" (i.e. when the average difference is negative) would fall in the extreme left of the distribution. Since you're interested in both the types of outcomes, you collectively consider them using the two-sided p-value.
 
 
-* Q: So in which example would we use a two sided p-value? Isnt the most common ussage the one sided p-value?
+* Q: So in which example would we use a two sided p-value? Isn't the most common usage the one sided p-value?
 
 * Q: Which test, one-tailed test or two-tailed test, should one use for a dataset obtained from experiments (e.g. sequencing)? How can one know if the choice of the test is appropriate?
 
