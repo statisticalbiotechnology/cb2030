@@ -14,6 +14,8 @@ Here you can find jupyter notebooks for the Seminars on
 
 Most of the contained notebooks can be executed on-line, using services provided by mybinder.org. Just click the small icon present in the readme files of each subfolder, and wait for the notebook to be executed in an online docker container.
 
+Note: Binder will automatically shut down user sessions that have more than 10 minutes of inactivity (if you leave your window open, this will be counted as “activity”), so be mindfull of this not to lose any of your work.
+
 ## Download
 To use this material off-line follow the following steps:
 

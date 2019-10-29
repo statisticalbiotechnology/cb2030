@@ -1,6 +1,7 @@
 name: p37
 channels:
   - defaults
+  - bioconda
 dependencies:
   - blas=1.0
   - ca-certificates=2019.8.28
@@ -43,4 +44,5 @@ dependencies:
   - wheel=0.33.6
   - xz=5.2.4
   - zlib=1.2.11
+  - networkx=2.2
 prefix: //anaconda3/envs/p37
