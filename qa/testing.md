@@ -26,7 +26,7 @@
 
 * Q: Could you clarify a bit about why the p-value is uniformly distributed if the null hypothesis is true? Also what happens if the null hypothesis is false (the Wikipedia article mentions that the distribution then depends on sample size and the true value of the parameter)?  
   Q: In the video, you said 'when the null hypothesis is true, we are equally likely to observe a p-value of 0.1 as 0.3 as 0.9.'  I don't understand it, could you give me a more detailed explanation of it?
-  > A: The uniformity follows from the definition of a *p* value. If Xobs is generated under H0, the probability Pr(X>=Xobs|H0) is just Pr(X>=Xobs). The null p values are uniform just the same way that it would have had if Xobs was drawn from any distribution you could imagine.
+  > A: The uniformity follows from the definition of a *p* value. If Xobs is generated under H0, the probability Pr(X>=Xobs\|H0) is just Pr(X>=Xobs). The null p values are uniform just the same way that it would have had if Xobs was drawn from any distribution you could imagine.
 
 * Q: According to the Wikipedia article, there are two main issues with using the p-value;
     1. The alternative hypothesis for any p-value less than 0.05, without other support, is accepted
