@@ -1,4 +1,4 @@
-# Quastion and answers -- Hypothesis Testing
+# Question and answers -- Hypothesis Testing
 
 ## Errors in presentation
 
