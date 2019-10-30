@@ -1,9 +1,9 @@
 # Questions and Answers to Multiple Hypothesis Testing.
 
-## Usage of FDR
+## Usage of FDRs and *q* values
 1. "In light of the definition of the false positive rate, a p-value cutoff says little about the content of the features actually called significant. The q values directly provide a meaningful measure among the features called significant."
   I am not sure I understand this. Is it because of the FDR = FP/(FP+TP) taking all significant features into account while the FPR = FP/(FP+TN) instead include the True negatives?
-  > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% of all null statistics (below and above treshold) is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings.
+  > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% out of all (below and above treshold) null statistics is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings.
 
 1. When we speak about false discovery rate as the method of looking at the rate of occurrence of false positives when doing multiple comparisons , is it that we measure say 'n' number of false positives occurring for every 'm' number of comparisons? Or we have the average of number of false positives for each comparison?
   > It is a statement of the set of findings we report from an experiment. If we expect 5% of our reported findings to be incorrect, we report a FDR of 5%.
@@ -45,7 +45,7 @@ Or in other words? How and why do we get this distribution of p-values?
   > "#{null p<sub>i</sub> <=t}" counts the number of  *p* values under t that were generted under the null hypothesis, while "#{p<sub>i</sub> <=t}"  counts all the *p* values under t.
 
 
-# From FDR to *q* value.
+## From FDR to *q* value.
 1. The q value is calculated by taking the minima of the FDR. Wouldn't this mean that the actual FDR could be higher than what we are reporting using q value. Why take minima and why not maxima when calculating q value? Further, how is the range for x' selected to calculate min(FDR)?  
   In the example in video, the FDR ranges from 0.15 to 0.2 for the score range of 6.5 to 7, but when reporting q/FDR it reports the minima i.e. only 0.15, missing out to show that the FDR in the range of 6.5 to 7 could be as high as 0.2. Why is this not a problem when handling data sets with large variability?
   > Well it is a problem. However, for large datasets, we do not see much variability in this. The case I show in the video is an exadjerated example to demonstrate why the procedure is needed.
