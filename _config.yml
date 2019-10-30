@@ -29,6 +29,7 @@ include:
   - nb/supervised/supervisedML.ipynb
   - qa/readme.md
   - qa/testing.md
+  - qa/multiplehypothesistesting.md
   - prep/readme.md
   - prep/clustering.md
   - prep/pca.md
