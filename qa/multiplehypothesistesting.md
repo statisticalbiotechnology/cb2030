@@ -3,7 +3,7 @@
 ## Usage of FDR
 1. "In light of the definition of the false positive rate, a p-value cutoff says little about the content of the features actually called significant. The q values directly provide a meaningful measure among the features called significant."
   I am not sure I understand this. Is it because of the FDR = FP/(FP+TP) taking all significant features into account while the FPR = FP/(FP+TN) instead include the True negatives?
-  > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% of all null statistics is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings.
+  > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% of all null statistics (below and above treshold) is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings.
 
 1. When we speak about false discovery rate as the method of looking at the rate of occurrence of false positives when doing multiple comparisons , is it that we measure say 'n' number of false positives occurring for every 'm' number of comparisons? Or we have the average of number of false positives for each comparison?
   > It is a statement of the set of findings we report from an experiment. If we expect 5% of our reported findings to be incorrect, we report a FDR of 5%.
