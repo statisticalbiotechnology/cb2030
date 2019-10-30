@@ -1,7 +1,9 @@
+# Questions and Answers to Multiple Hypothesis Testing.
+
 ## Usage of FDR
 1. "In light of the definition of the false positive rate, a p-value cutoff says little about the content of the features actually called significant. The q values directly provide a meaningful measure among the features called significant."
   I am not sure I understand this. Is it because of the FDR = FP/(FP+TP) taking all significant features into account while the FPR = FP/(FP+TN) instead include the True negatives?
-  > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% of all null statistics is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings. 
+  > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% of all null statistics is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings.
 
 1. When we speak about false discovery rate as the method of looking at the rate of occurrence of false positives when doing multiple comparisons , is it that we measure say 'n' number of false positives occurring for every 'm' number of comparisons? Or we have the average of number of false positives for each comparison?
 
@@ -58,4 +60,4 @@ Or in other words? How and why do we get this distribution of p-values?
 
 1. What is the relation of the threshold (lamda) to &pi;<sub>0</sub> as a function?  How do you find the ideal treshold?
 1. When the &pi;<sub>0</sub>(&lambda;) was plotted against &lambda; in the article, Storey and Tibshirani fitted a natural cubic spline with  degrees of freedom limited to 3 to the data, stating that this suited their purposes.  Will this always be the proper way to do it, or does this have to be evaluated on case-by-case basis?
-  > The procedure is frequently used. However, it should be noted that I in my notebook use a differnt procedure for &pi;<sub>0</sub> estimation than the one described in Storey&Tibshirani.
+  > The spline procedure is frequently used. However, it should be noted that I in my notebook use a differnt procedure for &pi;<sub>0</sub> estimation than the one described in Storey&Tibshirani.
