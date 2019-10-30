@@ -26,7 +26,8 @@
 
 * Q: Could you clarify a bit about why the *p* value is uniformly distributed if the null hypothesis is true? Also what happens if the null hypothesis is false (the Wikipedia article mentions that the distribution then depends on sample size and the true value of the parameter)?  
   Q: In the video, you said 'when the null hypothesis is true, we are equally likely to observe a *p* value of 0.1 as 0.3 as 0.9.'  I don't understand it, could you give me a more detailed explanation of it?
-  > A: The uniformity follows from the definition of a *p* value. If Xobs is generated under H<sub>0</sub>, the probability Pr(dX>=dXobs\|H<sub>0</sub>) is just Pr(dX>=dXobs). The null p values are uniform just the same way that it would have had if Xobs was drawn from any distribution you could imagine.
+  > A: The uniformity follows from the definition of a *p* value. If Xobs is generated under H<sub>0</sub>, the probability Pr(dX>=dXobs\|H<sub>0</sub>) is just Pr(dX>=dXobs), i.e. a [Cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function). The null p values are uniform just the same way that a sample from any distribution, when subject to its own CDF, would render a uniform distribution between [0,1].
+  > See e.g. [this stack exchange entry](https://stats.stackexchange.com/a/11288)
 
 * Q: According to the Wikipedia article, there are two main issues with using the *p* value;
     1. The alternative hypothesis for any *p* value less than 0.05, without other support, is accepted
@@ -56,7 +57,7 @@
 
 * Q: Could you clearify the concept of using critical values? When do you use this instead of *p* values, and what is the difference?  
   Q: What is the difference between *p* value and critical value? When do use which one?
-  > A: A critical value is the difference that corresponds to a *p* value of a the significance level we decided up front. I.e. you might estimate that a *p* value of 0.05 corresponds to a difference of means of 3 kg of the weights of your two samples. Your critical value on a 95% confidence level is then 3kg, your p-value treshold is 5%.  
+  > A: A critical value is the difference that corresponds to a *p* value of a the significance level we decided up front. I.e. you might estimate that a *p* value of 0.05 corresponds to a difference of means of 3 kg of the weights of your two samples. Your critical value on a 95% confidence level is then 3kg, your *p* value treshold is 5%.  
 
 * Q: In the Wikipedia article it is mentioned that some argue against the use of significance thresholds, that it could be sufficient to interpret the *p* value directly. What makes the use of significance thresholds important, other than to be able to state if a hypothesis can be rejected or not?
 
@@ -89,7 +90,7 @@
 * Q: What is the rationale behind using a two-sided *p* value? For instance in the example on the Wikipedia page of testing whether a coin is fair, I understand that it can be biased towards either heads or tails, but in what way does a two-sided *p* value relate to the observed result?  
 Q: When to use one-tailed *p* value and when two-tailed *p* value?  
 Q: What are the differences between one side p value and two side p value? Can you give us an example in real case where both of the two p value are meaningful?
-  > For instance if you are interested in the differential expression between two samples, you usually want to know only when a gene is expressed at different levels, without considering whether it is over-expressed or under-expressed. In this example the significant  "over-expression outcomes" (i.e. when the average difference is positive) would fall in the extreme right of the distribution, while the significant "under-expression outcomes" (i.e. when the average difference is negative) would fall in the extreme left of the distribution. Since you're interested in both the types of outcomes, you collectively consider them using the two-sided *p* value.
+  > For instance if you are interested in the differential expression between two samples, you usually want to know only when a gene is expressed at different levels, without considering whether it is over-expressed or under-expressed. In this example the significant  "over-expression outcomes" (i.e. when the average difference is positive) would fall in the extreme right of the distribution, while the significant "under-expression outcomes" (i.e. when the average difference is negative) would fall in the extreme left of the distribution. Since you're interested in both the types of outcomes, you collectively consider them using the two-sided *p* value.  
   > A [wikipedia](https://en.wikipedia.org/wiki/One-_and_two-tailed_tests) entry on the topic.
 
 * Q: So in which example would we use a two sided *p* value? Isn't the most common usage the one sided *p* value?
@@ -115,7 +116,7 @@ Q: What are the differences between one side p value and two side p value? Can y
 ## Null hypothesis (*H<sub>0</sub>*)
 
 * Q: Why do we need null hypothesis, why cannot analysis whether or not the data fit the alternative hypothesis directly? If we calculate P(data\|H1), and compared with significance level, can we get result to reject H1 or fail to reject H1?
-> The problem is that we know very little of H1. Under a typical H1 the difference in mean can take any value except for zero. This is why one one at least historically could not model probilities related to H1. H0 on the other hand, asumes a fix value of the difference in mean, e.g. 0, which enables us to estimate the distribution of measurement errors around that value.
+> A: The problem is that we know very little of H1. Under a typical H1 the difference in mean can take any value except for zero. This is why one one at least historically could not model probilities related to H1. H0 on the other hand, asumes a fix value of the difference in mean, e.g. 0, which enables us to estimate the distribution of measurement errors around that value.
 
 
 * Q: How to ensure the null hypotheis when using t-test? How to define "the situation we are not interested in"? Does it have a impact on the selection of formula?
@@ -156,8 +157,8 @@ Q: What are the differences between one side p value and two side p value? Can y
 
 ## Notebook
 
-* Q: From the "Differential expression analysis of the TCGA breast cancer set", what is a fold change and how is it calculated? Why do we use volcano plots to view differential expression values?
-  > See [wikipedia](https://en.wikipedia.org/wiki/Volcano_plot_(statistics)).
+* Q: From the "Differential expression analysis of the TCGA breast cancer set", what is a fold change and how is it calculated? Why do we use volcano plots to view differential expression values?  
+  > A: See [wikipedia](https://en.wikipedia.org/wiki/Volcano_plot_(statistics)).
 
 * Q: In the DE analysis notebook, I understand that the -logp values are used for the volcano plot to make the interesting values stand out more, but is there something else you can use the -logp values and logFC values for?
 
