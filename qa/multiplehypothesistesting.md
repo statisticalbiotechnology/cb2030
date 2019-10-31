@@ -114,8 +114,6 @@ Or in other words? How and why do we get this distribution of p-values?
 1. I did not really follow how π 0 and λ were calculated/determine and how they relate to the q-value and FDR. Could you go through an example, maybe even use the TCGA breast cancer set, and go through step by step how you calculate these 4 variables from the data and in which order you do the calculations (which variables depend on each other?)?
   > It would be great if you tell me why the notebook is not a good enough example in itsef? Try to play around a bit with the notebook before the seminar.
 
-
-
 ## Questions that will be hard to address during seminar
 1. Could you please confirm the following statements?
   To test many variables at once for their significance we use q values.  
