@@ -98,7 +98,8 @@ Or in other words? How and why do we get this distribution of p-values?
 1. What is the relation of the threshold (lamda) to &pi;<sub>0</sub> as a function?  How do you find the ideal treshold?
 4. I understand that &pi;<sub>0</sub> is an estimated parameter due to the lack of information on TP and FP, but what is lambda?
     > Depending on which treshold &lambda; we place ourselves we get different estimates of &pi;<sub>0</sub>. The point the article makes is that if you select lambda too low, you will getr a too high estimate of  &pi;<sub>0</sub>, if you place yourself too high, there will be too much variabilityin the estimate. Hence the authors use a spline to fit their data, and evaluates the spine function for &lambda;=1
-
+5. Why is the bootstrap method, instead of another method, used to calculate π0 in the Jupyter notebook “qvalue”?
+  > In my eyes, it gives more stable estimates.
 
 
 ## Null statistics
