@@ -121,7 +121,7 @@ Or in other words? How and why do we get this distribution of p-values?
   To test many variables at once for their significance we use q values.  
   > Yes this is common practice.   
 
-  Q values are caclulated by the benjamini hochberg procedure?  
+   Q values are caclulated by the benjamini hochberg procedure?  
   > No, the B-H procedure, which is not included in the study material, is a method to estimate an upper bound on the FDR.  
 
   And that works by ranking the p values lowest to highest, assigning ranks from 1-n .  
