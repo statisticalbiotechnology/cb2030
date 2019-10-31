@@ -19,8 +19,8 @@
   > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% out of all (below and above treshold) null statistics is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings.
 
 1. Could you develop more the difference between Bonferroni correction and FDR approach?
-1. In the article it is mentioned that the Bonferroni correction (controlling the familywise error rate) is too conservative when many true positives can be expected, but it still seems to be used in many studies. Are there any additional advantages or practical considerations underlying this, or could one equally well use a FDR approach in such cases?
-A [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction) is a way to tontrol for the family-wise error rate (FWER), i.e. what is the probability that at least one of your significant features is generated under H<sub>0</sub>. One good reason for calculating Bonnferroni corrections are that they are very simple to calculate.  
+1. In the article it is mentioned that the Bonferroni correction (controlling the familywise error rate) is too conservative when many true positives can be expected, but it still seems to be used in many studies. Are there any additional advantages or practical considerations underlying this, or could one equally well use a FDR approach in such cases?  
+  > A [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction) is a way to control for the family-wise error rate (FWER), i.e. what is the probability that at least one of your significant features is generated under H<sub>0</sub>. One good reason for calculating Bonnferroni corrections are that they are very simple to calculate.  
 
 1. Could you explain the distribution of p-values under H1 which is showed in slide 8?
   > Slide 8 showes the number of *p* values that would be significant for a couple of tresholds if all the 50000 probes in the experimentfall under the null (H<sub>0</sub>), i.e. there is no signal what so ever. This is just to make you understand that even very low p-value tresholds can report many FPs if you consider a large enough number of features.
@@ -116,25 +116,17 @@ Or in other words? How and why do we get this distribution of p-values?
 
 ## Questions that will be hard to address during seminar
 1. Could you please confirm the following statements?
-  To test many variables at once for their significance we use q values.  
-  > Yes this is common practice.   
-
-   Q values are caclulated by the benjamini hochberg procedure?  
-  > No, the B-H procedure, which is not included in the study material, is a method to estimate an upper bound on the FDR.  
-
-  And that works by ranking the p values lowest to highest, assigning ranks from 1-n .  
-  > Yes that is how the BH procedure works. (Not part of this course.)
-
-  Then the q values are calculated as ((rank divided by number of p values)*False discovery rate).  
-  > Not really.  First FDRs are calculated, then the FDRs are smoothed into q-values.  
-
-  Then we have a list with p values and q values, and we look for the highest p values, that is still lower then its associated q values? and all p values with lower ranks are significant?  
-  > Not sure I follow.  
-
-  This limits the number of p values we consider to be significant, by discarding p values even though they are below the critical value?  
-  > No, in the end we treshold our findings based on the *q* value.
-
+  - To test many variables at once for their significance we use q values.  
+    > Yes this is common practice.   
+  - Q values are caclulated by the benjamini hochberg procedure?  
+    > No, the B-H procedure, which is not included in the study material, is a method to estimate an upper bound on the FDR.  
+  - And that works by ranking the p values lowest to highest, assigning ranks from 1-n .  
+    > Yes that is how the BH procedure works. (Not part of this course.)
+  - Then the q values are calculated as ((rank divided by number of p values)*False discovery rate).  
+    > Not really.  First FDRs are calculated, then the FDRs are smoothed into q-values.  
+  - Then we have a list with p values and q values, and we look for the highest p values, that is still lower then its associated q values? and all p values with lower ranks are significant?  
+    > Not sure I follow.  
+  - This limits the number of p values we consider to be significant, by discarding p values even though they are below the critical value?  
+    > No, in the end we treshold our findings based on the *q* value.
 1. Can you explain in more detail what the q value is, I didn't understand the explanation in the video
-
-
 1. Can  q-value provide biological meaningful data, while rejecting hypothesis? What are the limitations of q values statistics? At what cases q value statistics is applicable?  At what cases p-value is preferable over q-value? Will the q-values still  be accurate if it is applied to enormously big sample size?
