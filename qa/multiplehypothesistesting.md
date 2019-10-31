@@ -19,9 +19,11 @@
   > A FDR of 5% means that your findings is expected to contain 5% FPs. A FPR of 5% on the other hand just means that 5% out of all (below and above treshold) null statistics is included in your findings. So a FPR will mean different things for different experiments, while the FDR is a direct statement about your findings.
 
 1. Could you develop more the difference between Bonferroni correction and FDR approach?
+1. In the article it is mentioned that the Bonferroni correction (controlling the familywise error rate) is too conservative when many true positives can be expected, but it still seems to be used in many studies. Are there any additional advantages or practical considerations underlying this, or could one equally well use a FDR approach in such cases?
+A [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction) is a way to tontrol for the family-wise error rate (FWER), i.e. what is the probability that at least one of your significant features is generated under H<sub>0</sub>. One good reason for calculating Bonnferroni corrections are that they are very simple to calculate.  
 
 1. Could you explain the distribution of p-values under H1 which is showed in slide 8?
-  > Slide 8 showes the number of *p* values that would be significant for 50000 genes in an experiment for a couple of *p* value tresholds if all *p* values are null (H<sub>0</sub>) *p* values.
+  > Slide 8 showes the number of *p* values that would be significant for a couple of tresholds if all the 50000 probes in the experimentfall under the null (H<sub>0</sub>), i.e. there is no signal what so ever. This is just to make you understand that even very low p-value tresholds can report many FPs if you consider a large enough number of features.
 
 1. The usage of q-value seems to offer a more "true" result than just using the classical p-value definition. I feel like the pros of using a q-value is described. However, are there any cons, or rather anything we must consider, when using the q-value?
     > An *q* value is a statement of our findings, so it does not tell us what we are missing out on. E.g. how many *p* values generated under H1 are under the treshold.
@@ -33,26 +35,26 @@
   > It is a statement of the set of findings we report from an experiment. If we expect 5% of our reported findings to be incorrect, we report a FDR of 5%.
 
 1. In the article it says that "The q value provides a measure of each feature’s significance, automatically taking into account the fact that thousands are simultaneously being tested". Is it that it compares the various features being measured and states how significant is a gene or feature when compared to the other genes or features in consideration?
-
-1. Is it common that published genomwide studies use q values instead of p values today? Is there any resistance against switching to q values or is it just a matter of ignorance?
+  > No, each feature is tested individually. However, we want to make an assesment of the errors of the features we called significant.
 
 1. Is there any specific case that q-value is more convenient to use than p-value or it can be applied for every statistical test?
+  > It can be used on any experiment generating a set of independent *p* values.
 
 1. In the context of genomics, is there any case in which it is better to express the significance in terms of the false positive rate rather than false discovery rate?
-
-1. Are q-values better than p-values only when many different features are analysed at the same time, or is it always more accurate?
+  > Sure, anytime you are interested in what fraction of all FPs in your experiment that is called significant, an FPR should be used.
 
 1. FDR is number of null hypothesis expected above threshold. However, how do we predict the number of expect null hypothesis that would be above threshold for a completely new and unknown data set or data set generated using relatively new techniques (Something that is never studied before and we do not have an idea of the expected rate of error)?
+> The novelty of the techique does not matter. As long as we can do hypothesis tests of the measurements the technique is generating, you should be able to use this.
 
-1. In the article it is mentioned that the Bonferroni correction (controlling the familywise error rate) is too conservative when many true positives can be expected, but it still seems to be used in many studies. Are there any additional advantages or practical considerations underlying this, or could one equally well use a FDR approach in such cases?
 
-
-## *q* values in practice.
+## Usage of *q* values/FDR in literature.
 1. Also, how is the q-value threshold chosen? (The article mentioned choosing what's practical for subsequent verification, are there other criteria?)
  > There is no rule. However, frequently tresholds of 1% or 5% are used.
 
 1. Are p-values and q-values used exclusively in publications? P-values can be used to assess scientific literature, while q-values is dependent on pi0 which seems to be estimated by the one conducting the study which increases risk of bias.
-   > Whenever multiple tests are involved, most journals require you to report FDR/*p* values. However, whenever you have measurements on one indidual substance that you were interested prior to the experiment, you can report *p* values.   
+1. Is it common that published genomwide studies use q values instead of p values today? Is there any resistance against switching to q values or is it just a matter of ignorance?
+1. Are q-values better than p-values only when many different features are analysed at the same time, or is it always more accurate?
+  > Whenever multiple tests are involved, most journals require you to report FDR/*p* values. However, whenever you have measurements on one indidual substance that you were interested prior to the experiment, you can report *p* values.   
 
 
 
@@ -85,8 +87,6 @@ Or in other words? How and why do we get this distribution of p-values?
 4. I understand that &pi;<sub>0</sub> is an estimated parameter due to the lack of information on TP and FP, but what is lambda?
     > Depending on which treshold &lambda; we place ourselves we get different estimates of &pi;<sub>0</sub>. The point the article makes is that if you select lambda too low, you will getr a too high estimate of  &pi;<sub>0</sub>, if you place yourself too high, there will be too much variabilityin the estimate. Hence the authors use a spline to fit their data, and evaluates the spine function for &lambda;=1
 
-1. I did not really follow how π 0 and λ were calculated/determine and how they relate to the q-value and FDR. Could you go through an example, maybe even use the TCGA breast cancer set, and go through step by step how you calculate these 4 variables from the data and in which order you do the calculations (which variables depend on each other?)?
-  > It would be great if you tell me why the notebook is not a good enough example in itsef? Try to play around a bit with the notebook before the seminar.
 
 
 ## Null statistics
@@ -96,11 +96,14 @@ Or in other words? How and why do we get this distribution of p-values?
 ## Notebook
 
 1. In the last figure on notebook, the treshold separate true and false data. Could you explain why the true has to have high p-value (-logp is low)?
+  > In the notebook, the features significant on a *q* value treshold of 10<sup>-10</sup> are labeled as "True" in the plot. The *q* value is semi-monotonically increasing with *p* value, so whenever q is low, p is low. low p means high -p, and high -log p.
+
+1. I did not really follow how π 0 and λ were calculated/determine and how they relate to the q-value and FDR. Could you go through an example, maybe even use the TCGA breast cancer set, and go through step by step how you calculate these 4 variables from the data and in which order you do the calculations (which variables depend on each other?)?
+  > It would be great if you tell me why the notebook is not a good enough example in itsef? Try to play around a bit with the notebook before the seminar.
 
 
 
-
-## Questions that will be hard to address  
+## Questions that will be hard to address during lecture.
 1. Could you please confirm the following statements?
   To test many variables at once for their significance we use q values.  
   > Yes this is common practice.   
