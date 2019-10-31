@@ -53,14 +53,23 @@ A [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction) i
 
 1. Are p-values and q-values used exclusively in publications? P-values can be used to assess scientific literature, while q-values is dependent on pi0 which seems to be estimated by the one conducting the study which increases risk of bias.
 1. Is it common that published genomwide studies use q values instead of p values today? Is there any resistance against switching to q values or is it just a matter of ignorance?
-1. Are q-values better than p-values only when many different features are analysed at the same time, or is it always more accurate?
+1. Could the choice between p- and q-values depend on what kind of feature is being investigated or is it only the number of features that are of interest?
+1. Theoretically, multiple testing correction should be performed every time that more than one test is done. However, is this the case in real-life research? Is there a maximum number of features that can be reliably tested and reported as significant (or not) without multiple testing correction?
+1. Are *q* values better than *p* values only when many different features are analysed at the same time, or is it always more accurate?
   > Whenever multiple tests are involved, most journals require you to report FDR/*p* values. However, whenever you have measurements on one indidual substance that you were interested prior to the experiment, you can report *p* values.   
 
 
 
 ## Estimation of FDR
-1. I didn't really understand how m0 was estimated mathematically using the p-value distribution and would like to have it explained a bit more.
-1. The false discovery rate can be defined as the number of null hypotheses divided by the total number of hypotheses above the score threshold. Is the “number of null hypotheses” equivalent to the number of “false positive features” because we refer to a certain threshold t or is there another reason?
+1. I didn't really understand how m0 was estimated mathematically using the *p* value distribution and would like to have it explained a bit more.
+  > Overall there are *m* features in your assay. Each one of these has a prior probability of &pi;<sub>0</sub> of being null. Hence you can estimate *m<sub>0</sub> = m&pi;<sub>0</sub>* null features.
+
+1. I don't understand the description of the original FDR method as "too conservative". I understand the math behind it, but I cannot grasp it from a conceptual point of view: if &pi;<sub>0</sub> is assumed to be equal to 1, wouldn't that mean that all the features that are considered significant are null?
+  > If you do not take any equation in consideration you are right. Your confusion arises when we estimate the number of errors under threshold *F(t) = m<sub>0</sub>t*. This estimation can be done as  *m<sub>0</sub> = m&pi;<sub>0</sub>*, or we can conservatively approxiamte *F(t) &approx; mt*. The &pi;<sub>0</sub> = 1 estimate is conservative, as it assumes a larger number of errors than really are present.
+
+1. The false discovery rate can be defined as the number of null hypotheses divided by the total number of hypotheses above the score threshold. Is the “number of null hypotheses” equivalent to the number of “false positive features” because we refer to a certain threshold *t* or is there another reason?
+> Yes this is an accurate description. Features are nullk or not, however the distinction between a Tm and a FP is a treshold.
+
 1. Why are the p-values distributed the way they are presented? Shouldnt H0 be non-existent at a p-value of 0, and also the distribution of H1 is quite confusing, we usually dont have a high frequency of low p-values (We would love to have that so)?!
 Or in other words? How and why do we get this distribution of p-values?
   > The uniformity of p-values under H0 is something we discussed in the previous seminar. It comes down to that the null *p* values are uniform just the same way that a sample from any distribution, when subject to its own CDF, would render a uniform distribution between [0,1].  
@@ -79,11 +88,14 @@ Or in other words? How and why do we get this distribution of p-values?
 5. The last step (calculation of q<sub>i</sub>) is done computational considering all tresholds? Does this lead to an mathematical underestimation of FDR by picking the best t-values?
     > In sort of a way yes, however, this is intrinsic to the definition of a *q* value.
 
+1. Could you clarify how *q* values are semi-[monotonically](https://en.wikipedia.org/wiki/Monotonic_function) increasing with *p* value, and why is this important?
+  > We smooth the FDRs into *q* values by defining a feature's *q* value to be the minimal FDR of any treshold that includes the feature. The procedure is important as we otherwise would not be able to allocate a FDR treshhold to a particular feature (, as there will be multiple such FDRs).
+
 ## &pi;<sub>0</sub> estimation
 
-1. What is the relation of the threshold (lamda) to &pi;<sub>0</sub> as a function?  How do you find the ideal treshold?
 1. When the &pi;<sub>0</sub>(&lambda;) was plotted against &lambda; in the article, Storey and Tibshirani fitted a natural cubic spline with  degrees of freedom limited to 3 to the data, stating that this suited their purposes.  Will this always be the proper way to do it, or does this have to be evaluated on case-by-case basis?
   > The spline procedure is frequently used. However, it should be noted that I in my notebook use a differnt procedure for &pi;<sub>0</sub> estimation than the one described in Storey&Tibshirani.
+1. What is the relation of the threshold (lamda) to &pi;<sub>0</sub> as a function?  How do you find the ideal treshold?
 4. I understand that &pi;<sub>0</sub> is an estimated parameter due to the lack of information on TP and FP, but what is lambda?
     > Depending on which treshold &lambda; we place ourselves we get different estimates of &pi;<sub>0</sub>. The point the article makes is that if you select lambda too low, you will getr a too high estimate of  &pi;<sub>0</sub>, if you place yourself too high, there will be too much variabilityin the estimate. Hence the authors use a spline to fit their data, and evaluates the spine function for &lambda;=1
 
@@ -91,7 +103,7 @@ Or in other words? How and why do we get this distribution of p-values?
 
 ## Null statistics
 1. From what I understood, if you take samples from two similar distributions (Ho) the p-values would be evenly distributed. Can this be used when designing experiments to identify false positives by repeating the experiment and comparing the p-values, i.e. if the p-value is low the first time there would be a high chance it wouldn't the second time and so on.
-
+  > Yes uyou could. However, in practice, it is better to use a larger sample size on the first experiment instead of repeating the experiment.
 
 ## Notebook
 
@@ -103,34 +115,27 @@ Or in other words? How and why do we get this distribution of p-values?
 
 
 
-## Questions that will be hard to address during lecture.
+## Questions that will be hard to address during seminar
 1. Could you please confirm the following statements?
   To test many variables at once for their significance we use q values.  
   > Yes this is common practice.   
+
   Q values are caclulated by the benjamini hochberg procedure?  
-  > No, the B-H procedure, which I do not think we have material on, is a method to estimate an upper bound on the FDR.  
+  > No, the B-H procedure, which is not included in the study material, is a method to estimate an upper bound on the FDR.  
+
   And that works by ranking the p values lowest to highest, assigning ranks from 1-n .  
-  > Yes that is how the BH procedure works. (Not part of this course.)  
+  > Yes that is how the BH procedure works. (Not part of this course.)
+
   Then the q values are calculated as ((rank divided by number of p values)*False discovery rate).  
   > Not really.  First FDRs are calculated, then the FDRs are smoothed into q-values.  
+
   Then we have a list with p values and q values, and we look for the highest p values, that is still lower then its associated q values? and all p values with lower ranks are significant?  
   > Not sure I follow.  
+
   This limits the number of p values we consider to be significant, by discarding p values even though they are below the critical value?  
   > No, in the end we treshold our findings based on the *q* value.
 
-
 1. Can you explain in more detail what the q value is, I didn't understand the explanation in the video
 
-1. Could the choice of statistical method also depend on what kind of feature is being investigated or is it only the number of features that are of interest?
 
 1. Can  q-value provide biological meaningful data, while rejecting hypothesis? What are the limitations of q values statistics? At what cases q value statistics is applicable?  At what cases p-value is preferable over q-value? Will the q-values still  be accurate if it is applied to enormously big sample size?
-
-
-
-
-
-
-
-1. Could you clarify how q-values cause the monotonically decreasing FDR function and why is this important?
-
-1. Theoretically, multiple testing correction should be performed every time that more than one test is done. However, is this the case in real-life research? Is there a maximum number of features that can be reliably tested and reported as significant (or not) without multiple testing correction?
