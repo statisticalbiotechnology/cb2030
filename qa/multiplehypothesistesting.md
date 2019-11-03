@@ -65,7 +65,7 @@
   > Overall there are *m* features in your assay. Each one of these has a prior probability of &pi;<sub>0</sub> of being null. Hence you can estimate *m<sub>0</sub> = m&pi;<sub>0</sub>* null features.
 
 1. I don't understand the description of the original FDR method as "too conservative". I understand the math behind it, but I cannot grasp it from a conceptual point of view: if &pi;<sub>0</sub> is assumed to be equal to 1, wouldn't that mean that all the features that are considered significant are null?
-  > If you do not take any equation in consideration you are right. Your confusion arises when we estimate the number of errors under threshold *F(t) = m<sub>0</sub>t*. This estimation can be done as  *m<sub>0</sub> = m&pi;<sub>0</sub>*, or we can conservatively approxiamte *F(t) &approx; mt*. The &pi;<sub>0</sub> = 1 estimate is conservative, as it assumes a larger number of errors than really are present.
+  > If you do not take any equation in consideration you are right. Your confusion arises when we estimate the number of errors under threshold *F(t) = m<sub>0</sub>t*. This estimation can be done as  *m<sub>0</sub> = m&pi;<sub>0</sub>*, or we can conservatively approxiamte *F(t) &asymp;  mt*. The &pi;<sub>0</sub> = 1 estimate is conservative, as it assumes a larger number of errors than really are present.
 
 1. The false discovery rate can be defined as the number of null hypotheses divided by the total number of hypotheses above the score threshold. Is the “number of null hypotheses” equivalent to the number of “false positive features” because we refer to a certain threshold *t* or is there another reason?
 > Yes this is an accurate description. Features are nullk or not, however the distinction between a Tm and a FP is a treshold.
