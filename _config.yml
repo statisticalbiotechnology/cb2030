@@ -30,6 +30,7 @@ include:
   - qa/readme.md
   - qa/testing.md
   - qa/multiplehypothesistesting.md
+  - qa/linearmodels.md
   - prep/readme.md
   - prep/clustering.md
   - prep/pca.md
