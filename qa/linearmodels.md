@@ -2,7 +2,7 @@
 
 ## Notebook
 1. In the Jupyter notebook, the KNAP2 expression is tested for significant dependence on grade, tumor size and the intercation between size and grade. This resulted in a very small p value for grade (1.8E-8) and a quite large p value for size (0.45). The interaction between size and grade gave a significant *p* value (0.016). It then says that "The test suggest that KNAP2 expression depends on an interaction between tumor size and grade". My question is if the significant result obtained for the interaction could be due to the very small p value for grade, thereby kind of "masking" the large p value for size? So I am wondering if we really can be sure that the interaction is significant in itself, and not solely significant in the tumor grade?
- > No, this should not, at least not theoretically be the case. The model should regress away the larger effect of the tumor grade, rendering the further tests data where the linear effect of the tumor grade is absent.
+ > No, this should not, at least not theoretically, be the case. The model should regress away the larger effect of the tumor grade, rendering the further tests data where the linear effect of the tumor grade is absent.
 
  1. How can one see “KNAP2 expression depends on an interaction between tumor size and grade” in the Jupyter notebook “KNAP2 gene analysis”? Which value in the table is the criterion?  
  1. In the video lecture, approximately at 11:50, you say that there is an inverse relationship between the node and the grade. How do you see this in the boxplots? How can you determine that there is an inverse relationship between these?
@@ -13,7 +13,7 @@
 
 
 1. In the jupyter notebook "KNAP2 gene analysis", for the different model equations, "C" is not the same value within the same equation? C could be a different values for each term, correct?
-  > Not correct. We use the notation C(.), when we want to emphasise that a variable is categorical and not continuous.
+  > Not correct! We use the notation C(.), when we want to emphasise that a variable is categorical and not continuous.
 
 
 ## python
@@ -49,9 +49,14 @@
 1. Could we say that all values of independent X are not subjected to the measurement error from the corresponding observed Y values in either simple and multiple linear regression?
   > No, we usually model the error term as an addition to the effect from the independent variables.
 
+1. The linear model assumes that the residues follow a normal distribution. If the residues calculated from a data set don't follow a normal distribution, does it have any impact in the linear model constructed? Does this impact (if there is any) depend also on the sample size (i.e. the residues of a small sample may not show a normal distribution just because there are few data points to calculate the residues from, but if we had a bigger sample the normality condition would be fulfilled).
+     > Yes, the assumptions of the distribution of the residuals have to full-filled for the tests to be valid.
+
 
 
 ## Degrees of freedom
+I should have done a better job in explicitly stating that I do not want you to cover how F-tests are calculated, including the theory behind degrees of freedom. In this course I want to treat them as as input to the black box of f-tests for significance testing.
+
 
 1. In the KNAP2 gene analysis: in the generated table we have df, sum of squares, mean sum of squares, F value, and p value. What is df and how is it important?
      > df is an abbreviation of [degrees of freedom](https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)). The more parameters you include in your model, the more you lower df of the residuals. This often lowers the sensitivity of the test.  
@@ -71,12 +76,14 @@ What does degrees of freedom mean in this context?
 
 
 ## F-tests
+I should have done a better job in explicitly stating that I do not want you to cover how F-tests are calculated. In this course I want to treat them as as a black box for significance testing. If you want to know how they really operate there are several on-line resourses to choose from, as well as most standard statistics course that put lots of effort in how they are constructed. However, as said, just see them as a vehicle for the calculation of *p* values from your data and linear models.
 
-1. The book chapter says that the t-statistic for a certain variable is the same as the F-statistic where only that variable is omitted. Is this what is done in the ANOVA tests used in the jupyter notebook example, since it reports one F-value for each term rather than one F-value for all predictors?
-  > No, for most tests in the notebook more than one variable is tested. [*t*-tests](https://en.wikipedia.org/wiki/Student%27s_t-test) can only be performed in case-control situations, or when a single sample is to be compared to a given value.
+1. Is there an easy explanation for what the *F* value stands for, when you do the Anova test?
+  > Yes, ANOVA's are dependent on [F tests](https://en.wikipedia.org/wiki/F-test).  
+
 
 1. It makes sense that we want to minimise the residues of all data point to to get the best regression curve. Why do we use the sum of the squares instead of the sum of the absolute values of the residues?
-  > I select two reasons: 1) It makes the maths easier. The derivate of $e(X)^2$ is $2e(X)$. Absolute values are trickier. 2) Subsequently want to use [*F* tests](https://en.wikipedia.org/wiki/F-test) to evaluate the models, which are defined for squared normal distributed parameters. By minimising the squared residues we get the input parameters for the *F* test for free.
+  > I select two reasons: 1) It makes the maths easier. The derivate of *e(X)<sup>2</sup>* is *2e(X)*. Absolute values are trickier. 2) Subsequently want to use [*F* tests](https://en.wikipedia.org/wiki/F-test) to evaluate the models, which are defined for squared normal distributed parameters. By minimising the squared residues we get the input parameters for the *F* test for free.
 
 1. The text states that when we have a large value of n a F-statistic value close to 1 can still provide evidence against H0 whilst a small value of n would require a large value of F-statistic to reject H0. What values counts as large for n and f-statistics and vice versa?
    > There is no rule. Check the properties by evaluating a F-tests yourself, or do as countless students done before you, use a [table](https://www.stat.purdue.edu/~jtroisi/STAT350Spring2015/tables/FTable.pdf).
@@ -90,41 +97,43 @@ What does degrees of freedom mean in this context?
   > No you get the message wrong. For n>30, a t-distribution is asymptotically equal to a normal distribution. If you want to learn more about sampling distributions feel free to discover their beauty by your own.  
 
 1. For the calculations of standard error at p.66 it is stated that the error for each observation must be assumed to be uncorrelated with the common variance. Could you clarify what this means and  why this is the case?
-  > The book actually states that the variables clearly are not the uncorrelated, however, it is a good enough approximation.
+  > The book actually states that the variables clearly are not the uncorrelated, however, that their independence is a good enough approximation.
 
 
 ## Relationship between F test and t tests
 1. The book chapter says that the t-statistic for a certain variable is the same as the F-statistic where only that variable is omitted, does this mean that they give the same p-value?
  > Yes.  
 
-1. The ANOVA test can be used in order to check whether the means of two or more groups are significantly different from each other. For what reason is the T-test still in use, even though it is limited to only compare two samples at the same time?
-  > Because you frequently want to test the difference between two groups.
-
-1. Is there an easy explaination for what the F value stands for, when you do the Anova test?
-  > Yes, ANOVA's are dependent on [F-tests](https://en.wikipedia.org/wiki/F-test).  
-
 1. What is the advantage of t test over f test?
   > None. For historical reasons, we call some special cases of *f* tests *t* tests.
 
-## Model selection
+1. The book chapter says that the t-statistic for a certain variable is the same as the F-statistic where only that variable is omitted. Is this what is done in the ANOVA tests used in the jupyter notebook example, since it reports one F-value for each term rather than one F-value for all predictors?
+   > No, for most tests in the notebook more than one variable is tested. [*t*-tests](https://en.wikipedia.org/wiki/Student%27s_t-test) can only be performed in case-control situations, or when a single sample is to be compared to a given value.
 
+1. The ANOVA test can be used in order to check whether the means of two or more groups are significantly different from each other. For what reason is the T-test still in use, even though it is limited to only compare two samples at the same time?
+  > Because you frequently want to test the difference between two groups.
+
+## Which relations should be investigated?
 
 1. When does one decide to not use linear regression on a data set? Is there a proper way to determine this?  
 1. In the textbook it is mentioned that if a predictor seems to be correlated with the observed variable Y in a simple linear regression it doesn't mean that taking account other predictors in a multiple linear regression it will still be significant. They demonstrate it with the example that although the advertising in the newspaper was correlated with the sales in the simple linear regression in the model that all the different media were used it was not. In the same context in the Jupyter notebook the size was not correlated with the gene expression, but the size in comparison with the grade was. Where is the line that allows us to draw conclusions focusing only in a few predictors especially in the really complex biological systems? Is there a way to correct for that? Does this mean that the size is correlated with the grade and the grade with the expression but the size with the expression no? How many predictors should we check in the case of the differential expression analysis and how confident can we be with the results???
   > The best answer is that we should only check the relations that make sense prior to the experiment.
 
+## Model selection
+
 1. In the book on the pages 78-79 about the three variable selection methods, which tests are used to generate the p-values in the different steps of the different methods?
  > They mean that you should evaluate an ANOVA for each step of the model building. I am a bit sceptic to these types of methods, as they indeed offers a possibility for p value hacking. You should instead just test the relations that make sense prior to the experiment.
 
-1. The linear model assumes that the residues follow a normal distribution. If the residues calculated from a data set don't follow a normal distribution, does it have any impact in the linear model constructed? Does this impact (if there is any) depend also on the sample size (i.e. the residues of a small sample may not show a normal distribution just because there are few data points to calculate the residues from, but if we had a bigger sample the normality condition would be fulfilled).
-   > Yes, the assumptions of the distribution of the residuals have to full-filled for the tests to be valid.
+ 1. Is there a reason not to always use mixed selection, such as greater computational requirements?
+    > Not really. However, all three suggested schemes are a form of data dredging, or p-value hacking.
+
 
 1. During the fitting process of a linear model, will only the parameters, (&beta;) change, or are  also the errors (e) affected?
    > Yes the residues are effected by which model we select.
 
 1. The hierarchical principle described in the textbook (p. 89) states that if an interaction term between two variables is included in a linear regression model, the main effects of these variables (i.e. terms modelling the effect of the individual variables) should also be included, regardless of whether these effects have been determined to not be statistically significant. However, I have a hard time understanding the explanation for this. Is it not possible for an independent variable to affect a dependent variable only through its interaction with another independent variable? Will the accuracy of the model in that case not be decreased if we include an individual term for this variable?
-   > I liked the textbook's explanation: "The rationale for this principle is that if X1*X2 is related to the response, then whether or not the coefficients of X1 or X2 are exactly zero is of little interest. Also X1*X2 is typically correlated with X1 and X2, and so leaving them out tends to alter the meaning of the interaction."
-   > Particularly the second part is easy to understand. If there is a small dependency on X1 or X2, that we do not regress away, it will be hard to tell what a significant dependency of X1*X2 means.
+   > I liked the textbook's explanation: "The rationale for this principle is that if X1\*X2 is related to the response, then whether or not the coefficients of X1 or X2 are exactly zero is of little interest. Also X1\*X2 is typically correlated with X1 and X2, and so leaving them out tends to alter the meaning of the interaction."
+   > Particularly the second part is easy to understand. If there is a small dependency on X1 or X2, that we do not regress away, it will be hard to tell what a significant dependency of X1\*X2 means.
 
 1. In supervised machine learning there is the problem of overfitting, does this also apply to linear modeling?
   > Not directly. If we select an overcomplicated model, we will get insignificant results, as we are decreasing the degree of freedom of the residues. However, it is easy to overfit to the data by incrementally refining your model to the data.
@@ -132,14 +141,10 @@ What does degrees of freedom mean in this context?
 1. How could we evaluate the quality of the linear model? (a variety of  Linear models with different number of variables included, e.g. size or  size and grade). Can we know if the variations of the data have been mostly explained by looking at the parameters of residuals?
    > We normally just take interest in the significance, i.e. *p* value, of each parameter of the model.
 
-1. Is there a reason not to always use mixed selection, such as greater computational requirements?
-     > Not really. However, all three suggested schemes are a form of data dredging, or p-value hacking.
 
 1.  As I understood, when building a statistical model for a dataset, it is first decided the shape of the linear model (E.g. Simple straight line, quadratic..) and then, the parameters of the corresponding equation are adjusted to get a best-fitting line. I find this, however, quite biased in the sense that we are choosing the model according to how we think the data is distributed.  Is it possible to do this in a completely unbiased way (that does not imply just trying different models) in which you will get a best-fitting model without deciding the general shape (equation) from the beginning?  
  Even, if the regression approach is commonly good enough, wouldn't it always be better to do it in an unsupervised manner to find any type of relationship between the data?
- > There are several ways to do non-linear fits of data. However, it is often hard to evaluate significance of such models if they are not linear. However, just as you state, there are unsupervised methods to find relationships in data, that will not affect our ability to subsequently test data, e.g. PCA. These are seldom used. In my mind that is a pity.  
-
-
+ > There are several ways to do non-linear fits of data. However, it is often hard to evaluate significance of such models if they are not linear. However, just as you state, there are unsupervised methods to find relationships in data, that will not affect our ability to subsequently test data, e.g. PCA and clustering. These are seldom used in this context. In my mind that is a pity.  
 
 ## Regression
 
@@ -158,9 +163,6 @@ What does degrees of freedom mean in this context?
 1. Page 64. “Y = 2 + 3X + &epsilon;”
   Why is &epsilon; added to the linear regression model? How is the size of &epsilon; determined?
    > The text book simulates a some measurements of a relationship between two variables X and Y. They add a normal distributed error in the simulation. They call this error &epsilon;. The parameters of the normal distribution were selected according to the author's ideas of a suitable size of an error.
-
-1. What test R2 or F is better for assessment linear regression model performance or model fit?
-     > Normally we use $p$ values.
 
 
 ## Hypothesis Testing
@@ -191,15 +193,20 @@ What does degrees of freedom mean in this context?
 1. Is there a benefit in presenting both t-statistic and p-value? Because they seem to be describing similar things
  > No, just present *p* value.
 
+ 1. What test R2 or F is better for assessment linear regression model performance or model fit?
+      > None. Normally we use $p$ values.
+
+
+
 ## Questions that we will not be able to discuss during seminar
 1. In order to perform hypothesis testing on the coefficients we use the *t* statistics where a certain measure of t is being calculated. How is the value of t is correlated with the p value and how is the p-value calculated in this case?
    > From the text in the textbook I understood that the t-statistics gives a series of values that forms the t-distribution. Based on this t-distribution (it becomes normal distribution under certain conditions), this can then be used to get p-values in a conventional manner.  
    > LK: I do not get the question or the answer.
 
 
-1. From the textbook, the key concepts seem to be:
- A. Definition of simple linear regression
- B. Definition of multiple linear regression
- C. How to estimate the uncertainty in the parameters (β0 and β1)
+1. From the textbook, the key concepts seem to be:  
+ A. Definition of simple linear regression  
+ B. Definition of multiple linear regression  
+ C. How to estimate the uncertainty in the parameters (β0 and β1)  
  Is there any additional key concept that we should understand?
  > Yes, there is.
