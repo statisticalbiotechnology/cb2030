@@ -51,3 +51,6 @@
 
 1. Can you explain the function of hinge loss? why use yi times wx-b?   
   > Here is wikipedia's entry on the [subject](https://en.wikipedia.org/wiki/Hinge_loss). However, that is not what I think you wonder about. *y_i(wx_i-b)* only makes sense as *y* is either -1 or 1, and you try to make *wx_i-b* take values >1 or <-1 depending on y.
+
+1. Would it be possible to use the support vector machine model for unsupervised learning? If so, what would be the quantity of test-data you would need to achieve a good predictor?
+  > SVM are normally only used for labeled data sets. There are some interesting exceptions, like outlier detection with [one class SVMs](https://scikit-learn.org/stable/modules/generated/sklearn.svm.OneClassSVM.html). Also, kernels by themselves have some interesting applications in unsupervised learning, for instance in visualization techniques such as [UMAP](https://umap-learn.readthedocs.io/en/latest/basic_usage.html)
