@@ -1,10 +1,10 @@
 # Questions and Answers to Supervised Learning.
 
 1. At the end of the video lecture, the last thing you say is that everything above a ROC score of 0.5 would be seen as a good predictor. Intuitevely this feels as a low requirement for implementation of predictors, therefore I am wondering if this is true? Do you use predictors with a ROC score of example 0.6 in clinics? If yes, why is the ROC score allowed to be so close to random (0.5)?
-> No, you are right. A ROC score of 0.51 will often not be very valuable. I meant to say that a ROC score > 0.5 is a score that is better than a random prediction. Also, this is somewhat dependent on the research question. Sometimes one accept predictors with very low ROC score as other information is unavailable.
+  > No, you are right. A ROC score of 0.51 will often not be very valuable. I meant to say that a ROC score > 0.5 is a score that is better than a random prediction. Also, this is somewhat dependent on the research question. Sometimes one accept predictors with very low ROC score as other information is unavailable.
 
 1. Except squaring the expression value, what are other types of dimensions that can be used when adding kernel functions?
-> Yes there are several different available kernels. Perhaps the most well known kernel is the [RBF Kernel](https://en.wikipedia.org/wiki/Radial_basis_function_kernel)
+  > Yes there are several different available kernels. Perhaps the most well known kernel is the [RBF Kernel](https://en.wikipedia.org/wiki/Radial_basis_function_kernel)
 
 1. In the VaderPlas article when using the radial basis function as kernel function in Scikit-Learn to fit the non-linear data, 7 points are marked as support vectors. What does the number of support vectors depend on and why did it increase from 3 to 7 when going from 2D to 3D (or did it project on a higher dimension than 3)?
 1. Will three support vectors always be enough to uniquely define a maximum margin separating hyperplane, or will the number depend on the dimensions of the data?
