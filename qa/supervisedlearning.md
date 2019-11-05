@@ -11,7 +11,7 @@
   > It will be dependent on the shape of the data, but tends to increase with the dimensionality of the data and slack penalty. See e.g. this [stack exchange post](https://stackoverflow.com/questions/9480605/what-is-the-relation-between-the-number-of-support-vectors-and-training-data-and). The minimum number of support vectors needed, tend to be independent on the number of [dimensions of the data](https://stats.stackexchange.com/a/310749)
 
 1. In the article by Noble it is said that "kernels can be defined on inputs that are not vectors", what is meant by this?
-> A well known case in bioinformatics are so called [string kernels](https://en.wikipedia.org/wiki/String_kernel), that evaluates similarities of text or amino acid strings. Another examples in phylogeny, is [tree kernels](https://en.wikipedia.org/wiki/Tree_kernel)
+> A well known case in bioinformatics are so called [string kernels](https://en.wikipedia.org/wiki/String_kernel), that evaluates similarities of text or amino acid strings. Another examples in phylogeny, is [tree kernels](https://en.wikipedia.org/wiki/Tree_kernel).
 
 1. Would it be possible to walk through the last code chunk of the jupyter notebook in a bit more detail? I find it a bit difficult to understand what is hapenning.
   > Could you help me by pinpoint where it gets challenging?
