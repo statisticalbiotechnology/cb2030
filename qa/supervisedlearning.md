@@ -21,22 +21,24 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 1. Noble mention the problem of the curse of dimensionality which menas that you could actually separate any given data but it would yield many more possible solutions and it will get harder to get the right solution, which I guess means that the problem of accuratly divide datapoints with a hyperplane still persists?
     > Yes, the  curse of dimensionality is just a description of a problem, the name offers no solution in itself.
 
+1. Are there any other ways to tackle the "curse of dimensionality" except those mentioned in the article with cross-validtion and beginning with Simple SVM and experimenting with standard kernel functions?
+  > You can always redisign your problem so that it becomes a lower-dimension problem.
 
 
 ## Overfitting and separation of test sets
 
-2. Given a dataset which percentage of it would it be used for training and which for testing? Are the bins showed in the presentation the same size? Is there a golden rule of how the dataset would be seperated?
-1. What is a suitable ratio of data points in a training set to data points in a testing set? How are the data points for the different sets chosen from the data?
+2. * Given a dataset which percentage of it would it be used for training and which for testing? Are the bins showed in the presentation the same size? Is there a golden rule of how the dataset would be seperated?
+  * What is a suitable ratio of data points in a training set to data points in a testing set? How are the data points for the different sets chosen from the data?
   > There is no rule. I often use 70/30.
 
 1. Overfitting as I understand it is that your delimiter between two classes is two specific and cannot be generalized; is this correct?
     > When you overfit, you learn how to make accurate predictions on the dataset you trained on but you are unable to make predictions on novel data.
 
 1. Does overfitting only occur when projecting data to higher dimensions?
-      > No yo can easily think of a scenario where you overfit in one dimension. Say that you collect two patient, one with lung-cancer that does not smoke, and anotherone without lung cancer that smokes 30 cigarettes a day. A lung cancer classifier that takes the number of smoked cigarettes a day as an input, with the decission boundary of 15 cigaretes a day, would perfectlyt separate the training data, but might not be very valuable in the clinic.
+      > No, you can easily think of a scenario where you overfit in one dimension. Say that you collect two patient, one with lung-cancer that does not smoke, and anotherone without lung cancer that smokes 30 cigarettes a day. A lung cancer classifier that takes the number of smoked cigarettes a day as an input, with the decission boundary of 15 cigaretes a day, would perfectlyt separate the training data, but might not be very valuable in the clinic.
 
 1. Is the only countermeasure to overfitting the choice of a better Kernel, or is there something else you can do?
-       >  More training data, less noicy data, less complex architectures (i.e. kernels) and more regularization of the classifier reduces overfitting problems.
+  >  More training data, less noicy data, less complex architectures (i.e. kernels) and more regularization of the classifier reduces overfitting problems.
 
 1. The Kernel function selection is based on trial and error. And as we know, trial and error based exploration of data can be misleading at times. Could that be a problem here, when working with the prediction. Even though we know that the data is pre-classified and annotated and the kernel function based selection is based on this annotated data, but is there any chance of it giving a misleading separation or an artifact completely?  
   > This situation should be detected in the testig stage of the classifier
@@ -55,20 +57,17 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
     > No, the bearing idea is that we avoid overfitting, or at least are able to detect situations where we overfitt, by using cross validation.
 
 1. How significant is the difference in accuracy when combining cross validation with nested cross validation vs no combination?
-      > It depends on the problem, however, the idea is that we want to detect situations where we overfitt.
+  > It depends on the problem, however, the idea is that we want to detect situations where we overfitt.
 
 1. Is there any reason to not combine with nested cross validation apart from computional performance requirements?
-        > To some extent there is a withhold of data when you cross validate. Also, it is easier to extend your prediction for new datapoints. I.e. which of your *k* trained predictors from *k* fold cross validation should you use when you encounter a new example.
+    > To some extent there is a withhold of data when you cross validate. Also, it is easier to extend your prediction for new datapoints. I.e. which of your *k* trained predictors from *k* fold cross validation should you use when you encounter a new example.
 
 1. Regarding the 3-fold cross-validation: if three different learners are created, do we choose the one with best performance as the final classifier or is the final classifier a combination between the three?
-      > There are different strategies for this. Often a final classifier is trained based on all data. However , such a classifier should not be used for reporting performance.
+  > There are different strategies for this. Often a final classifier is trained based on all data. However , such a classifier should not be used for reporting performance.
 
 1. In the video, the part that explains cross validation example, is a bit unclear to me. I understood that each learner has the data divided into 3 bins and the training and testing for the learner is done based on those 3 bins and that data set. However, I do not understand as to why there are three different learners? And do each learner itself have different data sets all together or is the same data changed a bit to produce complexity while keeping the data size constant?
 1. In 3-fold cross validation, the data set is divided into three different bins that fills different functions (train/test) for three different learners. What is ment by learners in this case? Is it three different Support vector machines?
-       > Yes!
-
-
-
+   > Yes!
 
 ## Kernels
 1. Could you develop more about the kernels, I could understand that it is a type of mathematical transformation but I wasn't able to grasp the "mechanism".
@@ -77,8 +76,8 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 1. Except squaring the expression value, what are other types of dimensions that can be used when adding kernel functions?
   > Yes there are several different available kernels. Perhaps the most well known kernel is the [RBF Kernel](https://en.wikipedia.org/wiki/Radial_basis_function_kernel)
 
-1. When using kernels, how do you know which/what type of kernel to use for your specific data?
-1. In Noble it is said that "kernels can be defined on inputs that are not vectors", what is meant by this?
+1. * When using kernels, how do you know which/what type of kernel to use for your specific data?
+ * In Noble it is said that "kernels can be defined on inputs that are not vectors", what is meant by this?
   > A well known case in bioinformatics are so called [string kernels](https://en.wikipedia.org/wiki/String_kernel), that evaluates similarities of text or amino acid strings. Another examples in phylogeny, is [tree kernels](https://en.wikipedia.org/wiki/Tree_kernel).
 
 1. In the Support Vector Machines Notebook it is mentioned that the parameter c that controls the margin hardenss should be adjusted, as well as the parameter gamma. What is the role of gamma? How can the optimal parameter be calculated?
@@ -93,13 +92,13 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 1. What is ment by changing the linear kernel to a radial basis function?
   > Instead of using one kernel, we use another kernel.  
 
-1 . Is the kernel is considered to be a hyper parameter?  
+1. Is the kernel is considered to be a hyper parameter?  
   > Yes, the choice of Kernel can be tuned just the same way as we tune hyperparameters.
 
-1. In Noble, the author explains that kernel functions add dimensionality to the data, so as to make the data points separable by a linear hyperplane. He mentions that in order to space up data points from a two-dimensional space to a four-dimensional space, one could calculate the products of all pairs of features. I do not fully understand how this would work.
+1. In Noble, it is explained that kernel functions add dimensionality to the data, so as to make the data points separable by a linear hyperplane. He mentions that in order to space up data points from a two-dimensional space to a four-dimensional space, one could calculate the products of all pairs of features. I do not fully understand how this would work.
   > You multiply the features together and use these products as additional features? The point is that this is an operation that a kernel performs for you.
 
-1 You mention in the video it is possible to add dimensionality levels to the space by calculating, for instance, the product of the expression values of the points in the data sets. What other kernel functions are used to increase the dimensionality of the data set?
+1. You mention in the video it is possible to add dimensionality levels to the space by calculating, for instance, the product of the expression values of the points in the data sets. What other kernel functions are used to increase the dimensionality of the data set?
   > **Any** function you like.
 
 ## Soft margins
@@ -120,12 +119,15 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 1. I understand that the soft margin allows some data points or examples to go into the margin, if this allows a better fit, and that the amount of "hardness" of the margin is controlled by the parameter C. The VaderPlas reading said that a larger C is a harder margin and a smaller C is a softer margin, however the "What is a support vector machine?" paper states that the soft margin parameter "specifies a trade-off between between hyperplane violations and the size of the margin" (page 2). The SVM will select the maximum margin hyperplane, or the hyperplane with the largest margin. I do not understand how the parameter C relates to the size of the margin or how the margin "hardness or softness" relates the size of the margin? Are they related?
  > The SVM optimes a function with two different components. *||w||* is the inverse of the size of the margin, the *&Sigma;max(0,1-y_i(wx_i-b))* is the slack penalty. The training of the SVM involves minimizing the sum of the two.
 
+1. I tried to read up on the calculation on the weight vector w  and bias(?)b, but found it a bit complex. How is that done?
+  > I find this [Stack exchange](https://math.stackexchange.com/questions/1305925/why-is-the-svm-margin-equal-to-frac2-mathbfw) post helpful. More generally, distances between hyperplanes can be calculated by formulas from this [wikipedia entry on the subject](https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_plane).
+
 1. Are hyperplanes always defined by multiple linear functions? or can they also include polynomic or quadratic functions? Also is there a good way of thinking of hyperplanes higher then 2 dimensional?
   > Yes, it is always a [hyperplane](https://en.wikipedia.org/wiki/Hyperplane).
 
 1. * In the formula that is used to decide the hyperplane(minimize formula), you say that lambda is a parameter that decides how much weight to put on two things , can you explain how we select this value ?
   * As I have understood it, there is the soft margin parameter C that needs to be determined in the training process. Is the soft margin parameter the same as the parameter lamda referred to in the video lecture? Is the slack penalty that same as the soft margin? Besides the soft margin parameter (and lamda parameter if it is a different parameter), are there any other hyper parameters that need to be optimized during the training?
-  > The slack penaly, *C=1/&lambda;* is hyperparameter. The notebook contains an example of how one select hyperparameters with grid search.
+  > The slack penaly, *C=1/&lambda;* is hyperparameter. The notebook contains an example of how one select hyperparameters with grid search. And yes there might be other hyperparameters in need of optimization during training.
 
 1. How does margin maximum hyperplane work? According to the article, one would choose the distance from the separating hyperplane to the nearest expression vector. How would one choose the margin hyperplane? Could it be between any two points? In the article , AML and ALL are separated using the separating hyperplane. So, what would the the margin hyperplane be in this scenario and what would the expression vector be, would it be at the AML or ALL side? I guess this would depend on what we would want the algorithm to identify. Wouldn't this be biased and incur error.  What would be the optimal distance from the separating hyperplane and expression vector?
 
@@ -140,12 +142,11 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 
 1. * In the VaderPlas article when using the radial basis function as kernel function in Scikit-Learn to fit the non-linear data, 7 points are marked as support vectors. What does the number of support vectors depend on and why did it increase from 3 to 7 when going from 2D to 3D (or did it project on a higher dimension than 3)?
   * Will three support vectors always be enough to uniquely define a maximum margin separating hyperplane, or will the number depend on the dimensions of the data?
-  > It will be dependent on the shape of the data, but tends to increase with the dimensionality of the data and slack penalty. See e.g. this [stack exchange post](https://stackoverflow.com/questions/9480605/what-is-the-relation-between-the-number-of-support-vectors-and-training-data-and). The minimum number of support vectors needed, tend to be independent on the number of [dimensions of the data](https://stats.stackexchange.com/a/310749)
+  > * That will be dependent on the shape of the data, but tends to increase with the dimensionality of the data and slack penalty. See e.g. this [stack exchange post](https://stackoverflow.com/questions/9480605/what-is-the-relation-between-the-number-of-support-vectors-and-training-data-and). The minimum number of support vectors needed, tend to be independent on the number of [dimensions of the data](https://stats.stackexchange.com/a/310749)
+  > * Support vectors are defined as the data points closest to the decision boundary. Each data point is a vector and those closest span the margin and are the only ones needed to define the decision boundary, and I guess are those supporting it.
 
 1. Regarding the plot produced by In [15] in VaderPlas, I interpret it as if all the data points with circles around them are supporting vectors. Is this correct? Are sometimes more than three supporting vectors used?
   > Yes and Yes!
-
-
 
 ## Questions we will not work with during the seminar
 
@@ -156,7 +157,7 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
   > Hard to understand.
 
 1. Is there a clear distinguish between hard SVM and soft SVM? I am wondering if it is absolutely Hard SVM when there is no data overlap even the distance between two classes is very small?
-    > Not sure what is meant with Har/soft SVMs.
+    > Not sure what is meant with Hard/soft SVMs.
 
 1. The article mentions one-versus-all classifiers to work well in cancer classification. Do you have an example of when they would not work well?
    > No but I am sure you cabn find such examples if you look for them.
@@ -176,7 +177,6 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 1. Does it make sens to do multiple nested cross calidations? several rounds with smaller and smaller subsets? and if so, where is the limit.
   > Yes, if you have a reason to do so, it makes sense.
 
-
 1. How does the example with the face recognition work?
   > It is not that relevant to this course. Read up on your own, if you have an interest.  
 
@@ -185,7 +185,6 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 
 1. How can we choose the support vectors? How many support vectors should be considered and how does this choice affect the accuracy of the SVM?
   > The SVM trainer selects them for you.
-
 
 1. Given that running times of state-of-the-art SVM learning algorithms scale approximately quadratically, what are the largest amounts of different variables (for example, expression of different genes) for which it is reasonable to use SVM? I.e. the examples used the expression of two genes to classify between two classes, how many genes is it feasible to scale up to?
  >  I am not sure it scales quadratically. I personally never used them for more than 20 million features, so I do not know where the technical limit sits.
