@@ -28,8 +28,8 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 ## Overfitting and separation of test sets
 
 2. * Given a dataset which percentage of it would it be used for training and which for testing? Are the bins showed in the presentation the same size? Is there a golden rule of how the dataset would be seperated?
-  * What is a suitable ratio of data points in a training set to data points in a testing set? How are the data points for the different sets chosen from the data?
-  > There is no rule. I often use 70/30.
+   * What is a suitable ratio of data points in a training set to data points in a testing set? How are the data points for the different sets chosen from the data?
+    > There is no rule. I often use 70/30.
 
 1. Overfitting as I understand it is that your delimiter between two classes is two specific and cannot be generalized; is this correct?
     > When you overfit, you learn how to make accurate predictions on the dataset you trained on but you are unable to make predictions on novel data.
@@ -65,7 +65,9 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 1. Regarding the 3-fold cross-validation: if three different learners are created, do we choose the one with best performance as the final classifier or is the final classifier a combination between the three?
   > There are different strategies for this. Often a final classifier is trained based on all data. However , such a classifier should not be used for reporting performance.
 
-1. In the video, the part that explains cross validation example, is a bit unclear to me. I understood that each learner has the data divided into 3 bins and the training and testing for the learner is done based on those 3 bins and that data set. However, I do not understand as to why there are three different learners? And do each learner itself have different data sets all together or is the same data changed a bit to produce complexity while keeping the data size constant?
+1. In the video, the part that explains cross validation example, is a bit unclear to me. I understood that each learner has the data divided into 3 bins and the training and testing for the learner is done based on those 3 bins and that data set. However, I do not understand as to why there are three different learners?
+ >  So that none of the learners trains and tests on the same data.
+
 1. In 3-fold cross validation, the data set is divided into three different bins that fills different functions (train/test) for three different learners. What is ment by learners in this case? Is it three different Support vector machines?
    > Yes!
 
@@ -77,7 +79,7 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
   > Yes there are several different available kernels. Perhaps the most well known kernel is the [RBF Kernel](https://en.wikipedia.org/wiki/Radial_basis_function_kernel)
 
 1. * When using kernels, how do you know which/what type of kernel to use for your specific data?
- * In Noble it is said that "kernels can be defined on inputs that are not vectors", what is meant by this?
+   * In Noble it is said that "kernels can be defined on inputs that are not vectors", what is meant by this?
   > A well known case in bioinformatics are so called [string kernels](https://en.wikipedia.org/wiki/String_kernel), that evaluates similarities of text or amino acid strings. Another examples in phylogeny, is [tree kernels](https://en.wikipedia.org/wiki/Tree_kernel).
 
 1. In the Support Vector Machines Notebook it is mentioned that the parameter c that controls the margin hardenss should be adjusted, as well as the parameter gamma. What is the role of gamma? How can the optimal parameter be calculated?
@@ -126,7 +128,7 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
   > Yes, it is always a [hyperplane](https://en.wikipedia.org/wiki/Hyperplane).
 
 1. * In the formula that is used to decide the hyperplane(minimize formula), you say that lambda is a parameter that decides how much weight to put on two things , can you explain how we select this value ?
-  * As I have understood it, there is the soft margin parameter C that needs to be determined in the training process. Is the soft margin parameter the same as the parameter lamda referred to in the video lecture? Is the slack penalty that same as the soft margin? Besides the soft margin parameter (and lamda parameter if it is a different parameter), are there any other hyper parameters that need to be optimized during the training?
+   * As I have understood it, there is the soft margin parameter C that needs to be determined in the training process. Is the soft margin parameter the same as the parameter lamda referred to in the video lecture? Is the slack penalty that same as the soft margin? Besides the soft margin parameter (and lamda parameter if it is a different parameter), are there any other hyper parameters that need to be optimized during the training?
   > The slack penaly, *C=1/&lambda;* is hyperparameter. The notebook contains an example of how one select hyperparameters with grid search. And yes there might be other hyperparameters in need of optimization during training.
 
 1. How does margin maximum hyperplane work? According to the article, one would choose the distance from the separating hyperplane to the nearest expression vector. How would one choose the margin hyperplane? Could it be between any two points? In the article, gene expression values from AML and ALL patients are separated using the separating hyperplane. So, what would the the margin hyperplane be in this scenario and what would the expression vector be, would it be at the AML or ALL side?
@@ -142,7 +144,7 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
       > The soft margin is a feature of the SVM, not the kernel.  
 
 1. * In the VaderPlas article when using the radial basis function as kernel function in Scikit-Learn to fit the non-linear data, 7 points are marked as support vectors. What does the number of support vectors depend on and why did it increase from 3 to 7 when going from 2D to 3D (or did it project on a higher dimension than 3)?
-  * Will three support vectors always be enough to uniquely define a maximum margin separating hyperplane, or will the number depend on the dimensions of the data?
+   * Will three support vectors always be enough to uniquely define a maximum margin separating hyperplane, or will the number depend on the dimensions of the data?
   > * That will be dependent on the shape of the data, but tends to increase with the dimensionality of the data and slack penalty. See e.g. this [stack exchange post](https://stackoverflow.com/questions/9480605/what-is-the-relation-between-the-number-of-support-vectors-and-training-data-and). The minimum number of support vectors needed, tend to be independent on the number of [dimensions of the data](https://stats.stackexchange.com/a/310749)
   > * Support vectors are defined as the data points closest to the decision boundary. Each data point is a vector and those closest span the margin and are the only ones needed to define the decision boundary, and I guess are those supporting it.
 
