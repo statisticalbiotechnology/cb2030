@@ -104,7 +104,7 @@ Frequently, one [standardize](https://en.wikipedia.org/wiki/Feature_scaling) eac
 ## Soft margins
 
 1. * In the video it is mentioned that the Hinge loss function is a part of the Support vector machine. What are Hinge losses?
-  * Can you explain the function of hinge loss? why use yi times wx-b?   
+    * Can you explain the function of hinge loss? why use yi times wx-b?   
     > Here is wikipedia's entry on the [subject](https://en.wikipedia.org/wiki/Hinge_loss). However, that is not what I think you wonder about. *y_i(wx_i-b)* only makes sense as *y* is either -1 or 1, and you try to make *wx_i-b* take values >1 or <-1 depending on the value of y.
 
 1. The soft margin allows for datapoints to be misclassified by our classifier. What size is reasonable to set the soft margin to? How do we determine a suitable soft margin?
