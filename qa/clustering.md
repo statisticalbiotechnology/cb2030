@@ -1,3 +1,5 @@
+# Questions and Answers on Clustering.
+
 1. In the notebook when log-transforming the data, the base 2 logarithm is used, while the natural logarithm was used in the notebook for linear models. Any base works to transform log-normal data to normally distributed data (according to Wikipedia), so is the choice of base here artbitrary or is there any reason you use different bases?
   > No this is entirely an arbitrary choice.  Infact, they are just a scalar factor from each other as, *log<sub>a</sub>(x)= log<sub>b</sub>(x)/log<sub>b</sub>(a)*
 
@@ -17,11 +19,11 @@
   > Once you used the labels for training, you can not use them for testing. In the notebook for supervised learning, we used our labels to train a perfect separation between PR+/- patients. If we would have used the same labels for assigning confidense of the predictions, we would have said that we had full confidence in our prediction, which in that case was the wrong .
 
 
-I have a hard time to fully understand the clustering in the last step of the "cluster_brca": "We use the same technique, however instead of clustering our 20,000 dimensional data, we select a subset of 16 known cancer associated genes."
+1. I have a hard time to fully understand the clustering in the last step of the "cluster_brca": "We use the same technique, however instead of clustering our 20,000 dimensional data, we select a subset of 16 known cancer associated genes."
 I guess my biggest confusion is what the "subset" (.fit(Xlim)) of the genes means actually means. We have a maximum roof of 30 clusters, from that we get 11 clusters (left part of the output table) and samples (right part of the output table) but how/where does the subset of genes come in the picture?
   > Out of all the genes tetsed, we just select the genes that are listed in the list "brca_names". That is what I mean bu a "subset of 16 ... genes." Generally, when you run into problems with understanding the code,  try to print variables, lists and dataframes, to see what they contain in different parts of the execution.
 
-In VaderPlas it says that the globally optimal result may not be achieved in k-means clustering, since particular starting guesses may lead to poor results. It also says that this is solved by letting the algorithm to be run for multiple starting guesses. By this, I guess that the globally optimal result is much more likely to occur (i.e. it is obtained for a majority of the starting guesses)? And that the globally optimal result is chosen based on this likelihood? If not, how is the globally optimal result chosen out of the clustering results? And how many starting guesses should be applied in order to ensure a globally optimal result?
+1. In VaderPlas it says that the globally optimal result may not be achieved in k-means clustering, since particular starting guesses may lead to poor results. It also says that this is solved by letting the algorithm to be run for multiple starting guesses. By this, I guess that the globally optimal result is much more likely to occur (i.e. it is obtained for a majority of the starting guesses)? And that the globally optimal result is chosen based on this likelihood? If not, how is the globally optimal result chosen out of the clustering results? And how many starting guesses should be applied in order to ensure a globally optimal result?
   > There is no real good way to evaluate how good a clusterinhg is if no labeled data is available. There are a couple of metrics that people use, like [silouette analysis](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html) , however, these are seldome conclusive. So yes, frequently reocuring clusters for multiple runs, are often prefered over clusters that just apear in one bout of clustering.
 
 If a data point is situated exactly between two cluster centers, where will it go?
