@@ -38,3 +38,6 @@ How do one determine the existance of nonlinear patterns where it's not as obvio
 
 1. In k-means clustering, the number of centroids are randomly assigned. How do we determine the number of centres to be used? Also, do larger number of centroids lead to overfitting?
    > No, in *k*-means we provide the number of clusters, *k*, as an input parameter.  There is no rule for how to select *k*. Also, there is no good way to define overfitting, in the context of *k*-means clustering.
+
+1. In the K-means calculation, the command random_state is set to 0. when changed, the orientation of the clusters change. Why does this happen? What does the command Random_state do?
+  > The varaiable sets the [radom seed](https://stackoverflow.com/questions/28064634/random-state-pseudo-random-number-in-scikit-learn) for the operation. This assures the same random numbers being seected each time the code is executed. 
