@@ -26,8 +26,15 @@ I guess my biggest confusion is what the "subset" (.fit(Xlim)) of the genes mean
 1. In VaderPlas it says that the globally optimal result may not be achieved in k-means clustering, since particular starting guesses may lead to poor results. It also says that this is solved by letting the algorithm to be run for multiple starting guesses. By this, I guess that the globally optimal result is much more likely to occur (i.e. it is obtained for a majority of the starting guesses)? And that the globally optimal result is chosen based on this likelihood? If not, how is the globally optimal result chosen out of the clustering results? And how many starting guesses should be applied in order to ensure a globally optimal result?
   > There is no real good way to evaluate how good a clusterinhg is if no labeled data is available. There are a couple of metrics that people use, like [silouette analysis](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html) , however, these are seldome conclusive. So yes, frequently reocuring clusters for multiple runs, are often prefered over clusters that just apear in one bout of clustering.
 
-If a data point is situated exactly between two cluster centers, where will it go?
+1. If a data point is situated exactly between two cluster centers, where will it go?
   > That willl seldom happen. And if it does, it would be dependent on the implementation, as there is no rule for such situations.
 
 1. In the VaderPlas page about GMMs and to choose covariance type they say "...it is essential to set this carefully for any given problem.",  but I feel that they do not really state when to use what. Are there any rules/guidelines for when to choose the different types of covariance? Can you predict this before doing your clustering?
-  > It depends on how your features behave. Check the sklearn documentation for [GMMs](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html), particularly in the description of  *covariance_type*, if
+  > It depends on how your features behave. Check the sklearn documentation for [GMMs](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html), particularly in the description of  *covariance_type*.  If you dont know, you should probably try to plot the relationship between a couple of ther variables.
+
+1. Some cluster bounderies in a simple 2d visual representations can be easily shown to have geometries in a nonlinear pattern.
+How do one determine the existance of nonlinear patterns where it's not as obvious, e.g. a more complicated 2d representations or representations in higher dimensions?
+  > This is indeed hard with linear transformations. A couple of resent techniques are frequently used for dimensionality reduction for the purpose of visualization. These include [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding) , [UMAP](https://umap-learn.readthedocs.io/en/latest/basic_usage.html), and some other [manifold learning techniques](https://scikit-learn.org/stable/modules/manifold.html).
+
+1. In k-means clustering, the number of centroids are randomly assigned. How do we determine the number of centres to be used? Also, do larger number of centroids lead to overfitting?
+   > No, in *k*-means we provide the number of clusters, *k*, as an input parameter.  There is no rule for how to select *k*. Also, there is no good way to define overfitting, in the context of *k*-means clustering.
