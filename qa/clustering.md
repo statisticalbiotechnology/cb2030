@@ -40,4 +40,29 @@ How do one determine the existance of nonlinear patterns where it's not as obvio
    > No, in *k*-means we provide the number of clusters, *k*, as an input parameter.  There is no rule for how to select *k*. Also, there is no good way to define overfitting, in the context of *k*-means clustering.
 
 1. In the K-means calculation, the command random_state is set to 0. when changed, the orientation of the clusters change. Why does this happen? What does the command Random_state do?
-  > The varaiable sets the [radom seed](https://stackoverflow.com/questions/28064634/random-state-pseudo-random-number-in-scikit-learn) for the operation. This assures the same random numbers being seected each time the code is executed. 
+  > The varaiable sets the [radom seed](https://stackoverflow.com/questions/28064634/random-state-pseudo-random-number-in-scikit-learn) for the operation. This assures the same random numbers being seected each time the code is executed.
+
+  1. Is there implementations of *k*-means clusters using kernels?
+    > Yes, *k*-means clustering can operate in kernel space, e.g. [kernel *k*-means](https://sites.google.com/site/dataclusteringalgorithms/kernel-k-means-clustering-algorithm) do so.
+
+  1. Is the reason for using Variational inferences of the number of components in the "In Depth: Gaussian Mixture Models" section that you want to avoid over-fitting?
+    > No, it is just to get a reasonable estimate of the number of components.
+
+  1. The Gaussian Mixture Model in the simple cases it could work like kmeans, so why wouldn't we just used the GMM is all the cases?
+    > There is no reason for that, as far as I know. The theory of k-means is simpler I guess. Also GMMs have a different historical background.
+
+  1. - How is the accuracy score calculated after k-means clustering? Are we assigning gold standard datapoints?
+  1. - I understood that since the GMM can also measure uncertainty assigning the datapoints in clusters as well as allowing the cluster boundaries to be elipses instead of only spheres, it should give more accurate results than kmeans clustering. This is not the case in the breast cancer notebook. Why?
+     > It is hard to give an exact reason. There is, however, no real reason to beleave that  the data should cluster in any particular way. Hence there we can not say that the results are more or less accurate, they just cluster the things we want them to cluster or they dont. That is not the same thing.
+
+  1. I really didn´t understand the way that the optimal number of components is being calculated in the breast cancer notebook.
+    > You will need quite a lot of probability theory to understand how a [Dirichlet process](https://en.wikipedia.org/wiki/Dirichlet_process) is working. I included the example to make you see that there is technology available that can help you solve the important problem of how to best select the number of components.
+
+  1. In the VanderPlas chapter on GMM, the section "Generalizing E-M: Gaussian Mixture Models", I don't quite understand the code chunk [10] (where two functions are defined). The plots that are generated from this contain "double" circles or ellipses, at what point in the definition of the functions is this specified, and what does the inner and outer border signify, respectively?
+    > They are actually three circles. Check the ``draw_ellipse(...)`` function, the iteratively increasing parameter ``nsig`` is just a multiplicative factor to the covariance components.
+
+  1. In the notebook you used only two k-means clusters. In practice, would you attempt different numbers?
+    > Yes, one should try a couple of different clusterings, before selecting one.
+
+  1. How would you determine which clustering method works best? Just trial and see if it works? Are there any methods that consistently outperform others or are favored in certain situations?
+    > Just trial and error. You check the clusters, and see if they make sense to what you would expect. Also, you should try to build in any prior knowledge into the features or your clustering method.
