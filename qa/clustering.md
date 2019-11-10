@@ -186,29 +186,3 @@ How do one determine the existence of nonlinear patterns where it's not as obvio
     > The GMM gave a different clustering than the k-means. The k-means clustering was co-insiding with some labels I assigned to the data in a better way than the GMM.
 
 1. The GMM approach is presented as a method that overcomes the limitations of k-means clustering. But in the notebook, the GMM approach does not appear to be able to provide a clear separation between samples that are ER and PR negative, and those that are not. How can this be explained?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1
