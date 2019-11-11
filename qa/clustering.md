@@ -42,12 +42,14 @@
 
 ## *k*-means vs. GMMs
 1. - K-means is less complex than GMM (it doesn’t allow for covariance and probability of assignment measurement) and is slow for large datasets. With this in mind, in which cases would K-means be preferred over GMM?
-1. - The Gaussian Mixture Model in the simple cases it could work like kmeans, so why wouldn't we just used the GMM is all the cases?
+   - The Gaussian Mixture Model in the simple cases it could work like kmeans, so why wouldn't we just used the GMM is all the cases?
   > There is no real reason for not always using GMMs, as far as I know. The theory of k-means is simpler I guess. Also GMMs have a different historical background.
 
 1. I can know how k-means used step by step, but I cannot know how GMM is used exactly. Can you give an example of GMM algorithm ?
-   > I will not cover the exact algorithm for GMMs. It, however, is similar to the k-Means, in that it in its standard form is a EM algorithm. Here is wikipedias description of the mathematical formulation of [GMMs](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model).
+   > I will not cover the exact algorithm for GMMs. It, however, is similar to the k-Means, in that it is an EM algorithm. A GMM is, however, probabilistic in its formulation, while *k*-means can, but does not have to be probabilistic. Here is wikipedias description of the mathematical formulation of [GMMs](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model).
 
+1. It seems reasonable to use the Bayesian variant of GMMs, since the number of clusters don't have to be chosen beforehand, are there any cases where that approach isn't possible?
+  > Yes this is my interpretation as well. However, as VanderPlas writes for another technique to select the number of components: "Notice the important point: this choice of number of components measures how well GMM works as a density estimator, not how well it works as a clustering algorithm. I'd encourage you to think of GMM primarily as a density estimator, and use it for clustering only when warranted within simple datasets." That note applies here as well.
 
 
 ## Starting positions of cluster means in k-Means
@@ -79,13 +81,13 @@
 ## Selection of the number of components for GMMs
 
 1. The VaderPlas article about Gaussian Mixture Models mentions methods like AIC and BIC to choose the optimal number of components to use, but these are chosen for optimal density estimation and not clustering. Does using Dirichlet Process Prior use the optimal number of components for density estimation too or is it more suited for clustering?
-  > Yes it do optimize the number of selected components. It is just a relatively reasent introduction to the library, so VanderPlas dont mention Dirichlet Processes for GMMs. However, as this is great software, I added it to the notebook.
+  > Yes the procedure optimizes the number of selected components. It is just a relatively resent introduction to the library, so VanderPlas don't mention Dirichlet Processes for GMMs. However, as this is great software, I added it to the notebook.
 
 1. While the VaderPlas article says nothing about the Dirichlet Process GMMs, the Wikipedia article on Dirichlet processes mentions clustering a lot.
   > Much of the workings of the algorithm is given in the documentation of [sk-learn](https://scikit-learn.org/stable/modules/mixture.html#bgmm)
 
 1. I have a hard time to fully understand the clustering in the last step of the "cluster_brca": "We use the same technique, however instead of clustering our 20,000 dimensional data, we select a subset of 16 known cancer associated genes." I guess my biggest confusion is what the "subset" (.fit(Xlim)) of the genes means actually means. We have a maximum roof of 30 clusters, from that we get 11 clusters (left part of the output table) and samples (right part of the output table) but how/where does the subset of genes come in the picture?
-  > Out of all the genes tetsed, we just select the genes that are listed in the list "brca_names". That is what I mean bu a "subset of 16 ... genes." Generally, when you run into problems with understanding the code,  try to print variables, lists and dataframes, to see what they contain in different parts of the execution.
+  > Out of all the genes tested, we just select the genes that are listed in the list "brca_names". That is what I mean bu a "subset of 16 ... genes." Generally, when you run into problems with understanding the code,  try to print variables, lists and dataframes, to see what they contain in different parts of the execution.
 
 1. Is the reason for using Variational inferences of the number of components in the "In Depth: Gaussian Mixture Models" section that you want to avoid over-fitting?
     > No, it is just to get a reasonable estimate of the number of components.
@@ -136,7 +138,7 @@ like [silouette analysis](https://scikit-learn.org/stable/auto_examples/cluster/
 1. - In reading assignment number 2 they explain that they kernelize the k-means by using the graph of the nearest neighbours to compute a higher-dimensional representation of the data, and then assigns labels using a k-means algorithm. I have a hard time understanding how they did this, is there a way to explain this with words and not just code, or could you explain what the code does ?
    - From the VaderPlas section: I have a hard time grasping how the Kernel works in this context. In SVM, the kernel transforms the data and projects it to higher dimension space. Here, it seems as though the data remains intact, but some kind of transformation to higher space has occurred. Can you please explain how this works?
    - VanderPlas suggests using kernels to transform the data to a higher dimensionality space, so that the data points can be linearly separated in this new context. In the example presented in the article, the ‘SpectralClustering estimator’ is used to transform the data. How does this work?
-   > In the example given they called the function [sklearn.cluster.SpectralClustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.SpectralClustering.html). The function use the same type of RBF kernel as an SVM, and forms its clusters in kernel space rather than among the input space. As said previously, we do not cover kernels in details in this course.  
+   > In the example given they called the function [sklearn.cluster.SpectralClustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.SpectralClustering.html). The function use the same type of RBF kernel as an SVM, and forms its clusters in kernel space rather than in the input space. As said previously, we do not cover kernels in details in this course.  
 
 1. Does the use of kernels allow for non-circular clusters during k-means clustering?
    > Yes they do.
@@ -144,9 +146,6 @@ like [silouette analysis](https://scikit-learn.org/stable/auto_examples/cluster/
 
 
 ## Bayesian GMMS
-
-1. It seems reasonable to use the Bayesian variant of GMMs, since the number of clusters don't have to be chosen beforehand, are there any cases where that approach isn't possible?
- > Yes this is my interpretation as well. However, as VanderPlas writes for another technique to select the number of components: "Notice the important point: this choice of number of components measures how well GMM works as a density estimator, not how well it works as a clustering algorithm. I'd encourage you to think of GMM primarily as a density estimator, and use it for clustering only when warranted within simple datasets." That note applies here as well.
 
 1. What is a suitable number of clusters for a Bayesian Gaussian mixture model? How is the number selected for a Bayesian Gaussian mixture model?
   > The point of the Bayesian GMM procedure is that you just have to select an upper bound for the number of clusters, and the procedure will then select an optimal number for you.
