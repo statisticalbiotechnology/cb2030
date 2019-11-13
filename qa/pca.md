@@ -55,6 +55,7 @@ Here they did RNA-sequencing for differential gene expression on Zika-virus infe
 
 1. In the video in the example about the height and the weight it is said that the second principal component seems to be more interesting for interpreting the results but I didn´t manage to understand the reason for that.
     > You would normally assume that a tall person allso is a heavy person. This implies that there is a linear relationship between squared length and weight. That relationship will be explaining most of the variation of your data, and end up in PC1. The PC1 would normally not be interesting to study, at least not in e.g. T2D studies. However, hopefully, PC2 will capture the [BMI]((https://en.wikipedia.org/wiki/Body_mass_index)), which might be of larger interest.
+    ![BMI](https://upload.wikimedia.org/wikipedia/commons/b/b0/BMI_chart.svg)
 
 1. What is the reason for the transformation from data axes to principal component axes? The transformed graph will always look like a sphere, with all the principal component vectors beeing the same lenght.
       > Good question. After the transformation the PCs will have an eigen value attached to them so that you know how much of the variance they explain. Particularly PC1 will be the linear combination of data that optimally explains the variation of the data.  
@@ -67,6 +68,9 @@ Here they did RNA-sequencing for differential gene expression on Zika-virus infe
 
 1. What is their relationship with the original data (e.g. "eigen gene 1" with "gene 1" values)?
       > An eigen gene is the linear combination of patients that would explain most of the variation of the data.
+
+1.  Is there any reason why the principal components are pointing in the direction they are pointing? I mean for example in the second picture in VaderPlas reading material, wouldn't it be the same if the second principal component was pointing up instead of down?
+  > No this is an arbitrar choice. You can fip the signs of the elements in the eigen patients and the eigen genes and they would still explain the same thing.
 
 
 ## Eigen genes and Eigen Samples
@@ -85,6 +89,8 @@ Here they did RNA-sequencing for differential gene expression on Zika-virus infe
 1. In the notebook the SVD is used to get eigengenes and eigenpatients, are these the principal components? From what I understood it seems that they explain just the variance of patients and of genes respectively, how would a PCA function choose which of these to use as principal components to explain the variance of the whole dataset?
   > They PCs are telling you what linear combinations of variables that will explain the most of the variation of the variables.
 
+1. Could you please explain the last part of the stackexchange answer, from the point that it starts talking about matrices. I don't understand what are the eigenvectors and eigenvalues.
+  > That part of the answer is not essential for the understanding of PCA, however: A [covariance matrix](https://datascienceplus.com/understanding-the-covariance-matrix/) is a description of how much variation you have in the data in each dimension(in the diagonal) as well as how much the datapoints dimensions are covarying with (non-diagonal elements). The answer makes the point that PCA is a projection from input space to a co-ordinate system where there is no covariation in the data, i.e. the covariation matrix is diagonal.
 
 ## Relation to other techniques
 
@@ -165,4 +171,4 @@ Could you clarify this? I have a hard time understanding what r is, why r has to
 image(x) = mean + x_1 *(basis1) + x_2*(basis2) + x_3*(basis3)+...
   It appears to me that the concept of “projections” is lost here. I also wonder if it’s possible to apply this latter kind of simplification to bi-dimensional data sets.
   According to the example, image(x) is a single data point and [X_1, X_2, ...] are its pixel values. It is also stated that PCA can calculate both the “mean” and the 64 basis and that you can obtain a close-resembling reconstruction of the digit’s picture only by exploiting the first 8 components. If the “mean” and the various “basis” are constant for every data point, that would mean that only the first 8 pixels values (the upper line of each picture) are enough to characterize 10 different types of digits (hard to believe). On the other hand, if these values are not constant, that would mean that PCA works on clusters and not on the whole data set (which would make perfectly sense, but then why this fact is not even mentioned?).
-  >  I excluded this part of the text as preparational material, as it might be confusing, The word [projection}(https://en.wikipedia.org/wiki/Projection_(mathematics)) has the meaning of a function that maps data points in one space to another space. Also, they only keep 8 values, but they do so together with their "basis" (eigen digits), which each have the same dimension as the orignial images. However, given that they have a large number of images 8 values per image + 8 eigen digits is a co,mpression of data.
+  >  I excluded this part of the text as preparational material, as it might be confusing, The word [projection}(https://en.wikipedia.org/wiki/Projection_(mathematics)) has the meaning of a function that maps data points in one space to another space. Also, in the eigen digit example, VanderPlas only keep 8 values, but they do so together with their "basis" (eigen digits), which each have the same dimension as the orignial images. However, given that they have a large number of images 8 values per image + 8 eigen digits is a compression of data.
