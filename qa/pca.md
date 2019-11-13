@@ -131,3 +131,27 @@ Could you clarify this? I have a hard time understanding what r is, why r has to
 
 1. Also, is there any particular reason why the genes pointing in either positive or negative directions in both PCs are more interesting than those pointing positive on one PC and negative on the other?
   > It is probably a sign of there being a bias in the patients, that we might be able to detect by studyin the eigen genes.
+
+1. I might be the only one who didn't take a Linear Algebra course here, but the whole "Kluwer et al." paper is beyond my comprehension. From the Jupyter notebook I've barely understood what SVD does in general, but I still don't get the main concepts.
+  > It would be helpful if you point out at what part of the paper you stopped understanding the text.
+
+1. What's the form of the eigenvectors?
+  > Vectors?
+
+1. What is their relationship with the original data (e.g. "eigen gene 1" with "gene 1" values)?
+  > An eigen gene is the linear combination of patients that would explain most of the variation of the data.
+
+1. Are they "ranked" according to their relevance in describing the overall variance?
+  > Yes that is right. PC1 describes more or equal of the variance than PC2.
+
+1. If you have m patients and n genes, you'll obtain m+n eigenvectors in total, but the PCA components should be mxn (one per dimension): how can you compare the two things?
+  > No, you have <= min(m,n) principal components.
+
+1. The VaderPLas page seems to describe PCA in two different ways in the case of low-dimensional data and in the case of high-dimensional data: I’m failing to reconnect this two descriptions. The first case is based on the process of projecting the data points on the component’s line: this is fairly easy to imagine (and to do) for bi- or tri-dimensional data, but is this concept applicable to high-dimensional data as well? I would say that in theory it’s feasible, but then, in the digits example, it is suggested to imagine the construction of a single picture as:
+image(x) = mean + x_1 *(basis1) + x_2*(basis2) + x_3*(basis3)+...
+  It appears to me that the concept of “projections” is lost here. I also wonder if it’s possible to apply this latter kind of simplification to bi-dimensional data sets.
+  According to the example, image(x) is a single data point and [X_1, X_2, ...] are its pixel values. It is also stated that PCA can calculate both the “mean” and the 64 basis and that you can obtain a close-resembling reconstruction of the digit’s picture only by exploiting the first 8 components. If the “mean” and the various “basis” are constant for every data point, that would mean that only the first 8 pixels values (the upper line of each picture) are enough to characterize 10 different types of digits (hard to believe). On the other hand, if these values are not constant, that would mean that PCA works on clusters and not on the whole data set (which would make perfectly sense, but then why this fact is not even mentioned?).
+
+1. Do the concepts of eigen genes and eigen assays/samples only come up when you do a SVD for PCA (as in the jupyter notebook and Kluwer et al. reading)? Or are the same concepts relevant when you do just a PCA (as was done in the VanderPlas reading with the commands: pca = PCA(n_components=2), pca.fit(X))? I do not understand the relationship between PC1 and PC2 and eigen genes and eigen samples/assays.
+  > There are some subtle [differenes between PCA and SVD](https://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca), so they PCs and the eigen vectors differs a by a scalar factor. Modulo those differences: If the data in the [introduction to PCA](https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html#Introducing-Principal-Component-Analysis) was gene expression values for two different patients,  the components in the figure for cell 6 would be the eigen patients one and two and the direction of the axises of the input space is the eigen genes. The eigen gene equivalent is also available through `pca.components_` in cell 4.
+![Kluwer](https://jakevdp.github.io/PythonDataScienceHandbook/figures/05.09-PCA-rotation.png)
