@@ -153,6 +153,11 @@ Could you clarify this? I have a hard time understanding what r is, why r has to
 1. What do the sentences “the genes pointing in a positive/negative direction for the two components” at the end of the jupyter notebook mean?
   > The genes with the higest resp lowest Eigen patients 1 and 2.
 
+1. In the final steps of the exercise presented in the notebook, the aim is to identify the genes that are more likely to be responsible for the observed difference among of lung cancer data points. The eigenpatients associated with the genes are investigated, and the KRT17 gene is identified as the minimal eigengene for eigenpatient 1 (i.e. the gene that least explains the variance in the dataset) and as the maximal eigengene for eigenpatient 2 (i.e. the gene that most explains the variability). Is this correct?  If so, does this mean the KRT17 gene explains the variation in the dataset better than the other 2 identified genes? Could you please elaborate a bit further the interpretation of these results?
+  > Your interpretation that KRT17 drives both eigen patient 1 and 2 and hense is a better explanation of the data than the other genes could be right. [KRT17](https://www.proteinatlas.org/ENSG00000128422-KRT17/pathology) is a known cancer related gene. At this point of the analysis, it is not fully clear what the biological interpretation of PC2 is.  From the eigen gene plot, it is however clear that PC1 seem to capture the difference beween LUAD and LUSC.
+
+
+
 ## Other
 
 1. The whole "Kluwer et al." paper is beyond my comprehension. From the Jupyter notebook I've barely understood what SVD does in general, but I still don't get the main concepts.
