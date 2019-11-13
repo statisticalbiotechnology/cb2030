@@ -17,12 +17,9 @@
 1. - What is the main use of PCA in life science? Is it to more easily visualize data (through dimensionality reduction) or to determine the most important features/variables in terms of variance?
    - Could we say that PCA is a clustering algorithm? Can it be used for clustering except visualization, feature selection and dimensionanily reduction?
   > No PCA is **not** a clustering technique. The analysis itself does not give you any groups of data points. PCA have multiple applications. It can be used for visualization, for dimensionality reduction and as a technique to give mechanistic explanation of any linear effects that you are trying to assess. It can also be used for determining biases of your patient material, [for missing value imputations](https://stats.stackexchange.com/questions/35561/imputation-of-missing-values-for-pca).
-  > A better explanation: One example is in genomics, where, when we set up an experiment, we have biological and technical replicates. Usually what we are looking for is a biological difference between two conditions, and to be sure that this is the case PCA can be used as a kind of quality control. What we want to observe is that most of the variance is explained by biology and not by technical factors, i.e. that principal component 1 is larger than principal component 2. I hope that this was clear enough and a correct explanation. If not, looking at the PCA of this article might help:
-  ![https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972086/figure/f1/]( https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=4972086_f1000research-5-9804-g0000.jpg)
+  > A very nice and applied explanation: One example is in genomics, where, when we set up an experiment, we have biological and technical replicates. Usually what we are looking for is a biological difference between two conditions, and to be sure that this is the case PCA can be used as a kind of quality control. What we want to observe is that most of the variance is explained by biology and not by technical factors, i.e. that principal component 1 is larger than principal component 2. I hope that this was clear enough and a correct explanation. If not, looking at the PCA of this article might help:
+  ![https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4972086/figure/f1/]( https://www.ncbi.nlm.nih.gov/corecgi/tileshop/tileshop.fcgi?p=PMC3&id=61776&s=62&r=1&c=1)
 Here they did RNA-sequencing for differential gene expression on Zika-virus infected cells using two different sequencing platforms (MiSeq and NextSeq). When they did the PCA, they could show that 50 % of the variance between the samples was due to whether the cells were infected with Zika virus or not, and 20 % the variance was due to the platform that they used (MiSeq or NextSeq).
-
-Probably there are a lot more examples, but hope this helps :)
-
 
 
 ## Variance explained and singular values
