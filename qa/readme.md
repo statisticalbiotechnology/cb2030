@@ -9,3 +9,5 @@ Here we keep the the questions and answers from the seminar
 - [Supervised Learning](supervisedlearning)  
 - [Clustering](clustering)
 - [PCA](pca)
+
+- [Pathway Analysis](pathway)
