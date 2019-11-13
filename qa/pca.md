@@ -54,8 +54,8 @@ Here they did RNA-sequencing for differential gene expression on Zika-virus infe
 ## Interpretation of principal components
 
 1. In the video in the example about the height and the weight it is said that the second principal component seems to be more interesting for interpreting the results but I didn´t manage to understand the reason for that.
-    > You would normally assume that a tall person allso is a heavy person. This implies that there is a linear relationship between squared length and weight. That relationship will be explaining most of the variation of your data, and end up in PC1. The PC1 would normally not be interesting to study, at least not in e.g. T2D studies. However, hopefully, PC2 will capture the [BMI]((https://en.wikipedia.org/wiki/Body_mass_index)), which might be of larger interest.
-    ![BMI](https://upload.wikimedia.org/wikipedia/commons/b/b0/BMI_chart.svg)
+    > You would normally assume that a tall person allso is a heavy person. This implies that there is a linear relationship between squared length and weight. That relationship will be explaining most of the variation of your data, and end up in PC1. The PC1 would normally not be interesting to study, at least not in e.g. T2D studies. However, hopefully, PC2 will capture the [BMI](https://en.wikipedia.org/wiki/Body_mass_index), which might be of larger interest.
+    ![BMI](https://upload.wikimedia.org/wikipedia/commons/b/b0/BMI_chart.svg "Image from wikipedia entry.")
 
 1. What is the reason for the transformation from data axes to principal component axes? The transformed graph will always look like a sphere, with all the principal component vectors beeing the same lenght.
       > Good question. After the transformation the PCs will have an eigen value attached to them so that you know how much of the variance they explain. Particularly PC1 will be the linear combination of data that optimally explains the variation of the data.  
@@ -77,7 +77,7 @@ Here they did RNA-sequencing for differential gene expression on Zika-virus infe
 
 1. In the video lecture at around 6:50 , It is said and understood that the columns of U represent the projections of the data onto the PC1. But what does it mean that the rows of Vt represent projection of different samples inside of X?
     > I like the concepts of [Kluwer et al.](https://public.lanl.gov/mewall/kluwer2002.html). Eigen genes is the best representation of how a gene behave, and eigen assays (or eigen experiments, eigen patients) are representations of how patients behave.
-    ![Eigen genes](https://public.lanl.gov/mewall/kluwer2002/SVD_GEA.jpg) 
+    ![Eigen genes](https://public.lanl.gov/mewall/kluwer2002/SVD_GEA.jpg "Image from Wall et al. Unkown License.")
 
 1. Do the concepts of eigen genes and eigen assays/samples only come up when you do a SVD for PCA (as in the jupyter notebook and Kluwer et al. reading)? Or are the same concepts relevant when you do just a PCA (as was done in the VanderPlas reading with the commands: pca = PCA(n_components=2), pca.fit(X))? I do not understand the relationship between PC1 and PC2 and eigen genes and eigen samples/assays.
     > There are some subtle [differenes between PCA and SVD](https://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca), so they PCs and the eigen vectors differs a by a scalar factor. Modulo those differences: If the data in the [introduction to PCA](https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html#Introducing-Principal-Component-Analysis) was gene expression values for two different patients,  the components in the figure for cell 6 would be the eigen patients one and two and the direction of the axises of the input space is the eigen genes. The eigen gene equivalent is also available through `pca.components_` in cell 4.
