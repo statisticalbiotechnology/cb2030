@@ -35,7 +35,36 @@ Would you say these are also the main limitations with GSEA? Or are there other 
 1. Is it possible and better to combine the different pathway databases (including metabolic pathways, interactions, and gene ontology) for one analysis?
   > This is an open research topic within multiomics analysis. It should be entirely possible to do so, however, I have seen very few successful implementations. One problem is lack of pathway definitions. However, some pathway definition databases like KEGG and Rectome actually do contain information on both metabolites and proteins.
 
-## Enrichment scores
+## Over-representation analysis
+1. In the article by Kathri et al, section First Generation: Over-Representation Analysis (ORA) Approaches, we can read that solving one of its limitations (that only the most significant genes are used) by using an "iterative approach that adds one gene at a time to find a set of genes for which a pathway is most significant". I do not quite get how this solves the problem? How are the genes chosen if not by a threshold? Do we analyze all genes that we have analyzed by using this method?
+  > Sure, you use an FDR threshold, but you keep on changing it until you see the result you want to get. Did I ever tell you that much systems biology stands on methods that should not be investigated too closely?
+
+1. Regarding ORA, the article by Kathri et al mentions that one of the limitations is that it assumes that each gene is independent of the other genes (more generally, analytes, I assume), which might yield biased or incorrect estimates of pathway significance. This sounds like a very bad assumption to make when studying pathways, and it sounds as though it would produce very severe errors, and thus extremely unreliable results. Since the method is still used: how severe and common do these errors tend to be?
+  > Nice catch! This is an error of the review in my mind. What they should have written is that the genes have to be independent under the null, which is an more reasonable assumption. Overall, the method seems to be reliable enough. I also not like the fact that the method is not taking quantative differences as input, but rather lists of genes, and that its test statistics does not relate to quantitative differences between case and control, but instead tests the sizes of genesets. That makes the test statistic hard for most biologists to [interpret](https://academic.oup.com/bioinformatics/article/23/8/980/198511) (and the general problems of the interpretation of *p* values makes this worse).
+
+1. Is there any way to correct for the fact that ORA assigns a higher significance to a pathway with more genes? I am specially concerned by the fact that we could be interested in analyzing pathways with different sizes, which may be both (or even just the smaller one) relevant in a given biological condition.
+  > It is not so much that the larger pathways get higher significance by chance, as that they have a larger chance to pick up weak signals.
+
+1. In Kathri et al regarding FCS they write that in the second step the gene-level statistics for all genes in a pathway are aggregated into a single pathway-level statistic.  I have a hard time understanding what this means, could you give a small example on this?
+  > It is their way of saying that you are giving a common measurement of gene expression for the genes in the pathway instead of measuring the activity of individual genes. As explained in the video lecture, you count the genes intersection between the differentially expressed genes and the pathway. That number is the single pathway-level statistics.
+
+1. And in this method, different thresholds may get different results, how should this threshold be chosen, according to the purpose of the experiment or the experience of the experimenter?
+   > Are these two alternative mutually exclusive? Preferably according to both criteria.
+
+## Null in Overrepresentation analysis
+
+1. I don't understand why the null hypothesis in ORA is proteins in pathway / all measured proteins = overlap / differentially expressed proteins. And how do you choose the "all measured protein"? since I think the ratio of overlap is correlated to it
+  > The first statement just comes from combinatorics. And you do not get to "choose" which proteins that were measured, it is a given from the data.
+
+1. In ORA methods for pathway analysis, which genes should be included in an appropriate background?  I see several options of background list of genes that could be used: all the genes measured in the dataset, all the genes present in the analyzed pathways or all the genes that could be expressed in the samples (e.g. All known brain expressed genes if the samples are from brain tissue). Which background gene set should be used, or would be more correct to use, and why? In the notebook, you use the genes in the dataset, but I don't understand why you would not use the genes in the database used for the analysis.
+  Does the choice of background depend on the test used (hypergeometric enrichment, chi-square, etc.)?
+  > All the genes that you were taking in consideration in the first place, i.e. all genes you have measured. The two other choices you list will lead to biases.
+
+1. Is there any situation where a hypergeometric test is prefered over Fisher or viceversa?
+> No, as they are the [same test](https://en.wikipedia.org/wiki/Fisher%27s_exact_test).
+
+
+## Geneset Enrichment Analysis
 1. In the video lecture, it is stated for the Gene-set enrichment analysis part that one "looks at the full distribution of all the gene products and put them in one list. Compare that list to the distribution of samples that are sitting in the pathway itself. Compare and see if the two distributions look different." I'm having a hard time connecting this explanation with the one presented in the paper by Subramanian et al. They discuss how the predetermined set of genes S (genes in a pathway) and differentially expressed list of genes L, and finding which genes of S are found at the top and bottom of L. How do S and L relate to your distribution (is one the red distribution and one the blue distribution)? Is the blue distribution representing the genes found "at the top and bottom" and if so, will this always follow a bimodal distribution?
   > I plotted the distribution of L and S for a fictive pathway in my slide. If the distributions are significantly different we call that a  regulation of the pathway. That is also what Subramanian et al. are measuring.
 
@@ -75,36 +104,6 @@ Would you say these are also the main limitations with GSEA? Or are there other 
 
 1. In the jupyter notebook for the gsea analysis the number of processes is set to 4, why is this and why is the default 1?
   > This controls the speed the pathways are calculate, by allowing a different number of parallel processes.
-
-
-## Over-representation analysis
-1. In the article by Kathri et al, section First Generation: Over-Representation Analysis (ORA) Approaches, we can read that solving one of its limitations (that only the most significant genes are used) by using an "iterative approach that adds one gene at a time to find a set of genes for which a pathway is most significant". I do not quite get how this solves the problem? How are the genes chosen if not by a threshold? Do we analyze all genes that we have analyzed by using this method?
-  > Sure you use a FDR treshold, but you keep on increasing it until you see the result you want to get. Did I ever tell you that much systems biology stands on methods that should not be investigated too closely?
-
-1. Regarding ORA, the article by Kathri et al mentions that one of the limitations is that it assumes that each gene is independent of the other genes (more generally, analytes, I assume), which might yield biased or incorrect estimates of pathway significance. This sounds like a very bad assumption to make when studying pathways, and it sounds as though it would produce very severe errors, and thus extremely unreliable results. Since the method is still used: how severe and common do these errors tend to be?
-  > Nice catch! This is an error of the review in my mind. What they should have written is that the genes have to be independent under the null, which is an more reasonable assumption. Overall, the method seems to be reliable enough. I also not like the fact that the method is not taking quantative differences as input, but rather lists of genes, and that its test statistics does not relate to quantitative differences between case and control, but instead tests the sizes of genesets. That makes the test statistic hard for most biologists to [interpret](https://academic.oup.com/bioinformatics/article/23/8/980/198511) (and the general problems of the interpretation of *p* values makes this worse).
-
-1. Is there any way to correct for the fact that ORA assigns a higher significance to a pathway with more genes? I am specially concerned by the fact that we could be interested in analyzing pathways with different sizes, which may be both (or even just the smaller one) relevant in a given biological condition.
-  > It is not so much that the larger pathways get higher significance by chance, as that they have a larger chance to pick up weak signals.
-
-1. In Kathri et al regarding FCS they write that in the second step the gene-level statistics for all genes in a pathway are aggregated into a single pathway-level statistic.  I have a hard time understanding what this means, could you give a small example on this?
-  > It is their way of saying that you are giving a common measurement of gene expression for the genes in the pathway instead of measuring the activity of individual genes. As explained in the video lecture, you count the genes intersection between the differentially expressed genes and the pathway. That number is the single pathway-level statistics.
-
-1. I don't understand why the null hypothesis in ORA is proteins in pathway / all measured proteins = overlap / differentially expressed proteins. And how do you choose the "all measured protein"? since I think the ratio of overlap is correlated to it
-  > The first statement just comes from combinatorics. And you do not get to "choose" which proteins that were measured, it is a given from the data.
-
-1. For over-representation analysis, the null hypothesis is the ratio of protein in pathway to all measured protein equal to the ratio of overlap to differentially expressed protein. Can you explain why that is the selected null hypothesis?
-  > It is just a combinatoric fact.
-
-1. And in this method, different thresholds may get different results, how should this threshold be chosen, according to the purpose of the experiment or the experience of the experimenter?
-   > Are these two alternative mutually exclusive? Preferably according to both criteria.
-
-1. In ORA methods for pathway analysis, which genes should be included in an appropriate background?  I see several options of background list of genes that could be used: all the genes measured in the dataset, all the genes present in the analyzed pathways or all the genes that could be expressed in the samples (e.g. All known brain expressed genes if the samples are from brain tissue). Which background gene set should be used, or would be more correct to use, and why? In the notebook, you use the genes in the dataset, but I don't understand why you would not use the genes in the database used for the analysis.
-  Does the choice of background depend on the test used (hypergeometric enrichment, chi-square, etc.)?
-  > All the genes that you were taking in consideration in the first place, i.e. all genes you have measured. The two other choices you list will lead to biases.
-
-1. Is there any situation where a hypergeometric test is prefered over Fisher or viceversa?
-> No, as they are the [same test](https://en.wikipedia.org/wiki/Fisher%27s_exact_test).
 
 
 ## Permutation tests
