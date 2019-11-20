@@ -110,15 +110,15 @@ c) How would the edge weights be visualized in the case of a weighted network? I
 
 > c) There are many ways of visualizing a network. One ways in whichs the weights can be used is a forces in a "force-directed graph visualization". But I did not understand the last part of your question.
 
-2. a) What is the "Depth and Breath first search" algorithm doing?
-
-b) In the presentation many clustering methods were mentioned but sadly all of them on the side. Would it be possible to describe one of them more in detail so we get an understanding how it works?
+2. a) What is the "Depth and Breath first search" algorithm doing?  
+  b) In the presentation many clustering methods were mentioned but sadly all of them on the side. Would it be possible to describe one of them more in detail so we get an understanding how it works?
 
 > a) They are two different algorithms that do essentially the same thing, explore the network from a root node, in a structured way, and give you all the noodes reachable from that node.
-
 > b) The book "Network Science" on the reading list is a good place to start, Chapter 9 is exclusively about communities in networks.
 
 
 # Unclear
 
 1. So the networks mentioned in the files are undirected and directed. But they are all used for explaining data not for data analysis. What does one need to change to create a network capable of predicting outcomes from data.
+  > Networks themselves can not be predictive. You need to apply your own definitions and rules to make use of them. This is not very different than other descriptions of data. E.g. numbers are neither predictive nor useful just as logic entities. It is just when you apply your own definitions of what the numbers stand for that they become useful. E.g. one apple plus one apple is two apples.
+  You can easily apply a rule like "Hubs in protein-interaction networks are good drug targets", to predict drug targets.
