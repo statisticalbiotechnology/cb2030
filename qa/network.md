@@ -63,6 +63,10 @@ It again depends largely on what you are modelling with the network.
 
 > Preferential attachment in this context in that context reffers to a way in which the system represented by the network has evolved over time. In that particular example (social network) the probability relates to the probabilty that a person connects with someone else, which is often proportional to the amount of people they already know.
 
+5. You said a sentence in the video that maximum clique is just what we need to find in a network, why it is important? Can you give an example in real case?
+
+> [This article](https://www.pnas.org/content/100/21/12123) is a good example of using cliques (and other techniques) to find protein modules in a protein interaction network.
+
 
 # Network algorithms
 
@@ -85,6 +89,11 @@ It again depends largely on what you are modelling with the network.
 5. In the Notebook you mention a "clever dynamic programming technique" that is used to find the average shortest path in a faster (and I guess non-holistic) way. What is that?
 
 > That is the [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+
+6. In the Jupyter Notebook, section Community detection, the Girvan–Newman algorithm is used to generate a list of partitions. It is then mentioned that "You can see that there are many levels of the hierarchical structure, and a list of all the nodes in each community at every level". What is ment by the hierarchical structure and its levels? Does it refer to different solutions of the community detection algorithm? Why did you choose the fourth level (and how do you know which one to choose)?
+
+> The Girvan-Newman algorithm works iteratively fist by "cutting" the network in two communities, and then cutting one of the resulting communities in two, and it continues doing so until there are no more cuts to be made, because all communities contain only one node. It is up to you to descide when you want to stop cutting, and there are many structured ways to do so, for instance, you may select the partition that gives you the largest [modularity](https://en.wikipedia.org/wiki/Modularity_(networks)) on the network.
+If you backtrack the algorithm, you will find that at any iteration it will join two communities, in an analogous way to hierarichical clustering, and that is where the hierarchy comes from.
 
 
 # Composite
