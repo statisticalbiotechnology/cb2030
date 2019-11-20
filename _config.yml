@@ -32,6 +32,7 @@ include:
   - qa/multiplehypothesistesting.md
   - qa/linearmodels.md
   - qa/supervisedlearning.md
+  - qa/network.md
   - prep/readme.md
   - prep/clustering.md
   - prep/pca.md

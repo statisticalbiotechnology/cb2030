@@ -11,3 +11,4 @@ Here we keep the the questions and answers from the seminar
 - [PCA](pca)
 
 - [Pathway Analysis](pathway)
+- [Network Analysis](network)
