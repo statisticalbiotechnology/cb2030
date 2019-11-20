@@ -78,6 +78,15 @@ It again depends largely on what you are modelling with the network.
 7. Regarding on clustering coefficient in the book,  the average clustering coefficient (C) is explained to define the degree of clustering for undirected networks. The clustering coefficient is also used for directed and weighted networks. I wonder the global clustering coefficient can be applied to both undirected and directed, or weighted networks?
 > The deffiinition of clustering coefficient presented on that chapter of the book is only aplicable to undirected, unwheighted graphs. However, you can follow the references [13, 14, 15, 16] on that chapter for generalizations of that deffinition for other types of networks.
 
+8. Are trails just a subset of paths or is there any other distinction than that trails don't revisit nodes and edges?
+> Yes, every trail is a path but not every path is a trail.
+
+9. How to find the projection in a tripartite network? Can we achieve weighed projection in a multiple network? and is there some information missed when projecting? What's the relationship of projection and clustering?
+> I'm unsure here as I've never encountered a tripartite network, but I would assume first you need to define on which of the three modes you want your projection to be done.
+
+10. The diameter of a network is the shortest path between the two nodes furthest from each other in the network, what can this knowledge be used for in analysis?
+> This again depends heavly on what kind of network you are studying. Different networks will have different interpretation for the diameter.
+
 # Network algorithms
 
 1. In the jupyter notebook, the two graph traversal algorithms generate tree objects. What exactly do these depict/tell us?
@@ -123,6 +132,8 @@ If you backtrack the algorithm, you will find that at any iteration it will join
 14. In slide 21 (minimum cut),  you mean that the correct cut would be the green one, and this is because it passes through the least amount of edges, right?  Wouldn't it be an equally correct result if this cut was between the down-left node and all the other nodes? And if yes, every time we would run this algorithm would get one of these two cuts randomly, or we would get both the results?
 > Both cuts are correct in that case, since we are trying to separate the network into 3 different parts.
 
+15. To study a real world network, would you try many, different algorithms to understand the network and compare between them? Is there a specific algorithm you usually start with (such as the label propagation algorithm)?
+> This is a very general question, but if you are reffering specificaly to community detection algorithms, the the two things you should consider first is the size of the network and the nature of what you mean by communities.
 
 
 # Composite
