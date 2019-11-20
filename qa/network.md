@@ -25,10 +25,26 @@ Does this mean that there is a way of measuring the weights of the links? If so,
 6. Weighting edges is a way of telling the network that between these two nodes, there is a stronger interaction. But if we are exploring de novo connections of a studied system, on what basis can we weight the edges on?
 > Usually, you would fist determine the nature of the interactions on your system of study, and then construct the network accordingly.
 
+7. In the book, section 2.2, they point out that "some networks simultaneously have directed and undirected links" for example some metabolic networks which have both reversible and irreversible reactions . How do you treat these type of networks, e.g. when you want to calculate network metrics? Should the different characteristics (directed and undirected) be treated separately or is there some middle-way where you can deal with them both in one?
+> If a network has both directed and undirected links, treat it as a directed network, and for the undirected links, establish two links, one going in each direction.
+
+8. how is an edge weighed or scored in a directed network? Does it depend on the relationship between two nodes and a particular distance like euclidean calculated between the nodes? 
+> There is no general answer to this question, as different networks are defined in different ways.
+
+9. In the notebook, you used the connected components function. Can you interpret the result of it a little? As my understanding, the lonely nodes are nodes that don't have any connection with the other node as there is only one number in the bracket, but then why it will be shown in the result of connected components function since "it returns all the subgraphs consisting of nodes that are connected by any path".
+> A single node is still a subgraph.
+
+10. When we want to choose an algorithm to cluster the network, which features of the network should be considered to find a suitable algorithm?
+> The main thing you should focus on is how well the assumptions of the algorithm reflect the dynamics of the system you are studying.
+
 # From networks to knowledge
 
 1. There are many algorithms to divide data points into communities, but different algorithms can result in different communities, if that can we get the same interpretation of this network when using different algorithms? If not, which one do we prefer to use in real case?
->
+> Each algorithm makes different assumptions about the nature of communities. Everytime you get some results results, you shoudl always go back to those assumptions to see what they mean on the real system you are studying. And in this sense there is no algorithm that is better on all cases.
+
+2. In a biological network such as a network modelling protein-protein interactions - what would computing these types of network analysis metrics give you? What conclusions can you draw from clustering coefficients and average shortest path in such a network?
+> This always depends on what is your network representing. Even protein-protein interaction networks can be constructed in different ways.
+
 
 # Networks in biology
 
@@ -56,6 +72,11 @@ It again depends largely on what you are modelling with the network.
 5. You said a sentence in the video that maximum clique is just what we need to find in a network, why it is important? Can you give an example in real case?
 > [This article](https://www.pnas.org/content/100/21/12123) is a good example of using cliques (and other techniques) to find protein modules in a protein interaction network.
 
+6. What is the exact use of finding a maximum clique in a network ? Does it represent something ?
+> It's important to note that there can be mant maximum cliques in a network. Again, to undertand what the maximum clique means you have to go back to how the network was fist defined. Different networks will have different interpretations. 
+
+7. Regarding on clustering coefficient in the book,  the average clustering coefficient (C) is explained to define the degree of clustering for undirected networks. The clustering coefficient is also used for directed and weighted networks. I wonder the global clustering coefficient can be applied to both undirected and directed, or weighted networks?
+> The deffiinition of clustering coefficient presented on that chapter of the book is only aplicable to undirected, unwheighted graphs. However, you can follow the references [13, 14, 15, 16] on that chapter for generalizations of that deffinition for other types of networks.
 
 # Network algorithms
 
@@ -78,6 +99,31 @@ It again depends largely on what you are modelling with the network.
 > The Girvan-Newman algorithm works iteratively fist by "cutting" the network in two communities, and then cutting one of the resulting communities in two, and it continues doing so until there are no more cuts to be made, because all communities contain only one node. It is up to you to descide when you want to stop cutting, and there are many structured ways to do so, for instance, you may select the partition that gives you the largest [modularity](https://en.wikipedia.org/wiki/Modularity_(networks)) on the network.
 If you backtrack the algorithm, you will find that at any iteration it will join two communities, in an analogous way to hierarichical clustering, and that is where the hierarchy comes from.
 
+7. I did not fully understand the explanation of minimum cut. It says that the algorithm divides the nodes in as many groups as possible that contains as many nodes as possible. How is this possible to do at the same time? As many groups as possible should according to my intuition contain as few nodes as possible?
+> The video might have been confusing. You tell the min-cut algorithm how many communities you want and it tries to divide the networks in that many __equal__ parts, using cuts that pass through the smallest amount of edges possible, so in the end you end up with groups that are approximately equal in size.
+
+8. BFS algorithm seems demanding for computer in networks with massive amounts of nodes and links, e.g. citation network. Is there an alternative algorithm more practical for such an extensive network?
+> BFS is itself very fast, as its complexity is **linear** in terms of number of vertices and edges. But it is also a very versitile algorithm that can be used for many things, and you might find better algorithms for more specific cases. 
+
+9. Regarding minimum cut as an algorithm to find network communities: does the algorithm find the optimal number of communities or does the user decide in how many communities should the network be divided (as in k-means clustering, where the user selects k)? If the last case were true, are there any other algorithms to complement minimum cut and decide how many comunities does our network have? 
+> For the minimum cut algorithm, you do have to specify the the number of communities. However, the biggest issue with the algorithm is the fact that all its communities have equal size, an assumption that generally does not hold in most systems.
+
+10. Since the clustering algorithms works differently do they also give different clustering coefficients? Is it common to run more than one clustering algorithm to be able to interpenetrate the results correctly? 
+> Your abilty to interpret the results correctly is much more influeced by whether or not the assumptions of the algorithm hold or not on your system, that the performance of the algorithm itself. However, it is not rare to use more than one commuinty detection algorithm and [ensemble](https://en.wikipedia.org/wiki/Ensemble_learning) the results.
+
+11. I did not fully understand the minimum cut algorithm, you say in the video that firstly you divide the network into a number of communities, after that you try to divide the network in as many equal parts as possible that is containing as many nodes as possible, why do you divide the network in equal parts? Then you explain that the separation between the nodes (the cut) passes through the least amount of edges possible, how is this done? 
+> I won't go into detail on how the algorithm works, but you can find it [here](https://en.wikipedia.org/wiki/Karger%27s_algorithm). The main idea is that you specify the number of communities, and it will result in that many communities that are of equal size and are as leat connected (less edges) as possible as possible.
+
+12. The Multilevel modularity algorithm (Louvain algorithm) can be applied on a network to find communities within the latter. Nodes a progressively merged into communities if they improve the modulatory of that community. In a second, step communities are also merged together into single nodes. The Louvain algorithm is presented in the articles as one of the most accurate but doesn’t it “ignore” smaller, distinct communities that are likely to end up merged into a bigger one?
+> (Answer by student) It doesn't, because the information about the smaller modules is not lost. What you depicted is indeed the common drawback of modularity-based methods (it's called "resolution limit": the size of identified groups depends on the size of the whole network), but it's overcome by the Louvain algorithm. It's called "multilevel" because it can detect different levels of modules: the bigger ones and also the sub-modules within them. However, one issue is that once two nodes have been merged into a module, they can never be separated again and are forced to "travel together" to the upper levels.
+
+13. The minimum cut algorithm for community detection tries to make groups of the same size. This seems, to me, a big assumption that will rarely correspond to any real group in a dataset, since I would expect groups of varying sizes. When can this type of algorithm be useful?
+> You are correct that this is generally the case. This algorithm is rarely used nowadays and I included it in the presentation for historical reasons, as it was one of the fist. (This was been widely regarded as a bad move) 
+
+14. In slide 21 (minimum cut),  you mean that the correct cut would be the green one, and this is because it passes through the least amount of edges, right?  Wouldn't it be an equally correct result if this cut was between the down-left node and all the other nodes? And if yes, every time we would run this algorithm would get one of these two cuts randomly, or we would get both the results?
+> Both cuts are correct in that case, since we are trying to separate the network into 3 different parts.
+
+
 
 # Composite
 
@@ -99,3 +145,14 @@ If you backtrack the algorithm, you will find that at any iteration it will join
 1. So the networks mentioned in the files are undirected and directed. But they are all used for explaining data not for data analysis. What does one need to change to create a network capable of predicting outcomes from data.
   > Networks themselves can not be predictive. You need to apply your own definitions and rules to make use of them. This is not very different than other descriptions of data. E.g. numbers are neither predictive nor useful just as logic entities. It is just when you apply your own definitions of what the numbers stand for that they become useful. E.g. one apple plus one apple is two apples.
   You can easily apply a rule like "Hubs in protein-interaction networks are good drug targets", to predict drug targets.
+
+2. In the Jupyter notebook “network”, the structure of the small network changes after the fourth level of the detected hierarchy was visualized. Does the detection of the hierarchy affect the structure of the network? Do the different levels of the hierarchy adopt different structures of the network? If so, why?
+> It is unclear what you mean here by structure change, but as a rule, a community detection algorithm does not affect the network structure, and only labels its nodes.
+
+3. Is it possible to determine network analysis in more than two dimensions?
+> It is unclear to me what do you mean by dimesions here. But see question 3 in network properties. 
+
+# Out of scope
+
+1. Which network inference tools gives directionality and sign for interactions for the gene expression data? How many replicates are necessary to give good predictions?  
+What are current challenges in assessing directionality of the protein-protein interactions? How to evaluate the robustness of the network with flows? How to evaluate the complexity of the algorithm and  what complexity is appropriate  for specific network size? 
