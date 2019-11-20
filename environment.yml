@@ -9,9 +9,11 @@ dependencies:
   - pandas
   - pip
   - python=3.7.4
+  - jupyter
   - scikit-learn
   - scipy
   - seaborn
   - statsmodels
   - networkx
+  - ipywidgets
 prefix: //anaconda3/envs/p37
