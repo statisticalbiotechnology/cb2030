@@ -5,7 +5,7 @@
 > When buiding a model, it is good to keep in mind the old adage "everything should be made as simple as possible, but no simpler." There are always things left out from your model, and at some point including more details on your model will detract from your ability to make inferences on that model, instead of helping.
 
 
-2. Since many pathways in a cell are codependent on each other, is it possible to have a network of pathways?
+2. Since many pathways in a cell are co-dependent, is it possible to have a network of pathways?
 
 > Yes, it is absolutely possible, but before constructing such network, you have to ask yourself how you will study it and whether it will help you attack the problem you want to study.
 
@@ -37,7 +37,7 @@ Does this mean that there is a way of measuring the weights of the links? If so,
 
 1. There are many algorithms to divide data points into communities, but different algorithms can result in different communities, if that can we get the same interpretation of this network when using different algorithms? If not, which one do we prefer to use in real case?
 
-> 
+>
 
 # Networks in biology
 
