@@ -36,7 +36,7 @@ Does this mean that there is a way of measuring the weights of the links? If so,
   > This is a very broad question, but I will point you to the fields of Systems Biology (!) and Network Medicine as good examples on where you might find your answer.
 
 2. Are not most of the biological networks directed networks? Are there examples of non-directed networks in a biological concept?
- > A good example of undirected network would be a gene coexpression network.
+ > A good example of undirected network would be a gene co-expression network.
 
 # Network properties
 
@@ -74,7 +74,7 @@ It again depends largely on what you are modelling with the network.
 5. In the Notebook you mention a "clever dynamic programming technique" that is used to find the average shortest path in a faster (and I guess non-holistic) way. What is that?
 > That is the [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
-6. In the Jupyter Notebook, section Community detection, the Girvan–Newman algorithm is used to generate a list of partitions. It is then mentioned that "You can see that there are many levels of the hierarchical structure, and a list of all the nodes in each community at every level". What is ment by the hierarchical structure and its levels? Does it refer to different solutions of the community detection algorithm? Why did you choose the fourth level (and how do you know which one to choose)?
+6. In the Jupyter Notebook, section __Community detection__, the Girvan–Newman algorithm is used to generate a list of partitions. It is then mentioned that "You can see that there are many levels of the hierarchical structure, and a list of all the nodes in each community at every level". What is ment by the hierarchical structure and its levels? Does it refer to different solutions of the community detection algorithm? Why did you choose the fourth level (and how do you know which one to choose)?
 > The Girvan-Newman algorithm works iteratively fist by "cutting" the network in two communities, and then cutting one of the resulting communities in two, and it continues doing so until there are no more cuts to be made, because all communities contain only one node. It is up to you to descide when you want to stop cutting, and there are many structured ways to do so, for instance, you may select the partition that gives you the largest [modularity](https://en.wikipedia.org/wiki/Modularity_(networks)) on the network.
 If you backtrack the algorithm, you will find that at any iteration it will join two communities, in an analogous way to hierarichical clustering, and that is where the hierarchy comes from.
 
