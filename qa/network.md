@@ -33,6 +33,12 @@ Does this mean that there is a way of measuring the weights of the links? If so,
 
 > Usually, you would fist determine the nature of the interactions on your system of study, and then construct the network accordingly.
 
+# From networks to knwoledge
+
+1. There are many algorithms to divide data points into communities, but different algorithms can result in different communities, if that can we get the same interpretation of this network when using different algorithms? If not, which one do we prefer to use in real case?
+
+> 
+
 # Networks in biology
 
 1. Networks are a nice way to visualize interactions, but what conclusion can you draw from network analysis in a biological context beyond visualization?
