@@ -1,0 +1,28 @@
+## using "peca_core" executables
+
+## The two files are RNA and protein input files
+FILE_X = mrna_1500_lab.txt 0
+FILE_Y = prot_1500-30perc_lab.txt 0
+
+## Indicate there are two replicates in this data set
+N_REP = 2
+
+## We are purposefully giving an equally spaced time point for PECA modeling for a reason. 
+## When you have irregularly spaced time intervals, 
+## the rate ratios can be inaccurately estimated for larger intervals (30 min interval versus 8 hour interval)
+TIME = 0 1 2 3 4 5 6 7
+
+N_BURN = 1000
+N_THIN = 10
+N_SAMPLE = 1000
+
+## The smoothing parameters. 
+## The first value indicates how smooth the curve should be; 
+## a small value will yield a smoother curve (smoother),
+## a large value will yield a curve interpolating the data closely (less smooth).
+## The second value will cause it to shrink towards the prior mean.
+SMOOTHING= 2.0 1.0
+
+## The file that gives the network information.
+## A list of undirected edges.
+MODULE= 9606.protein.actions.v10.5_ensg.txt
