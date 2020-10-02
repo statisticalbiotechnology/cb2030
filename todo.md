@@ -5,16 +5,6 @@ General issues:
 * Create a polished Q&A from last years questions?
 
 
-## Video recordings
-
-### Multiple Hypothesis Testing.
-
-  1. The definition of the p-value seems to be slightly different for multiple hypothesis testing compared to single hypothesis testing. For single hypothesis testing a p-value of 5% would mean that there is a 5% risk of an event as extreme or more extreme given H0 is true whilst for multiple hypothesis testing a p-value of 5% would mean that if we looked at 20 different traits at least 1 out of the 20 would be expected to have a p-value of 5%.
-    > No it is the same definition. What I mean is just that if you have an experiment with only null *p* values (i..e. no signal) one out of 20 p values would be <= 0.05.
-
-  1. There is an error on slide 7 in the video at ~ 7:27, on  slide  it  says  that  True  negatives is  FP,  but I'm  assuming  it's  TN?
-    > Yes this is wrong. In the bottom of the slide one can read "True  Negatives -  FP". That should read "True  Negatives -  TN".
-
 ## Notebooks
 
 Update the notebooks so that the following questions are answered:
