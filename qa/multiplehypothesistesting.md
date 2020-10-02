@@ -2,7 +2,7 @@
 
 
 ## Hypothesis testing
-1. By using FDR, we reduces false positive, but a number of true positive is lost simultaneously. Is there any solution for this condition such as a hybridized method?
+1. By using FDR, we reduces false positive, but a number of true positive is lost simultaneously. Is there any solution for this?
   > A: No. That is the point of the whole point of significance testing. Regardless how you select your threshold, there will be errors. The question is just if you prefer errors of one kind (FP) over the other (FN).
 
 ## Relationship of FDR to other ways to report errors.
