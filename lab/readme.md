@@ -2,7 +2,7 @@
 
 Here you find the lab instructions for the computer excercises:
 
-## Lab 1 - Statistical Testing
+## Lab 2 - Statistical Testing
 
 * [Lab1 notebook](Lab1.ipynb)
 
@@ -13,7 +13,7 @@ Note: If you do not see the interactive sliders when loading this notebook on yo
 
 ------
 
-## Lab 2 - Pathway Analysis and Machine Learning
+## Lab 3 - Pathway Analysis and Machine Learning
 
 * [Lab2 notebook](Lab2.ipynb)
 
