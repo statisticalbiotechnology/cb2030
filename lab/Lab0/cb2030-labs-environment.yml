@@ -1,4 +1,4 @@
-name: cb2030-labs
+name: cb2030
 channels:
   - defaults
   - bioconda
