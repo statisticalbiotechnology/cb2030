@@ -1,8 +1,4 @@
-# Issues to fix before start f the course.
-
-General issues:
-* Replace statistica books with ["Thinking Stats"](http://greenteapress.com/thinkstats2/html/index.html)
-* Create a polished Q&A from last years questions?
+# Issues to fix before start of the course.
 
 
 ## Notebooks

@@ -3,13 +3,13 @@
 | Code | Day  | Date  | Time_  | ID  | The content of the Convocation |
 |--------|-------|--------|---------------|------------|----------------------------------------|
  | L1 | Mon | 26/10 | 10-12 |  All | Introduction |
- | C1 | Wed | 28/10 | 13-17 |  LK | Notebooks |
+ | C1 | Wed | 28/10 | 13-17 |  GJ | Notebooks |
  | L2 | Fri | 30/10 | 10-12 |  LK | Hypothesis Testing |
  |    |     |       |       |            |    |
  | L3 | Wed | 4/11 | 8-10 |  LK |  Multiple Testing  |
  | L4 | Fri | 6/11 | 10-12 |  LK | Linear Models |
  |    |     |       |       |            |    |
- | C2 | Mon | 9/11 | 8-12 |  LK | Hypothesis Testing |
+ | C2 | Mon | 9/11 | 8-12 |  GJ | Hypothesis Testing |
  | L5 | Wed | 11/11 | 8-10 |  LK | Supervised Learning |
  | L6 | Fri | 13/11 | 10-12 |  LK | Clustering |
  |    |     |       |       |            |    |
@@ -17,7 +17,7 @@
  | L8 | Thu | 19/11 | 8-10 |  LK | Pathway Analysis |
  | C3 | Fri | 20/11 | 13-17 |  LK | Machine Learning |
  |      |       |           |           |           |   |
- | L9 | Wed | 25/11 | 8-10 |  LK | Network Analysis |
+ | L9 | Wed | 25/11 | 8-10 |  GJ | Network Analysis |
  | L10 | Thu | 26/11 | 8-10 |  CZ |  Metabolic Modelling 1 |
  | L11 | Fri | 27/11 | 10-12 |  CZ | Metabolic Modelling 2 |
  |    |     |       |       |            |    |
