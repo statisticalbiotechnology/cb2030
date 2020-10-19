@@ -1,0 +1,29 @@
+name: cb2030-labs
+channels:
+  - defaults
+  - bioconda
+  - r
+dependencies:
+  # Core
+  - pip
+  - python=3.7.4
+  - jupyter
+  # Lectures
+  - statsmodels
+  - networkx
+  # Lab 1
+  - pandas
+  - numpy
+  - scipy
+  - seaborn
+  - matplotlib
+  - ipywidgets
+  # Lab 2
+  - scikit-learn
+  - gseapy
+  # Lab 3
+  - r-base
+  - r-essentials
+  - rstudio
+  - r-gplots
+  - r-ggdendro
