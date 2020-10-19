@@ -24,3 +24,4 @@
 7. Open the `test-r.R` file.
 8. Run every line of the file by clicking on `Run` until you have reached the end of the file.
 9. If you haven't encountered any errors, your **R** installation is also ready! :D
+    * You may have some *warning* messages, you don't need to worrie about those.

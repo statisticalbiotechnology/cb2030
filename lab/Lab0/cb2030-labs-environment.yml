@@ -2,7 +2,7 @@ name: cb2030
 channels:
   - defaults
   - bioconda
-  - r
+  - conda-forge
 dependencies:
   # Core
   - pip
@@ -23,7 +23,9 @@ dependencies:
   - gseapy
   # Lab 3
   - r-base
-  - r-essentials
   - rstudio
+  - r-tidyverse
+  - r-ggplot2
+  - r-readxl
   - r-gplots
   - r-ggdendro
