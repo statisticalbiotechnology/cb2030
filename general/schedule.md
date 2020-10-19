@@ -15,7 +15,7 @@
  |    |     |       |       |            |    |
  | L7 | Wed | 18/11 | 8-10 |  LK | Principal Component Analysis |
  | L8 | Thu | 19/11 | 8-10 |  LK | Pathway Analysis |
- | C3 | Fri | 20/11 | 13-17 |  LK | Machine Learning |
+ | C3 | Fri | 20/11 | 13-17 |  GJ | Machine Learning |
  |      |       |           |           |           |   |
  | L9 | Wed | 25/11 | 8-10 |  GJ | Network Analysis |
  | L10 | Thu | 26/11 | 8-10 |  CZ |  Metabolic Modelling 1 |
@@ -23,12 +23,22 @@
  |    |     |       |       |            |    |
  | L12 | Mon | 30/11 | 10-12 |  CZ | Metabolic Modelling 3 |
  | L13 | Wed | 2/12 | 8-10 |  CZ | Metabolic Modelling 4 |
- | C4 | Wed | 2/12 | 15-19 |  CZ | Metabolic Modelling |
+ | C4 | Wed | 2/12 | 15-19 |  MA | Metabolic Modelling |
  | L14 | Thu | 3/12 | 8-10 |  FE | Gene Regulation 1 |
  | L15 | Fri | 4/12 | 10-12 |  FE | Gene Regulation 2 |
  |    |     |       |       |            |    |
  | L16 | Mon | 7/12 | 10-12 |  FE | Gene Regulation 3 |
  | L17 | Wed | 9/12 | 8-10 |  FE | Gene Regulation 4 |
- | C5 | Wed | 9/12 | 15-19 |  FE | Gene Regulation |
+ | C5 | Wed | 9/12 | 15-19 |  MA | Gene Regulation |
  | L18 | Thu | 10/12 | 8-10 |  All | Q&A
- | Exam | Tue | 12/1 | 14-18 |  All | Exam |
+ | Exam | Tue | 12/1 | 14-18 |  All | Exam |  
+
+We used the following codes:
+
+ | ID | Name |
+ |----|------|
+ | LK | Lukas Käll |
+ | FE | Fredrik Edfors |
+ | CZ | Cheng Zhang |
+ | GJ | Gustavo Jeuken |
+ | MA | Muhammad Arif |
