@@ -28,14 +28,14 @@ Note: If you do not see the interactive sliders when loading this notebook on yo
 
 ## Lab 3 - Genome-scale Metabolic Modeling
 
-* Lab instructions [here](Lab3/Lab3 Instruction.pdf)
+* Lab instructions [here](Lab3/Lab3&#32;Instruction.pdf)
 * Files neded to perform the lab [here](Lab3/)
 
 ------
 
 ## Lab 4 - Gene regulation
 
-* Lab instructions [here](Lab4/Lab 4 - Instructions.pdf)
+* Lab instructions [here](Lab4/Lab&#32;4&#32;-&#32;Instructions.pdf)
 * Files neded to perform the lab [here](Lab4/)
 
 
