@@ -29,3 +29,7 @@ dependencies:
   - r-readxl
   - r-gplots
   - r-ggdendro
+  # GEM
+  - pip:
+    - cobra
+    - escher
