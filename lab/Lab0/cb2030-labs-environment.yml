@@ -24,6 +24,8 @@ dependencies:
   # Lab 3
   - cobra
   - escher
+  - pytest
+  - pytest-benchmark
   # Lab 4
   - r-base
   - rstudio
