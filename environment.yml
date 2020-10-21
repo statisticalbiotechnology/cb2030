@@ -1,19 +1,25 @@
-name: p37
+name: cb2030
 channels:
   - defaults
   - bioconda
 dependencies:
-  - gseapy
-  - matplotlib
-  - numpy
-  - pandas
+  # Core
   - pip
-  - python=3.7.4
+  - python
   - jupyter
-  - scikit-learn
-  - scipy
-  - seaborn
+  # Lectures
   - statsmodels
   - networkx
+  # Lab 1
+  - pandas
+  - numpy
+  - scipy
+  - seaborn
+  - matplotlib
   - ipywidgets
-prefix: //anaconda3/envs/p37
+  # Lab 2
+  - scikit-learn
+  - gseapy
+  # Lab 3
+  - cobra
+  - escher

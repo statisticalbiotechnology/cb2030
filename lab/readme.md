@@ -4,6 +4,10 @@ Here you find the lab instructions for the computer excercises:
 
 ## Lab 0 - Getting your software ready
 
+* [Lab1 notebook](Lab0/Lab0.ipynb)
+* Files neded to perform the lab [here](Lab0/)
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab0%2FLab0.ipynb)
 
 ------
 
@@ -28,8 +32,9 @@ Note: If you do not see the interactive sliders when loading this notebook on yo
 
 ## Lab 3 - Genome-scale Metabolic Modeling
 
-* Lab instructions [here](Lab3/Lab3&#32;Instruction.pdf)
-* Files neded to perform the lab [here](Lab3/)
+* [Lab3 notebook](Lab3/Lab3.ipynb)
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab3%2FLab3.ipynb)
 
 ------
 
