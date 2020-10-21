@@ -13,8 +13,8 @@
 ## Testing if everything installed correctly
 
 1. On Anaconda Navigator &#8594; Home, select `cb2030` on the `Applications on:` dropdown menu.
-2. Launch **Jupyter Notebook** by clicking `Launch`.
-3. Navigate to and open the `Lab0.ipynb ` notebook.
+2. Launch **Jupyter Notebook** by clicking **[Launch]**.
+3. Navigate to and open the `Lab0.ipynb` notebook.
 4. Run the **first cell** by clicking on **[&#9658; Run]**.
     * You only need to run the first cell for now.
 5. If you didn't get any errors, your **Python** installation is ready! :D
