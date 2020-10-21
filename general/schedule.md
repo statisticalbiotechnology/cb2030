@@ -23,13 +23,13 @@
  |    |     |       |       |            |    |
  | L12 | Mon | 30/11 | 10-12 |  CZ | [Zoom]() | Metabolic Modelling 3 |
  | L13 | Wed | 2/12 | 8-10 |  CZ | [Zoom]() | Metabolic Modelling 4 |
- | C3 | Wed | 2/12 | 15-19 |  MA | [Zoom]() | Metabolic Modelling |
+ | C3 | Wed | 2/12 | 15-19 |  MA | [Zoom](https://kth-se.zoom.us/j/65678435002) | Metabolic Modelling |
  | L14 | Thu | 3/12 | 8-10 |  FE | [Zoom]() | Gene Regulation 1 |
  | L15 | Fri | 4/12 | 10-12 |  FE | [Zoom]() | Gene Regulation 2 |
  |    |     |       |       |            |    |
  | L16 | Mon | 7/12 | 10-12 |  FE | [Zoom]() | Gene Regulation 3 |
  | L17 | Wed | 9/12 | 8-10 |  FE | [Zoom]() | Gene Regulation 4 |
- | C4 | Wed | 9/12 | 15-19 |  MA | [Zoom]() | Gene Regulation |
+ | C4 | Wed | 9/12 | 15-19 |  MA | [Zoom](https://kth-se.zoom.us/j/62172233680) | Gene Regulation |
  | L18 | Thu | 10/12 | 8-10 |  All | [Zoom](https://kth-se.zoom.us/j/6290910465) | Q&A
  | Exam | Tue | 12/1 | 14-18 |  All |  TBD |Exam |  
 
