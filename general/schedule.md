@@ -18,11 +18,11 @@
  | C2 | Fri | 20/11 | 13-17 |  GJ | [Zoom](https://kth-se.zoom.us/j/65638658194) | Machine Learning |
  |      |       |           |           |           |   |
  | L9 | Wed | 25/11 | 8-10 |  GJ | [Zoom](https://kth-se.zoom.us/j/61421004663) | Network Analysis |
- | L10 | Thu | 26/11 | 8-10 |  CZ | [Zoom]() |  Metabolic Modelling 1 |
- | L11 | Fri | 27/11 | 10-12 |  CZ | [Zoom]() | Metabolic Modelling 2 |
+ | L10 | Thu | 26/11 | 8-10 |  CZ | [Zoom](https://kth-se.zoom.us/j/63578217451) |  Metabolic Modelling 1 |
+ | L11 | Fri | 27/11 | 10-12 |  CZ | [Zoom](https://kth-se.zoom.us/j/63039584551) | Metabolic Modelling 2 |
  |    |     |       |       |            |    |
- | L12 | Mon | 30/11 | 10-12 |  CZ | [Zoom]() | Metabolic Modelling 3 |
- | L13 | Wed | 2/12 | 8-10 |  CZ | [Zoom]() | Metabolic Modelling 4 |
+ | L12 | Mon | 30/11 | 10-12 |  CZ | [Zoom](https://kth-se.zoom.us/j/62114841438) | Metabolic Modelling 3 |
+ | L13 | Wed | 2/12 | 8-10 |  CZ | [Zoom](https://kth-se.zoom.us/j/66832154474) | Metabolic Modelling 4 |
  | C3 | Wed | 2/12 | 15-19 |  MA | [Zoom](https://kth-se.zoom.us/j/65678435002) | Metabolic Modelling |
  | L14 | Thu | 3/12 | 8-10 |  FE | [Zoom](https://kth-se.zoom.us/j/63012467687) | Gene Regulation 1 |
  | L15 | Fri | 4/12 | 10-12 |  FE | [Zoom](https://kth-se.zoom.us/j/62038814914) | Gene Regulation 2 |
