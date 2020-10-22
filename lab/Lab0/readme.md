@@ -16,6 +16,13 @@
 2. Launch **Jupyter Notebook** by clicking **[Launch]**.
 3. Navigate to and open the `Lab0.ipynb` notebook.
 4. Run the **first cell** by clicking on **[&#9658; Run]**.
-    * You only need to run the first cell for now.
+    * You only need to run the first cell to test the software. The rest of the notebook gives you an introduction on how to use Jupyter notebooks.
 5. If you didn't get any errors, your **Python** installation is ready! :D
-6. You can close the notebook.
+
+## Introduction to Jupyter notebooks.
+
+The rest of the notebook will give you an overview of how to use Jupyter notebooks, something we will use a lot on the course. You can now try to follow it along.
+
+If you have encountered any problems during the software installation, or have any question on how to use notebooks, bring your questions to lab session **C0**.
+
+
