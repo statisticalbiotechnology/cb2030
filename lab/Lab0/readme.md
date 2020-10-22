@@ -25,8 +25,10 @@ The rest of the notebook will give you an overview of how to use Jupyter noteboo
 
 If you have encountered any problems during the software installation, or have any question on how to use notebooks, bring your questions to lab session **C0**.
 
+---
 
-### Binder
+
+### Appendix: Binder
 
 If for any reason you cannot install and run Jupyter notebooks on you computer, there is the possibility to run them on the cloud, through a service called Binder.
 
