@@ -1,5 +1,11 @@
 # Issues to fix before start of the course.
 
+## Lectures
+
+### PCA
+
+Add geographic PCA example to prep material.
+
 
 ## Notebooks
 
