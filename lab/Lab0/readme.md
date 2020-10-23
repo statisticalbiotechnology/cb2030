@@ -34,5 +34,5 @@ If for any reason you cannot install and run Jupyter notebooks on you computer, 
 
 All you have to do is click this respective icon for the notebook you want: ![Binder](https://mybinder.org/badge_logo.svg)
 
-There are, however, two big caveats of doing this, the first being that the notebook will shut down after 10min of 10 minutes of inactivity (if you leave your window open, this will be counted as “activity”), and this means that you can easily loose all your data and progress if you are not cerefull.
+There are, however, two big caveats of doing this, the first being that the notebook will shut down after 10 minutes of inactivity (if you leave your window open, this will be counted as “activity”), and this means that you can easily lose all your data and progress if you are not carefull.
 The second is that it will run much slower in the cloud than on your computer.
