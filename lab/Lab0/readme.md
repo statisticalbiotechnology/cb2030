@@ -19,10 +19,20 @@
     * You only need to run the first cell to test the software. The rest of the notebook gives you an introduction on how to use Jupyter notebooks.
 5. If you didn't get any errors, your **Python** installation is ready! :D
 
-## Introduction to Jupyter notebooks.
+# Introduction to Jupyter notebooks.
 
 The rest of the notebook will give you an overview of how to use Jupyter notebooks, something we will use a lot on the course. You can now try to follow it along.
 
 If you have encountered any problems during the software installation, or have any question on how to use notebooks, bring your questions to lab session **C0**.
 
+---
 
+
+### Appendix: Binder
+
+If for any reason you cannot install and run Jupyter notebooks on you computer, there is the possibility to run them on the cloud, through a service called Binder.
+
+All you have to do is click this respective icon for the notebook you want: ![Binder](https://mybinder.org/badge_logo.svg)
+
+There are, however, two big caveats of doing this, the first being that the notebook will shut down after 10 minutes of inactivity (if you leave your window open, this will be counted as “activity”), and this means that you can easily lose all your data and progress if you are not carefull.
+The second is that it will run much slower in the cloud than on your computer.
