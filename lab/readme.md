@@ -6,7 +6,7 @@ Here you find the lab instructions for the computer excercises:
 
 * Instructions on how to install the software [here](Lab0/)
 * [Lab0 notebook](Lab0/Lab0.ipynb)
-* Files neded to perform the lab [here](Lab0/)
+* Files neded to perform the lab [here](https://github.com/statisticalbiotechnology/cb2030/tree/master/lab/Lab0)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab0%2FLab0.ipynb)
 
