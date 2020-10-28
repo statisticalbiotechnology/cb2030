@@ -20,7 +20,6 @@ dependencies:
   - ipywidgets
   # Lab 2
   - scikit-learn
-  - gseapy
   # Lab 4
   - r-base
   - rstudio
@@ -35,3 +34,4 @@ dependencies:
   - pip:
     - cobra
     - escher
+    - gseapy
