@@ -1,0 +1,37 @@
+name: cb2030
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+dependencies:
+  # Core
+  - pip
+  - python=3
+  - jupyter
+  # Lectures
+  - statsmodels
+  - networkx
+  # Lab 1
+  - pandas
+  - numpy
+  - scipy
+  - seaborn
+  - matplotlib
+  - ipywidgets
+  # Lab 2
+  - scikit-learn
+  - gseapy
+  # Lab 4
+  - r-base
+  - rstudio
+  - r-tidyverse
+  - r-ggplot2
+  - r-readxl
+  - r-gplots
+  - r-ggdendro
+  # Lab 3
+  - pytest
+  - pytest-benchmark
+  - pip:
+    - cobra
+    - escher
