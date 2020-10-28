@@ -7,7 +7,7 @@
 3. Open Anaconda Navigator.
 4. Environments &#8594; Import.
 5. Select the `cb2030-labs-environment.yml` file. 
-    * If you are using **Windows**, select the `cb2030-labs-environment-windows.yml` file instead. 
+    * If you are using **Windows**, select the `cb2030-labs-environment-windows.yml` [file](cb2030-labs-environment-windows.yml) instead. 
     * This will install some packages that are required for the labs, it might take some time.
 6. Once this is done, we will test to see if everything works correctly.
 
