@@ -3,9 +3,26 @@
 ## One vs. Two sided *p* values
 
 1. In chapter 9.4, it is explained that the difference between one-sided and two-sided hypothesis testing (of alternative test statistics) is that the latter includes the absolute values thus is twice the size of the one-sided hypothesis. My question here is if there are any methodologies that can help us to choose between one-sided or the two-sided hypothesis testing?
-> It all depends on what you are testing. If you are just testing for e.g. up **or** down regulation of genes, you use a one sided test. If you test for both, you use a two sided test.
+> A1. It all depends on what you are testing. If you are just testing for e.g. up **or** down regulation of genes, you use a one sided test. If you test for both, you use a two sided test.  
+> A2. According to the literature, two-sided hypothesis testing is used to confirm/reject a novel/unsupported hypothesis. One-sided hypothesis testing is used instead, for hypotheses that are supported by background reasons.
 
-# Test statistic
+1. In Section 9.4, we discuss between one-sided and two-sided p tests. In the example we were discussing about the first babies being born late, the one sided test gave a more significant p value.  
+What helps us decide whether we should do a one-sided or a two-sided p test, is it he test statistic we are looking at like (standard deviation, mean) ? Or the question we are trying to answer. Also how is p-value affected depending on if its a one-sided or a two-sided  P test?  
+> Usually, for one-sided p test, p-value is half of the p-value in the two-sided p test, depending on the shape of distribution. I would presume that this division of p-value occurs for normally distributed data.
+ > > It is mentioned that a one-sided test is more specific than a two-sided test. It might also depend on what you want to test, whether you want to know how likely it is to obtain a result this far off the mean (long and short pregnancies, two sided) or how likely it is to have such a long or short pregnancy (one sided).
+
+## Sampling distributions
+1. In 8.3 they use a simulation to answer: “If the actual values of µ and σ were 90 kg and 7.5 kg, and we ran the same experiment many times, how much would the estimated mean, x, vary?”. Not sure I understand how that works and what it means, especially since they use the values from their sample, which could potentially be an extreme value due to sampling error and variation.
+> And I am not sure I understand what you do not understand. What they say is that if they know that the population parameters are µ=90 kg and σ=7.5 kg, how would the sample means vary.
+
+1. The sampling distribution gives us a much better estimate of the population statistic than the statistic of just one sample. That makes a lot of sense, since you are basing the conclusion on much more information. But what is the difference between calculating the sampling distribution and just taking a much bigger sample to base your conclusion on? Couldn’t those two options contain an equal amount of information?
+> They could be the same thing if done smartely, however, if you just register an average over a larger sample, you might not get the uncertainty of the distribution.
+
+1. In 8.3, the standard error is calculated by taking the mean of the difference between the sample mean and the population mean. The population mean (mu) and standard deviation (sigma) are hypothesized to be the first sample mean calculated, and the standard error calculated from simulated sampling from a normal distribution with those parameters.  
+How are we justified in using those values of mu and sigma for both the population mean that creates the normal distribution and the comparison used to calculate the standard error (mu - xbar)? I realize that we cannot know the actual population parameters, nor the actual distribution even, but I’m curious what reasoning we can give for the method of calculating standard error (and why it’s not double-counting the evidence)?
+
+
+## Test statistic
 1. How do you choose your test statistic? For example in chapter 9, the authors chose the mean, but the mean would be largely affected by extreme values and therefore would not be the best choice sometimes. Why not choose the median then? How do we choose between the two?  
 > The choice is dependent on how your data is distributed, and how prone you think your data collection is for resulting in outliers.
 
@@ -17,12 +34,14 @@ Why would we do this? Even if the confidence interval is narrow or the standard 
 > Yes, you might detect sampling biases this way. E.g. you could find out if your weighting scale is wrongly calibrated.
 
 
+
 ## Definition of *p* values
 1. "The *P* value is the probability of getting test results at least as extreme as the actual results, provided the null hypothesis is correct."  
 This is the definition in more or less the same word that we always hear when we explain the *p* value. But I have never heard anyone explain what the numbers really stand for with an example. Take a *p* value of 0.05 to identify a protein from a partial sequence.  
 Does this mean that we have a 5% chance that the identification is incorrect, which should mean that we have a 95% chance of having identified the correct sequence? and how does this related if we have multiple results with equal or similar *p* values?
-> No it does not men that there is 5% chance that the identification is incorrect. It means that if we repeat the experiment 20 times you would find on average one experiment with as good, or better, identification score, despite the identification is incorrect in all your experiments.
-
+> A1. No it does not mean that there is 5% chance that the identification is incorrect. It means that if we repeat the experiment 20 times you would find on average one experiment with as good, or better, identification score, despite the identification is incorrect in all your experiments.  
+> A2. It means that you - as the researcher - have set a threshold of 5%, where if the probability that the protein identification by the partial sequencing was made by pure chance was 5% or higher, then the identification is incorrect/non-significant. Many scientists that falsify data, usually choose to raise the threshold value to confirm the significance of their - incorrect/random - results.  
+It does not mean, however that there is a 95% chance that the protein identification by the partial sequencing was true, because the p-value is used only for the null-hypothesis and - just like confidence interval - does not take into account the type I and type II errors.
 
 ## Uniformity of *p* values
 
@@ -42,7 +61,9 @@ For example is it better to focus just on A or could we say that A and B have la
  > In this particular case the *p* values are so ridiculously low that you should go back to the dataset and check for biases. That said, the purpose of a volcano plot is just this, that you should compare the fold change and significance.
 
 1. The threshold for the significance test depends on the study itself and this bar value can be adjusted from case to case which can unfortunately lead to *p* value abuse. Researchers can change the significance level bar so that the preferable/wanted result can pass under it. How can this be avoided and detected? Is there a rule how to choose a proper significance level?
- > No not really. Normally we say that we should select significance levels before the experiment starts.
+ > A1. No not really. Normally we say that we should select significance levels before the experiment starts.  
+ > A2. If the researcher, whom you suspect has committed *p* value abuse, has published the data of her research - along with the results - then you can use that data to repeat the null hypothesis testing with the default threshold(s) (0.01, 0.05, 0.1). Your results will then show if the researcher abused the *p* value or not.  
+ It is harder to detect *p* value abuses if the researcher does not publish the relevant data, however.
 
 
 ## Bayesian methods
@@ -73,14 +94,19 @@ For example is it better to focus just on A or could we say that A and B have la
 1. Is the log of a normal distribution also a normal distribution? If not, under which conditions?
 > It is, if the data follows a [log-normal](https://en.wikipedia.org/wiki/Log-normal_distribution) distribution.
 
+1. There are usually numerous statistical tests that can be applied to the same data set when conducting research. Is there any benefit to run several statistical tests to further strengthen the confidence in your data or is it more valuable to simply chose the test that illustrates the point you want to make the best based your data? If there is a benefit to apply as many tests as you could should you allways do so?  
+In short: How extensive should your testing be in number of applied tests?
+> Just use one test. The reason for this will become obvious when we discuss multiple testing corrections in the next lecture.
 
 ## Correlation
 1. In chapter 9.5, testing a correlation, it is mentioned that Pearson's correlation is used on the NSFG data set to test probability of the correlation between birth weight and mother’s age, but that Spearman’s correlation would work as well. Are there situations where we would rather use on of these correlation methods or are they in most cases interchangeable?
 > Spearman's correlations are seen as more robust.
 
+1. In chapter 9.5 author tested the significance of correlation using Pearson's correlation, however, very frequently it's said, that correlation does not guarantee causation (e.g. data sets of two different studies might be very similar, but the studies would not be linked by any means). Does this test take it into consideration or is it reliant for a scientist to analyze and optimize it before? Also, is there any real difference between Pearson's correlation and Spearman's correlation to be used?
+
 1. Regarding chapter 9.5 Testing a correlation, is there a limit in what variables can be tested? I don't have an example but I am wondering if it is possible to use this method to show correlation with phenomena that have nothing to do with eachother?
-> A1:I think you can probably correlate any two variables, but it simply does not prove a causation link between the two.
-A2: [Sure you can!](https://www.tylervigen.com/spurious-correlations)
+> A1:I think you can probably correlate any two variables, but it simply does not prove a causation link between the two.  
+A2: [Sure you can!](https://www.tylervigen.com/spurious-correlations) That does, however, not mean that it is useful to do so.
 
 
 ## Experimental Design
@@ -91,10 +117,20 @@ A2: [Sure you can!](https://www.tylervigen.com/spurious-correlations)
 
 1. Confidence intervals and standard errors only quantify sampling error […]. The sampling distribution does not account for other sources of error, notably sampling bias and measurement error (Chapter 8).  
 Is there a way to detect and correct for these other sources of error?
-> Yes, you can use blocking to account for biases in the measurement procedure. Measurement errors are compensated by increasing sample sizes. See e.g. [Wikipedia](https://en.wikipedia.org/wiki/Design_of_experiments).
+> A1. Yes, you can use blocking to account for biases in the measurement procedure. Measurement errors are compensated by increasing sample sizes. See e.g. [Wikipedia](https://en.wikipedia.org/wiki/Design_of_experiments).
+> A2. You can use replicate measurements to correct for measurement error I would think :)
 
 1. On Wikipedia it is mentioned that a prerequisite for the exactness of the t-test is that the sample means are normally distributed, and the central limit theorem states that this is the case if the sample size is large enough, even when the individual data values are not normally distributed. The Wikipedia page about the misuse of *p* values also mentions that sample size affects the *p* value. So clearly sample size is an important consideration in hypothesis testing. How do you determine a good (sufficient) sample size?
 > See e.g. [Wikipedia](https://en.wikipedia.org/wiki/Design_of_experiments).
+
+1. What are some common sources of sampling error apart from biological variance, i.e. is there something else that I have to think about when constructing a sample subset?
+> There are a large number of factors to consider. Enough for a lecture of its own.
+
+
+## Notebook
+
+1. In the notebook, we only remove NaN and zeroes. Is it also relevant to consider removal of outliers? If so, how do we determine which outlier-conditions to set without compromising the integrity of the data?
+> Yes it is. You know an outlier when you see one.
 
 
 ---
@@ -115,18 +151,24 @@ Optional question: Should we consider the programming code as well, when we read
 1. The preparatory text states that a p-value between 1-10% are "borderline" between statistically significant and insignificant. As this is a rather wide border, does the way one handles such a result differ greatly depending on where in the interval the p-value is?
 
 
-1. In Section 9.4, we discuss between one-sided and two-sided p tests. In the example we were discussing about the first babies being born late, the one sided test gave a more significant p value.  
-What helps us decide whether we should do a one-sided or a two-sided p test, is it he test statistic we are looking at like (standard deviation, mean) ? Or the question we are trying to answer. Also how is p-value affected depending on if its a one-sided or a two-sided  P test?
-
-1. In 8.3, the standard error is calculated by taking the mean of the difference between the sample mean and the population mean. The population mean (mu) and standard deviation (sigma) are hypothesized to be the first sample mean calculated, and the standard error calculated from simulated sampling from a normal distribution with those parameters.  
-How are we justified in using those values of mu and sigma for both the population mean that creates the normal distribution and the comparison used to calculate the standard error (mu - xbar)? I realize that we cannot know the actual population parameters, nor the actual distribution even, but I’m curious what reasoning we can give for the method of calculating standard error (and why it’s not double-counting the evidence)?
-
 1. The author in the chapter 9.1 uses a combination of three different strategies referring to them as the Classical approach.  
 Are there more acceptable combinations of different approaches? If so, could you gives us examples of which ones and instances they could be used?
 > Not sure what you mean. Downey presents one framework for testing.
 
-1. In the notebook, we only remove NaN and zeroes. Is it also relevant to consider removal of outliers? If so, how do we determine which outlier-conditions to set without compromising the integrity of the data?
-> Yes it is. You know one when you see one.
-
 
 1. How can the sampling error be reduced with the same sample size? Are the individuals of a sample from a population always randomly selected?
+
+1. When taking a random sample, how do we avoid sampling errors to an as big degree as possible? Should we be “not completely random”, through e.g. picking a certain number of people from all age groups “on purpose”? Then pick a certain number of individuals based on gender, etc? Should we classify individuals in the two populations and then randomly pick equal numbers from each category in both populations? Or what does it actually mean to take a random sample, while still trying to avoid sampling errors (confounders)? Should we just assume that, statistically if we take a big enough sample, we will pick approximately equal numbers of individuals from the different categories without doing it consciously?
+
+1. The reading material talks about the errors that random sampling can introduce. Other than optimising the sampling size to try to reduce the sampling bias and other errors, are there other methods that we can implement to reduce these errors during sampling?  
+Additionally, how do we decide what is a 'good' sample size?
+
+1. In chapter 8, It explains how increasing samples can minimize the sampling bias and measurement errors. I think increasing samples also grows variances and eventually threatens the assumption of similarity, How can It be solved when it comes to robustness of samples.
+
+1. In the book 8.3, to get a sample distribution, we choose n values from a normal distribution with the given parameters(mean and standard deviation, from the sample). Then the sample distribution is the basement for the p-value (in the videos). What if the population features are not distributed with normal distribution? Or the hypothesis testing is only suitable for the population features that are normal distributed.
+
+
+
+----
+
+1. The way I understand it, p-value depends on the iterations, so the number of times an experiment is made. Taking this into account, how can we be sure that p-value is reliable? Is there any way to overcome or limit this uncertainty?  
