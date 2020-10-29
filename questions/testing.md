@@ -68,10 +68,20 @@ For example is it better to focus just on A or could we say that A and B have la
 1. In 9.3, to test a difference in means between two groups, the null hypothesis is originally assumed that the distributions for two groups are the same. However, the permutation is an approach applied for modelling the null hypothesis, which shuffles the values and treats two groups as one big group. Does it mean that the comparison between two separated groups is replaced by the comparison of one of the groups to the whole group? Thus, in this case, is the null hypothesis still the same as the original one that the distributions for the two groups are the same, or should it be adjusted to consistent with the permutation method because of the changes of the test groups?
 > No you are still comparing two groups.
 
+## Different tests
+1. In the Jupyter notebook on differential expression analysis it is stated that it is generally assumed that expression values follow a log-normal distribution. Why is this the case? Are there any other possible distributions? What are the most common ways to determine the most suitable distribution of gene expression data?
+1. Is the log of a normal distribution also a normal distribution? If not, under which conditions?
+> It is, if the data follows a [log-normal](https://en.wikipedia.org/wiki/Log-normal_distribution) distribution.
+
 
 ## Correlation
 1. In chapter 9.5, testing a correlation, it is mentioned that Pearson's correlation is used on the NSFG data set to test probability of the correlation between birth weight and mother’s age, but that Spearman’s correlation would work as well. Are there situations where we would rather use on of these correlation methods or are they in most cases interchangeable?
 > Spearman's correlations are seen as more robust.
+
+1. Regarding chapter 9.5 Testing a correlation, is there a limit in what variables can be tested? I don't have an example but I am wondering if it is possible to use this method to show correlation with phenomena that have nothing to do with eachother?
+> A1:I think you can probably correlate any two variables, but it simply does not prove a causation link between the two.
+A2: [Sure you can!](https://www.tylervigen.com/spurious-correlations)
+
 
 ## Experimental Design
 
@@ -88,3 +98,35 @@ Is there a way to detect and correct for these other sources of error?
 
 
 ---
+
+
+
+1. In the section about standard deviation and standard error in chapter 8.3 of the book, it is mentioned that the standard error decreases with increasing sample size, whereas the standard deviation does not do so.  
+When analysing a badly sampled, small-size population, wouldn't the standard deviation also be subject to changes when increasing the sample population? To build up on the gorilla example for instance, if the original sample population would only consist of some of the lightest and some of the heaviest animals, adding more medium-sized gorillas to increase the sample population would reduce the standard deviation. In that case, wouldn't it be possible to use the standard deviation as an indicator of sufficient population size, i.e. if the standard deviation does not change anymore when adding new gorillas, a sufficiently representative population size has been found?
+
+1. There are different significance tests to calculate the p-value, for example t-test. How do we choose which statistical test to use? Are there any test statistics that are more common and appropriate in biological research or does that depend more on the research question or our data set?
+
+1. In the lecture video you mentioned that there can be biological variation (between the individuals) and technical variation (in the measurement process), what can be examples of these types of variations? and how can they be avoided/dealt with?
+
+1. In this preparatory material, student's t-distribution is mentioned for the distribution of the samples. Are there cases, however, within biotechnology, where this distribution cannot help us?  
+Which other distributions models can be used then?  
+Optional question: Should we consider the programming code as well, when we read the "hypothesis testing" or can there be easier codes for statistical models?
+
+1. The preparatory text states that a p-value between 1-10% are "borderline" between statistically significant and insignificant. As this is a rather wide border, does the way one handles such a result differ greatly depending on where in the interval the p-value is?
+
+
+1. In Section 9.4, we discuss between one-sided and two-sided p tests. In the example we were discussing about the first babies being born late, the one sided test gave a more significant p value.  
+What helps us decide whether we should do a one-sided or a two-sided p test, is it he test statistic we are looking at like (standard deviation, mean) ? Or the question we are trying to answer. Also how is p-value affected depending on if its a one-sided or a two-sided  P test?
+
+1. In 8.3, the standard error is calculated by taking the mean of the difference between the sample mean and the population mean. The population mean (mu) and standard deviation (sigma) are hypothesized to be the first sample mean calculated, and the standard error calculated from simulated sampling from a normal distribution with those parameters.  
+How are we justified in using those values of mu and sigma for both the population mean that creates the normal distribution and the comparison used to calculate the standard error (mu - xbar)? I realize that we cannot know the actual population parameters, nor the actual distribution even, but I’m curious what reasoning we can give for the method of calculating standard error (and why it’s not double-counting the evidence)?
+
+1. The author in the chapter 9.1 uses a combination of three different strategies referring to them as the Classical approach.  
+Are there more acceptable combinations of different approaches? If so, could you gives us examples of which ones and instances they could be used?
+> Not sure what you mean. Downey presents one framework for testing.
+
+1. In the notebook, we only remove NaN and zeroes. Is it also relevant to consider removal of outliers? If so, how do we determine which outlier-conditions to set without compromising the integrity of the data?
+> Yes it is. You know one when you see one.
+
+
+1. How can the sampling error be reduced with the same sample size? Are the individuals of a sample from a population always randomly selected?
