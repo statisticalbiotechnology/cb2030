@@ -1,25 +1,5 @@
 # Question and answers -- Hypothesis Testing
 
-## One vs. Two sided *p* values
-
-1. In chapter 9.4, it is explained that the difference between one-sided and two-sided hypothesis testing (of alternative test statistics) is that the latter includes the absolute values thus is twice the size of the one-sided hypothesis. My question here is if there are any methodologies that can help us to choose between one-sided or the two-sided hypothesis testing?
-> A1. It all depends on what you are testing. If you are just testing for e.g. up **or** down regulation of genes, you use a one sided test. If you test for both, you use a two sided test.  
-> A2. According to the literature, two-sided hypothesis testing is used to confirm/reject a novel/unsupported hypothesis. One-sided hypothesis testing is used instead, for hypotheses that are supported by background reasons.
-
-1. In Section 9.4, we discuss between one-sided and two-sided p tests. In the example we were discussing about the first babies being born late, the one sided test gave a more significant p value.  
-What helps us decide whether we should do a one-sided or a two-sided p test, is it he test statistic we are looking at like (standard deviation, mean) ? Or the question we are trying to answer. Also how is p-value affected depending on if its a one-sided or a two-sided  P test?  
-> Usually, for one-sided p test, p-value is half of the p-value in the two-sided p test, depending on the shape of distribution. I would presume that this division of p-value occurs for normally distributed data.
- > > It is mentioned that a one-sided test is more specific than a two-sided test. It might also depend on what you want to test, whether you want to know how likely it is to obtain a result this far off the mean (long and short pregnancies, two sided) or how likely it is to have such a long or short pregnancy (one sided).
-
-## Sampling distributions
-1. In 8.3 they use a simulation to answer: “If the actual values of µ and σ were 90 kg and 7.5 kg, and we ran the same experiment many times, how much would the estimated mean, x, vary?”. Not sure I understand how that works and what it means, especially since they use the values from their sample, which could potentially be an extreme value due to sampling error and variation.
-> And I am not sure I understand what you do not understand. What they say is that if they know that the population parameters are µ=90 kg and σ=7.5 kg, how would the sample means vary.
-
-1. The sampling distribution gives us a much better estimate of the population statistic than the statistic of just one sample. That makes a lot of sense, since you are basing the conclusion on much more information. But what is the difference between calculating the sampling distribution and just taking a much bigger sample to base your conclusion on? Couldn’t those two options contain an equal amount of information?
-> They could be the same thing if done smartely, however, if you just register an average over a larger sample, you might not get the uncertainty of the distribution.
-
-1. In 8.3, the standard error is calculated by taking the mean of the difference between the sample mean and the population mean. The population mean (mu) and standard deviation (sigma) are hypothesized to be the first sample mean calculated, and the standard error calculated from simulated sampling from a normal distribution with those parameters.  
-How are we justified in using those values of mu and sigma for both the population mean that creates the normal distribution and the comparison used to calculate the standard error (mu - xbar)? I realize that we cannot know the actual population parameters, nor the actual distribution even, but I’m curious what reasoning we can give for the method of calculating standard error (and why it’s not double-counting the evidence)?
 
 
 ## Test statistic
@@ -32,6 +12,16 @@ How are we justified in using those values of mu and sigma for both the populati
 1. In chapter 8, to quantify the sampling error, hypothetical values of mean and variance of the population are chosen to be their corresponding estimates in the sample. That sounds like you are evaluating the veracity of the sample estimates under the assumption that they are the right estimations for the population.  
 Why would we do this? Even if the confidence interval is narrow or the standard error is small, I could not conclude that the estimates are right. I could have perfectly picked a group of extreme values (as they suggest with randomly picking 9 heavy gorillas in that same section). Is sampling bias detected by this sampling error quantification?
 > Yes, you might detect sampling biases this way. E.g. you could find out if your weighting scale is wrongly calibrated.
+
+## Sampling distributions
+1. In 8.3 they use a simulation to answer: “If the actual values of µ and σ were 90 kg and 7.5 kg, and we ran the same experiment many times, how much would the estimated mean, x, vary?”. Not sure I understand how that works and what it means, especially since they use the values from their sample, which could potentially be an extreme value due to sampling error and variation.
+> And I am not sure I understand what you do not understand. What they say is that if they know that the population parameters are µ=90 kg and σ=7.5 kg, how would the sample means vary.
+
+1. The sampling distribution gives us a much better estimate of the population statistic than the statistic of just one sample. That makes a lot of sense, since you are basing the conclusion on much more information. But what is the difference between calculating the sampling distribution and just taking a much bigger sample to base your conclusion on? Couldn’t those two options contain an equal amount of information?
+> They could be the same thing if done smartely, however, if you just register an average over a larger sample, you might not get the uncertainty of the distribution.
+
+1. In 8.3, the standard error is calculated by taking the mean of the difference between the sample mean and the population mean. The population mean (mu) and standard deviation (sigma) are hypothesized to be the first sample mean calculated, and the standard error calculated from simulated sampling from a normal distribution with those parameters.  
+How are we justified in using those values of mu and sigma for both the population mean that creates the normal distribution and the comparison used to calculate the standard error (mu - xbar)? I realize that we cannot know the actual population parameters, nor the actual distribution even, but I’m curious what reasoning we can give for the method of calculating standard error (and why it’s not double-counting the evidence)?
 
 
 
@@ -47,13 +37,38 @@ It does not mean, however that there is a 95% chance that the protein identifica
 
 1. It is mentioned in the video that the *p* value is uniformly distributed under the null hypothesis and in the questions it is explained that this is due to the CDF. Is the *p* value still uniformly distributed if the alternative hypothesis is most likely true (i.e. when the null hypothesis is rejected) because the *p* value is calculated based on the null hypothesis?  
 Is there a necessity and if so a way to assess whether the *p* value is uniformly distributed and are there conditions/experiments for which we cannot assume a uniformly distributed *p* value?
- > *p* values are uniform under null as the *p* value is defined under null. The probability that you are among the 25% tallest persons in your class is 25%.
+ > *p* values are uniform under null as the *p* value is defined under null. The probability that a randomly selected person in your class is among the 25% tallest persons in your class is 25%.
 
+ ## One vs. Two sided *p* values
+
+ 1. In chapter 9.4, it is explained that the difference between one-sided and two-sided hypothesis testing (of alternative test statistics) is that the latter includes the absolute values thus is twice the size of the one-sided hypothesis. My question here is if there are any methodologies that can help us to choose between one-sided or the two-sided hypothesis testing?
+ > A1. It all depends on what you are testing. If you are just testing for e.g. up **or** down regulation of genes, you use a one sided test. If you test for both, you use a two sided test.  
+ > A2. According to the literature, two-sided hypothesis testing is used to confirm/reject a novel/unsupported hypothesis. One-sided hypothesis testing is used instead, for hypotheses that are supported by background reasons.
+
+ 1. In Section 9.4, we discuss between one-sided and two-sided p tests. In the example we were discussing about the first babies being born late, the one sided test gave a more significant p value.  
+ What helps us decide whether we should do a one-sided or a two-sided p test, is it he test statistic we are looking at like (standard deviation, mean) ? Or the question we are trying to answer. Also how is p-value affected depending on if its a one-sided or a two-sided  P test?  
+ > Usually, for one-sided p test, p-value is half of the p-value in the two-sided p test, depending on the shape of distribution. I would presume that this division of p-value occurs for normally distributed data.
+  > > It is mentioned that a one-sided test is more specific than a two-sided test. It might also depend on what you want to test, whether you want to know how likely it is to obtain a result this far off the mean (long and short pregnancies, two sided) or how likely it is to have such a long or short pregnancy (one sided).
+
+  ## Permutation tests
+  1. In chapter 9.3, they write that they model the null hypothesis by permutation. When we say that we model the null hypothesis, is this a way of determining the sampling distribution under the null hypothesis?
+  > Yes!
+
+  1. In 9.3 they bring up the concept of doing a null hypothesis test by permutation, and describe that permutation means that we can pool the two sample groups and treat as one group. I wonder what the reason for that is and when it is applicable?
+  > If you are under the H<sub>0</sub> you should see no difference between case and control. Hence you should be able to switch labels of your samples and get comparative results.
+
+
+  1. You can calculate a *p* value for non-normally distributed data, but when do we know what kind of data to expect? Could you give an example of when this is applicable, or if not explain why it is always normally distributed?
+  > Different populations follow different distributions. They are sometime normal, then you can apply tests like *t* tests. Permutation tests do not make other assumptions of the distributions than that they are equal for case and control.
+
+  1. You can analyze the difference between two samples using *p* values with a *t* test. In the Wikipedia entry about *t* tests, there where many different versions of *t* tests depending on your samples. For example *t* tests for paired samples and for samples of different sizes. Are there any situations when a *t* test cannot be used to analyze the significance of the difference between two samples? Why?
+  > The *t* test is only valid if your errors follow a normal distribution.
+
+  1. In 9.3, to test a difference in means between two groups, the null hypothesis is originally assumed that the distributions for two groups are the same. However, the permutation is an approach applied for modelling the null hypothesis, which shuffles the values and treats two groups as one big group. Does it mean that the comparison between two separated groups is replaced by the comparison of one of the groups to the whole group? Thus, in this case, is the null hypothesis still the same as the original one that the distributions for the two groups are the same, or should it be adjusted to consistent with the permutation method because of the changes of the test groups?
+  > No you are still comparing two groups.
 
 ## Significance levels
 
-1. In Chapter 9.2, the author states that they recommend you to interpret *p* values according to their order of magnitude because the *p* value chosen to be the threshold for significance is arbitrary. If the *p* value is less than 1%, the effect is unlikely to be due to chance, if it is greater than 10% the effect can plausibly be explained by chance. *p* values between 1% and 10% should be considered borderline, and the data does not provide strong evidence whether the H0 is true or not.  
-What do you do if your *p* value is within the range 1% - 10%? How do you then go about disproving the H0?
 
 1. ![](img/q1.png)
 In the provided volcano plot A and B have similar log fold change values but very different *p* values (pa less than 10 -40 and pb more than 10-20). However, in both cases the *p* values are really small. My question is how much weight should someone put in such differences of the *p* value when interpreting results like this.
@@ -65,6 +80,10 @@ For example is it better to focus just on A or could we say that A and B have la
  > A2. If the researcher, whom you suspect has committed *p* value abuse, has published the data of her research - along with the results - then you can use that data to repeat the null hypothesis testing with the default threshold(s) (0.01, 0.05, 0.1). Your results will then show if the researcher abused the *p* value or not.  
  It is harder to detect *p* value abuses if the researcher does not publish the relevant data, however.
 
+ 1. In Chapter 9.2, the author states that they recommend you to interpret *p* values according to their order of magnitude because the *p* value chosen to be the threshold for significance is arbitrary. If the *p* value is less than 1%, the effect is unlikely to be due to chance, if it is greater than 10% the effect can plausibly be explained by chance. *p* values between 1% and 10% should be considered borderline, and the data does not provide strong evidence whether the H0 is true or not.  
+ What do you do if your *p* value is within the range 1% - 10%? How do you then go about disproving the H0?
+
+![](img/p006.jpg)
 
 ## Bayesian methods
 
@@ -72,22 +91,6 @@ For example is it better to focus just on A or could we say that A and B have la
 > What I call "classical hypothesis testing" is the same thing as Neyman-Pearson. In future incarnations of this course we might be able to go through Bayesian Inferences.
 
 
-## Permutation tests
-1. In chapter 9.3, they write that they model the null hypothesis by permutation. When we say that we model the null hypothesis, is this a way of determining the sampling distribution under the null hypothesis?
-> Yes!
-
-1. In 9.3 they bring up the concept of doing a null hypothesis test by permutation, and describe that permutation means that we can pool the two sample groups and treat as one group. I wonder what the reason for that is and when it is applicable?
-> If you are under the H<sub>0</sub> you should see no difference between case and control. Hence you should be able to switch labels of your samples and get comparative results.
-
-
-1. You can calculate a *p* value for non-normally distributed data, but when do we know what kind of data to expect? Could you give an example of when this is applicable, or if not explain why it is always normally distributed?
-> Different populations follow different distributions. They are sometime normal, then you can apply tests like *t* tests. Permutation tests do not make other assumptions of the distributions than that they are equal for case and control.
-
-1. You can analyze the difference between two samples using *p* values with a *t* test. In the Wikipedia entry about *t* tests, there where many different versions of *t* tests depending on your samples. For example *t* tests for paired samples and for samples of different sizes. Are there any situations when a *t* test cannot be used to analyze the significance of the difference between two samples? Why?
-> The *t* test is only valid if your errors follow a normal distribution.
-
-1. In 9.3, to test a difference in means between two groups, the null hypothesis is originally assumed that the distributions for two groups are the same. However, the permutation is an approach applied for modelling the null hypothesis, which shuffles the values and treats two groups as one big group. Does it mean that the comparison between two separated groups is replaced by the comparison of one of the groups to the whole group? Thus, in this case, is the null hypothesis still the same as the original one that the distributions for the two groups are the same, or should it be adjusted to consistent with the permutation method because of the changes of the test groups?
-> No you are still comparing two groups.
 
 ## Different tests
 1. In the Jupyter notebook on differential expression analysis it is stated that it is generally assumed that expression values follow a log-normal distribution. Why is this the case? Are there any other possible distributions? What are the most common ways to determine the most suitable distribution of gene expression data?
@@ -107,7 +110,7 @@ In short: How extensive should your testing be in number of applied tests?
 1. Regarding chapter 9.5 Testing a correlation, is there a limit in what variables can be tested? I don't have an example but I am wondering if it is possible to use this method to show correlation with phenomena that have nothing to do with eachother?
 > A1:I think you can probably correlate any two variables, but it simply does not prove a causation link between the two.  
 A2: [Sure you can!](https://www.tylervigen.com/spurious-correlations) That does, however, not mean that it is useful to do so.
-
+![](img/causality.jpeg)
 
 ## Experimental Design
 
@@ -163,7 +166,6 @@ Are there more acceptable combinations of different approaches? If so, could you
 1. The reading material talks about the errors that random sampling can introduce. Other than optimising the sampling size to try to reduce the sampling bias and other errors, are there other methods that we can implement to reduce these errors during sampling?  
 Additionally, how do we decide what is a 'good' sample size?
 
-1. In chapter 8, It explains how increasing samples can minimize the sampling bias and measurement errors. I think increasing samples also grows variances and eventually threatens the assumption of similarity, How can It be solved when it comes to robustness of samples.
 
 1. In the book 8.3, to get a sample distribution, we choose n values from a normal distribution with the given parameters(mean and standard deviation, from the sample). Then the sample distribution is the basement for the p-value (in the videos). What if the population features are not distributed with normal distribution? Or the hypothesis testing is only suitable for the population features that are normal distributed.
 
@@ -172,3 +174,5 @@ Additionally, how do we decide what is a 'good' sample size?
 ----
 
 1. The way I understand it, p-value depends on the iterations, so the number of times an experiment is made. Taking this into account, how can we be sure that p-value is reliable? Is there any way to overcome or limit this uncertainty?  
+
+1. In chapter 8, It explains how increasing samples can minimize the sampling bias and measurement errors. I think increasing samples also grows variances and eventually threatens the assumption of similarity, How can It be solved when it comes to robustness of samples.
