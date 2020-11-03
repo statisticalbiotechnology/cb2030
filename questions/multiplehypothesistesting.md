@@ -1,7 +1,7 @@
 # Questions and Answers to Multiple Hypothesis Testing.
 
 ## Conservative vs. anti-conservative measures
-1. In the Storey and Tibshirani paper, the authors write that for instance the Bonferroni method is too conservative. Generally the term conservative comes up quite often in statistics when comparing hypothesis testing methods. Now I would like to know what makes a method conservative, how do the results differ and when conservative methods are appreciable?
+1. In the [Storey&Tibshirani](https://www.pnas.org/content/100/16/9440) paper, the authors write that for instance the Bonferroni method is too conservative. Generally the term conservative comes up quite often in statistics when comparing hypothesis testing methods. Now I would like to know what makes a method conservative, how do the results differ and when conservative methods are appreciable?
 
 1. The paper mentions that their proposed methodology is conservative in nature, but also that the old method (Benjamini, Y. & Hochberg) is very conservative. In statistics, since everything is about a perspective/ point of view how do we decide what makes a technique conservative?
 
@@ -41,7 +41,7 @@ However, is there a way that would minimize the number of FN, so that as few sam
 
 ## *q* value vs. FDR
 
-1. From what I understand the FDR approach presented in the paper by Storey and Tibshirani is more accurate in some cases than other FDR estimates, as the Bonferroni and Hochberg procedure. Is this solely because of the π0 estimation or are there other differences that also affect the accuracy?
+1. From what I understand the FDR approach presented in the paper by [Storey&Tibshirani](https://www.pnas.org/content/100/16/9440) is more accurate in some cases than other FDR estimates, as the Bonferroni and Hochberg procedure. Is this solely because of the π0 estimation or are there other differences that also affect the accuracy?
 > Yes, that is the main difference.
 
 1. What is the difference between the q-value and the FDR adjusted p-value? Are these terms interchangeable?
