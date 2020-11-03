@@ -99,7 +99,7 @@ I'm thinking of cases where some genes are either activated or inactivated indep
 1. Is there any convention for q-value threshold in multiple hypothesis testing? Also, I have heared about other methods to overcome multiple hypothesis testing problem such as Bonferroni correction, is there any preference regarding which method should be chosen? Is q-value the best method?
 
 1. Could you explain the concepts of π0 and q-value with examples? As I find the definitions rather abstract.
-> I like the examples given in Storey&Tibshirani.
+> I like the examples given in [Storey&Tibshirani](https://www.pnas.org/content/100/16/9440).
 
 1. Is there a downside of using q-values instead of p-values even for lower numbers of tests (for example 5) in the same sample or is it explicitly preferred for really large numbers of test (for example 1000)?
 
@@ -124,7 +124,7 @@ How do they conclude that the threshold is valid? Can't the author pick any thre
 
 ## Notebook
 1. In [jupyter notebook](https://nbviewer.jupyter.org/github/statisticalbiotechnology/cb2030/blob/master/nb/multiplehypo/qvalue.ipynb), the optimal Pi0 has been calculated by function estimatePi0 and it is used in the next function to generate FDR. However, why is Pi0_hat counted in the function of qvalue, and what is the meaning of it? From the results figure, the distribution of Pi0_hat values is just a decreasing string with approximate 1 declining to 0,  from the first gene to the last one.
-> This is a residual from last years teaching. The Pi0_hat is implemented in the same manner as the Storey&Tibshirani paper, and the bootstrap method is not used.
+> This is a residual from last years teaching. The Pi0_hat is implemented in the same manner as the [Storey&Tibshirani](https://www.pnas.org/content/100/16/9440) paper, and the bootstrap method is not used.
 
 1. The notebook contained Bootstrap and Spline methods whose results varied slightly. Are there certain criteria to choose between these methods?
 
@@ -142,4 +142,4 @@ How do they conclude that the threshold is valid? Can't the author pick any thre
 1. If I understood correctly, FDR estimates the error rate among the significant findings of a rejection region. Is there any estimate that takes into account the fasle negatives, so the findings under the alternative hypothesis that are outside the rejection region?
 
 1. The method of using FDR allows for the significant reduction of false positive results. Did the introduction of this statistical test retroactivley invalidate any prior findings or studies utilizing tradtional statistical tests in any way? If so are there any examples of papers that were corrected following?
-> Storey&Tibshirani is an example of such a paper.
+> [Storey&Tibshirani](https://www.pnas.org/content/100/16/9440) is an example of such a paper.
