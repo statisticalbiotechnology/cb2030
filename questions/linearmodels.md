@@ -78,9 +78,9 @@ In the book, in the chapter of non-linear relationships the author calculates an
   * explanatory variables and  exogenous variables
   > Other names for independent variables
   * Proxy variables
-  > Variables used as stand-in for categorical data. I.e. in the notebook I use C(grade) to give the grade of a tumor. Or C(Sex) could be defined as 0 for female or 1 for males.  
+  > Variables used as stand-in for other (often unmeasurable) variables. E.g. bmi for amount of body fat, GDP for welfare is a country.
   * control variable
-  > A variable included in a regression to eliminate or “control for” a spurious relationship. I.e. a variable you are not interested to model per se, but want to remove the effect of. E.g. witch week-day you did the measurement or which of two petris dishes your sample was residing at.  
+  > A variable included in a regression to eliminate or “control for” a spurious relationship. I.e. a variable you are not interested to model per se, but want to remove the effect of. E.g. which week-day you did the measurement or which of two 48-well plates your sample was residing at.  
 
 1. 1. What are the implications of running an ANOVA-test using the formula "y ~ x:z", i.e. what does it mean to test the explanatory variables x and z in conjunction?
    1. In the notebook, some of the models evaluate the interaction between two explanatory variables, which was not present in the chapters of the book.  
