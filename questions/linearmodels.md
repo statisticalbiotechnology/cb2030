@@ -98,11 +98,11 @@ In the book, in the chapter of non-linear relationships the author calculates an
 1. Could you clarify the differences among:
   * dependent variables    
   > This is what we call the output from a model, e.g. yhat in yhat = a*x+ b  
-  * Endogenous variables
-  > Another name for dependent variable.
+  * Response or Endogenous variables
+  > Other names for dependent variable.
   * Independent variables  
   > This is what we call the input to a model, e.g. x in yhat = a*x+ b  
-  * Explanatory variables and  exogenous variables
+  * Explanatory variables and exogenous variables
   > Other names for independent variables
   * Proxy variables
   > Variables used as stand-in for other (often unmeasurable) variables. E.g. bmi for amount of body fat, GDP for welfare is a country.
