@@ -5,6 +5,9 @@
 1. Are there any assumptions for linear regression other than that the relationship between the dependent and independent variable is linear? What should one do if the assumptions are not met?
 > We are minimizing the summed square of the residuals, which is a good thing if you have normally distributed residuals. That is not always the case. There are several other techniques for optimization that can be used. Still linear models are popular as they are easy to interpret.
 
+1. How were the equations for calculating the slope and intercept of a regression line derived?
+> A descriopion of the calculus can be found in this [blogpost](https://towardsdatascience.com/linear-regression-derivation-d362ea3884c2) 
+
 1. Regarding the ANOVA tests made in the jupyter notebook, we get an F-statistic together with the p-value for each test. What does this F-statistic tell us?
 > The F-statistic is the statistic we use when we perform [F-tests](https://en.wikipedia.org/wiki/F-test). Roughly it is the quota between the variance explained by the model to the variance of the residuals.
 
