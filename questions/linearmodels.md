@@ -72,11 +72,11 @@ In the book, in the chapter of non-linear relationships the author calculates an
 1. I think I am still not really grasping sampling distribution. Regarding resampling of data to assess sampling error:  
 "sampling error is the result of measuring a sample rather than the entire population." p. 142 in Downey  
 If you draw new sets of data (with replacement) from your sample to calculate the distribution of those new sets of data, how can that give any new information on the population? We only study the sample more closely, but how can that relate to assessing the sampling error?
-> The procedure in Downey simulates the sampling process, by sampling with replacement. This is known as [bootstraping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)). We are studying the same sample values over and over again, but in a new context each time. This only work when the null model is that there is no effect.
+> The procedure in Downey simulates the sampling process, by sampling with replacement. This is known as [bootstraping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)). We are studying the same sample values over and over again, but in a new context each time.
 
 
 1. In chapter 10.6 (figure 10.4): How do you generate a distribution of slopes that adhere to the null hypothesis?
-> You just mix up the links between the dependent and the independent variables.
+> You just mix up the links between the dependent and the independent variables. Or as Downey does, the link between the residuals and the independent variable.
 
 1. General question: What consistutes good and bad practices respectively, when it comes to resampling and other bootstrap-oriented methods?
 
@@ -84,17 +84,17 @@ If you draw new sets of data (with replacement) from your sample to calculate th
 
 ## Weighted resampling
 1. In order to do weighted resampling - how are the weights actually obtained? Is it only used in case I have different predefined groups so that I know 'how much' I oversampled one particular group or do sampling weights also play a role in case I do not know specific groups before the experiment is carried out / the sample is drawn? E.g. differential gene expression where I would not have predefined groups or if would try to predict the US elections by sampling the population - how would I know then if I oversampled a particular group?
-> The point is that the text try to make is that if we have different amount of samples from a certain part of the population we need to compensate for that effect. Say that you have a gender bias in your study, it is good practice to compensate for the geneder-effect when resampling.
+> The point is that the text try to make is that if we have different amount of samples from a certain part of the population we need to compensate for that effect. Say that you have a gender bias in your study, it is good practice to compensate for the geneder-effect when resampling. If you want to make an early prediction of how the mail-in woters in the US elections are going to behave it is nice to compensate for the fact that mail-in woters have different party preferentials that the ones turning up in the election boots.
 
 
 1. “To correct for oversampling, we can use resampling; that is, we can draw samples from the survey using probabilities proportional to sampling weights “  (Allen B. Downey, Chapter 10.7 Weighted resampling). Is the author referring to resampling methods such as permutation tests, bootstrap or Jackknife or is he simply rerunning the test with weights applied?
 “If you oversample one group by a factor of 2, each person in the oversampled group would have a lower weight” (Allen B. Downey, Chapter 10.7) Does the application of weights can reduce significant differences in one representing group if the weights are applied on a dataset which is not large enough?  So e.g. if you oversample a group by the factor of two and one of the samples is not representing the actual distribution of the factor in the group you would falsely correct this group. On the other hand, you would give more weight to a group that is represented by just one sample which could also be not representative.
 
-1. If the number of all samples is known, we can proportionally sample according to their different weights after traversing the entire sample. So how do we weighted sampling when we don’t know how big the total sample is, or the total is too large to traverse? Thank you!
+1. If the number of all samples is known, we can proportionally sample according to their different weights after traversing the entire sample. So how do we weighted sampling when we don’t know how big the total sample is, or the total is too large to traverse?
 
 
 1. In Chapter 10.7 the authors mention, that "each person in the oversampled group would have a lower weight". Do I understand correctly that it gives a problem of over-averaging the results, but it would also give less of outliers if the sampling group would have some. Also, in real-world sampling would it be more erroneous to oversample or undersample the population?
-> These are realtive terms, if you over-sample one type of data, you under sample another.
+> These are realtive terms, if you over-sample one type of data, you under-sample another.
 
 1. "To correct for oversampling, we can use resampling" (Allen B. Downey, Chapter 10.7) - What can we do in cases where resampling is not possible? And even when we do resample some bias will still exist in the sampling (possibly even the same biases). How do we overcome these two scenarios?
 
