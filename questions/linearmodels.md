@@ -69,6 +69,12 @@ In the book, in the chapter of non-linear relationships the author calculates an
 
 ## Resampling
 
+1. I think I am still not really grasping sampling distribution. Regarding resampling of data to assess sampling error:  
+"sampling error is the result of measuring a sample rather than the entire population." p. 142 in Downey  
+If you draw new sets of data (with replacement) from your sample to calculate the distribution of those new sets of data, how can that give any new information on the population? We only study the sample more closely, but how can that relate to assessing the sampling error?
+> The procedure in Downey simulates the sampling process, by sampling with replacement. This is known as [bootstraping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)). We are studying the same sample values over and over again, but in a new context each time. This only work when the null model is that there is no effect.
+
+
 1. In chapter 10.6 (figure 10.4): How do you generate a distribution of slopes that adhere to the null hypothesis?
 > You just mix up the links between the dependent and the independent variables.
 
@@ -149,11 +155,6 @@ If we find that an interaction between two explanatory variables is significant,
 
 
 ## Other
-1. I think I am still not really grasping sampling distribution. Regarding resampling of data to assess sampling error:  
-"sampling error is the result of measuring a sample rather than the entire population." p. 142 in Downey  
-If you draw new sets of data (with replacement) from your sample to calculate the distribution of those new sets of data, how can that give any new information on the population? We only study the sample more closely, but how can that relate to assessing the sampling error?
-> The procedure in Downey simulates the sampling process under null, i.e. for the case when there is no effect. If there was no effect from a population parameter, what would happen if we just rearranged all the dependent variables and their independent variables. We are studying the same sample values over and over again, but in a new context each time. This only work when the null model is that there is no effect.
-
 
 1. What is the difference between ANOVA and linear regression?
 > An ANOVA is a statistical test you perform on linear regression models.
