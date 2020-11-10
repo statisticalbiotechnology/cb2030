@@ -80,6 +80,8 @@ As I understood that C has an ability that adjusts the SVM so that small C will 
 
 ## Multi-class
 
+There is a description of a multi-class classification problem in [VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html#Example:-Face-Recognition).
+
 1. To perform multiclass classifications, Noble describes that: “the simplest approach is to train multiple, one-versus-all classifiers”. He mentions that there are a variety of methods to perform multiclass classifications which are more sophisticated. Could you elaborate on how these optimized SVM algorithms work?
 > Here are some examples from [sklearn](https://scikit-learn.org/stable/modules/svm.html#multi-class-classification)
 
