@@ -3,7 +3,7 @@
 ## Supervised ML
 
 1. Can the machine learning algorithm become better than the quality of the data? Say we have to label the data as positive or negative but we are only correct 90% of the time will this then also be true for the algorithm?  
-> Yes, normally manually annotated labels are incorrectly set, and some ML algorithms can to some extent overcome such problems. However, it is tricky to prove that you improve on manual annotation, since you do not have any ground truth.
+> Yes, normally manually annotated labels are frequently incorrectly set, and some ML algorithms can to some extent overcome such problems. However, it is tricky to prove that you improve on manual annotation, since you do not have any ground truth.
 
 1. The hyperplane is used to separate data in a n-dimensional space. Instead you could also do a complexity reduction (e.g. PCA) and then apply a linear function (or one with low dimensionality) to separate the data. Is the hyperplane more precise as no complexity reduction is carried out? Is one of the methods preferred in certain cases?
 > Supervised ML is preferred when you trust your labels, and often for lower dimensional problems. Unsupervised ML is preferred in other cases.
