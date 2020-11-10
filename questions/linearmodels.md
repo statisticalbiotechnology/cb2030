@@ -105,7 +105,7 @@ In the book, in the chapter of non-linear relationships the author calculates an
   * Explanatory variables and exogenous variables
   > Other names for independent variables
   * Proxy variables
-  > Variables used as stand-in for other (often unmeasurable) variables. E.g. bmi for amount of body fat, GDP for welfare is a country.
+  > Variables used as stand-in for other (often unmeasurable) variables. E.g. bmi for amount of body fat, GDP for welfare in a country.
   * control variable
   > A variable included in a regression to eliminate or “control for” a spurious relationship. I.e. a variable you are not interested to model per se, but want to remove the effect of. E.g. which week-day you did the measurement or which of two 48-well plates your sample was residing at.  
 
