@@ -5,6 +5,9 @@
 1. Are there any assumptions for linear regression other than that the relationship between the dependent and independent variable is linear? What should one do if the assumptions are not met?
 > We are minimizing the summed square of the residuals, which is a good thing if you have normally distributed residuals. That is not always the case. There are several other techniques for optimization that can be used. Still linear models are popular as they are easy to interpret.
 
+1. How were the equations for calculating the slope and intercept of a regression line derived?
+> A descriopion of the calculus can be found in this [blogpost](https://towardsdatascience.com/linear-regression-derivation-d362ea3884c2) 
+
 1. Regarding the ANOVA tests made in the jupyter notebook, we get an F-statistic together with the p-value for each test. What does this F-statistic tell us?
 > The F-statistic is the statistic we use when we perform [F-tests](https://en.wikipedia.org/wiki/F-test). Roughly it is the quota between the variance explained by the model to the variance of the residuals.
 
@@ -69,8 +72,14 @@ In the book, in the chapter of non-linear relationships the author calculates an
 
 ## Resampling
 
+1. I think I am still not really grasping sampling distribution. Regarding resampling of data to assess sampling error:  
+"sampling error is the result of measuring a sample rather than the entire population." p. 142 in Downey  
+If you draw new sets of data (with replacement) from your sample to calculate the distribution of those new sets of data, how can that give any new information on the population? We only study the sample more closely, but how can that relate to assessing the sampling error?
+> The procedure in Downey simulates the sampling process, by sampling with replacement. This is known as [bootstraping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)). We are studying the same sample values over and over again, but in a new context each time.
+
+
 1. In chapter 10.6 (figure 10.4): How do you generate a distribution of slopes that adhere to the null hypothesis?
-> You just mix up the links between the dependent and the independent variables.
+> You just mix up the links between the dependent and the independent variables. Or as Downey does, the link between the residuals and the independent variable.
 
 1. General question: What consistutes good and bad practices respectively, when it comes to resampling and other bootstrap-oriented methods?
 
@@ -78,17 +87,17 @@ In the book, in the chapter of non-linear relationships the author calculates an
 
 ## Weighted resampling
 1. In order to do weighted resampling - how are the weights actually obtained? Is it only used in case I have different predefined groups so that I know 'how much' I oversampled one particular group or do sampling weights also play a role in case I do not know specific groups before the experiment is carried out / the sample is drawn? E.g. differential gene expression where I would not have predefined groups or if would try to predict the US elections by sampling the population - how would I know then if I oversampled a particular group?
-> The point is that the text try to make is that if we have different amount of samples from a certain part of the population we need to compensate for that effect. Say that you have a gender bias in your study, it is good practice to compensate for the geneder-effect when resampling.
+> The point is that the text try to make is that if we have different amount of samples from a certain part of the population we need to compensate for that effect. Say that you have a gender bias in your study, it is good practice to compensate for the geneder-effect when resampling. If you want to make an early prediction of how the mail-in woters in the US elections are going to behave it is nice to compensate for the fact that mail-in woters have different party preferentials that the ones turning up in the election boots.
 
 
 1. “To correct for oversampling, we can use resampling; that is, we can draw samples from the survey using probabilities proportional to sampling weights “  (Allen B. Downey, Chapter 10.7 Weighted resampling). Is the author referring to resampling methods such as permutation tests, bootstrap or Jackknife or is he simply rerunning the test with weights applied?
 “If you oversample one group by a factor of 2, each person in the oversampled group would have a lower weight” (Allen B. Downey, Chapter 10.7) Does the application of weights can reduce significant differences in one representing group if the weights are applied on a dataset which is not large enough?  So e.g. if you oversample a group by the factor of two and one of the samples is not representing the actual distribution of the factor in the group you would falsely correct this group. On the other hand, you would give more weight to a group that is represented by just one sample which could also be not representative.
 
-1. If the number of all samples is known, we can proportionally sample according to their different weights after traversing the entire sample. So how do we weighted sampling when we don’t know how big the total sample is, or the total is too large to traverse? Thank you!
+1. If the number of all samples is known, we can proportionally sample according to their different weights after traversing the entire sample. So how do we weighted sampling when we don’t know how big the total sample is, or the total is too large to traverse?
 
 
 1. In Chapter 10.7 the authors mention, that "each person in the oversampled group would have a lower weight". Do I understand correctly that it gives a problem of over-averaging the results, but it would also give less of outliers if the sampling group would have some. Also, in real-world sampling would it be more erroneous to oversample or undersample the population?
-> These are realtive terms, if you over-sample one type of data, you under sample another.
+> These are realtive terms, if you over-sample one type of data, you under-sample another.
 
 1. "To correct for oversampling, we can use resampling" (Allen B. Downey, Chapter 10.7) - What can we do in cases where resampling is not possible? And even when we do resample some bias will still exist in the sampling (possibly even the same biases). How do we overcome these two scenarios?
 
@@ -149,11 +158,6 @@ If we find that an interaction between two explanatory variables is significant,
 
 
 ## Other
-1. I think I am still not really grasping sampling distribution. Regarding resampling of data to assess sampling error:  
-"sampling error is the result of measuring a sample rather than the entire population." p. 142 in Downey  
-If you draw new sets of data (with replacement) from your sample to calculate the distribution of those new sets of data, how can that give any new information on the population? We only study the sample more closely, but how can that relate to assessing the sampling error?
-> The procedure in Downey simulates the sampling process under null, i.e. for the case when there is no effect. If there was no effect from a population parameter, what would happen if we just rearranged all the dependent variables and their independent variables. We are studying the same sample values over and over again, but in a new context each time. This only work when the null model is that there is no effect.
-
 
 1. What is the difference between ANOVA and linear regression?
 > An ANOVA is a statistical test you perform on linear regression models.
