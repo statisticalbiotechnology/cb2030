@@ -121,7 +121,7 @@ As I understood that C has an ability that adjusts the SVM so that small C will 
 > There are many different kernel functions available.
 
 1. Is it reasonable to perform this type of analyses using a regular personal computer or is it necessary to use a supercomputer to avoid overheating?
-> Could you try to run the examples in the notebook on your computer? Pretty please!
+> Could you try to run the examples in the notebook on your computer? 
 
 
 1. Supervised Learning such as SVM are based on creating a classifier from an annotated dataset. Does this mean that the classifier only can get as precise as the annotations in the dataset? Can a small set of erroneous annotations ruin a dataset? How is this in contrast to unsupervised learning?
