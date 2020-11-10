@@ -1,7 +1,7 @@
 # Questions and Answers to Supervised Learning.
 
 1. How can we find the right kernel? The Noble article mentions trial and error, is this the most common way to do it?
-> Yes that is it. Trial and error is often the most frequent waty to select models and hyper-parameters in other types of ML.
+> Yes that is it. Trial and error is often the most frequent way to select models and hyper-parameters in other types of ML.
 
 1. How do you decide how many variables (genes in the jupyter notebook on the TCGA breast cancer set) to use to avoid over - and underfitting of the training data set?
 > Again, trial and error is the most common method. You often to your feature selection on a separate dataset, to avoid overfitting. This said, [feature selection](https://en.wikipedia.org/wiki/Feature_selection) is a research topic of its own.
@@ -9,7 +9,7 @@
 1. What must be taken into consideration when we choose the soft margin parameters?
 > That your classifier should work well.
 
-1. To perform multiclass classifications, Noble describes that: “the simplest approach is to train multiple, one-versus-all classifiers” (Noble, W. What is a support vector machine?. Nat Biotechnol 24, 1565–1567 (2006)). He mentions that there are a variety of methods to perform multiclass classifications which are more sophisticated. Could you elaborate on how these optimized SVM algorithms work?
+1. To perform multiclass classifications, Noble describes that: “the simplest approach is to train multiple, one-versus-all classifiers”. He mentions that there are a variety of methods to perform multiclass classifications which are more sophisticated. Could you elaborate on how these optimized SVM algorithms work?
 > Here are some examples from [sklearn](https://scikit-learn.org/stable/modules/svm.html#multi-class-classification)
 
 1. In cross-validation, how do we know how many bins to divide the data in, and later on how many bins to use for training / testing?
@@ -79,8 +79,8 @@ Suppose one has two spread-out clusters, possibly growing into each other. Would
 1. When we are doing a grid search in the jupyter notebook the C parameter vary from 0.0001 to 1000 to find the best parameter. As I understand it, if we increase the C parameter we also increase the risk of overfitting the training data and thus getting bad predictions on our test data. Would there be cases where we would allow higher C parameters even though we risk overfitting the data?
 > As long as we test on separate data from our testing, this should be detectable.
 
-![](img/margin.png)
-1. About the softening Margins in VanderPlas:  
+1. ![](img/margin.png)  
+About the softening Margins in VanderPlas:  
 We have a plot shows the data have the overlap. Then basically if we don't project them into a higher dimension, we should not able to find any maximum margin hyperplane between them.  
 As I understood that C has an ability that adjusts the SVM so that small C will allow points to go into the margin. Indeed in the figure C=0.1 we got more points inside the margin, and C=10.0 still strict for points that not entering the margin. But where are those overlaps? Why the overlap disappeared if we do the softening Margins?
 > Not sure that I understand what you mean with overlap in this context.
@@ -90,3 +90,54 @@ As I understood that C has an ability that adjusts the SVM so that small C will 
 
 1. Is there a way to score the effectiveness of a kernel function in mathematical terms, rather than just looking at the result? Why aren't nonlinear "hyperplanes" used more often (or linear hyperplanes transformed by the inverse of a kernel function)?
 > A hyperplane is easy to express. A kernel is warping the feature space to be separable by the (linear) hyperplane, instead of what you are suggesting, i.e. warping the decisions boundary.
+
+1. In the video about supervised machine learning, separating hyperplanes & kernel algorithm are shown to be useful for the separation of two categories (e.g. disease and healthy mRNA). But, if we want to separate more than 3 categories with the same method,  are there any algorithm / method that we can use for this purpose?  
+> Multi-class classifiers might help you.
+
+1. You mentioned in the video lecture that we need to optimise hyper-parameters by another separate test dataset. Why is it that we cannot optimise the hyper-parameters from the training set?
+> We might overfit to our training data.
+
+1. How does the nested cross validation allow us to select the hyper parameters? What type of information about the hyper parameters does the nested cross validation produce and how do we interpret that?
+> The cross validation allow you to test which values that work best for your test data.
+
+
+1. The hyperplane is used to separate data in a n-dimensional space. Instead you could also do a complexity reduction (e.g. PCA) and then apply a linear function (or one with low dimensionality) to separate the data. Is the hyperplane more precise as no complexity reduction is carried out? Is one of the methods preferred in certain cases?
+> Supervised ML is preferred when you trust your labels, and often for lower dimensional problems. Unsupervised ML is preferred in other cases.
+
+1. When using support vector machines, are the outcomes so reliable that you don't need a second opinion from a person?
+> No.
+
+1. I'm not sure if I understood it correctly, but is cross-validation a cheaper alternative than supervised machine learning, or is it a manual version of it?
+> No It is a way to validate Supervised ML.
+
+1. Could you give us an example of a hypervariable in nested cross-validation? Is it like saying that GC content is a variable of the DNA-melting temperature and H-bond energy of G≡C pair is, in turn, hypervariable of the GC content?
+> The cases shown in the notebook is quite illustrative I think.
+
+
+1. How can we define the statistical significance of hyperplane, margin, etc. ?
+> We measure performance based on test sets?
+
+1. In the literature we saw two different options for a kernel function: the first was a linear function and the second was a radial basis function. What other types of functions can be used, and most importantly are there any requirements for the selection of the kernel function?
+> There are many different kernel functions available.
+
+1. Is it reasonable to perform this type of analyses using a regular personal computer or is it necessary to use a supercomputer to avoid overheating?
+> Could you try to run the examples in the notebook on your computer? Pretty please!
+
+
+1. Supervised Learning such as SVM are based on creating a classifier from an annotated dataset. Does this mean that the classifier only can get as precise as the annotations in the dataset? Can a small set of erroneous annotations ruin a dataset? How is this in contrast to unsupervised learning?
+> Yes and Yes! In unsupervised learning there are no errornous annotation to ruin your classification.
+
+
+1. In the article "What is a support vector machine?", it is mentioned that SVM is different from other similar methods due to how the hyperplane is selected.  How do other classifiers select this parameter?
+> What the article mean is that other classifiers have other types of hyper parameters, that also needs to be set by some method.
+
+
+1. How do we add another dimension to the data for kernel feature? And how do we know which method of adding dimensionality is the best for one particular dataset?
+> We do not know, we have to try for ourselves.
+
+1. In case of for example expression levels: Is it possible for a simple supervised learning to decide between three groups as well? For example low expression, normal expression and overexpression? Is it common to just have one hyperplane to divide two groups or is it common to use more than one dividing line to distinguish more groups?
+> Yes, you use a multi-class classifier.
+
+1. ![](img/moving_examples.png)
+Is there any risk of a hyperplane in the real data to be off enough, that some data could be misinterpreted? And if so do we just disregard that kind of data?
+> Yes, a classifier can not be better than its training data.
