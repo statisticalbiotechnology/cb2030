@@ -104,7 +104,7 @@ There is a description of a multi-class classification problem in [VanderPlas](h
 > Not in a visual way. You have to use your imagination, or possibly use a [dimensionality reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction) scheme to project your data to a 2d plot.
 
 ## Support Vector Machines
-The derivation of the mathematical formulation of a support vector machine is given e.g. in the wikipedia entry on [SVMs](https://en.wikipedia.org/wiki/Support_vector_machine).
+The derivation of the mathematical formulation of a support vector machine is given e.g. in the wikipedia entry on [SVMs](https://en.wikipedia.org/wiki/Support_vector_machine#Linear_SVM).
 
 1. In the VanderPlas it is mentioned that SVM methods are computationally expensive when the training data set is large. In practice, how large can the training data set be before the method becomes so time-consuming that it makes sense to use simpler, faster methods first?
 > I am currently working with datasets of 25 million datapoints. Given you can use not too advanced classification you can expand the number of datapoints pretty far.
