@@ -10,9 +10,8 @@
 1. What are the differences between a spherical covariance model using GMM and a k-means result? Both of them would result in a circular (or spherical) cluster, but it is mentioned that while they have a similar outcome, there are differences.
 > They are very similar in behavior. One difference, though, is that you get probabilities for the points in a GMM, but not in k-means.
 
-
 1. From the reading material, I understood that *k*-means is a simpler clustering method than Gaussian Mixture Models (GMM). However, in the notebook the separation between the two cases is more clear for the k-means clustering. Why is the separation of the PR-ER- patients less clear when using GMM?
-> FIXME
+> It is hard to say. Probably it is just due to random chance.
 
 1. Do you use GMMs if the results of the k-means does not make a lot of sense, such as if the clustering seems wrong, or is GMMs the preferred method?
 > No there is no rule for this.
