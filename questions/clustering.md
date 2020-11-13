@@ -10,15 +10,8 @@
 1. What are the differences between a spherical covariance model using GMM and a k-means result? Both of them would result in a circular (or spherical) cluster, but it is mentioned that while they have a similar outcome, there are differences.
 > They are very similar in behavior. One difference, though, is that you get probabilities for the points in a GMM, but not in k-means.
 
-
-1. From the reading material, I understood that *k*-means is a simpler clustering method than Gaussian Mixture Models (GMM). However, in the notebook the separation between the two cases is more clear for the k-means clustering. Why is the separation of the PR-ER- patients less clear when using GMM?
-> FIXME
-
 1. Do you use GMMs if the results of the k-means does not make a lot of sense, such as if the clustering seems wrong, or is GMMs the preferred method?
 > No there is no rule for this.
-
-1. In the Jupyter notebook, we saw that the Gaussian Mixture Model algorithm had a less clear separation of the PR/ER negative and PR/ER positive samples than the k-means algorithm. However, in the VanderPlas text, I interpreted it as GMM was superior to k-means clustering. Should we trust the outcome from the GMM clustering more even though it did not generate a good separation? If not, how do we know which method to use? Should we always try with both clustering methods?
-> You can always try with both methods.
 
 1. Could it be possible to somehow assign a probability of a point belonging to a cluster in k-means similarly as for GMM?
 > Not without making more assumptions about your data.
@@ -170,3 +163,9 @@ If you want to have a look at other clustering algorithms, [sklearn contain a la
 ## Notebook
 1. In the last example in the notebook ( Cluster analysis of TCGA breast cancer sets ) a subset of cancer associated genes are used instead of all genes for clustering. What are the pros and cons for these two approaches? And how do you choose which genes are most appropriate if you use the subset approach?
 > No we use the full stet of patients with a certain PR or ER label. In practice you probably would like to use as much data as possible.
+
+1. From the reading material, I understood that *k*-means is a simpler clustering method than Gaussian Mixture Models (GMM). However, in the notebook the separation between the two cases is more clear for the k-means clustering. Why is the separation of the PR-ER- patients less clear when using GMM?
+> It can be a random effect. There is nothing saying that there should be a separation into PR-ER- patients in the first place, so we would not know which is the better result at this point.
+
+1. In the Jupyter notebook, we saw that the Gaussian Mixture Model algorithm had a less clear separation of the PR/ER negative and PR/ER positive samples than the k-means algorithm. However, in the VanderPlas text, I interpreted it as GMM was superior to k-means clustering. Should we trust the outcome from the GMM clustering more even though it did not generate a good separation? If not, how do we know which method to use? Should we always try with both clustering methods?
+> You can always try with both methods.
