@@ -3,11 +3,11 @@
 ## *k* means vs GMMs
 
 1. * Could you provide instances when one can decide which method to follow for clustering between GMMs and k-means? The paper seems to suggest GMMs as the preferred approach.
-   * GMM seems to be superior over k-means clustering. Are there situations in which the use of k-means clustering offers an advantage over GMM?
+   * *I:* GMM seems to be superior over k-means clustering. Are there situations in which the use of k-means clustering offers an advantage over GMM?
    * Due to the high amount of errors probable, it seems that it's smarter to use other methods such as GMM instead of k-means clustering on real-world data. Is there any occasion where we would prefer using k-means clustering instead of GMM for non-ideal data?
 > Yes. k-means is a simpler and faster algorithm, and is hence more popular,
 
-1. What are the differences between a spherical covariance model using GMM and a k-means result? Both of them would result in a circular (or spherical) cluster, but it is mentioned that while they have a similar outcome, there are differences.
+1. *I:* What are the differences between a spherical covariance model using GMM and a k-means result? Both of them would result in a circular (or spherical) cluster, but it is mentioned that while they have a similar outcome, there are differences.
 > They are very similar in behavior. One difference, though, is that you get probabilities for the points in a GMM, but not in k-means.
 
 1. Do you use GMMs if the results of the k-means does not make a lot of sense, such as if the clustering seems wrong, or is GMMs the preferred method?
@@ -28,7 +28,7 @@
 1. How much is the running time of the algorithm affected by the strating guesses in k-means clustering?
  > The starting guess might effect the number of iteration you have to d before converging.
 
- 1. In case of the k-means clustering: Is there a way to find out that the k-means clustering is not a good model for clustering due to overlapping clusters by algorithms?
+ 1. *I:* In case of the k-means clustering: Is there a way to find out that the k-means clustering is not a good model for clustering due to overlapping clusters by algorithms?
  > By definition, K-means clusters do not overlap.
 
 1. Once surpassed the linear boundaries of k-means with the kernel transformation proposed by the support vector machines, which would be the next bottleneck or limit to take into account while clustering?`
@@ -37,7 +37,7 @@
 
 ## Selecting number of clusters
 
-1. * Before K-means does clustering, we must first determine K which is the number of clusters in the sample. What are the general methods to determine k?
+1. * *I:* Before K-means does clustering, we must first determine K which is the number of clusters in the sample. What are the general methods to determine k?
   * When choosing the optimal number of components for GMM,  analytic criterions such as AIC or BIC is used. Is there a similar method for choosing the optimal number for k-means clustering?
 > There are no relly good methods for this. However, there are some heuristics avalable such as [silouette plots](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html), and AIC and BIC, as shown in VanderPlas.
 
@@ -63,7 +63,7 @@ In my understanding, that means that both methods are only suited for a certain 
 
 
 ## EM algorithm
-1. In the section on k-means, VanderPlas states that 'undertypical circumstances, each repetition of the E-step and M-step will always result in a better estimate of the cluster characteristics.' What would be an untypical scenario in this case?
+1. *I:* In the section on k-means, VanderPlas states that 'undertypical circumstances, each repetition of the E-step and M-step will always result in a better estimate of the cluster characteristics.' What would be an untypical scenario in this case?
 > I am not sure myself. However, the [EM algorithm](https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm) is guaranteed to not decrease the expected log-likelihood in each iteration.
   * Moreover, does a practical maximum number Expectation-Maximisation cycles exist, after which the process is ended without reasonable cluster generation  (when employing E-M on a dataset witout any apparent cluster, for instance equidistantly ordered items )?
 > There will always be k clusters after the alg. ends.
@@ -91,7 +91,7 @@ In my understanding, that means that both methods are only suited for a certain 
 > GMMs are great to mimic general probabilistic distributions, and are hence frequently used in [Bayesian modelling](https://en.wikipedia.org/wiki/Mixture_model#Examples).
 
 1. Using several Gaussians in GMM to create a density estimator of a dataset would create peaks at each cluster center. The number of peaks would change with the number of cluster centers. This seems to create artificial probability “hotspots” that were not present in the original data. Could this be an issue, and if so - how can it be solved? (Ideally, only one probability distribution would exist for one group of data.)
-> Not sure I understand. 
+> Not sure I understand.
 
 1. GMM is considered to be more of a density estimator rather than a clustering method. Why is GMM only used as a clustering method when the data set is simple?
 > Because it is a nice algorithm.
@@ -106,7 +106,7 @@ Here is a wikipedia entry on [local optima](https://en.wikipedia.org/wiki/Local_
   * As stated by VanderPlas in the section on k-means clustering, multiple starting guesses are often used in order to find a good configuration. It is mentioned that the default setting in Scikit-Learning is running the algorithm for 10 guesses. Is this number generally enough? What should we consider when choosing the number of starting guesses?
   > No, this is problem dependent, and you have to try for yourself and see.
 
-2. It is mentioned that clustering might result in a local, but not global minimum and that we can address this by choosing different starting points. Is there any way to assess whether we actually found the global minimum? Or would we just assume that when the same / a similar result is obtained with different starting points, the global minimum is found?
+2. *I:* It is mentioned that clustering might result in a local, but not global minimum and that we can address this by choosing different starting points. Is there any way to assess whether we actually found the global minimum? Or would we just assume that when the same / a similar result is obtained with different starting points, the global minimum is found?
   > No there is no way to tell.
 
 1. Convergence does not imply that you have reached the globally optimal clustering. Many k-mean approaches, as well as GMMs, use repeated clustering, based on different starting cluster centers, to obtain different clustering options. If different results are obtained, how is it then determined which clustering to settle for? I assume (but might be wrong) it’s not so easy as to say that the clustering that occurs the most times is always the one that makes the most sense?
@@ -115,7 +115,7 @@ Here is a wikipedia entry on [local optima](https://en.wikipedia.org/wiki/Local_
   > You are not guaranteed to do so.
 
 ## Benchmarking clusterings
-1. When achieving clusters based on a specific method (say i.e. k-means clustering or Gaussian Mixture Models) how sure are we in the end result of the separation of the different clusters? For very simple and separated data points in a sample we can be fairly certain in our result just by the looking at the different clusters achieved by these algorithms, however, say that we now have a very dense population of data points in our sample. How can we estimate (or give scores) of how well the algorithms have performed in separating the data points in different clusters?
+1. *I:* When achieving clusters based on a specific method (say i.e. k-means clustering or Gaussian Mixture Models) how sure are we in the end result of the separation of the different clusters? For very simple and separated data points in a sample we can be fairly certain in our result just by the looking at the different clusters achieved by these algorithms, however, say that we now have a very dense population of data points in our sample. How can we estimate (or give scores) of how well the algorithms have performed in separating the data points in different clusters?
 > One might benchmark based on labeled examples.
 
 ## Supervised vs. Unsupervised ML
@@ -145,7 +145,7 @@ Here is a wikipedia entry on [local optima](https://en.wikipedia.org/wiki/Local_
 If you want to have a look at other clustering algorithms, [sklearn contain a large set of algorithms](https://scikit-learn.org/stable/modules/clustering.html#k-means).
 
 
-1. In both k-means clustering and GMMs, there is a risk of data points being added to different clusters by chance (due to overlap e.g.). Are there any other methods that can make sure that this does not happen?
+1. *I:* In both k-means clustering and GMMs, there is a risk of data points being added to different clusters by chance (due to overlap e.g.). Are there any other methods that can make sure that this does not happen?
 > No, by definition a data point belongs to just one cluster.
 
 1. When would you use kernelized *k*-means and when would you use GMMs? Should you always compare them or is there some benchmarking involved?
@@ -159,7 +159,7 @@ If you want to have a look at other clustering algorithms, [sklearn contain a la
 
 
 ## Notebook
-1. In the last example in the notebook ( Cluster analysis of TCGA breast cancer sets ) a subset of cancer associated genes are used instead of all genes for clustering. What are the pros and cons for these two approaches? And how do you choose which genes are most appropriate if you use the subset approach?
+1. *I:* In the last example in the notebook ( Cluster analysis of TCGA breast cancer sets ) a subset of cancer associated genes are used instead of all genes for clustering. What are the pros and cons for these two approaches? And how do you choose which genes are most appropriate if you use the subset approach?
 > No we use the full stet of patients with a certain PR or ER label. In practice you probably would like to use as much data as possible.
 
 1. From the reading material, I understood that *k*-means is a simpler clustering method than Gaussian Mixture Models (GMM). However, in the notebook the separation between the two cases is more clear for the k-means clustering. Why is the separation of the PR-ER- patients less clear when using GMM?
