@@ -39,13 +39,13 @@
 
 1. * Before K-means does clustering, we must first determine K which is the number of clusters in the sample. What are the general methods to determine k?
   * When choosing the optimal number of components for GMM,  analytic criterions such as AIC or BIC is used. Is there a similar method for choosing the optimal number for k-means clustering?
-> There are no relly good methods for this. However, there are some heuristics avalable such as [silouette plots](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html)
+> There are no relly good methods for this. However, there are some heuristics avalable such as [silouette plots](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html), and AIC and BIC, as shown in VanderPlas.
 
 1. In In Depth: Gaussian Mixture Models, it is said that the choice of number of components with AIC or BIC criterion can only reflect how well GMM works as a density estimator, but not as a clustering algorithm. Why would the optimal number be different between the two uses?
-> FIXME
+> Because they were calculated with different methods?
 
 1. Regarding the number of components in GMM, the text mentionts that "as is typical with this sort of problem, the BIC recommends a simpler model". When selecting a correction method (AIC, BIC) to calculate the optimal number of components, is it important to have background information or predictions about the dataset?
-> Not sure what you mean with "background information". FIXME
+> Not sure what you mean with "background information".
 
 1. * Is a GMM with a Dirichlet process prior the only clustering method we can use when we're not able to specify k?  Do we need to know how the Dirichlet process works?
   * Should we know for the exams how Dirichlet Process Priors work to find the number of clusters, or is it okay to know just that it can work in conjunction with GMM to automatically select k?
@@ -91,7 +91,7 @@ In my understanding, that means that both methods are only suited for a certain 
 > GMMs are great to mimic general probabilistic distributions, and are hence frequently used in [Bayesian modelling](https://en.wikipedia.org/wiki/Mixture_model#Examples).
 
 1. Using several Gaussians in GMM to create a density estimator of a dataset would create peaks at each cluster center. The number of peaks would change with the number of cluster centers. This seems to create artificial probability “hotspots” that were not present in the original data. Could this be an issue, and if so - how can it be solved? (Ideally, only one probability distribution would exist for one group of data.)
-> Not sure I understand. FIXME.
+> Not sure I understand. 
 
 1. GMM is considered to be more of a density estimator rather than a clustering method. Why is GMM only used as a clustering method when the data set is simple?
 > Because it is a nice algorithm.
@@ -137,10 +137,8 @@ Here is a wikipedia entry on [local optima](https://en.wikipedia.org/wiki/Local_
 > I am not sure. It could be worth trying.
 
 1. If the k-means algorithm is not effective for clustering our data set, in which cases should we proceed with PCA and when with a Gaussian mixture model?
-> FIXME
-
 1. When we should use dimension reduction before applying either k-Means clustering or GMMs? When we are not necessary to do the dimension reduction?
-> FIXME
+> There is no rule for this.
 
 
 ## Other clustering algorithms
