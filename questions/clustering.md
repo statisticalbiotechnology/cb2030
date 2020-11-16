@@ -163,7 +163,7 @@ If you want to have a look at other clustering algorithms, [sklearn contain a la
 > Clustering is always challenging. There are several other clustering algorithms available.
 
 1. In batch-based k-means algorithms, you have to choose a subset of the data to update the cluster centers with at each step. Is this subset chosen randomly?
-> Yes, [Mini-batches are subsets of the input data, randomly sampled in each training iteration.](https://scikit-learn.org/stable/modules/clustering.html#mini-batch-kmeans)
+> Yes, [Mini-batches are subsets of the input data, randomly sampled in each training iteration.](https://scikit-learn.org/stable/modules/clustering.html#mini-batch-kmeans)  
 
 
 ## Notebook
