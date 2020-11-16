@@ -82,7 +82,6 @@ In my understanding, that means that both methods are only suited for a certain 
      * How do we choose which covariance type to use on our GMM clustering model?
   > You calculate the covariation and variance between points i a cluster, and try to convince yourself what the covariation structure looks like.  
 
-
 1. Can you kernelize the data in GMMs as you did with the k-means? Would that help in the number of components the GMMs need?
   > I have not tried to do so myself, but [others](https://arxiv.org/abs/1608.00550) seem to do so.
 
