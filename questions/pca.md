@@ -42,4 +42,15 @@ Eigen genes. These illustrate the linear combinations of genes that explains the
 1. I did not understand what we should extract from SVD. I understand we can see the single value matrix as the equivalent of PCA "explained variance", but what do we do then? Do we take the corresponding eigenassay column or the eigengene row for further analysis? Honestly, I don't understand what is contained in the other two matrices defined in SVD.
 > Right, it might be a bit abstract at first. I will try to run some examples during the seminar, if you were not convinced by the examples in the video.
 
-15/11
+1. In your youtube video you say that the difference we can see in the first plot in the jupyter notebook could be due to biases in the data sets, such as that they have been normalized separately. How can such biases be avoided? Moreover, is the data always normalized before performing PCA and if so how is the normalization done?
+
+1. In the notebook (PCA of Carcinomas) it is explained that the data from both types of cancer are merged a just one single dataset and from this "new merged data set" the principal components are obtained which are later used for the SVD analysis. I don't quite understand how you plot the "new merged data set" for obtaining the principal components when you only have the transcripts count as the variable? I mean, in the youtube video you explain that a single data set from patients could be plotted in order to get the principal component 1, though there you had 2 variables (height and weight). In the notebook we only have one single variable (counts of transcripts), so how does the code produce the principal component? Does it choose random transcript counts and plot them against each other ?
+
+1. What exactly is S and why is it a diagonal matrix?
+Why is the Eigen gene matrix transposed?
+
+1. Is it possible that for instance when investigating 10 genes/dimensions that at least 4 of them accounts for equally large variance and are thus equally relevant and therefore PCA cannot convert the data into dimensions that are displayable?
+
+1. To me the eigengenes/eigensamples and principal components seem like kind of the same thing, what's the difference?
+
+1. Other dimensionality reduction methods such as t-SNE are often also used for example in gene expression analysis.  When do we prefer to use PCA in front of other methods, and could we then for example also use t-SNE on the data in the jupyter notebook?
