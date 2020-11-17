@@ -1,19 +1,21 @@
 # Questions and Answers on Principal Component Analysis.
 
-## Other types of Dimensionality Reduction
-1. Is there any other dimensionality reduction methods utilizing a metric other than the covariance measure? I.e. can you capture other features of the data in question by the same procedure as PCA?
-  > One related type of analysis that is using a [different orthogonality criterium](https://stats.stackexchange.com/questions/35319/what-is-the-relationship-between-independent-component-analysis-and-factor-analy) than PCA is [Independent Component Analysis (ICA)](https://en.wikipedia.org/wiki/Independent_component_analysis).
+## General properties of PCAs
+1. Are the eigenvectors given from the SVD or are they needed beforehand?
+> They are given by the SVD.
 
-1. Other dimensionality reduction methods such as t-SNE are often also used for example in gene expression analysis.  When do we prefer to use PCA in front of other methods, and could we then for example also use t-SNE on the data in the jupyter notebook?
-> [t-SNE](https://scikit-learn.org/stable/modules/manifold.html#t-distributed-stochastic-neighbor-embedding-t-sne) is a non-linear technique. We wont cover it here, but it is great for visualisation of multidimensional data. Feel free to try it out in the notebook example, it is relatively straightforward to implement.
-
+1. Is there a limit of how many dimensions PCA can be applied to? Does the maximum number of dimensions that PCA is suitable for depend on the size and/or quality of the data set? In that case, how?
+> The notebook contains an example of PCA on 20k dimensions. There might be that you can hit an over limit by using even more dimensions, however, I have not experienced any problems with the size of the problem.
 
 ## Difference between PCA and SVD
-1. Would calculating a covariance matrix between genes in a microarray and then performing a PCA yield exactly the same result as performing SVD on it?
-1. I don’t really understand, is SVD a method that is always used to perform PCA or are they two different/independent methods for dimensionality reduction but that they combined together? (I felt that SVD was difficult to understand and I don’t think I understood exactly its connection with PCA).
+1. * According to wikipedia SVD is a different name for PCA, depending on the field of application. But I read somewhere else that PCA is built upon SVD, and it seemed like the PCA method was an extension somehow. So, is there a difference between the two and, in that case, what is it?
+  * Would calculating a covariance matrix between genes in a microarray and then performing a PCA yield exactly the same result as performing SVD on it?
+   * I don’t really understand, is SVD a method that is always used to perform PCA or are they two different/independent methods for dimensionality reduction but that they combined together? (I felt that SVD was difficult to understand and I don’t think I understood exactly its connection with PCA).
 > SVD is an algorithm for performing PCA.  
 > A more elaborated answer:  
-[]"What is the difference between SVD and PCA? SVD gives you the whole nine-yard of diagonalizing a matrix into special matrices](https://jonathan-hui.medium.com/machine-learning-singular-value-decomposition-svd-principal-component-analysis-pca-1d45e885e491) that are easy to manipulate and to analyze. It lay down the foundation to untangle data into independent components. PCA skips less significant components. Obviously, we can use SVD to find PCA by truncating the less important basis vectors in the original SVD matrix."
+["What is the difference between SVD and PCA? SVD gives you the whole nine-yard of diagonalizing a matrix into special matrices](https://jonathan-hui.medium.com/machine-learning-singular-value-decomposition-svd-principal-component-analysis-pca-1d45e885e491) that are easy to manipulate and to analyze. It lay down the foundation to untangle data into independent components. PCA skips less significant components. Obviously, we can use SVD to find PCA by truncating the less important basis vectors in the original SVD matrix."
+1. Can you explain more about the relationship between PCA and SVD?
+> Yes I can.
 
 ## Eigenvectors and Eigenvalues
 
@@ -47,6 +49,23 @@ Why is the Eigen gene matrix transposed?
 1. What are some good ways to identify an optimal number of reduced dimensions?
 > The amount of explained variation is a typical mean to identify which components that are relevant.
 
+## Covariation
+
+1. * I don't really get the covariance matrix. Do we have to compute that to be able to perform PCA?   
+> No.  
+   * Why would we need to look at the covariation of each pair of data points? In the explanations of PCA you just look for the dimensions that explains most of the variance.
+> Yes that is all a PCA does for you, it finds a rotation where the the variance in the data is best explained in order of the principal components.
+  * Is it that when this is done computationally (and not by eye as in the explanations) the best way to compute this is to base it on calculations of covariance between all data points?
+> No, there is no separate covariance calculations involved. Just let the SVD do its job. In practice the PCA replaces linear combinations of covarying variables with new variables.
+
+
+## Dimensionality Reduction
+
+1. When doing a dimensionality reduction using PCA it is said that it involves "zeroing out" one or more of the smallest principal components. Are these considered outliers or why is it necessary to "zero out" these? Also, what exactly does it mean to "zero out"?
+> VanderPlas means that you can make a dimensionality reduction of your problem by just selecting a subset of the principal components.
+
+
+
 ## Number of PC's to extract.
 
 1. When PCA is used in machine learning do we need to do dimensional reduction to 3D or 2D or can they handle higher dimensions? And does a higher dimension generally show a clearer picture than a lower dimension?
@@ -74,7 +93,7 @@ Why is the Eigen gene matrix transposed?
 1. It is said that PCA is affected by outliers and that some variants of the method can compensate for that or remove them in some way, but I have difficulties understanding how outliers can be identified as such and not just as points showing an actual effect, especially when the aim is to investigate the data.
 > VanderPlas mention SparsePCA and explains that it uses a regularization scheme called L1-penalty, i.e. it penalizes not just for squared errors of the decomposition, but also for number of non-zero elements in each principal components. Feel free to try the method yourself in e.g. the jupyter notebook.
 
-## Kluver nomenclature
+## Kluwer *et al.* nomenclature
 ![](https://public.lanl.gov/mewall/kluwer2002/SVD_GEA.jpg)
 
 1. To me the eigengenes/eigensamples and principal components seem like kind of the same thing, what's the difference?
@@ -83,6 +102,9 @@ Why is the Eigen gene matrix transposed?
 1. Is the "first Eigen gene" means the first principal component and the "second Eigen gene" means the second principal component? So are they both the linear combination of a set of different genes? In Jupyter notebook's illustration, it seems really similar to how we illustrating PC1, PC2, etc.  
 Eigen genes. These illustrate the linear combinations of genes that explains the variance of the genes. First one describes the most, the second explains most of the variance when the variance of the first gene-compination is removed. Here we only explore the first two component, but one could plot the other ones as well.)
 > Yes, the nomenclature in the notebook follows the section 2 of [Kluver et al.](https://public.lanl.gov/mewall/kluwer2002.html)
+
+1. Can you explain the connection between PCA and eigengenes/eigensamples again? Does  the eigengenes and/or eigensamples describe the principal components of the data set?
+> Yes, Kluwer et al. calls principal components eigengenes and eigenassays.
 
 ## Limitations of PCA
 
@@ -104,14 +126,34 @@ Eigen genes. These illustrate the linear combinations of genes that explains the
 ## Design of Experiments
 
 1. In your youtube video you say that the difference we can see in the first plot in the jupyter notebook could be due to biases in the data sets, such as that they have been normalized separately. How can such biases be avoided? Moreover, is the data always normalized before performing PCA and if so how is the normalization done?
-> You conduct your experiment exactly the same way for all samples. That is easier said than done.
+> You conduct your experiment exactly the same way for all samples. That is easier said than done, though.
+
+## Other types of Dimensionality Reduction
+
+1. Is there any other dimensionality reduction methods utilizing a metric other than the covariance measure? I.e. can you capture other features of the data in question by the same procedure as PCA?
+  > One related type of analysis that is using a [different orthogonality criterium](https://stats.stackexchange.com/questions/35319/what-is-the-relationship-between-independent-component-analysis-and-factor-analy) than PCA is [Independent Component Analysis (ICA)](https://en.wikipedia.org/wiki/Independent_component_analysis).
+
+1. Other dimensionality reduction methods such as t-SNE are often also used for example in gene expression analysis.  When do we prefer to use PCA in front of other methods, and could we then for example also use t-SNE on the data in the jupyter notebook?
+> [t-SNE](https://scikit-learn.org/stable/modules/manifold.html#t-distributed-stochastic-neighbor-embedding-t-sne) is a non-linear technique. We wont cover it here, but it is great for visualisation of multidimensional data. Feel free to try it out in the notebook example, it is relatively straightforward to implement.
+
+1. It has been shown that PCA is not useful for every high-dimensional dataset. Being the outliers affection in the data one of the PCA's main weakness.  
+Scikit-Learn is one of the strongest iterative alternatives to discard poorly described data points from the dataset. This method contains interesting variants on PCA, RandomizedPCA and SparsePCA.  
+RandomizedPCA approximates the first few principal components in a fast but non-deterministic way. While SparsePCA introduces a regularization term enforcing sparsity of the components.  
+In which cases, would it be better to use RandomizedPCA, achieving a fast discard of the data points and when it would be better to introduce and regularize the components through the SparsePCA variant?
+> Why don't you find out by trying them out?
 
 ## Outliers
 
 1. When you have outliers in the PCA, how do you know if you can discard them? The text says that you can discard "data points that are poorly described by the initial components", but what defines if they are poorly described?
-> You. It is a subjective call.
+> You! It is a subjective call.
+
+1. In the lecture video, the most extreme genes for Eigen Patient 1 and 2 are considered the most relevant. How do we know these are not outliers? Has the data been filtered before the analysis?
+> No I do not say that they are more relevant, just that they describe the most of the variation in the data. They could contain outlier data, so it might be worth plotting their expression values.
 
 ## Other
 
 1. Are there vectors of a dataset that can be used to decide whether PCA or SVD are more suitable for the analyses or are both dimensional reduction algorithms always applicable?
 > Not sure I understand your question.
+
+1. Would it be possible to explain Singular Value Decomposition a little bit better with regard to the gene expression data analysis?   
+> Sure I can. Which aspect was unclear in e.g. Kluwer et al.?
