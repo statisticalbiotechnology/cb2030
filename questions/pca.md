@@ -101,10 +101,10 @@ Why is the Eigen gene matrix transposed?
 
 1. Is the "first Eigen gene" means the first principal component and the "second Eigen gene" means the second principal component? So are they both the linear combination of a set of different genes? In Jupyter notebook's illustration, it seems really similar to how we illustrating PC1, PC2, etc.  
 Eigen genes. These illustrate the linear combinations of genes that explains the variance of the genes. First one describes the most, the second explains most of the variance when the variance of the first gene-compination is removed. Here we only explore the first two component, but one could plot the other ones as well.)
-> Yes, the nomenclature in the notebook follows the section 2 of [Kluver et al.](https://public.lanl.gov/mewall/kluwer2002.html)
+> Yes, the nomenclature in the notebook follows the section 2 of [Kluwer et al.](https://public.lanl.gov/mewall/kluwer2002.html)
 
 1. Can you explain the connection between PCA and eigengenes/eigensamples again? Does  the eigengenes and/or eigensamples describe the principal components of the data set?
-> Yes, Kluwer et al. calls principal components eigengenes and eigenassays.
+> Yes, Kluwer *et al.* calls principal components eigengenes and eigenassays.
 
 ## Limitations of PCA
 
