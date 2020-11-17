@@ -75,6 +75,7 @@ Why is the Eigen gene matrix transposed?
 > VanderPlas mention SparsePCA and explains that it uses a regularization scheme called L1-penalty, i.e. it penalizes not just for squared errors of the decomposition, but also for number of non-zero elements in each principal components. Feel free to try the method yourself in e.g. the jupyter notebook.
 
 ## Kluver nomenclature
+![](https://public.lanl.gov/mewall/kluwer2002/SVD_GEA.jpg)
 
 1. To me the eigengenes/eigensamples and principal components seem like kind of the same thing, what's the difference?
 > None. Eigengenes/eigensamples is just a more direct nomenclature.
