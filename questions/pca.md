@@ -11,7 +11,7 @@
 1. * According to wikipedia SVD is a different name for PCA, depending on the field of application. But I read somewhere else that PCA is built upon SVD, and it seemed like the PCA method was an extension somehow. So, is there a difference between the two and, in that case, what is it?
   * Would calculating a covariance matrix between genes in a microarray and then performing a PCA yield exactly the same result as performing SVD on it?
    * I don’t really understand, is SVD a method that is always used to perform PCA or are they two different/independent methods for dimensionality reduction but that they combined together? (I felt that SVD was difficult to understand and I don’t think I understood exactly its connection with PCA).
-> SVD is an algorithm for performing PCA.  
+> SVD is an algorithm for performing PCA ([give and take some small considerations](https://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-between-svd-and-pca)).  
 > A more elaborated answer:  
 ["What is the difference between SVD and PCA? SVD gives you the whole nine-yard of diagonalizing a matrix into special matrices](https://jonathan-hui.medium.com/machine-learning-singular-value-decomposition-svd-principal-component-analysis-pca-1d45e885e491) that are easy to manipulate and to analyze. It lay down the foundation to untangle data into independent components. PCA skips less significant components. Obviously, we can use SVD to find PCA by truncating the less important basis vectors in the original SVD matrix."
 1. Can you explain more about the relationship between PCA and SVD?
@@ -121,7 +121,7 @@ Eigen genes. These illustrate the linear combinations of genes that explains the
 ## Notebook
 
 1. In the notebook (PCA of Carcinomas) it is explained that the data from both types of cancer are merged a just one single dataset and from this "new merged data set" the principal components are obtained which are later used for the SVD analysis. I don't quite understand how you plot the "new merged data set" for obtaining the principal components when you only have the transcripts count as the variable? I mean, in the youtube video you explain that a single data set from patients could be plotted in order to get the principal component 1, though there you had 2 variables (height and weight). In the notebook we only have one single variable (counts of transcripts), so how does the code produce the principal component? Does it choose random transcript counts and plot them against each other?
-> Each of the two sets contains patients' gene expression values (about 20k gene exression values per patient). Here the data is given as a 500*20k array, patients as columns, genes at rows. You add the patients containing the two types of cancer in one large set,which here is  represented as a 1k*20k matrix. This is a typicalthing that is easier viewed in the notebook directly.  
+> Each of the two sets contains patients' gene expression values (about 20k gene exression values per patient). Here the data is given as a 500 x 20k array, patients as columns, genes at rows. You add the patients containing the two types of cancer in one large set,which here is  represented as a 1k x 20k matrix. This is a typicalthing that is easier viewed in the notebook directly.  
 
 ## Design of Experiments
 
