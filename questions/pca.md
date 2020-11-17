@@ -17,17 +17,22 @@
 1. Can you explain more about the relationship between PCA and SVD?
 > Yes I can.
 
+## Singular Value Decomposition
+
+1. **(4 votes)** I found it hard to understand what the three matrices in the SVD represented. Could you explain this a bit more?
+> Not very much more than i.e. the description in Kluwer et al. Hopefully this will become clear after the seminar.
+
 ## Eigenvectors and Eigenvalues
 
-1. In what circumstances are we interested in the properties of "eigenpatients", rather than "eigengenes"?
-> The eigen patient contains the variation within the patients, e.g. the first eigen patient contains the most descriptive difference between the patients. So the eigen patient is a vector containing one value per gene that gives the relative weight of that gene.  Conversely, the eigengenes contains the variation within the genes, e.g. the first eigengene contains the most descriptive difference between the genes. So the eigengene is a vector containing one value per patient that gives the relative weight of that patient.
+1. **(5 votes)** In what circumstances are we interested in the properties of "eigenpatients", rather than "eigengenes"?
+> The eigenpatient contains the variation within the patients, e.g. the first eigenpatient contains the most descriptive difference between the patients. So the eigenpatient is a vector containing one value per gene that gives the relative weight of that gene.  Conversely, the eigengenes contains the variation within the genes, e.g. the first eigengene contains the most descriptive difference between the genes. So the eigengene is a vector containing one value per patient that gives the relative weight of that patient.
 
-1. I did not understand what we should extract from SVD. I understand we can see the single value matrix as the equivalent of PCA "explained variance", but what do we do then? Do we take the corresponding eigenassay column or the eigengene row for further analysis? Honestly, I don't understand what is contained in the other two matrices defined in SVD.
+1. **(5 votes)** I did not understand what we should extract from SVD. I understand we can see the single value matrix as the equivalent of PCA "explained variance", but what do we do then? Do we take the corresponding eigenassay column or the eigengene row for further analysis? Honestly, I don't understand what is contained in the other two matrices defined in SVD.
 > Right, it might be a bit abstract at first. I will try to run some examples during the seminar, if you were not convinced by the examples in the video.
 
-1. What exactly is S and why is it a diagonal matrix?
-Why is the Eigen gene matrix transposed?
-> The S matrix is a diagonal matrix containing the eigenvalues.
+1. **(3 votes)** What exactly is S and why is it a diagonal matrix?
+Why is the Eigengene matrix transposed?
+> The S matrix is a diagonal matrix containing the eigenvalues. The eigengene matrix is transposed as it is the way it comes out from a SVD.
 
 1. Do the Eigengenes and Eigensamples with their values actually exist in the data (= are there samples and genes which have exactly those values) or are those hypothetical 'genes' and 'samples' which describe the variance across the dataset?
 > No, there is no individual sample or gene that takes the same shape as the eigengene. They are an average behavior across all genes/samples.
@@ -40,13 +45,13 @@ Why is the Eigen gene matrix transposed?
    In his examples, a plot of the cumulative explained variance resembled a [pareto curve](https://en.wikipedia.org/wiki/Pareto_distribution) (as above). Is this behaviour a requirement for a successful principle component analysis?
 > It is not a requirement on the problem, instead it is a property of the analysis. 1st PC contains the most of the variance, 2nd PC the next-to most of the variance, etc. As the PCs are ordered, each new component adds a smaller and smaller contribution to the variance explained. Hence, the type of plot you see above.
 
-1. What information could the S matrix give us in the jupyter notebook example?
+1. **(3 votes)** What information could the S matrix give us in the jupyter notebook example?
 > The S matrix (also called sigma matrix) in a [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition) contains the eigen-values. In this context, they are indicating the relative importance of the PCs of how well they explain the variance within your gene-expression matrix.
 
 1. Is it possible that for instance when investigating 10 genes/dimensions that at least 4 of them accounts for equally large variance and are thus equally relevant and therefore PCA cannot convert the data into dimensions that are displayable?
 > That is entirely possible.
 
-1. What are some good ways to identify an optimal number of reduced dimensions?
+1. **(3 votes)** What are some good ways to identify an optimal number of reduced dimensions?
 > The amount of explained variation is a typical mean to identify which components that are relevant.
 
 ## Covariation
@@ -68,13 +73,13 @@ Why is the Eigen gene matrix transposed?
 
 ## Number of PC's to extract.
 
-1. When PCA is used in machine learning do we need to do dimensional reduction to 3D or 2D or can they handle higher dimensions? And does a higher dimension generally show a clearer picture than a lower dimension?
+1. **(2 votes)** When PCA is used in machine learning do we need to do dimensional reduction to 3D or 2D or can they handle higher dimensions? And does a higher dimension generally show a clearer picture than a lower dimension?
 > You frequently strive to reduce your problem to as few components as possible, but not less.
 
 1. When combining components do you / the computer try different variations to see which one has the best separation, or do we decide ourselves what we think is appropriate?
 > You have to choose the number of dimensions yourself.
 
-1. As I understood, to plot the results of a PCA in 2D we need to select two principal components. What can we do if PC1 and PC2 can only explain a small amount of the total variance? Is there a way to include more components within the PCA plot?
+1. **(2 votes)** As I understood, to plot the results of a PCA in 2D we need to select two principal components. What can we do if PC1 and PC2 can only explain a small amount of the total variance? Is there a way to include more components within the PCA plot?
 > You are free to include as many components you want. However, they are sorted in the order of amount of explained variance. Hence if your first two components did not explain that much variance your third component is also not likely to explain much.
 
 ## Applications
@@ -96,8 +101,11 @@ Why is the Eigen gene matrix transposed?
 ## Kluwer *et al.* nomenclature
 ![](https://public.lanl.gov/mewall/kluwer2002/SVD_GEA.jpg)
 
-1. To me the eigengenes/eigensamples and principal components seem like kind of the same thing, what's the difference?
+1. **(5 votes)** To me the eigengenes/eigensamples and principal components seem like kind of the same thing, what's the difference?
 > None. Eigengenes/eigensamples is just a more direct nomenclature.
+
+1. **(3 votes)** I had problems with understanding what eigenassays are. From what I understood they correspond to the columns (U<sub>k</sub>) in the left (m x  n) matrix U in X=USV<sup>T</sup> and it is mentioned that they are analogous to  principal components. I still don't understand what they represent in a gene expression analysis.
+> The eigenassay contains the variation within the patients, e.g. the first eigenassay contains the most descriptive difference between the assays. So the eigenassay is a vector containing one value per gene that gives the relative weight of that gene.
 
 1. Is the "first Eigen gene" means the first principal component and the "second Eigen gene" means the second principal component? So are they both the linear combination of a set of different genes? In Jupyter notebook's illustration, it seems really similar to how we illustrating PC1, PC2, etc.  
 Eigen genes. These illustrate the linear combinations of genes that explains the variance of the genes. First one describes the most, the second explains most of the variance when the variance of the first gene-compination is removed. Here we only explore the first two component, but one could plot the other ones as well.)
@@ -108,7 +116,8 @@ Eigen genes. These illustrate the linear combinations of genes that explains the
 
 ## Limitations of PCA
 
-1. It is mentioned in "principal component analysis summary" that PCA is less useful for high-dimensional data sets. Is this due to the loss of information or is it other factors limiting the use of PCA?
+1. **(3 votes))** It is mentioned in "principal component analysis summary" that PCA is less useful for high-dimensional data sets. Is this due to the loss of information or is it other factors limiting the use of PCA?
+> I dissagree, VanderPlas states that: "Certainly PCA is not useful for every high-dimensional dataset, but it offers a straightforward and efficient path to gaining insight into high-dimensional data.", that is not really the same thing as you state.
 > PCA is frequently used in high dimensional data, as we are in more need of dimensionality reduction in high dimensional data.
 
 1. It is mentioned that PCAs main weakness is outliers in your data. Does this mean that there are examples of when PCA or dimensionality reduction is possible but not recommended? Such as when there is a lot of variance between samples and data?
@@ -125,15 +134,15 @@ Eigen genes. These illustrate the linear combinations of genes that explains the
 
 ## Design of Experiments
 
-1. In your youtube video you say that the difference we can see in the first plot in the jupyter notebook could be due to biases in the data sets, such as that they have been normalized separately. How can such biases be avoided? Moreover, is the data always normalized before performing PCA and if so how is the normalization done?
+1. **(2 votes)** In your youtube video you say that the difference we can see in the first plot in the jupyter notebook could be due to biases in the data sets, such as that they have been normalized separately. How can such biases be avoided? Moreover, is the data always normalized before performing PCA and if so how is the normalization done?
 > You conduct your experiment exactly the same way for all samples. That is easier said than done, though.
 
 ## Other types of Dimensionality Reduction
 
-1. Is there any other dimensionality reduction methods utilizing a metric other than the covariance measure? I.e. can you capture other features of the data in question by the same procedure as PCA?
+1. **(4 votes)** Is there any other dimensionality reduction methods utilizing a metric other than the covariance measure? I.e. can you capture other features of the data in question by the same procedure as PCA?
   > One related type of analysis that is using a [different orthogonality criterium](https://stats.stackexchange.com/questions/35319/what-is-the-relationship-between-independent-component-analysis-and-factor-analy) than PCA is [Independent Component Analysis (ICA)](https://en.wikipedia.org/wiki/Independent_component_analysis).
 
-1. Other dimensionality reduction methods such as t-SNE are often also used for example in gene expression analysis.  When do we prefer to use PCA in front of other methods, and could we then for example also use t-SNE on the data in the jupyter notebook?
+1. **(2 votes)** Other dimensionality reduction methods such as t-SNE are often also used for example in gene expression analysis.  When do we prefer to use PCA in front of other methods, and could we then for example also use t-SNE on the data in the jupyter notebook?
 > [t-SNE](https://scikit-learn.org/stable/modules/manifold.html#t-distributed-stochastic-neighbor-embedding-t-sne) is a non-linear technique. We wont cover it here, but it is great for visualisation of multidimensional data. Feel free to try it out in the notebook example, it is relatively straightforward to implement.
 
 1. It has been shown that PCA is not useful for every high-dimensional dataset. Being the outliers affection in the data one of the PCA's main weakness.  
