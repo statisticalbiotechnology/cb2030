@@ -23,16 +23,16 @@ def estimatePi0(p, numBoot=100, numLambda=100, maxLambda=0.95):
     minIx = np.argmin(mse)
     return pi0s[minIx]
 
-def qvalues(pvalues):
+def qvalues(pvalues, pcol="p"):
     m = pvalues.shape[0] # The number of p-values
-    pvalues.sort_values("p",inplace=True) # sort the pvalues in acending order
-    pi0 = estimatePi0(list(pvalues["p"].values))
+    pvalues.sort_values(pcol,inplace=True) # sort the pvalues in acending order
+    pi0 = estimatePi0(list(pvalues[pcol].values))
     
     # calculate a FDR(t) as in Storey & Tibshirani
     num_p = 0.0
     for ix in pvalues.index:
         num_p += 1.0
-        fdr = pi0*pvalues.loc[ix,"p"]*m/num_p
+        fdr = pi0*pvalues.loc[ix,pcol]*m/num_p
         pvalues.loc[ix,"q"] = fdr
     
     # calculate a q(p) as the minimal FDR(t)
