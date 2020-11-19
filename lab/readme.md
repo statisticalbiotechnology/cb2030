@@ -38,9 +38,5 @@ Here you find the lab instructions for the computer excercises:
 
 ## Lab 4 - Gene regulation
 
-### Obs: Lab 4 instructions will still change. Do not use this current version.
-
-* Lab instructions [here](Lab4/Lab&#32;4&#32;-&#32;Instructions.pdf)
-* Files neded to perform the lab [here](Lab4/)
-
+### Lab 4 instructions are still being worked on.
 
