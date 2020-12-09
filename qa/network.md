@@ -4,7 +4,7 @@
 
 1. In the video about the Girvan-Newman method the edge betweenness is described as a property of a node and that nodes with high edge betweenness are removed. However, in the Network Science book the edge betweenness is described as a property of an edge and that edges with high edge betweenness are removed. This made me a bit confused.. Are they two variations of the method? Or am I misunderstanding something? 
 
-> Good catch! As the name suggests, edge betweenness is a property of an edge. And I did misspoke this in the video.
+> Good catch! As the name suggests, edge betweenness is a property of an edge. And I did misspeak this in the video.
 
 # Building networks
 1. Are there methods of, from a distance matrix or points in R^n to predict a possible underlying network or connectivity between points based on proximity, for example for mapping allosteric protein interactions based on static crystal structures?

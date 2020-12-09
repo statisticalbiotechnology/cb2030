@@ -38,5 +38,5 @@ Here you find the lab instructions for the computer excercises:
 
 ## Lab 4 - Gene regulation
 
-### Lab 4 instructions are still being worked on.
+* [Link to the lab](https://thanadol.shinyapps.io/CB2030/)
 
