@@ -31,6 +31,7 @@
  | L17 | Wed | 9/12 | 8-10 |  FE | [Zoom]( https://kth-se.zoom.us/j/67669702155) | Gene Regulation 4 |
  | C4 | Wed | 9/12 | 15-19 |  MA | [Zoom](https://kth-se.zoom.us/j/62172233680) | Gene Regulation |
  | L18 | Thu | 10/12 | 8-10 |  All | [Zoom](https://kth-se.zoom.us/j/63235701000) | Q&A
+ | L19 | Thu | 7/1 | 15-17 |  All | [Zoom](https://kth-se.zoom.us/j/69068920245) | Q&A, again.
  | Exam | Tue | 12/1 | 14-18 |  All |  TBD |Exam |  
 
 We used the following codes:
