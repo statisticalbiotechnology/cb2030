@@ -25,6 +25,12 @@ Here we store selected questions and answers from previous years incarnations of
   >  
   > So you see that in a non-continuous distribution you can have a certain probability for X to assume a specific value, because the possible values are "limited": you can, for instance, count the number of persons having a certain age. On the other hand, in a continuous distribution the probability for X to assume one specific value is one over infinite (=0): what is the probability for a person to be 173.67809223... cm tall? The only thing you can define is the probability for that person to be, for instance, taller/shorter than 173 cm or to be between 173.0 and 173.5 cm.
 
+* Q: "The *P* value is the probability of getting test results at least as extreme as the actual results, provided the null hypothesis is correct."  
+This is the definition in more or less the same word that we always hear when we explain the *p* value. But I have never heard anyone explain what the numbers really stand for with an example. Take a *p* value of 0.05 to identify a protein from a partial sequence.  
+Does this mean that we have a 5% chance that the identification is incorrect, which should mean that we have a 95% chance of having identified the correct sequence? and how does this related if we have multiple results with equal or similar *p* values?
+> A1. No it does not mean that there is 5% chance that the identification is incorrect. It means that if we repeat the experiment 20 times you would find on average one experiment with as good, or better, identification score, despite the identification is incorrect in all your experiments.  
+> A2. It means that you - as the researcher - have set a threshold of 5%, where if the probability that the protein identification by the partial sequencing was made by pure chance was 5% or higher, then the identification is incorrect/non-significant. Many scientists that falsify data, usually choose to raise the threshold value to confirm the significance of their - incorrect/random - results.  
+It does not mean, however that there is a 95% chance that the protein identification by the partial sequencing was true, because the p-value is used only for the null-hypothesis and - just like confidence interval - does not take into account the type I and type II errors.
 
 ## Significance levels
 
