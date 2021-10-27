@@ -20,14 +20,6 @@ dependencies:
   - ipywidgets
   # Lab 2
   - scikit-learn
-  # Lab 4
-  - r-base
-  - rstudio
-  - r-tidyverse
-  - r-ggplot2
-  - r-readxl
-  - r-gplots
-  - r-ggdendro
   # Lab 3
   - pytest
   - pytest-benchmark
