@@ -11,20 +11,6 @@ Add geographic PCA example to prep material.
 
 Update the notebooks so that the following questions are answered:
 
-### Linear models
-1. In the Jupyter notebook, the KNAP2 expression is tested for significant dependence on grade, tumor size and the intercation between size and grade. This resulted in a very small p value for grade (1.8E-8) and a quite large p value for size (0.45). The interaction between size and grade gave a significant *p* value (0.016). It then says that "The test suggest that KNAP2 expression depends on an interaction between tumor size and grade". My question is if the significant result obtained for the interaction could be due to the very small p value for grade, thereby kind of "masking" the large p value for size? So I am wondering if we really can be sure that the interaction is significant in itself, and not solely significant in the tumor grade?
- > No, this should not, at least not theoretically, be the case. The model should regress away the larger effect of the tumor grade, rendering the further tests data where the linear effect of the tumor grade is absent.
-
- 1. How can one see “KNAP2 expression depends on an interaction between tumor size and grade” in the Jupyter notebook “KNAP2 gene analysis”? Which value in the table is the criterion?  
- 1. In the video lecture, approximately at 11:50, you say that there is an inverse relationship between the node and the grade. How do you see this in the boxplots? How can you determine that there is an inverse relationship between these?
-   >  The difference in KNAP2 expression between node=1 and node=0 is positive for grade=1 tumors, but negative for grade=3 tumors. Hence there is a tempting interaction between these variables. We subsequently test if this interaction is significant.  
-
-1. In the video it seems to me that the effect of node upon gene expression is dependent on the grade of the cancer. Can you use multiple linear regression to study the effect of multiple parameters (such as grade/node/size) on a single feature (gene expression) while including the fact that the parameters can affect and be dependent on one another? Can that be done by representing each parameter as a separate "line equation" and looking at the sum of them?
-    > Yes, the notebook, for instance, look at KNAP2 expression's dependency on the interaction between tumor grade and if the patient's lymph nodes have been removed or not.
-
-1. In the jupyter notebook "KNAP2 gene analysis", for the different model equations, "C" is not the same value within the same equation? C could be a different values for each term, correct?
-  > Not correct! We use the notation C(.), when we want to emphasise that a variable is categorical and not continuous.
-
 ### Pathway Analysis
 
 1. In the notebook the number of permutations for significance estimation is set to 100 to speed up the calculations but it was still very slow when I tried to execute it (in the binder server thing). Is the method typically slow or was it just the server?
