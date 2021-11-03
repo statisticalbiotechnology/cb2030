@@ -25,13 +25,6 @@ Update the notebooks so that the following questions are answered:
 1. In the jupyter notebook "KNAP2 gene analysis", for the different model equations, "C" is not the same value within the same equation? C could be a different values for each term, correct?
   > Not correct! We use the notation C(.), when we want to emphasise that a variable is categorical and not continuous.
 
-  ### Multiple hypotheis Testing
-1. In the last figure on notebook, the treshold separate true and false data. Could you explain why the true has to have high p-value (-logp is low)?
-    > In the notebook, the features significant on a *q* value treshold of 10<sup>-10</sup> are labeled as "True" in the plot. The *q* value is semi-monotonically increasing with *p* value, so whenever q is low, p is low. low p means high -p, and high -log p.
-
-1. I did not really follow how π 0 and λ were calculated/determine and how they relate to the q-value and FDR. Could you go through an example, maybe even use the TCGA breast cancer set, and go through step by step how you calculate these 4 variables from the data and in which order you do the calculations (which variables depend on each other?)?
-    > It would be great if you tell me why the notebook is not a good enough example in itsef? Try to play around a bit with the notebook before the seminar.
-
 ### Pathway Analysis
 
 1. In the notebook the number of permutations for significance estimation is set to 100 to speed up the calculations but it was still very slow when I tried to execute it (in the binder server thing). Is the method typically slow or was it just the server?
