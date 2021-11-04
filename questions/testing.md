@@ -1,11 +1,15 @@
 # Question and answers -- Hypothesis Testing
 
 ## Definition of probabilities
-1. What properties of the p-value makes them uniformly distributed under H0?
+1. What properties of the $p$ value makes them uniformly distributed under H0?
+   > A1. They are sampled from the same distribution that they are tested against. An analogue is that the probability of a randomly selected Swede to be among the $p$% tallest persons in Sweden is $p$.   
+   > A2. For the p-values to be uniformly distributed the distribution of test statistics needs to be continuous, (has infinite range of values). In continues distribution, the chosen sample could be in any percentile of the distribution, meaning that all the percentile of the samples are uniformly distributed. Keeping in mind that a percentile is a statistical value where the certain percentage of scores fall below given sample value, in terms of continuous distribution, it could likely be anywhere.  
+   Under the conditions of H0, the exact samples values are calculated if the null hypothesis is true. The sample is chosen randomly from this distribution and p-values represent a location on that distribution, therefore p-values are uniformly distributed under H0.
 
-1. Why don't we use the CDF instead of PDF (probability distribution function) to test the difference in sample means?
+2. Why don't we use the CDF instead of PDF (probability distribution function) to test the difference in sample means?
+   > We do use a CDF for calculating p values
 
-1. Can someone elaborate further why the p-value is not a probability of observing a result as extreme as the one observed due to chance? If we are sampling randomly then any result we get is due to chance, and extreme result have a lower probability. 
+3. Can someone elaborate further why the p-value is not a probability of observing a result as extreme as the one observed due to chance? If we are sampling randomly then any result we get is due to chance, and extreme result have a lower probability. 
    > In The ASA Statement on p-Values: Context, Process, and Purpose it is said that:
    > „P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone. Researchers often wish to turn a p-value into a statement about the truth of a null hypothesis, or about the probability that random chance produced the observed data. The p-value is neither. It is a statement about data in relation to a specified hypothetical explanation, and is not a statement about the explanation itself.“
    > It is correct that there is an element of chance. Just as you are saying, ideally, we chose the sample at random. The “correct” definition does not exclude this element of chance. From the ASA statement the first problem with the “incorrect” definition you stated is rather that it can be interpreted as to mean that the p-value is the probability that the data were produced by random chance alone. But the p-value is not about what “caused” the data in the first place:
@@ -15,11 +19,15 @@
    >[amstat](https://amstat.tandfonline.com/doi/full/10.1080/00031305.2016.1154108#.Vt2XIOaE2MN)
    >[wikipedia](https://en.wikipedia.org/wiki/P-value)
 
+## Variance
+1. One thing that I don't quite understand is why "as sample size increases, standard error gets smaller; standard deviation does not". 
+   > The SE is the error in the estimate of the mean, which shrinks as you increase sample size.
 
 ## Hyptheses
 1. We speak a lot about when we can reject H0, but not when we reject H1. I do not mean here just keeping the assumption that there is no difference because we have not had enough statstical power, but stating that for ex. 2 populations are actually identical at some confidence level. Do we ever do that? How to find out the confidence level for H1 being false and how does it relate to statistical power?
 
 ## Sidedness of tests
+
 1. In 9.4 one-sided and two-sided tests are introduced, but I do not understand which one to apply to which situation? Further, can two-sided tests be used for unsupported hypotheses, why is this the case in comparison to one-sided tests?
    > One-sided tests are used when we have a reason to believe one mean (if we are comparing means) is bigger than the other, thus we are only testing "one-side" of an eventual difference. If we just think there is a difference between the means but don´t know which mean would be bigger, we use a two-sided test, i.e., the absolute value of the difference between the means. I guess the reason two-sided test can be used for unsupported hypotheses since you don´t have to know which mean "should be" bigger while the one-sided tests have to be based on some sort of knowledge or expectation about the system to be able to tell which mean should be tested for being bigger than the other. 
 1. Are there any situation when you do exception when to use two-sided p-value and one-sided p-value? i.e. for example in this case you should use two-sided p-value, but in this particular situation we do the  exception and use one-sided p-value. If there are not any exception do you have any examples of articles when they have used the two-sided p-value or one-sided p-value wrong. 
@@ -36,6 +44,9 @@
 
 1. (Think Stats 2e, Chapter 9.5 - Testing a correlation)  
 In the context of testing the statistical significance of a correlation, what factors are used to determine whether to use a one-sided or two-sided test, in the real world? 
+
+1. I am wondering if the terms  "one-sided" and "two-sided"  refer to both the p-value and the statistical test and are in that sense interchangeable? In other words, is the one-sided p value the "result" of a one-sided test and two-sided p-value the result of "two-sided" test?
+
 
 ## Sampling process
 1. [Classical hypothesis testing] It is stated in 9.1 that statistical significance of an apparent effect allows for inference that the effect is likely to appear in the larger population too. Say that the sample group consists of a few thousands individuals from Sweden, and that the larger population is all inhabitants in Sweden. This must surely be of different statistically significance in comparison to the whole world's population. What are the limitations of statistical significance in regard to population size, and how are they evaluated?
@@ -126,19 +137,15 @@ Also, why do we have to reject the null hypothesis? Couldnt we make H1 be H0 and
 > video 5.47
 How easy is it normally to determine the distribution (normal, binomial, Poisson etc) of the test statistic? Have there been cases where researchers found that none of the existing distributions was good to apply in their hypothesis test? In that case how did they deal with this problem?
 
-
-
-
 1. I am having trouble understanding the point of the graph in the permutation test Figure 9.1 in part 9.3. I understand they choose the complement value of their p value (0.17) which is 0.83 to decide the intersect the line in the graph, but I do not understand what this gives in terms of results. What would be a general use of this method and what is the purpose?
+> It is an explanation of how p-value are related to CDFs
+
 
 1. In section 9.3, how do we see that the difference in means is about 0.17 weeks? Is it where the CDF reaches 1? What does the scale from  0 to 1 on the y-axis represent? Is it the probability of finding the difference or something else?
 
 
-1. I am wondering if "one-sided" and "two-sided" are terms used to describe either p-value and the statistical test itself and are there interchangeable. in other words is one-sided p value the "result" of the one-sided test and two-sided p value the result of two-sided test? 
-
-1. How do we use Bayesian methods to claim that  there is a 90% probability that the actual parameter, µ, falls in the 90% confidence interval is not true? (based on “8.3  Sampling distributions”)
+2. How do we use Bayesian methods to claim that  there is a 90% probability that the actual parameter, µ, falls in the 90% confidence interval is not true? (based on “8.3  Sampling distributions”)
 
 
 
-1. I am wondering if the terms  "one-sided" and "two-sided"  refer to both the p-value and the statistical test and are in that sense interchangeable? In other words, is the one-sided p value the "result" of a one-sided test and two-sided p-value the result of "two-sided" test?
 
