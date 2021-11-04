@@ -91,7 +91,7 @@ distribution for any test statistic, under the strong null hypothesis
 that a set of genetic variants has absolutely no effect on the
 outcome."
 
-## $t$ tests
+## *t* tests
 
 1. From preparatory reading, the is an extra reading on t-test. I would like to know the differences between t-test and z-test, and when to choose one over the other and what effects each test has on the p-value
 > The two test statistics sample from two different distributions, normal distirbution and student's t-distribution for z-test and t-test respectively. The t-test is generally used when the variance is unknown and the z-test assumes a known variance, but for larger sample numbers, the t-distirbution approaches the normal distibution and such may be approximated at larger sample sizes using the normal distibution. Since the p-value is the probability of getting the derived result or a more extreme result assuming the null hypothesis is true (integral of probability density function between test statistic and infinity) at either one tail or both tails depending on the test, the p-value will be affected accordingly by the calculation of the test statistic with accompanied distribution.
