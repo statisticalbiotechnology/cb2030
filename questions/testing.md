@@ -30,7 +30,7 @@
    > As I understand, the choice of whether to use a one-sided or two-sided test depends on what you aim to prove/disprove, i.e. the basis for your hypothesis. If you are interested in proving a difference in your test statistic then both the smaller and bigger data become relevant in rejecting H0, thus you should choose a two-sided test. If you are instead interested in proving an increase or decrease in your test statistic then only one side of the data becomes relevant, thus you choose a one-sided test. I believe the appropriate choice boils down to which direction(s) of the test statistic that are relevant in rejecting H0.
 
 1. in 9.4  when we need to use a one-sided test or a two-sided test, what is the difference between them in test statistics?
-   > A1: None.
+   > A1: You use the absolute value of the one sided test statistics to derive a two-sided statistic if the distribution is symetric.
    > A2: A one sided test is used when one needs to measure the effect only in one direction. If the test statistic falls on one side of the normal probability it allows us to infer that an effect is seen in that direction. We can rely on the one sided test only if we are testing for something very specific. Like: the how much more significant is the effect of drinking on gambling than say proximity to casinos.
    > A two sided test allots equal probability for the test statistic to fall on either side of the normal probability. This can be translated as, if one wants to measure the beneficial effect of a new drug on a population, it test for both scenarios where the mean is greater than(not-beneficial) and less than(Beneficial). 
 
@@ -61,7 +61,7 @@ in this part, we want to see if the longer mean pregnancy length for first babie
 In MakeModel part, we combines the groups into one NumPy array. And then in RunModel code , we shuff the pooled values and splitting them into two groups. I am confused about how they split those values? randowly? The value and numbers of first babies are fixed, what's the point to shuff and then split? How this step attribute to test the differnece? What's the logic behind it ?
     > As you said, they are using this logic as a way to model the null hypothesis. So as I understand it they want to create a situation where H0 is true. Since we're testing if there is a statistically significant difference in mean for pregnancy length comparing first babies and others, H1 is that there is a difference in mean and H0 is that there is no difference in means. Before doing the test we don't know whether we will end up rejecting H0 or not, but regardless, the p-value is the probability of observing the result in your test statistic or a result more extreme under the assumption that H0 is true. Therefore, we need to be able to compute the probability distribution of different results when H0 is true, otherwise we will not be able to calculate a p-value. By combining the data points from the two groups and shuffling them, then splitting them up again, we create two new groups which due to the shuffling satisfy the null hypothesis, and based on this situation we can now compute the p-value.
 
-
+1. In 8.3, they are using an example with gorillas to explain samling distribution. They assume that the population is well known, in order to choose a representative sample, but then goes on to discuss how a sampling error can occur if you happen to sample only the smallest or largest gorillas. Since weight is the parameter of interest and we don't know what the gorillas weigh (and therefore might choose a sample with poor distribution); from a statistical point of view, why does the population have to be well known, and what properties could that include?
 ### Confidence intervalls
 
 1. I have a question about practical application of CI in section 8.3.  When we calculate the CI in some case such as KM survival analysis, we may get a CI like (X, NA).X is an actual value, but i don't know the meaning of NA and why we get NA.
@@ -73,7 +73,11 @@ In MakeModel part, we combines the groups into one NumPy array. And then in RunM
    > The purpose of this permutation is to "model" the null hypothesis. Lets say we have group A and B and we make a t test for their values, so we do not know at this point if they are different or not. The null hypothesis is that they are equal. For the computational system we create the scenario when we know that the null hypothesis is true and for this we just mix the two groups randomly (permutation), which will satisfy the null hypothesis. Having this we can "compare" if the original not mixed A and B are also satisfying this null hypothesis or not.
 
 1. [Concerning section 9.3] They write that a way to model the null hypothesis is by permutation of values from two different sampling groups and then treating the two as one big group. How does this create a model where the distribution for the two original groups are the same? Could you offer a more elaborate explanation? 
-
+   > I found this document from the faculty of Washington about permutation tests done by Ken Rice and Thomas Lumley (https://faculty.washington.edu/kenrice/sisg/SISG-08-06.pdf (Links to an external site.)). It helped me visualize permutation tests. 
+   > "A permutation test gives a simple way to compute the sampling
+distribution for any test statistic, under the strong null hypothesis
+that a set of genetic variants has absolutely no effect on the
+outcome."
 
 ## $t$ tests
 
