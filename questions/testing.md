@@ -1,8 +1,8 @@
 # Question and answers -- Hypothesis Testing
 
 ## Definition of probabilities
-1. What properties of the $p$ value makes them uniformly distributed under H0?
-   > A1. They are sampled from the same distribution that they are tested against. An analogue is that the probability of a randomly selected Swede to be among the $p$% tallest persons in Sweden is $p$.   
+1. What properties of the *p* value makes them uniformly distributed under H0?
+   > A1. They are sampled from the same distribution that they are tested against. An analogue is that the probability of a randomly selected Swede to be among the *p*% tallest persons in Sweden is *p*.   
    > A2. For the p-values to be uniformly distributed the distribution of test statistics needs to be continuous, (has infinite range of values). In continues distribution, the chosen sample could be in any percentile of the distribution, meaning that all the percentile of the samples are uniformly distributed. Keeping in mind that a percentile is a statistical value where the certain percentage of scores fall below given sample value, in terms of continuous distribution, it could likely be anywhere.  
    Under the conditions of H0, the exact samples values are calculated if the null hypothesis is true. The sample is chosen randomly from this distribution and p-values represent a location on that distribution, therefore p-values are uniformly distributed under H0.
 
