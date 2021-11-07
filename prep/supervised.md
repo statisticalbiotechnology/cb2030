@@ -6,3 +6,5 @@ As a preparation for the Multiple Supervised Learning convocation, make yourself
 2. Read Noble, [What is a support vector machine](https://www.nature.com/articles/nbt1206-1565)
 3. Read the section in VaderPlas on [Support vector machines](https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html)
 4. Investigate the jupyter notebook on [Supervised Learning](../nb/supervised/readme.md)  
+
+Slightly moderated versions of your questions will be posted [here](../questions/supervised.md).

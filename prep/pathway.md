@@ -8,3 +8,6 @@ As a preparation for the Pathway Analysis convocation, make yourself acquainted 
 approach for interpreting genome-wide
 expression profiles](http://software.broadinstitute.org/gsea/doc/subramanian_tamayo_gsea_pnas.pdf). Feel free to skip the "*Results*" section of the paper.
 4. Execute the example code in the jupyter [notebook](../nb/enrichment/readme)
+
+Slightly moderated versions of your questions will be posted [here](../questions/pathway.md).
+

@@ -7,3 +7,6 @@ As a preparation for the Principal Component Analysis convocation, make yourself
 3. Read the first answer to this [question](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues) on StackExchange
 3. Read Section 2, upto, but not including section 2.1 of [Wall et al.](https://public.lanl.gov/mewall/kluwer2002.html)
 4. Investigate the jupyter notebook on [PCA of Lung Carcenomas](../nb/pca/readme.md)  
+
+Slightly moderated versions of your questions will be posted [here](../questions/pca.md).
+
