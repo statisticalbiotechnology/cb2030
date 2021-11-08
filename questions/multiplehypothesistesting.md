@@ -5,7 +5,7 @@
 ## The multiple in multiple testing
 
 * Are q-values and FDR sensitive to the number of measured variables in any way? 
-> Yes, they obviously are. FDR(t)=mt*pi_0/|{p<=t}|, so both the nominator and denominator is influenced by the number of tested hypotheses.
+> Yes, they obviously are. FDR(t)=mt*pi_0/\|{p<=t}\|, so both the nominator and denominator is influenced by the number of tested hypotheses.
 
 
 ## *p* values
@@ -15,8 +15,8 @@ If I understood correctly the null hypothesis p-values frequencies are evenly di
 
 ## False discovery rates
 
-* In "Statistical significance for genomewide studies" it’s stated that one doesn’t want to underestimate the q-value. If one were to underestimate the q-value, what would this imply, how would this affect FDR?
-> A1: That would imply that you would report fewer errors than you actually have. 
+* In "Statistical significance for genomewide studies" it’s stated that one doesn’t want to underestimate the q-value. If one were to underestimate the q-value, what would this imply, how would this affect FDR?  
+> A1: That would imply that you would report fewer errors than you actually have.   
 > A2: Underestimating FDR leads to possible unexpected false discoveries.
 
 * In the end of the video it is mentioned that if we find 1000 genes at an FDR of 5%, it means that 50 of those genes are incorrectly assessed. How do we use that information in practice, how we go about to determine which of the observations are true and which are false? 
@@ -27,13 +27,13 @@ If I understood correctly the null hypothesis p-values frequencies are evenly di
 ## *q* values
 * As I understand it, the p-value gives information regarding the false positive rate whereas the q-value gives information about the false discovery rate and I understand that the FDR is interesting since it's based on the false positives out of the features called significant instead of the false positives out of the truly null features. However, I don't understand the point of using the minimal FDR, when that means that the actual FDR could be higher? What does the q-value really tell us, considering this? 
 > A1: FDR is calculated from the experimental data you have. There is some variance in a specific p-value that you obtain for false positives, and you often still obtain true positives with higher p-value. You will hence get lower a FDR for higher p-value threshold. Then imagine you plan to repeat the experiment, and you want to minimize FDR while still keeping reasonable sensitivity (still detect proportion of true positives within desired range). The data on FDRs from previous experiments tells you, that by increasing p-value threshold you can get lower proportion of false positives in all significant results. But is that right? Well, if your model is correct, and p-values are evenly distributed under H0, it should not be. I believe the figure from slide nr 13 ilustrates it very well :)
-> So if we want our estimated FDR to stand really for expected proportion of positive results (ex. in next experiment) coming from H0, and not overfit it to the data we have, the strategy of choice is to go for q-value.
-> A2: This is a subtle, but the difference it is easier to define the minimal FDR of any set defined by a treshold that includes the current -value, than to make a definition based on a maximal value.  
+> So if we want our estimated FDR to stand really for expected proportion of positive results (ex. in next experiment) coming from H0, and not overfit it to the data we have, the strategy of choice is to go for q-value.  
+> A2: This is a subtle, but the difference it is easier to define the minimal FDR of any set defined by a treshold that includes the current -value, than to make a definition based on a maximal value.    
 
 * [Video 18:00]- I would just like some clarification on why we are interested in having a monotonical decrease of the false discovery rate? Doesn't "sawing off" the peaks make us report a lower FDR? 
 
 ## π0 estimation
-These questions are to some degree dealt with in the spline estimate section of the q-value [notebook](../nb/multiplehypo/qvalue.ipynb)
+These questions are to some degree dealt with in the spline estimate section of the *q* value [notebook](../nb/multiplehypo/qvalue.ipynb)
 
 * [Video 15.40]
 I'm wondering about the π0 estimation and the π0(λ) against λ plot. How is λ is selected for the estimation? The video says that we look for where the variance start to increase, but can still be trusted in the plot (around λ=0.6), but how is this λ=0.6 then used? I'm wondering since it is then said that we want to estimate at λ=1.  
@@ -59,7 +59,7 @@ How do we choose the value of λ in the π0(λ) function? Here the value of π0 
 
 ## Histograms
 * In figure 1 of Storey and Tibshirani's paper, I don't understand the scale of the y-axis. I thought that in a density histogram the sum of the density values of all bars should be 1?
-> A1: As I understand, the histogram itself represents a frequency distribution meaning that the height of each bar is equal to the average density (y-axis) of the corresponding p-value interval (x-axis). So it is not the height of the individual bars that add up to 1 but instead the area you get by integrating over the bars that add up 1.
+> A1: As I understand, the histogram itself represents a frequency distribution meaning that the height of each bar is equal to the average density (y-axis) of the corresponding p-value interval (x-axis). So it is not the height of the individual bars that add up to 1 but instead the area you get by integrating over the bars that add up 1.  
 > A2: It is worth noting that you are not the first one to ask yourself this [question](https://math.stackexchange.com/questions/2666834/what-is-the-difference-between-frequency-and-density-in-a-histogram)
 
 
