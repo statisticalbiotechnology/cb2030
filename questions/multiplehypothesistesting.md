@@ -20,7 +20,7 @@
 * In the end of the video it is mentioned that if we find 1000 genes at an FDR of 5%, it means that 50 of those genes are incorrectly assessed. How do we use that information in practice, how we go about to determine which of the observations are true and which are false? 
 > When you estimate errors you just estimate errors!
 
-* When defining the FDR they state that the significant features (S) have p-values lower or equal to the threshold: S(t) =#[p <=t]   
+* When defining the FDR they state that the significant features (S) have p-values lower or equal to the threshold: S(t) = #[p <=t]   
 but they also say that the number of null statistics (F) is: F(t) = #[null p <= t]. Why do the null hypotheses not have p-values > t , as we have learned earlier?
    > It's because the F is the number of false positive features, so these would be the null hypothesis included in the values lower than the threshold. The null hypothesis that are higher than the threshold would be the true negative values which they are not interested in measuring for that particular purpose. See the third page of the article where it shows:  
    F/S' = F/F+T = no. false positive features/no. significant features
