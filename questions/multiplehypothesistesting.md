@@ -1,17 +1,16 @@
 # Questions and Answers to Multiple Hypothesis Testing.
 
-
-
 ## The multiple in multiple testing
 
 * Are q-values and FDR sensitive to the number of measured variables in any way? 
-> Yes, they obviously are. FDR(t)=mt*pi_0/\|{p<=t}\|, so both the nominator and denominator is influenced by the number of tested hypotheses.
+   > Yes, they obviously are. FDR(t)=mt*pi_0/\|{p<=t}\|, so both the nominator and denominator is influenced by the number of tested hypotheses.
 
-
+* I am wondering why are *q* values necessary? *p* values can be used in hypothesis testing to test the significance of the null hypothesis. Why is it cannot be used in the same way in multiple hypothesis testing? Why do we need extra values in this case?
+   > In multiple hypothesis testin, it is hard to tell the probability that a finding is wrong from an individual *p* value without knowing the distribution of the other estimated *p* values. A FDR or a *q* value has an intuitive explanation.
 ## *p* values
 * [Video lecture 8:00ish]
 If I understood correctly the null hypothesis p-values frequencies are evenly distributed between 0 and 1 by definition. Is there a particular reason for such deffinition?
-> P-values under null hypothesis is uniformly distributed because they are taken from the same distribution they are tested against according to Lukas in our last seminar.
+> *p* values under null hypothesis is uniformly distributed because they are taken from the same distribution they are tested against according to our last seminar.
 
 ## False discovery rates
 
@@ -24,13 +23,23 @@ If I understood correctly the null hypothesis p-values frequencies are evenly di
 
 
 
+## Monotonicity
+* [Video 18:00]- I would just like some clarification on why we are interested in having a monotonical decrease of the false discovery rate? Doesn't "sawing off" the peaks make us report a lower FDR? 
+* The  *q* values are semi-[monotonically](https://en.wikipedia.org/wiki/Monotonic_function) increasing with *p* value. Why are we interested in a monotonical decrease? 
+  > We smooth the FDRs into *q* values by defining a feature's *q* value to be the minimal FDR of any treshold that includes the feature. The procedure is important as we otherwise would not be able to allocate a FDR treshhold to a particular feature (, as there will be multiple such FDRs).
+
+* If we look at the slides 25/26 and the graphs that show the FDR and number of accepted statistics, the graph is non-monotonic when not considering the q value, however is this not only possible if we know the true outcome? In reality why will we not get a monotonic graph with only FDR anyway since we never know what is truly Null or Alternative? Doesn't the it follow that the number of False positives go down when we lower the threshold and thus there should be no jagged curve.
+
+
 ## *q* values
 * As I understand it, the p-value gives information regarding the false positive rate whereas the q-value gives information about the false discovery rate and I understand that the FDR is interesting since it's based on the false positives out of the features called significant instead of the false positives out of the truly null features. However, I don't understand the point of using the minimal FDR, when that means that the actual FDR could be higher? What does the q-value really tell us, considering this? 
 > A1: FDR is calculated from the experimental data you have. There is some variance in a specific p-value that you obtain for false positives, and you often still obtain true positives with higher p-value. You will hence get lower a FDR for higher p-value threshold. Then imagine you plan to repeat the experiment, and you want to minimize FDR while still keeping reasonable sensitivity (still detect proportion of true positives within desired range). The data on FDRs from previous experiments tells you, that by increasing p-value threshold you can get lower proportion of false positives in all significant results. But is that right? Well, if your model is correct, and p-values are evenly distributed under H0, it should not be. I believe the figure from slide nr 13 ilustrates it very well :)
 > So if we want our estimated FDR to stand really for expected proportion of positive results (ex. in next experiment) coming from H0, and not overfit it to the data we have, the strategy of choice is to go for q-value.  
 > A2: This is a subtle, but the difference it is easier to define the minimal FDR of any set defined by a treshold that includes the current -value, than to make a definition based on a maximal value.    
 
-* [Video 18:00]- I would just like some clarification on why we are interested in having a monotonical decrease of the false discovery rate? Doesn't "sawing off" the peaks make us report a lower FDR? 
+
+* Which of the measures *q* value, FDR, and *p* value focus on sets, and which focus on individual measurements.
+   > FDR is a property of a set, while both *q* and *p* values are estimates for individual datapoints. The *q* values are estimates for individual datapoints within a list.
 
 ## π0 estimation
 These questions are to some degree dealt with in the spline estimate section of the *q* value [notebook](../nb/multiplehypo/qvalue.ipynb)
@@ -47,8 +56,8 @@ How do we choose the value of λ in the π0(λ) function? Here the value of π0 
 
 ## Other types of multiple hypothesis corrections
 
-* In Statistical significance for genomewide studies by Storey and Tibshirani, the paper states that "the error measure that is typically controlled in genome scans for linkage is the family-wise error rate". Are both the False discovery rate (FDR) and Family-wise error rate (FEWR) different approaches to control type I errors? if that is so, what is FEWR and when do we typically use it?
-> [FWER](https://en.wikipedia.org/wiki/Family-wise_error_rate) was popular before the advent of the benjamini hochberg method was invented. In short it looks for the probability of at least one finding being a false positive.
+* In Statistical significance for genomewide studies by Storey and Tibshirani, the paper states that "the error measure that is typically controlled in genome scans for linkage is the family-wise error rate". Are both the False discovery rate (FDR) and Family-wise error rate (FWER) different approaches to control type I errors? if that is so, what is FWER and when do we typically use it?
+> [FWER](https://en.wikipedia.org/wiki/Family-wise_error_rate) was popular before the advent of the Benjamini-Hochberg method for estimating the upper bound of the FDR was invented. In short FWER is the probability of at least one finding being a false positive.
 
 * In one popular R-package I found that the the method for calculating the p.adjust(q value) is benjamini-hochberg. When should we use such estimates?
 > I think q-values are to be prefered. That is why I use them in this course.
@@ -74,9 +83,14 @@ However, I do think type I errors are more significant in statistical analysis t
 
 
 * Is there a way to combine all hypotheses into one model and test for all of the null hypothesis at the same time with p-value? And if possible, would this be better the than testing multiple null hypothesis with q-value?
+> You would typicalluy merge your null hypotheses into one single statement e.g. µA=µB=µC=0 in an ANOVA with three groups.
 
 * Are the q values used for FDRs both in random errors and systematic errors or do you use a different approach in the two cases?
 
 * If I have a hypothesis with two independent statements, can I consider it within the context of multiple hypothesis testing and apply the concepts, such as q value and FDR?
 
+* In the "Remark B: General Algorithm for Estimating q values" in the article they highlight their pick for λ, and further explain they set the degree of freedom of the natural cubic spline to 3, as this would serve their purpose by limiting its curvature to be as a quadratic function. I do not understand how they deemed that this method performed well, and the data is not given in the article. 
+
+* In the jupyter notebook, two alternative methods are used to estimate π0 (the bootstrap method and a method similar to what is described in “Statistical significance for genomewide studies”). This yields relatively similar result, approximately 0.194 and 0.185 respectively. What are the pros and cons with each method and are there any cases where one is preferred over the other?
+The bootstrap method is slightly more stable, and hence I use it in the notebook.
 
