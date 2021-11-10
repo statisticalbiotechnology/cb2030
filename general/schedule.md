@@ -7,7 +7,7 @@
  | L2 | Fri | 5/11 | 10-12 |  LK | FB52 | Hypothesis Testing |
  |    |     |       |       |     |    | |
  | L3 | Wed | 10/11 | 8-10 |  LK | FB53 |  Multiple Testing  |
- | C1 | Wed | 10/11 | 13-17 |  GJ | Gul/Grön | Hypothesis Testing
+ | C1 | Wed | 10/11 | 14-18 |  GJ | Gul/Grön | Hypothesis Testing
  | L4 | Fri | 12/11 | 10-12 |  LK | FB52 | Linear Models |
  |    |     |       |       |     |    | |
  | L5 | Wed | 17/11 | 8-10 |  LK | FB52 | Supervised Learning |
