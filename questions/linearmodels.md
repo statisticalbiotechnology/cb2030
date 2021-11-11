@@ -7,6 +7,47 @@
    > **dependent variables**: The variables in a regression model we would like to predict. Also known as endogenous variables.
    > **explanatory variables**: The variables used to predict or explain the dependent variables. Also known as independent, or exogenous, variables.
 
+1. Why are the residual distributed equally? I guess the higher the value, the higher the residue in natural. But in RMSE, it considers everything equally. So I think RMSE will focus on the higher value if the difference between values are big. Is it OK not to consider these things?
+
+1. In the video at 4.40, you mention dummy variables just briefly in the context of categorical data. If I understand this correctly, depending on how many categories you have, you need to have 2 or more dummy variables, (number of categories - 1). Is there a limit for how many dummy variables you can have? If so, could the sample size be a possible limitation? 
+   > With any model of data, you should ensure that you have many more data points than parameters to fit. This is true here as well, were you need at least one parameter per variable you test. 
+
+
+## Residues
+
+8. Chapter 10 Linear regression in Downey seem to imply that the residuals should be normally distributed but I was wondering about the variables, if they need to be normally distributed before being able to run a linear regression?
+
+1. Chapter 10.1 of the book says that the most common way to minimize the residual value is to use the sum of squared residuals. Why don't they use the absolute value of the residual instead, as one of the good reasons quoted is that "Squaring has the feature of treating positive and negative residuals the same, which is usually what we want"?
+
+3. In Downey, section 10.3 plotted residuals (Figure 10.2) and stated that it is a useful test, since if we get a flat line in the output, it then indicated that residuals are random. I don’t think I fully get the logic of this Figure 10.2 and would be happy to have a quick walk-through of how one should interpret it.    
+
+9.  Downey, Chapter 10.5 (Goodness of fit)  
+   I do not completely understand how Std(res) and Std(ys) are calculated and why Std(res) would be a better estimate of the quality of the linear model in comparison to Std(ys).
+   > A1: Std(res) and Std(ys) come from the residual calculations done before hand.
+   ```
+   def Residuals(xs, ys, inter, slope):
+      xs = np.asarray(xs)
+      ys = np.asarray(ys)
+      res = ys - (inter + slope * xs)
+      return res
+   ```
+   > I believe Std(res) does take into account the whole picture while Std(ys) only focuses on one variable.
+   > Std(res) is the root mean squared error of the predictions done for ys - (inter + slope * xs), which includes the xs as well and not only the ys variable.
+   > A2: I think std(.) are calculated according to the formula for standard deviation.
+   > So I don't think one can say that Std(res) and Std(ys) are estimates of the quality of the linear model and one is better than the other. It's rather that Std(res) in comparison to Std(ys) tells you if the prediction from the linear model is better than the prediction we would have made without the additional information we built the linear model from. 
+   > Using the example with birth weights and age:  
+   > If we only had the values of the birth weights our best guess would be the mean of the birth weights. So our estimate of the birth weight for a 25 year old would be the same as our estimate for a 30 year old and all other ages. So Std(ys) tells us how far our estimate would be off, on average, if we only had the birth weights for our prediction. 
+   > The Std(res), on the other hand, is a measure of how far our estimate (yi(estimated by the regression equation)) would be off, on average, if we used the additional information age for the prediction (if we used the regression equation and not only the mean to estimate birth weight).  
+   > So Std(ys) is not an estimate of the quality of the linear model. But by comparing Std(ys) and and Std(res) we can evaluate the quality of the linear model.
+   > If Std(res)=Std(ys), knowing mothers age does not improve the prediction, because the error we would make would be as large, on average, as if we only used the mean for our prediction.  
+   > if Std(res)<Std(ys), knowing mothers age does improve the prediction, because the error we would make would be smaller, on average, as if we only used the mean for our prediction.  
+   > A3: Std(ys) is the standard deviation of your dependent variable y, and Std(res) is the standard deviation of the residuals of the model, i.e. what is left after we regressed away our linear model. The more the linear model explains about the data, the larger is the difference between the two measures. 
+
+1. Video lecture, about min 4-6, If we find that the linear model applied minimizes the squared sum of residuals more than expected by chance, what does that tell us about the original data? 
+   > This would mean that the original data has a good fit to the linear model that you applied and that the original data follows some form of linear distribution. If it did not minimise the squared sum of residuals more than expected by chance, that means that the model was not a good fit for the original data at all and would thus have more or less the same performance as a null model would. 
+   > Because now we know that the R2 have a relationship with Pearson value. the R2 equal to the pearson2 . Regarding the p value of linear models, is there any similar relationship between the p value of Pearson and linear models?
+
+
 ## Optimization criterion
 1. In Downey 10.1 the author writes that it is worth considering whether squared residuals are the right thing to minimize. What other parameters can be minimized to obtain the a good fit and which methods are used for this cause? Furthermore, in what kind of situations would it be beneficial to use a method other than a least squares fit?
 
@@ -39,39 +80,24 @@ In the Jupyter notebook example, an interaction term between grade and node remo
 
 6. Considering the online lecture (10:45), if we have three parameters correlating with each other in one way (positive or negative), but let's say, in reality, only A is interacting with B and C independently (there is no interaction between B and C but we see a similar correlation), how can the undirect correlation in this system be identified/eliminated? Could it be done using the available data? 
 
+## Plotting
+
+2. Simple Linear Regression. Reading the material that was suggested, I learnt that before doing some kind of calculations it is always a good idea to make a scatter plot. From the scatter plot we can see if the data roughly fits a line. Why do we need to do that before calculations?  
+   > A1: By using a scatter plot, we can visually examine our data. Making a scatter plot from your data is quite simple and allows us to assess the relationship between the variables before we do the calculations. I.e. you can make a prediction of what the regression line should look like. After the calculations are done, it is also easy to see if the line fits the data, as you say. For me, a visual analysis usually helps to understand the data and make predictions as well as identify any calculation errors. 
+   > A2: It is always good practice to visualize data before fitting your model to the data. 
+
+
 ## Notebook
 1. 11:0011 Nov at 11:00
 [KPNA2 gene analysis] What is the "hue"-parameter?
 > In the plotting package I use, [seaborn](https://seaborn.pydata.org/), the *hue* paramet sets the color scheme of the data points
 
-### Other
-7. Is there a statistic that can provide hints towards which kind of model could explain our data? Or we find this out empirically by trying out several models.
-
-8. Chapter 10 Linear regression in Downey seem to imply that the residuals should be normally distributed but I was wondering about the variables, if they need to be normally distributed before being able to run a linear regression?
-
-9.  Downey, Chapter 10.5 (Goodness of fit)
-I do not completely understand how Std(res) and Std(ys) are calculated and why Std(res) would be a better estimate of the quality of the linear model in comparison to Std(ys).
-
-1. In the video at 4.40, you mention dummy variables just briefly in the context of categorical data. If I understand this correctly, depending on how many categories you have, you need to have 2 or more dummy variables, (number of categories - 1). Is there a limit for how many dummy variables you can have? If so, could the sample size be a possible limitation? 
-   > With any model of data, you should ensure that you have many more data points than parameters to fit. This is true here as well, were you need at least one parameter per variable you test. 
-
-1. Video lecture, about min 4-6, If we find that the linear model applied minimizes the squared sum of residuals more than expected by chance, what does that tell us about the original data? 
-   > If I understood correctly, this would mean that the original data has a good fit to the linear model that you applied and that the original data follows some form of linear distribution. If it did not minimise the squared sum of residuals more than expected by chance, that means that the model was not a good fit for the original data at all and would thus have more or less the same performance as a null model would. 
-   > Because now we know that the R2 have a relationship with Pearson value. the R2 equal to the pearson2 . Regarding the p value of linear models, is there any similar relationship between the p value of Pearson and linear models?
-
-
-
-1. Why are the residual distributed equally? I guess the higher the value, the higher the residue in natural. But in RMSE, it considers everything equally. So I think RMSE will focus on the higher value if the difference between values are big. Is it OK not to consider these things?
-
-2. Simple Linear Regression. Reading the material that was suggested, I learnt that before doing some kind of calculations it is always a good idea to make a scatter plot. From the scatter plot we can see if the data roughly fits a line. Why do we need to do that before calculations?  
-   > By using a scatter plot, we can visually examine our data. Making a scatter plot from your data is quite simple and allows us to assess the relationship between the variables before we do the calculations. I.e. you can make a prediction of what the regression line should look like. After the calculations are done, it is also easy to see if the line fits the data, as you say. For me, a visual analysis usually helps to understand the data and make predictions as well as identify any calculation errors. I hope I understood your question correctly! 
-
-3. In the Think Stats 2e book, section 10.3 plotted residuals (Figure 10.2) and stated that it is a useful test, since if we get a flat line in the output, it then indicated that residuals are random. I don’t think I fully get the logic of this Figure 10.2 and would be happy to have a quick walk-through of how one should interpret it.    
-
 4. Interaction terms in the KPNA2 gene analysis Notebook: When testing whether the gene expression depends on the tumor size, we first perform the test with size as the only variable, and then we also include the grade and node, before finally testing if there’s an interaction between size and grade.  
 How do we know when to include interaction terms in the test? If there wouldn’t have been any significant interaction between size and grade, would we then have tested for an interaction between size and node? And if there would’ve been more variables than just grade and node in this example, would we then continue to test for an interaction between the size and all other variables as well, one at a time?
 > The quite circular answer os that one include an independent variable when you are interested to test the relation from the variable on the outcome. 
 
+### Other
+7. Is there a statistic that can provide hints towards which kind of model could explain our data? Or we find this out empirically by trying out several models.
 
 1. They write that R^2 = p^2 and that because of this a one sided test of R^2 is equivalent to a two sided test of p, but I am not following the logic of this. Would we not rather multiply the value of a one sided test by 2 to get the two sided test-value assuming we have a normal distribution? 
 
@@ -83,7 +109,6 @@ How do we know when to include interaction terms in the test? If there wouldn’
 2. Why when we only have one variable in the linear model to test it is equivalent to a t-test?
 > Because this is what a t-test does.
 
-1. Chapter 10.1 of the book says that the most common way to minimize the residual value is to use the sum of squared residuals. Why don't they use the absolute value of the residual instead, as one of the good reasons quoted is that "Squaring has the feature of treating positive and negative residuals the same, which is usually what we want"?
 
 * Goodness of fit, Chap 10.5]  How well a linear model reflects a dataset can be evaluated by calculating the standard deviation of residuals, R-squared or Pearson's coefficient. How do we know which one to choose? The author mentions that standard deviation of residuals is better for assessing quality of prediction than Pearson's or R-squared. Why is that?
 
