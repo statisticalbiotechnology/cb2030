@@ -83,5 +83,42 @@ How do we know when to include interaction terms in the test? If there wouldn’
 2. Why when we only have one variable in the linear model to test it is equivalent to a t-test?
 > Because this is what a t-test does.
 
-
 1. Chapter 10.1 of the book says that the most common way to minimize the residual value is to use the sum of squared residuals. Why don't they use the absolute value of the residual instead, as one of the good reasons quoted is that "Squaring has the feature of treating positive and negative residuals the same, which is usually what we want"?
+
+* Goodness of fit, Chap 10.5]  How well a linear model reflects a dataset can be evaluated by calculating the standard deviation of residuals, R-squared or Pearson's coefficient. How do we know which one to choose? The author mentions that standard deviation of residuals is better for assessing quality of prediction than Pearson's or R-squared. Why is that?
+
+* In the Simple Linear regression part in VanderPlas, they show an example of a linear regression with a straight-line fit, which has a slope and an intercept. Then for a multidimensional linear model, the slope is [1.5, -2, 1]. Are these the slopes at the inflection points or what does this mean in practice?
+
+* It was mentioned in the video (7:20) that ANOVA can be used when case and control are evaluated with a linear model and that it would be equivalent to a t-test when we only have one variable. What are the differences between ANOVA and a t-test, and why would it be equivalent when we only have one variable?
+
+* It is stated in Downey 10.1 that the most common way to minimize residuals is to minimize the sum of squared residuals. But they also mention that the absolute value of residuals or their cubes can be used for this purpose. Are these later methods ever used and when would these be used instead of squared residuals? 
+
+* In 10.5, the author thinks standard deviation is a better tool in representing the quality of predictive power, while the coefficient of determination represents better the strength of a relationship, how the predictive power is defined here, I suppose is the absolute difference between the predicted value and the true value, but it is a bit hard to understand the difference between the predictive power and the correlation strength of a relationship.
+
+* In the online reading material, can you explain more about using the LinearRegression to handle multidimensional linear model? And by referring to multiple x values, does it mean multiple variables? Thank you.
+
+* In the book, section 10.6, the authors discuss how to estimate the p-value and present 2 ways of doing this. They conclude that computing the probability that the slope of the distribution falls below 0 is the best option and good enough even when the sampling size is small and residuals are skewed. In that case, is there any situation where we should use the other method (i.e. computing the probability that the slope under the null hypothesis exceeds the observed slope)?
+
+* Why when we only have one variable in the linear model to test it is equivalent to a t-test?
+
+* In the book part 10.1, they mention that using squared residual gives more weight to large residuals and I'm wondering why this is beneficial to the model?
+
+* By giving more weight I think they mean penalising large errors more than small ones. The errors of the data points to fit the model are not treated equally as smaller errors should always be preferred over large ones. So I guess it is about accuracy.
+
+* Textbook: 10.1
+In the linear regression model, can we use R squared instead of p-value to evaluate the accuracy of the data?
+
+* in the measurement of goodness of fit, which situation standard deviation is better than the coefficient of determination and why?
+
+* Why is that only those response variables that have an arbitrary distribution, as opposed to a normal distribution, can be subjected to linearization?
+And wouldn't such a general linear model be afflicted by outliers as expected in expression experiments? 
+
+* (Simple Linear regression (Links to an external site.) subsection in VanderPlas)
+I am having some trouble understanding a real example of multidimensional linear models. Could someone give me some examples of how this could be applied?
+
+* Do you have to calculate the p-value every time you perform data processing? When we have two variables in the data, is it still possible to do the t-test to calculate the p-value? Will it appear that the data has biological significance but not statistical significance?
+
+* We've heard of at least three methods to minimize the residuals in linear regression: sum of squared residuals, absolute value of residuals and cubic regression. How do we determine which of these (and I expect many others) to use on our data? 
+
+* KPNA2 gene analysis Notebook: What does the F value in the fourth column of each table actually mean in this case? Are F values not used to tell us if a group of variables are jointly significant? If I'm not mistaken is it not also used in this case to see if singular variables such as grade or node respectively are statistically significant? Can't a t-test be performed to see if singular variables are statistically significant?
+   > The F statistic is defined as the variance of the group means / mean of the within group variances or in other words the Mean Square Between divided by the Mean Squared Error. Test statistics (t-statistic in the T-test, D-statistic in Kolmogorov Smirnov, ...) are used to get the probability value (p value). In order to make meaningful conclusions from your test, both p-value and f-value should be statistically significant (see multiple testing procedures from last lecture).
