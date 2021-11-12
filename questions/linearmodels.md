@@ -94,7 +94,7 @@ In the Jupyter notebook example, an interaction term between grade and node remo
 
 4. Interaction terms in the KPNA2 gene analysis Notebook: When testing whether the gene expression depends on the tumor size, we first perform the test with size as the only variable, and then we also include the grade and node, before finally testing if there’s an interaction between size and grade.  
 How do we know when to include interaction terms in the test? If there wouldn’t have been any significant interaction between size and grade, would we then have tested for an interaction between size and node? And if there would’ve been more variables than just grade and node in this example, would we then continue to test for an interaction between the size and all other variables as well, one at a time?
-> The quite circular answer os that one include an independent variable when you are interested to test the relation from the variable on the outcome. 
+> The quite circular answer is that one should include an independent variable when you are interested to test the relation from the variable on the outcome. 
 
 ### Other
 7. Is there a statistic that can provide hints towards which kind of model could explain our data? Or we find this out empirically by trying out several models.
