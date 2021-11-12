@@ -3,13 +3,11 @@
 ## Model
 
 5. Could you explain more about the relationship between dependent variable and explanatory variables? In my world they should be synonyms, but clearly there is a different.
-   > A1: From ThinkStat's glossary:  
-   > **dependent variables**: The variables in a regression model we would like to predict. Also known as endogenous variables.   
-   > **explanatory variables**: The variables used to predict or explain the dependent variables. Also known as independent, or exogenous, variables.  
+   > A1: From ThinkStat's glossary:   
+   > **dependent variables**: The variables in a regression model we would like to predict. Also known as endogenous variables.    
+   > **explanatory variables**: The variables used to predict or explain the dependent variables. Also known as independent, or exogenous, variables.   
    > A2: Firstly, an explanatory variable is more or less a synonym to an independent variable. A dependent variable can be described as an effect (e.g. the survival rate of a secluded E.coli colony) while an independent variable can be described as the cause (e.g. the amount of glucose added to the colony). The independent variable is literally independent of other variables present in the study while the dependent variable literally depends on the manipulation of the independent variable, e.g through experimentation. You can find several examples contextualizing both terms online, e.g. [here](https://online.stat.psu.edu/stat200/lesson/1/1.1/1.1.2)
 
-1. Why are the residual distributed equally? I guess the higher the value, the higher the residue in natural. But in RMSE, it considers everything equally. So I think RMSE will focus on the higher value if the difference between values are big. Is it OK not to consider these things?
-   > Your question reverse the relation we normally are looking for. If the residues have don't have an even variance, it is likely not the right explanation of the variance in the dependent variable. 
 
 2. In the video at 4.40, you mention dummy variables just briefly in the context of categorical data. If I understand this correctly, depending on how many categories you have, you need to have 2 or more dummy variables, (number of categories - 1). Is there a limit for how many dummy variables you can have? If so, could the sample size be a possible limitation? 
    > With any model of data, you should ensure that you have many more data points than parameters to fit. This is true here as well, were you need at least one parameter per variable you test. 
@@ -18,6 +16,9 @@
 ## Residues
 
 8. Chapter 10 Linear regression in Downey seem to imply that the residuals should be normally distributed but I was wondering about the variables, if they need to be normally distributed before being able to run a linear regression?
+
+1. Why are the residual distributed evenly across the dependent variable? I guess the higher the value, the higher the residue in natural. But in RMSE, it considers everything equally. So I think RMSE will focus on the higher value if the difference between values are big. Is it OK not to consider these things?
+   > Your question reverse the relation we normally are looking for. If the residues have don't have an even variance, it is likely not the right explanation of the variance in the dependent variable. 
 
 1. Chapter 10.1 of the book says that the most common way to minimize the residual value is to use the sum of squared residuals. Why don't they use the absolute value of the residual instead, as one of the good reasons quoted is that "Squaring has the feature of treating positive and negative residuals the same, which is usually what we want"?
 
@@ -98,6 +99,8 @@ In the Jupyter notebook example, an interaction term between grade and node remo
 How do we know when to include interaction terms in the test? If there wouldn’t have been any significant interaction between size and grade, would we then have tested for an interaction between size and node? And if there would’ve been more variables than just grade and node in this example, would we then continue to test for an interaction between the size and all other variables as well, one at a time?
 > The quite circular answer is that one should include an independent variable when you are interested to test the relation from the variable on the outcome. 
 
+1. KPNA2 gene analysis Notebook: What does the F value in the fourth column of each table actually mean in this case? Are F values not used to tell us if a group of variables are jointly significant? If I'm not mistaken is it not also used in this case to see if singular variables such as grade or node respectively are statistically significant? Can't a t-test be performed to see if singular variables are statistically significant?
+   > The F statistic is defined as the variance of the group means / mean of the within group variances or in other words the Mean Square Between divided by the Mean Squared Error. Test statistics (t-statistic in the T-test, D-statistic in Kolmogorov Smirnov, ...) are used to get the probability value (p value). In order to make meaningful conclusions from your test, both p-value and f-value should be statistically significant (see multiple testing procedures from last lecture).
 ### Other
 7. Is there a statistic that can provide hints towards which kind of model could explain our data? Or we find this out empirically by trying out several models.
 
@@ -147,5 +150,3 @@ I am having some trouble understanding a real example of multidimensional linear
 
 * We've heard of at least three methods to minimize the residuals in linear regression: sum of squared residuals, absolute value of residuals and cubic regression. How do we determine which of these (and I expect many others) to use on our data? 
 
-* KPNA2 gene analysis Notebook: What does the F value in the fourth column of each table actually mean in this case? Are F values not used to tell us if a group of variables are jointly significant? If I'm not mistaken is it not also used in this case to see if singular variables such as grade or node respectively are statistically significant? Can't a t-test be performed to see if singular variables are statistically significant?
-   > The F statistic is defined as the variance of the group means / mean of the within group variances or in other words the Mean Square Between divided by the Mean Squared Error. Test statistics (t-statistic in the T-test, D-statistic in Kolmogorov Smirnov, ...) are used to get the probability value (p value). In order to make meaningful conclusions from your test, both p-value and f-value should be statistically significant (see multiple testing procedures from last lecture).
