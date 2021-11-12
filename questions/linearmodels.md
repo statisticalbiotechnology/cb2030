@@ -3,13 +3,15 @@
 ## Model
 
 5. Could you explain more about the relationship between dependent variable and explanatory variables? In my world they should be synonyms, but clearly there is a different.
-   > From ThinkStat's glossary: 
-   > **dependent variables**: The variables in a regression model we would like to predict. Also known as endogenous variables.
-   > **explanatory variables**: The variables used to predict or explain the dependent variables. Also known as independent, or exogenous, variables.
+   > A1: From ThinkStat's glossary:  
+   > **dependent variables**: The variables in a regression model we would like to predict. Also known as endogenous variables.   
+   > **explanatory variables**: The variables used to predict or explain the dependent variables. Also known as independent, or exogenous, variables.  
+   > A2: Firstly, an explanatory variable is more or less a synonym to an independent variable. A dependent variable can be described as an effect (e.g. the survival rate of a secluded E.coli colony) while an independent variable can be described as the cause (e.g. the amount of glucose added to the colony). The independent variable is literally independent of other variables present in the study while the dependent variable literally depends on the manipulation of the independent variable, e.g through experimentation. You can find several examples contextualizing both terms online, e.g. [here](https://online.stat.psu.edu/stat200/lesson/1/1.1/1.1.2)
 
 1. Why are the residual distributed equally? I guess the higher the value, the higher the residue in natural. But in RMSE, it considers everything equally. So I think RMSE will focus on the higher value if the difference between values are big. Is it OK not to consider these things?
+   > Your question reverse the relation we normally are looking for. If the residues have don't have an even variance, it is likely not the right explanation of the variance in the dependent variable. 
 
-1. In the video at 4.40, you mention dummy variables just briefly in the context of categorical data. If I understand this correctly, depending on how many categories you have, you need to have 2 or more dummy variables, (number of categories - 1). Is there a limit for how many dummy variables you can have? If so, could the sample size be a possible limitation? 
+2. In the video at 4.40, you mention dummy variables just briefly in the context of categorical data. If I understand this correctly, depending on how many categories you have, you need to have 2 or more dummy variables, (number of categories - 1). Is there a limit for how many dummy variables you can have? If so, could the sample size be a possible limitation? 
    > With any model of data, you should ensure that you have many more data points than parameters to fit. This is true here as well, were you need at least one parameter per variable you test. 
 
 
