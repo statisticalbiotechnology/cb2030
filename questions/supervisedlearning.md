@@ -24,6 +24,9 @@
    > This is a question that goes beyond what we will talk about. A hint is given in this [thread](https://www.quora.com/What-is-the-computational-complexity-of-an-SVM)
 
 ## Cross validation
+
+1. Video 12:20 about cross validation "We can give accuracy estimates based on all the training and test data without having trained on the same examples that we tested." What does it mean that we do not train on the same examples we tested? Do we not use the same data on all the learners?
+
 1. Is it possible to asses hyper parameters with simple cross validation (and no nested cross validation) if the training dataset is large enough?
    > You stand the risk of overfitting to your data if you do.
 
@@ -38,3 +41,5 @@
 
 2. In the article about SVM，When we transfer the data into the higher dimensional space, what method we used to separate the data? is it still the maximum-margin hyperplane method? 
    > SVMs us hyperplanes to separate datapoint in kernelspace.
+
+[10:08]
