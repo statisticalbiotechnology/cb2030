@@ -6,10 +6,24 @@
    > To my understanding, the main advantage of unsupervised and semi-supervised learning is that these methods are less biased than supervised learning since they make conclusions/look for patterns inherent to the dataset rather than based on labels. The goal of supervised learning is to predict the output when it is given new data labelled in a similar way to the training dataset. Meanwhile, the goal of unsupervised learning is to find the patterns in unlabeled input data. Unsupervised learning is very useful for explanatory analysis, for example in clustering data points. 
    > The main disadvantage of supervised learning is that we can have a high risk of overfitting the data, which would lead to disproportionate conclusions. On the other hand, unsupervised learning can lead to poor correlation/patternization between data points, which would not be a very useful analysis.
 
+
+## Overfitting
+
+1. Video Lecture (10 minutes) and article by Noble. To detect and avoid overfitting we want to train and test the method on different data sets, and we can use cross-validation to do so. But I am a little confused about how we measure overfitting here? For supervised regression (with a continuous output variable) we can calculate a training and test error where a high test error and low training error indicate overfitting. Is it the confusion matrix that is used for supervised classification to estimate these errors? 
+   > Overfitting is when the model fits the training data so much that it ends up modeling noise rather than the important properties that we want to model, such that it works well on the training data but not the test data. Here is an example taken from Vanderplas: 
+   > ![](https://jakevdp.github.io/PythonDataScienceHandbook/figures/05.03-bias-variance.png)
+   > We see to the right of the image that the overfitted model follows each and every point, leading to a very large variance in the model. When we apply a model like this to a different data set, we might not get the classification we intended because the model was so precisely fitted to the training data that it does not actually reflect real life. 
+   > So we want to make sure that our model is not overfitted to the training set that we used. When we perform cross-validation, we split the training set so that we, in practice, end up with different training sets. We can then compare how well the data fits these different training sets. Since the training sets are annotated such that we know the "true" classifications, we can create a confusion matrix based on this to measure the performance of the model. There is a really good example in the VanderPlas book where they calculate these values for [face recognition](https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html)
+   > Using this confusion matrix, if we identify that the test set fits the model better for one of the training sets, we can determine that the model is overfitted to that training set. Ideally, the different test sets should fit their respective training sets equally well. 
+
+
 ## Kernels
 2. In Noble, I do not understand how it's possible that the dataset can be linearly separated when projected in 4 dimensions. Figure [1K](https://www.nature.com/articles/nbt1206-1565/figures/1). How does dimensionality increase translate into better linear separation?
    > A1: A good illustration of how added dimensionality can improve separation is given in [Figure 1i and 1j](https://www.nature.com/articles/nbt1206-1565/figures/1)   
    > A2: Introducing another axis with an accompanied function allows for separation that previously was not possible with a straight line in the original data dimension. For example, under the Beyond Linear Boundries: Kernel SVM section in the In-Depth: Support Vector Machines article, by applying a RBF kernel they achieve a separation of the apparent middle cluster from the rest of the data points which allows for the positioning of a plane that can translate this difference into labels. In the article, they similarily applied a kernel function to achieve a separation in a higher dimension for which a hyperplane could be used to separate the 2 classes.
+
+1. Where can I find the proof that "for any given data set with consistent labels (where consistent simply means that the data set does not contain two identical objects with opposite labels) there exists a kernel function that will allow the data to be linearly separated" (SVM paper). Can anyone please provide a link to the proof.
+   > If you use an [RBF kernel](https://en.wikipedia.org/wiki/Radial_basis_function_kernel) with a sufficently large gamma parameter this will be the case.
 
 
 ## Kernels for non-vectors
@@ -24,6 +38,12 @@
 1. 10:2416 Nov at 10:24
 Is the Hinge loss function the only one used in SVM for generating soft margins? Are there other loss functions that can be utilized in certain situations depending on datadistribution, high noise levels etc?
   > Yes, hinge-loss is the function used together with SVMs, however, for other types of ML there is a plentiora of other loss functions.
+
+## Soft margin
+
+1. In the VanderPlus section under “Tuning the SVM: Softening Margins”, the tuning parameter C is described as a parameter that controls the hardness of the margins. How is a suitable value of C chosen? It is mentioned that cross-validation or a similar procedure should be used, how is this used to determine C?
+
+
 
 ## Maximum margin separating hyper planes
 
@@ -56,6 +76,13 @@ Is the Hinge loss function the only one used in SVM for generating soft margins?
 3. [Video 12.40] How do you select the number of folds you group your data into, and how does this selection affect the training? Can the number of folds be made into a hyperparameter to optimize?
    > This is a trade-off between time to training your N models, and leaving out the 1/N of your training data that is used for training. 
 
+## ROC-curves
+
+1. Video 17:00 ROC-scores - In the video you mention that a ROC-score > 0.5 means that the method is a good predictor, so a higher ROC-score indicates a better performance. Since the ROC-score is the area under the ROC-curve, different curves could end up having the same score. If two different methods end up having the same score, is there a way to determine which one performs better than the other, or does this mean that they are equally good?
+  > A1: In the sence that they have the same ROC score, the two predictors are equally good.   
+  > A2; If AUROC is same, we can think these as almost equally good. But also we can check other method from another perspective. For example, even the score of AUROC is same, maybe the shape of curve is different (sharp shape and smooth shape can be the same score). And using such a F-measure, can get which one is a sharp shape and has best pair of TPR and FPR. Also as Area Under Curve method, you can check AUPR also (it's Area Under Precision-Recall curve).
+
+
 ## Pre conditioning
 
 1. In the article about SVM, is it possible to help the algorithm select a correct solution with multi-dimension data set by combining the dimensions that are similar to each other together before projecting the data?
@@ -74,15 +101,6 @@ Is the Hinge loss function the only one used in SVM for generating soft margins?
 1. VaderPlas on Support vector machines, part Beyond linear boundaries: Kernel SVM. “A potential problem with this strategy—projecting N points into N dimensions—is that it might become very computationally intensive as N grows large.”. Could you develop this a little more and explain why it might become very computationally intensive as N grows large?
 
 1. Video 9:49-12:41 How are the training sets validated, and how many training sets are required to produce analgorith that is robust for practical use?
-
-1. Video Lecture (10 minutes) and article by Noble. To detect and avoid overfitting we want to train and test the method on different data sets, and we can use cross-validation to do so. But I am a little confused about how we measure overfitting here? For supervised regression (with a continuous output variable) we can calculate a training and test error where a high test error and low training error indicate overfitting. Is it the confusion matrix that is used for supervised classification to estimate these errors? 
-   > Overfitting is when the model fits the training data so much that it ends up modeling noise rather than the important properties that we want to model, such that it works well on the training data but not the test data. Here is an example taken from Vanderplas: 
-   > ![](https://jakevdp.github.io/PythonDataScienceHandbook/figures/05.03-bias-variance.png)
-   > We see to the right of the image that the overfitted model follows each and every point, leading to a very large variance in the model. When we apply a model like this to a different data set, we might not get the classification we intended because the model was so precisely fitted to the training data that it does not actually reflect real life. 
-   > So we want to make sure that our model is not overfitted to the training set that we used. When we perform cross-validation, we split the training set so that we, in practice, end up with different training sets. We can then compare how well the data fits these different training sets. Since the training sets are annotated such that we know the "true" classifications, we can create a confusion matrix based on this to measure the performance of the model. There is a really good example in the VanderPlas book where they calculate these values for [face recognition](https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html)  (Links to an external site.)
-   > Using this confusion matrix, if we identify that the test set fits the model better for one of the training sets, we can determine that the model is overfitted to that training set. Ideally, the different test sets should fit their respective training sets equally well. 
-
-1. In the VanderPlus section under “Tuning the SVM: Softening Margins”, the tuning parameter C is described as a parameter that controls the hardness of the margins. How is a suitable value of C chosen? It is mentioned that cross-validation or a similar procedure should be used, how is this used to determine C?
 
 1. The article by Noble states that  a SVM can classify microscopy images by using an appropriately defined kernel function. How would you describe a maximum-margin hyperplane that separates the images - would that hyperplane also be an image?   
    > No, a hyperplane is always a [hyperplane](https://en.wikipedia.org/wiki/Hyperplane).
@@ -109,5 +127,33 @@ The article mentions that sometimes algorithms are used as to get fast approxima
 1. In Noble it is stated that projecting data into very high dimensional spaces can be problematic due to the curse of dimensionality. A projected hyperplane with very high-dimensional kernel function will result in a boundary between the classes that is very specific to the training data set and will not generalize well when new data is presented. What is consider to be a too high dimension? Is it specific for a data set or can it be somewhat generalized? It is also stated that one should choose a kernel function that allow the data to be separated but without introducing irrelevant dimensions. When is a dimension consider to be irrelevant? 
 
 1. In the video lecture about cross validation three different “learners” are trained/tested on different bins of the original training data. What are the different learners in this case? Are they later combined somehow and in that case, how is that done? 
+
+1. In the article, it is said that an SVM does not assume that the training data values follow a normal distribution, does it means that the overall training data should not follow a normal distribution, can the sub-training data follow a normal distribution such as AML and ALL?
+   > The distribution does not matter (it can be normal or not). The only thing that matters is that the training data and the test data follow the same distribution.
+
+1. I am not sure I get the difference in the video about cross validation and nested cross validation. The later seems to me just as a cross validation with higher k. Like from 3 we go up to 3*3. What is the additional difference between the two?
+
+1. In the video, it mentioned that we can use the other right kernels to transform the data to get the linear separation hyperplane, but when we change the data by other kernels, will it make influence on the raw data like changing these data meaning or adjusting the real data?
+
+1. In the Noble article they state that separating hyperplanes can be applied to classify gene expression profiles in cancers. By extrapolating the hyperplane to higher dimensions we can study a larger number of genes simultaneously, but where do we draw the line for " the curse of dimensionality" ? For instance, would it be possible to apply the SVM-algorithm for PAM50 (Prosigna) subtype classification of breast cancers? 
+
+
+1. The kernel function "adds" a new dimension to provide a solution to a nonseparable data set. If the new dimension is not enough to find an acceptable separation, is there a possible solution? or we just use a different way to separate the data set?
+
+1. In the soft margin, several data can cross the hyperplane without affecting the result, it there a limit that over such limit, soft margin can not be applied to determine the separation hyperplane.
+
+1. All the examples provided discuss the separation of two classes, and as I see, those are dummy variables (healthy/sick, etc). Can hyperplanes and support vector machines only be applied on data with two classes? If not, how would a separation of three classes look? Is it the same principle repeated twice?
+
+
+2. Since we do not know for a lot of data we generate which values are TPs and which are FPs how do you estimate the correct tuning fa
+
+3. How do you add the "soft margin" to the SVM algorithm and how to avoid that the "soft margin" biases your results? (SVM paper)
+
+1. What are some other benefits to using a Kernel function besides using it to transform nonlinear data into linear data?
+
+1. Video - Cross validation: Are learner 1, 2 and 3 connected in any way or do they count as three different instances of training and testing the data? So one gets accuracy estimates for each learner and then takes the sum of it to represent the accuracy estimate of the entire data set i.e all three bins? 
+
+1. How to choose the best kernel function? In the reading material it says that choosing the right kernel function is time consuming and is done through trial and error, but what are the most common methods to assess a chosen kernel? Are there other methods besides the cross-validation?
+
 
 [11:13]
