@@ -124,6 +124,8 @@ k-means is limited to linear cluster boundaries, what method should you use when
 
 
 ## Information criteria
+These concepts are discussed in detail at the wikipedia etries of [AIC](https://en.wikipedia.org/wiki/Akaike_information_criterion) and [BIC](https://en.wikipedia.org/wiki/Bayesian_information_criterion).
+
 * What is the difference between AIC and BIC? What is measured?
    > BIC and AIC are apparently very closely related. They both introduce penalty terms in order to overcome overfitting that occurs when parameters are added to increase the likelihood of the model. The penalty terms are introduced for the number of parameters in the model. The major difference seems to be that BIC has a larger penalty term than AIC. More depth information can be found in the review by Stoica and Selen  "Model-order selection: a review of information criterion rules", IEEE Signal Processing Magazine 
 
