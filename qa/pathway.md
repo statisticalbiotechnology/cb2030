@@ -1,8 +1,6 @@
 # Questions and Answers on Pathway Analysis.
 
 ## General questions on Pathway Analysis
-1. In the article Khatri et. al, it is said that the FCS method considers molecular measurements to select the differentially expressed genes thus solving the problem caused by the ORA method. What exactly are these gene measurements that the authors refer to?
-  > They write in the introduction that: "Virtually all of the approaches and tools discussed here are independent of the data generated from most high-throughput technologies, including next-generation sequencing data and the knowledge bases used for pathway annotations. In this review, we use gene expression measurements as example data for discussing and explaining various approaches."
 
 1. The general limitations using a knowledge based-driven pathway analysis seems to be:
   - Low resolution knowledge bases, missing condition- and cell-specific information, and incomplete annotations restrict development of the next-generation pathway analysis methods.
@@ -10,25 +8,13 @@
 Would you say these are also the main limitations with GSEA? Or are there other limitations as well?
   > I do not fully get the "dynamic nature" of pathways, but your first point resonates well with me. I would add the methods inability to detect covariation between the gene products as an additional weakness.
 
-1. What is the reason for univariate analysis outperforming multivariate analysis for biological data, when the opposite is true for simulated data (as mentioned in the article by Khatri et al.)? Could this change with improved measurement techniques/technologies, gene annotation and/or knowledge of pathways and interactions in general?
-  > It might be an erroneous finding. In our hands, multivariate statistics is always more sensitive.
-
 1. So the principle of pathway analysis is grouping gens together and test how they behave as a group? This is done by taking already existing knowledge. But then isnt expression analysis of unrelated gens, to find connections between them also an important method to find relations between gens?
   > Yes, that is important, but detecting novel pathways are not a goal of regular pathway analysis.
-
-1. I think we should measure as many genes at the same time as we can, not just the ones that we can group into pathways. Off course by knowing which gens already interact its easier to establish a phenotype.
-  > Here I am a bit confused about your statement. Why do you think so? If you already know that two genes are co-regulated, why measure them both?
-
-1. It seems to me that GSEA still has the limitation of analyzing each pathway independently (ES is calculated across all genes, but there is no evaluation of the appearance of one gene in multiple pathways), without considering the cross-communication between biological pathways. How do they address this problem?
-  > I am not sure this is a feature or a bug of the methodology. Some genes are [more central](https://en.wikipedia.org/wiki/Interactome#Hubs) than others.
 
 
 ## Pathway databases
 1. One of the main obstacles for pathway analysis is annotation. Does this also include standardization of data annotation, i.e. do all databases treat/annotate the data in similar ways, and if not, would this be a problem? I am also wondering if different databases used for the same purpose can yield different results because of differences in annotation standard.
 > No, there is differences between the databases. Even the number of pathways in the database will effect your results, if you do your multiple hypothesis correction in an accurate way.
-
-1. In the article by Khatri et al. it is mentioned that due to the low resolution of databases it is required that the input for the analysis must first be mapped “non-redundant namespace”. What does this mean and how does this allow the analysis to be independent of technology use for data collection?
-  > Most pathways were first described long before the advent of high-throughput molecular biology. Such studies often describe their analytes (proteins and metabolites) in familiar terms, not necessarily giving the exact proteoform or detectable metabolite adduct. Hence, pathway curators have to revise the literature to map the old literature to more formalized taxonomy, like ensembl, uniprot or entrez.
 
 
 ## Integration of results
@@ -36,11 +22,6 @@ Would you say these are also the main limitations with GSEA? Or are there other 
   > This is an open research topic within multiomics analysis. It should be entirely possible to do so, however, I have seen very few successful implementations. One problem is lack of pathway definitions. However, some pathway definition databases like KEGG and Rectome actually do contain information on both metabolites and proteins.
 
 ## Over-representation analysis
-1. In the article by Kathri et al, section First Generation: Over-Representation Analysis (ORA) Approaches, we can read that solving one of its limitations (that only the most significant genes are used) by using an "iterative approach that adds one gene at a time to find a set of genes for which a pathway is most significant". I do not quite get how this solves the problem? How are the genes chosen if not by a threshold? Do we analyze all genes that we have analyzed by using this method?
-  > Sure, you use an FDR threshold, but you keep on changing it until you see the result you want to get. Did I ever tell you that much systems biology stands on methods that should not be investigated too closely?
-
-1. Regarding ORA, the article by Kathri et al mentions that one of the limitations is that it assumes that each gene is independent of the other genes (more generally, analytes, I assume), which might yield biased or incorrect estimates of pathway significance. This sounds like a very bad assumption to make when studying pathways, and it sounds as though it would produce very severe errors, and thus extremely unreliable results. Since the method is still used: how severe and common do these errors tend to be?
-  > Nice catch! This is an error of the review in my mind. What they should have written is that the genes have to be independent under the null, which is an more reasonable assumption. Overall, the method seems to be reliable enough. I also not like the fact that the method is not taking quantative differences as input, but rather lists of genes, and that its test statistics does not relate to quantitative differences between case and control, but instead tests the sizes of genesets. That makes the test statistic hard for most biologists to [interpret](https://academic.oup.com/bioinformatics/article/23/8/980/198511) (and the general problems of the interpretation of *p* values makes this worse).
 
 1. Is there any way to correct for the fact that ORA assigns a higher significance to a pathway with more genes? I am specially concerned by the fact that we could be interested in analyzing pathways with different sizes, which may be both (or even just the smaller one) relevant in a given biological condition.
   > It is not so much that the larger pathways get higher significance by chance, as that they have a larger chance to pick up weak signals.
@@ -74,17 +55,8 @@ Would you say these are also the main limitations with GSEA? Or are there other 
 1. I am a bit confused about the plots obtained from the Gene Set Enrichment Analysis in the jupyter notebook. What does it mean to have a negative enrichment score (as in the plot)? Is it correlated to down-regulation of the genes in the pathway?
     > Yes, it means that the downwards trend is stronger than the upwards trend at that part of the plot. However, gsea cares about the "leading edge", i.e. the left most part of the plot.
 
-1. What does the plot below the enrichment score tell us? Can you explain the difference between the axes and why it is a vertical line in the middle of the plot?
-    > It is pretty well described by Subramanian *et al.* in my mind. The line gives you marks the median of all investigated genes.
 
-1. In the paper Subramnaian et al,  the author talks about the three key elements of GSEA. In the first method of the calculation of enrichment score, what does the author mean by running-sum statistic?  Is it the score assigned to a gene according to the relevance of occurrence in a particular phenotype?
-  > They talk about the ES score, i.e. their cumulative sum statistic.
-
-1. What is meant by  a gene set being over represented? Is it that a gene is falsely or ranked by chance in the top or bottom of L?
-  > In the context of Subramnaian et al that is the right interpretation.
-
-
-1. In GSEA, my understanding to the Gene set S is that it is a set of all genes that involved in a biochemical pathway and L is a set of genes that are differentially expressed. As it is mentioned in the GSEA paper, "The goal of GSEA is to determine whether members of a gene set S tend to occur toward the top (or bottom) of the list L." When calculating the ES, the score is increased when the gene in L is in S and degreased when the gene in L is not in S. If so,  how could  this method be able to measure whether the gene in set S tends to occur at the two extremes of L?
+2. In GSEA, my understanding to the Gene set S is that it is a set of all genes that involved in a biochemical pathway and L is a set of genes that are differentially expressed. As it is mentioned in the GSEA paper, "The goal of GSEA is to determine whether members of a gene set S tend to occur toward the top (or bottom) of the list L." When calculating the ES, the score is increased when the gene in L is in S and degreased when the gene in L is not in S. If so,  how could  this method be able to measure whether the gene in set S tends to occur at the two extremes of L?
   > Could you help me by explaining how their proposed method would not "determine whether members of a gene set S tend to occur toward the top (or bottom) of the list L"?
 
 
@@ -99,15 +71,9 @@ Would you say these are also the main limitations with GSEA? Or are there other 
 1. Are there any cases, regarding differential gene expression, where it's better to not perform a pathway analysis, where individual measurements are preferred?
   > It all depends on what you are interested in reporting as a result.  
 
-1. Could you explain more about GSEA part in Jupyter notebook? I am confused about the input data. It seems like you select five top scoring data sets. Is it enrichment score? Which ranked list L do you use?
-  > No I list the top 5 pathways that stem from the gsea analysis.
-
-1. In the jupyter notebook for the gsea analysis the number of processes is set to 4, why is this and why is the default 1?
-  > This controls the speed the pathways are calculate, by allowing a different number of parallel processes.
-
 
 ## Permutation tests
-1. Also, when it is said that they "permute the phenotype labels" in step 2, does this mean that for each sample, we keep all gene expression data and just assign it a label (e.g. healthy/diseased, or whatever groups we are comparing), irrespective of its actual label? Wouldn't this require a rather large number of samples to yield a good background distribution? Or is something else meant by permuting the labels?
+1. When it is said that they "permute the phenotype labels" in step 2, does this mean that for each sample, we keep all gene expression data and just assign it a label (e.g. healthy/diseased, or whatever groups we are comparing), irrespective of its actual label? Wouldn't this require a rather large number of samples to yield a good background distribution? Or is something else meant by permuting the labels?
   > Yes, your question is an accurate description of how a permutation tests work.
 
 1. In the gene enrichment analysis I didn´t really grasp how the null distribution is being calculated and it was a bit unclear to me why permutation of class labels gives better results than permutation of genes, and a better biological assessment?
@@ -194,23 +160,17 @@ does it mean that since the cell cycles's p-value<threshold then those 24 genes 
 
 ## GSEA
 
-1. **(3 votes)** In Functional Class Scoring, the list of genes is ranked prior to analysis by some metric. What should we consider when choosing the ranking metric? Is it generally better to rank by statistical significance (e.g. p-value or q-value) or biological significance (e.g. log fold change)?
-> Both could work, but GSEA uses statistical significance (there is no such thing as a separate biological significance, though).
-
 1.  In the notebook the function gseapy.gsea() is used with the method used to calculate a correlation or ranking set to 'signal_to_noise'. There seems to be other methods to choose from, how do you make this choice?
 >  The documentation lists a couple of [methods](https://gseapy.readthedocs.io/en/latest/run.html#run) some of them need samples group of at least 3, which might not be available. There might be cases where you rather sort by FC than significance. See above.
 
-1. In the functional class scoring (FCS), you start by scoring/ranking the genes, do you then just take the genes with the highest score or do you need some prior knowledge of these genes functions in order to understand the pathway. I feel like you only identify genes that could be relevant to the pathway but not necessarily relevant. Is this assumption correct?
-> No, e.g. GSEA uses expression values from all measured genes. You set the genes in a pathway in perspective to all other genes.
-
 1. In Subramanian's article, one of the advantages of GSEA is that it does not concentrate on the high scoring genes that are poorly annotated or could not be reproducible. However, the author mentions that GSEA is different from other tools because it considers all of the genes in the experiment. Although the leading-edge analysis can help conclude the subtle results, how do these 'bad' high scoring genes processed? Will the high ratio of these genes influence the final consequences?
-> I do not understand what you mean with "'bad' high scoring genes". The advantage is that unlike ORA, GSEA studies the full distribution of expression values.
+> The advantage is that unlike ORA, GSEA studies the full distribution of expression values.
 
-1. The article for GSEA defines the "top" and "bottom" of a gene set S from a microarray, but could you elaborate in more detail?
-> Not sure what you mean. The point of GSEA is the oposit. Here is an extract of the article: "A common approach involves focusing on a handful of genes at the top and bottom of L (i.e., those showing the largest difference) to discern telltale biological clues. This approach has a few major limitations."
-
-2.  In order to determine the correlation between gene expression and phenotype - in the slides/video, the correlation to the phenotype seems to be a continuous axis in the graph instead of 'classes' of phenotypes such as disease/healthy. Is the correlation typically categorical or are there examples when it would be a continuous variable?
+1.  In order to determine the correlation between gene expression and phenotype - in the slides/video, the correlation to the phenotype seems to be a continuous axis in the graph instead of 'classes' of phenotypes such as disease/healthy. Is the correlation typically categorical or are there examples when it would be a continuous variable?
 > This is a nice observation. It is more common to use categorical variables, but it nothing that hinders the same analysis to be done for continuous variables. Gseapy does not seem to support this though.
+
+1.  In the notebook the function gseapy.gsea() is used with the method used to calculate a correlation or ranking set to 'signal_to_noise'. There seems to be other methods to choose from, how do you make this choice?
+>  The documentation lists a couple of [methods](https://gseapy.readthedocs.io/en/latest/run.html#run) some of them need samples group of at least 3, which might not be available. There might be cases where you rather sort by FC than significance. See above.
 
 
 ## Significance calculation in gsea
@@ -225,11 +185,8 @@ does it mean that since the cell cycles's p-value<threshold then those 24 genes 
 Does this mean that even though the method calculates FDRs, they will in this case be incorrect/unreliable or just that the FDRs will be higher than they would be when permuting class labels?
 > The first, i.e. that the reported statistics is inflated as it does not take gene-gene correlations in account.
 
-1. Another student already mentioned the permutation (GSEA paper) in a question further up. I have a related question about the permutation in order to determine the significance of the enrichment score. How is the gene-gene correlation preserved when the class labels are permutated compared to the permutation of genes?
-> When you permute class labels, you are keeping the same gene-expresion values together. If they for some reason are exposed to the same biases that would mean that the gene expresion values will continue to correlate also after permutation.
 
-
-# Types of analytes
+## Types of analytes
 
 1. The examples given in the article Ten Years of Pathway Analysis map genes to pathways by annotated databases to compare and analyse pathways between samples. I assume that gene expression is the most common way to analyse pathways but is proteomics (protein levels) ever used to analyse pathways?
 > Protein concentrations can be seen as gene expression. But, Yes you quite freuently see pathway analysis based on protein abundances. Maybe even more frequently, pathways are used within metabolomics, i.e. with the abundances of various small molecules.
