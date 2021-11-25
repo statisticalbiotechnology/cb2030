@@ -3,7 +3,14 @@
 
 ## Pathway databases
 
-1. Pathway analysis seems to be very dependent on annotation, so I’m guessing that the availability of annotated data is a limitation. Would it be possible to combine different pathway databases in the same analysis in order to get access to more data (for example if two different metabolic pathway databases contain different data that’s both relevant for our analysis)?
+1. Pathway analysis seems to be very dependent on annotation, so I’m guessing that the availability of annotated data is a limitation. Would it be possible to combine different pathway databases in the same analysis in order to get access to more data (for example if two different metabolic pathway databases contain different data that’s both relevant for our analysis)?   
+   > A1: I work with a lot of databases and I think it would be difficult to combine information from two different pathway databases in the sense you were describing because the annotation used across different databases is not standardized. So it would be laborious, but not impossible, to combine annotation styles/methods from different databases in a straightforward way.   
+   > A2: I was actually interested in this too and decided to investigate a little bit by looking the KEGG and Reactome databases. I *think* performing the same analysis with data from different databases would not be so easy because there is a possibility that there are differences between the pathways in the databases (e.g. which pathways they have and number of proteins in a pathway) that could affect the overall results. After all, we want to compare the entries between each other based on the data provided, so how do we deal with a pathway that has information from both databases? Which database should we choose then? Or how do we compare two pathways with data coming from different databases that uses different methods to obtain their data? 
+   > However, I did find this [study from 2019 that proposes a method for integrating three different pathways](https://www.frontiersin.org/articles/10.3389/fgene.2019.01203/full)  
+   > In very short and simple term, they try to find the overlapping pathways between the databases and combining them. They label these merged pathways based on if they come from two databases or three databases. Pathways that come from a single database are still kept, of course. Here is an example of how they did it:
+   ![](https://www.frontiersin.org/files/Articles/493380/fgene-10-01203-HTML-r1/image_m/fgene-10-01203-g001.jpg)
+   > Using this new merged dataset, they claim to have more biologically consistent results and improved prediction performance. So it seems to still be possible to combine data from different databases, as long as you combine them in a systematic way before you perform your analysis. 
+
 
 1. To know the pathway of related genes, for example, I guess we should have the data of expression or something. And to get these data, we have to know the set of genes that are likely to be related each other since we have to do Knockout or Knockdown experiment. How do we get to know which genes are likely to be related? And how many genes are needed to make pathway which is reliable?
    > This is what kept biochemists buzzy the last century.
@@ -12,6 +19,10 @@
 ## ORA vs. GSEA
 
 GSA uses quantative values as input, ORA dont. That is the main difference between the strategies.
+
+1. Does it follow the same logic that you can use over representation analysis to determine if some pathway is implicated in a genetic disease not based on DE data but on genes that are muted in said disease?
+   > Yes, this is a typical case when you use ORA.
+
 
 1. The GSEA method seem to pick out relevant genes more precisely because of the ranking, so I wonder when we would rather use Over-representation analysis?
    
@@ -74,6 +85,13 @@ GSA uses quantative values as input, ORA dont. That is the main difference betwe
 1. from the paper page 2. I find the following paragraph confusing... "We note that the GSEA method differs in several important ways from the preliminary version (see Supporting Text). In the original implementation, the running-sum statistic used equal weights at every step, which yielded high scores for sets clustered near the middle of the ranked list (Fig. 2 and Table 1). These sets do not represent biologically relevant correlation with the phenotype. We addressed this issue by weighting the steps according to each gene’s correlation with a phenotype. We noticed that the use of weighted steps could cause the distribution of observed ES scores to be asymmetric in cases where many more genes are correlated with one of the two phenotypes. We therefore estimate the significance levels by considering separately the positively and negatively scoring gene sets" specifically the last two sentence. Why do we need to consider the (+) and (-) scoring separately? aren't we really just interested in any amount of change? 
 > A great question. I am others are confused about this as well. Partticularly since you know some proteins are suprresing the expression of other proteins you would expect an active pathway to contain both up an down regulated genes. 
 
+1. I'm having trouble understanding the calculation of the enrichment score. Is it correct that when running down the L we increase or decrease the running sum by the p-value of the gene, and it's sign is dependent on whether the gene is in S or not? Does this not mean that we expect or S to account for a lot of the variation, what happens when there are many metabolic pathways responsible for the phenotype?
+
+## Correlation with phenotype
+
+1. In both the video and article I find the term "correlation with phenotype" confusing, and it is also stated in the article that any suitable metric could be used for this. How exactly is it defined? And does it only work to calculate the correlation when one uses expression profiles labled categorically, for example as 1 or 2 as used in the article?
+
+
 
 ## Validation
 1. How are the results from Over-representation Analysis and Gene-set enrichment analysis validated?
@@ -88,6 +106,12 @@ GSA uses quantative values as input, ORA dont. That is the main difference betwe
 2. In the article, they illustrate all the genes in Table 2 which have an FDR < 0.25, instead of our common threshold of 0.05 what is the reason behind this, and is this unique for their approach, or is it common to have a threshold of 0.25 when doing GSEA?
     > GSEA is performed to find candidate hypotheses, which you try to further validate with your research. So, many scientist choose a FDR of 0.25 (results will be valid 3/4 times) to avoid overlooking potentially significant results. Expression datasets are often quite sparse and incoherent (high biochemical noise due to cell cycle phases, bursting, ...) and many genesets just include a fairly small number of genes / in the statistical test just few genes are analyzed, resulting in high statistical errors. In summary, GSEA is a first step to find candidates which you try to verify later.
 
+## Multiple testing
+
+1. In ORA when setting the threshold for determining the most significantly differentially expressed genes, what difference does it make to do thresholding on either the q-value or p-value? [Video 6:28 and jupyter notebook]
+
+
+
 ## Notebook
 
 1. In the jupyter notebook a q-value threshold of 10<sup>-15</sup> is used for the ORA, why was this value chosen? Is there any general way of thinking to choose a suitable threshold, can the data be taken into account somehow or is the choice completely arbitrary?
@@ -99,5 +123,3 @@ GSA uses quantative values as input, ORA dont. That is the main difference betwe
 
 2. Why do the calculations for the ES also look for p-values distributed in the top extreme of p-values, and not just the bottom extremes?
 
-
-[Wed 15:43]
