@@ -32,6 +32,10 @@ GSA uses quantative values as input, ORA dont. That is the main difference betwe
 1. In over-representation analysis part, i didn't get the point what's the point of overlap is significantly larger than expected. What can we conlude if its by chance, and not by chance?  I mean the overlap size can summarize or conclude something? I am confused.
    > A1: I was also thinking about this, and my interpretation was that if the overlap between all differentially expressed proteins and the proteins in the pathway we are interested in is larger than what we expect by chance, it should indicate that the pathway is for example up-regulated. This means that we can compare different condition groups and see if the pathway is more/less active in one group compared to another.   
 
+1. I did not fully understand what Overrepresentation Analyses achieves. "A method of summarizing the activity of analytes into pathway activity", what exactly does this mean and how can we gain information about this by looking at the overlap between lists of differentially expressed genes and members of a pathway? 
+
+1. In this lecture we learnt about over-representation analysis which is a statistical model that determines whether some biological processes or functions are over-represented in a gene list which is experimentally derived. I was wondering is over-enrichment analysis is the same as over-representation analysis and it has just two names or these are two different analysis methods? If yes, what is the difference between them?
+
 ## GSEA
 
 1. From the article by Subramanian et al., The magnitude of the addition to the running sum when encountering a gene in the list belonging to the gene set S is weighted according to the gene's correlation with the phenotype. In the article they write that this can "cause the distribution of observed ES scores to be asymmetric in cases where many more genes are correlated with one of the two phenotypes". What does this mean, and why is this a reason for estimating significance levels for positively and negatively scoring genes separately?
@@ -66,6 +70,10 @@ GSA uses quantative values as input, ORA dont. That is the main difference betwe
    > An example that comes handy is RNA-seq.
 
 1. If you manage to find a significant correlation between a differential expression profile and an a priori defined gene set, but the most differentially expressed gene list contains one or more genes that have no known relation to the defined gene set or studied phenotype. Would you disregard those genes and claim a significant correlation with the defined gene set? Or would you need to further investigate these genes before drawing conclusions?  
+
+1. from the paper page 2. I find the following paragraph confusing... "We note that the GSEA method differs in several important ways from the preliminary version (see Supporting Text). In the original implementation, the running-sum statistic used equal weights at every step, which yielded high scores for sets clustered near the middle of the ranked list (Fig. 2 and Table 1). These sets do not represent biologically relevant correlation with the phenotype. We addressed this issue by weighting the steps according to each gene’s correlation with a phenotype. We noticed that the use of weighted steps could cause the distribution of observed ES scores to be asymmetric in cases where many more genes are correlated with one of the two phenotypes. We therefore estimate the significance levels by considering separately the positively and negatively scoring gene sets" specifically the last two sentence. Why do we need to consider the (+) and (-) scoring separately? aren't we really just interested in any amount of change? 
+> A great question. I am others are confused about this as well. Partticularly since you know some proteins are suprresing the expression of other proteins you would expect an active pathway to contain both up an down regulated genes. 
+
 
 ## Validation
 1. How are the results from Over-representation Analysis and Gene-set enrichment analysis validated?
