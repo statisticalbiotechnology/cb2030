@@ -32,6 +32,7 @@
  | L17 | Wed | 15/12 | 13-15 |  FE | FR4 | Gene Regulation 4 |
  | L18 | Fri | 17/12 | 13-15 |  All | M3 | Q&A |
  | Exam | Tue | 11/1 | 14-18 |  - |  FB51/52 | Exam |  
+ | Exam | Fri | 22/4 | 14-18 |  - |  FB54 | Re-exam |  
 
 We used the following codes:
 
