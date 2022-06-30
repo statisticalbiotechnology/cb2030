@@ -24,7 +24,7 @@
 | L11 | Fri | 2/12 | 8-10 | CZ | FB42 | Metabolic Modelling 2 |
 |    |     |       |       |     |    | |
 | L12 | Mon | 5/12 | 8-10 | CZ | FB53 | Metabolic Modelling 3 |
-| C3 | Tue | 6/12 | 13-17 | Röd | TA | Metabolic Modelling |
+| C3 | Tue | 6/12 | 13-17 | Röd | MS | Metabolic Modelling |
 | L13 | Wed | 7/12 | 8-10 | CZ | FB42 | Metabolic Modelling 4 |
 | LX | Thu | 8/12 | 8-10 | X | FB42 | CANCELLED |
 | L14 | Fri | 9/12 | 10-12 | FE | FB52 | Gene Regulation 1 |
@@ -48,6 +48,7 @@ We used the following codes:
  | FE | Fredrik Edfors |
  | TA | Generic TA |
  | LD | Leo Dahl |
+ | MS | Mengnan Shi |
 
  ### Remaining issues
  1. Move C1?
