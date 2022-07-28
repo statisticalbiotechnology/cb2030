@@ -18,12 +18,12 @@
 |    |     |       |       |     |    | |
 | C2 | Mon | 28/11 | 8-12 | ME | Spelhallen, Sporthallen | Machine Learning |
 | L9 | Wed | 30/11 | 8-10 | LK | FB42 | Network Analysis? |
-| L10 | Thu | 1/12 | 8-10 | CZ | FB42 | Metabolic Modelling 1 |
-| L11 | Fri | 2/12 | 8-10 | CZ | FB42 | Metabolic Modelling 2 |
+| L10 | Thu | 1/12 | 8-10 | CZ | FB42 | Genome-scale metabolic models and Linear Programming |
+| L11 | Fri | 2/12 | 8-10 | CZ | FB42 | Flux balance analysis |
 |    |     |       |       |     |    | |
-| L12 | Mon | 5/12 | 8-10 | CZ | FB53 | Metabolic Modelling 3 |
+| L12 | Mon | 5/12 | 8-10 | CZ | FB53 | Application of genome-scale metabolic models |
 | C3 | Tue | 6/12 | 13-17 | Röd | MS | Metabolic Modelling |
-| L13 | Wed | 7/12 | 8-10 | CZ | FB42 | Metabolic Modelling 4 |
+| L13 | Wed | 7/12 | 8-10 | CZ | FB42 |  Next-generation genome-scale metabolic modeling |
 | L14 | Fri | 9/12 | 10-12 | FE | FB52 | Gene Regulation 1 |
 |    |     |       |       |     |    | |
 | L15 | Mon | 12/12 | 8-10 | FE | FB52 | Gene Regulation 2 |
