@@ -3,22 +3,20 @@
 | Code | Day  | Date  | Time_  | ID  | Location | The content of the Convocation |
 |--------|-------|--------|---------------|------------|----|----------------------------------------|
 | L1 | Wed | 2/11 | 8-10 | All | FB42 | Introduction |
-| C0 | Thu | 3/11 | 13-17 | TA | Karmosin, Magenta | Software and Notebooks |
+| C0 | Thu | 3/11 | 13-17 | ME | Karmosin, Magenta | Software and Notebooks |
 | L2 | Fri | 4/11 | 8-10 | LK | FB42 | Hypothesis Testing |
 |    |     |       |       |     |    | |
-| CX | Mon | 7/11 | 14-18 | X | Magenta, Vit | CANCELLED |
 | L3 | Wed | 9/11 | 8-10 | LK | FB42 | Multiple Testing  |
 | L4 | Fri | 11/11 | 10-12 | LK | U51 | Linear Models |
 |    |     |       |       |     |    | |
 | L5 | Wed | 16/11 | 8-10 | LK | FB42 | Supervised Learning |
-| LX | Thu | 17/11 | 8-10 | LK | FB42 | CANCELLED |
+| C1 | Wed | 16/11 | 13-17 | ME | Röd | Hypothesis Testing |
 | L6 | Fri | 18/11 | 13-15 | LK | FB53 | Clustering |
 |    |     |       |       |     |    | |
 | L7 | Wed | 23/11 | 8-10 | LK | FB42 | Principal Component Analysis |
-| C1 | Wed | 23/11 | 10-15 | TA | Grå, Magenta | Hypothesis Testing |
 | L8 | Fri | 25/11 | 10-12 | LK | K1 | Pathway Analysis |
 |    |     |       |       |     |    | |
-| C2 | Mon | 28/11 | 8-12 | TA | Spelhallen, Sporthallen | Machine Learning |
+| C2 | Mon | 28/11 | 8-12 | ME | Spelhallen, Sporthallen | Machine Learning |
 | L9 | Wed | 30/11 | 8-10 | LK | FB42 | Network Analysis? |
 | L10 | Thu | 1/12 | 8-10 | CZ | FB42 | Metabolic Modelling 1 |
 | L11 | Fri | 2/12 | 8-10 | CZ | FB42 | Metabolic Modelling 2 |
@@ -26,7 +24,6 @@
 | L12 | Mon | 5/12 | 8-10 | CZ | FB53 | Metabolic Modelling 3 |
 | C3 | Tue | 6/12 | 13-17 | Röd | MS | Metabolic Modelling |
 | L13 | Wed | 7/12 | 8-10 | CZ | FB42 | Metabolic Modelling 4 |
-| LX | Thu | 8/12 | 8-10 | X | FB42 | CANCELLED |
 | L14 | Fri | 9/12 | 10-12 | FE | FB52 | Gene Regulation 1 |
 |    |     |       |       |     |    | |
 | L15 | Mon | 12/12 | 8-10 | FE | FB52 | Gene Regulation 2 |
@@ -37,7 +34,7 @@
 |    |     |       |       |     |    | |
 | Exam | Tue | 10/01 | 14-18 | All | FB51, FB53, FB55 |
 |    |     |       |       |     |    | |
-| Re-Exam | April | x-x | All | TBD |
+| Re-Exam | Thu | 13/04 | 8-12 | All | FB51 |
 
 We used the following codes:
 
@@ -46,7 +43,7 @@ We used the following codes:
  | LK | Lukas Käll |
  | CZ | Cheng Zhang |
  | FE | Fredrik Edfors |
- | TA | Generic TA |
+ | ME | Markus Ekvall |
  | LD | Leo Dahl |
  | MS | Mengnan Shi |
 
