@@ -18,11 +18,11 @@
  | C2 | Fri | 26/11 | 13-17 |  GJ | Röd/Grön | Machine Learning |
  |    |     |       |       |     |    | |
  | L9 | Wed | 1/12 | 8-10 |  GJ | FB52 | Network Analysis |
- | L10 | Thu | 2/12 | 8-10 |  CZ | FD5 |  Metabolic Modelling 1 |
- | L11 | Fri | 3/12 | 10-12 |  CZ | FB52 | Metabolic Modelling 2 |
+ | L10 | Thu | 2/12 | 8-10 |  CZ | FD5 |  Genome-scale metabolic models and Linear Programming. |
+ | L11 | Fri | 3/12 | 10-12 |  CZ | FB52 | Flux balance analysis |
  |    |     |       |       |     |    | |
- | L12 | Mon | 6/12 | 10-12 |  CZ | FB42 | Metabolic Modelling 3 |
- | L13 | Wed | 8/12 | 8-10 |  CZ | FB52 | Metabolic Modelling 4 |
+ | L12 | Mon | 6/12 | 10-12 |  CZ | FB42 | Application of genome-scale metabolic models |
+ | L13 | Wed | 8/12 | 8-10 |  CZ | FB52 | Next-generation genome-scale metabolic modeling |
  | L14 | Thu | 9/12 | 8-10 |  FE | FB52 | Gene Regulation 1 |
  | L15 | Fri | 10/12 | 10-12 |  FE | FB52 | Gene Regulation 2 |
  | C3 | Fri | 10/12 | 13-17 |  TL | Grön/spelhallen | Metabolic Modelling |
