@@ -2,6 +2,10 @@
 
 Here we store selected questions and answers from previous years incarnations of the course.
 
+## Definition of probabilities
+1. What properties of the *p* value makes them uniformly distributed under H0?
+   > A1. They are sampled from the same distribution that they are tested against. An analogue is that the probability of a randomly selected Swede to be among the *p*% tallest persons in Sweden is *p*.   
+
 ## Definition of *p* value
 
 * Q: What is the relation between a *p* value and a probability.
