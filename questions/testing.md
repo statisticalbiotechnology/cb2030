@@ -23,7 +23,9 @@ Now the question comes, how rare must an event be to contradict the H0 (and thus
 > Simulating a situation where this null hypothesis is true (the book makes 1000 iterations/permutations of the H0 simulation), one can count how often you observed a similar or greater effect (i.e., differences in means of two groups as big as those between your initial groups). If this is so rare (<5%) of the time then they are by convention statistically significant.
 1. In 9.2 chapter example, was the simulation used as a control for the hypothesis testing?
 > The simulation is used to generate a sampling distribution.
+
 ### Normal distributions
+
 1. In biology, the p-value is almost always derived from statistics that apply a normal distribution in a group of samples. If there is no apparent normal distribution, how do you calculate the p-value? Or are other statistics applied then?  
 This is a more general question and does not refer to any chapter in specific, on the Wikipedia page of p-value they constantly refer to an assumed normal distribution, hence the question.
 > S: There is rule, the  *central limit theorem*. If you have a given number of samples like n>30 you can expect that you have a normal distribution and also a good criterion is are your box-plots look symmetric (from my German stat. script).   
@@ -37,6 +39,7 @@ This is a more general question and does not refer to any chapter in specific, o
 Therefore, physical quantities that are expected to be the sum of many independent processes, such as measurement errors, often have distributions that are nearly normal.
 
 ### One vs. Two-tailed tests.
+
 1. Why does the one-tailed method of p-value provide more statistical power than the two-tailed method?
 > For a two-tailed method the significance level is split to both sides. The one-sided test, on the other hand, focuses all the significance to one side making it twice as strong. Therefore, fewer subjects are needed in order to gain the same significance as for a two-sided method.
 > > So how are we choosing between one-sided or two-sided methods for p-value? From the book, it is hard to understand. Is it: one-sided = only 1 seems to be used only when one specific parameter is affecting the difference between 2 populations & 2-sided = when a difference in 2 populations is affected by 2 extreme opposite actions. Is that correct?
