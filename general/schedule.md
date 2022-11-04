@@ -48,10 +48,6 @@ We used the following codes:
  | MS | Mengnan Shi |
 
  ### Remaining issues
- 1. Move C1?
- 2. TAs
- 3. More informative titles of L10-L17
  4. Date for reexam
- 5. Report cancelled lectures
- 6. Content of new L9
-
+ 5. Report cancelled lectures to admin
+ 
