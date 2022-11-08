@@ -23,7 +23,8 @@
 > The value of thresholds are arbitrarily defined, which is a rather conventional thing as we define the p-value to be significant. If I understand correctly, the cutt-off here, denoted by t, is the same p-value that we think it is significant below this value. So basically we use the same cut-off (threshold) to calculate p-value and q-value.    
 > For the false negative, I don't think we are interested in it, at least for this method. Because true positives and false negatives are in seperate zone of the p-value frequency plot, where true positives are at the left-hand side of the cutoff, and false negatives are in the reverse. In this method, we approximate p-value distribution on the right-hand side of the cut-off as a uniform distribution, and I think in this way we are mixing false negatives and true negatives. But I have a feeling that there will be a method to focus on true negatives and false negatives, maybe it can be false rejection rate or something else (joke).
 
-
+1. In false discovery rate we take into the consideration only the false positives, what about false negatives? 
+> When controlling for FDR we do not in any way control the false negatives.
 
 ### pi_0 estimates
 
@@ -38,6 +39,9 @@
 
 1. In the article, they write "If we take λ=0, then 𝜋0(λ)=1, which is usually going to be much too conservative in genomewide data sets, where a sizable proportion of features are expected to be truly alternative." Isn't this always too conservative or are there situations when you can set  λ=0 and use 𝜋0(λ)=1? If so, what situations and why?
 > Yes, pi_0=1 is conservative in all cases except for if you belive that all your findings are incorrect, which makes the rest of the analysis uninteresting. The lambda parameter is just a help variable we use to derive the pi_0.
+
+1. In the formula for the pi0-estimate, what does lambda indicate? I mean what does it mean, if lambda is near 1 or near 0? 
+> Lambda is a tunable parameter p-value treshold, that determines how conservative the data you want to include in for your pi0 estimatiom is. The smaller the lambda, the more p-values you include, however, you also get a more conservative estimate.
 
 ### Applications of FDRs
 
