@@ -8,7 +8,13 @@
 1. As stated in the article, with large data false positives still occurs with low p-values. Therefore they developed this method using FDR and q-values. Can this new method improve for smaller sets of data too? 
 > There is always going to be a risk that there are false positives, no matter the size of the data set. However, the larger the data set, the higher the risk. The FDR and q-values are always useful when multiple features are analyzed due to it reflecting on the hypotheses that are alternative/significant features.
 
-0:188 Nov at 0:18
+### p-values under null
+1. In the video at around 7 minutes you talk about the distribution of p-values under H1 and H0. You say that the null hypothesis "by definition being evenly distributed over the scale between 0 and 1". What exactly do you mean by it being evenly distributed.
+> That they are [uniformely distributed](https://en.wikipedia.org/wiki/Continuous_uniform_distribution).
+
+### Thresholds
+1. It is unclear how in the article, they write that if you choose a as a cutoff for q values, then the FDR will be smaller than or equal to a. But the q-value is the minimum FDR if we consider the feature in question significant, the maximum would be pi0. I don't understand how these can both be true, could anyone explain this?
+> First you calculte your q-values, *then* you threshold the q-values. During the second operation the q-values do not change.
 
 ### Sensitivity vs. selectivity
 
@@ -43,7 +49,19 @@
 1. In the formula for the pi0-estimate, what does lambda indicate? I mean what does it mean, if lambda is near 1 or near 0? 
 > Lambda is a tunable parameter p-value treshold, that determines how conservative the data you want to include in for your pi0 estimatiom is. The smaller the lambda, the more p-values you include, however, you also get a more conservative estimate.
 
+1. I don't understand the min FDR(t); from my understanding, when the threshold t is fixed, the FDR(t) is fixed, but how could you find out the minimum FDR(t)?  
+> No the procedures minimizes FDR(t) over all values of t that includes the current p value. 
+
+1. I have a hard time moving from the conceptual understanding of pi0 (slide 21) to its formula given a certain lambda (slide 22). From slide 21 (pi0 illustration), it seems to me that pi0 is the % of overall red (=H0). To calculate this, we need a formula that is based off of values we have such as lambda (the threshold value). But with the formula given in slide 22, what are we graphically calculating? It should still be the red area, but I cannot see that.
+> In the range between lambda and 1 you expect there to be m(1-lambda) features, but instead you find just the blue ones. The quotient between the two is your prior of being null.
+
+ 
+
+
 ### Applications of FDRs
+
+1. Computing the q-value can help you focus your investigation effort on a subset of your original data. But can you perform another analysis on this subset (and so on)? How would "nested q-values" be interpreted?
+> The FDR and the q-values is only defined for the set of hypothesis that were originally posed. If you want to look at a subset, you need to restart the procedure from scratch.
 
 1. I feel very confused about the application of q-value in the genomewide data set. It says that 'one may use the q-values as an exploratory guide for which features to investigate further.' In my mind, it gives me feeling that it can be used to distinguish the significant genes with different expressions which really contribute to the development of cancer (for example) from the genes which show significant expression changes but do not interfere with the cancer development. In other words, the changes of these genes are only the results of other gene expression change, not participating in the tumorigenesis. Can we apply the q-value to help us to exclude those genes? 
 > I think it can not be used to exclude those genes during experiment.
@@ -60,6 +78,12 @@ Because in multiple hypothesis testing, q value is used to control the positive 
 1. In the article, the authors speak about features and q-values of those features. It is still unclear to me if in that case feature is 1 single gene or a set of genes!?
 > One feature is one hypothesis, i.e. one gene that is studied for significance. One feature/gene/hypothesis has one q-value that represents the least possible FDR, that is what is the probability of its significance.
 
+### Monotonicity
+
+1. For the definition of the q-value, I don’t understand why we have to ensure that the q-value is a monotonically increasing function with the p-value threshold t. 
+> If a measure is not (semi-)[monotonic](https://en.wikipedia.org/wiki/Monotonic_function) with p-value, we could not define a set of p-values that would be less than a given treshold. ![](https://en.wikipedia.org/wiki/Monotonic_function#/media/File:Monotonicity_example1.svg) 
+
+
 ### Other measures of error rates
 1. What is the difference between the q-value and the FDR-adjusted p-value using Benjamini-Hochberg method? Can we use these terms interchangeably?
 > "The more mathematical definition of the q value is the minimum FDR that can be attained when calling that feature significant (see Remark A in Appendix).   
@@ -72,5 +96,7 @@ Because in multiple hypothesis testing, q value is used to control the positive 
 1. The article stressed that q value is not the probability of a feature being a false positive as the q value accounts for the fact that decisions are made for m features simultaneously. What exactly is the difference between the two estimates and when would it be necessary to also estimate the probability of a feature being false positive?
 > FDRs are used to isolate sets of features. If we are only interested in one single feature, we might want to calculate its posterior probability. This is known as posterior error probability (PEP) or local-FDR.
 
+2. When we talk about FDR, we are only actually talking about false positive rates, right?
+> No a False positive rate is something entierly different. FPR is the fraction of null features under the treshold, a definition very close to a p-value.
 
 
