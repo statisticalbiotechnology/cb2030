@@ -100,3 +100,17 @@ Because in multiple hypothesis testing, q value is used to control the positive 
 > No a False positive rate is something entierly different. FPR is the fraction of null features under the treshold, a definition very close to a p-value.
 
 
+* In the Youtube lecture, Lukas says that a simple linear regression (F(x) = a*x + b) can be drawn for comparisons between groups (dummy-variable x, with x=0 being the diseased group and x=1 the healthy). I did not really understand which points are fitted to which lines. Is it the difference between the groups? Because if that was the case, would it not be more intuitive to plot them both on the same plane, fit one line per group, and define their behavior compared to each other (see pic attached)? Was that an example of multiple linear regression?
+> In the example the measurements are one dimentional so you just fit one average for each of the two conditions and calculate the difference between them as well as the residuals around those means. 
+
+* In section 10.3, what can the plot of the residuals say about the linear regression? I mean in what cases should we plot the residuals?  
+> The idea with looking at the residuals is to compare how well the model fits the data. Residuals are the difference between the actual value and the value given by the model. Since the objective of a model is to match the data as well as possible, looking at the residuals is a way to check this. So we do not actually need to plot the residuals, rather, we simply calculate them and use them to understand how good our model is.
+
+* Are permutations a more robust way of testing the linear model than looking at the R2, and if so, why?
+> I think permutation is a way to test the linear model, i.e. to see whether a relationship stated by the linear model can due to chance, while looking at the R2 is a way to measure the quality of the linear model, i.e. if the model fit the data well, so if I understand right these are different concepts. 
+
+* In Chapter 10.5, many methods are mentioned to measure the goodness of fit for a linear model. But the relationships between some samples could be non-linear. So, is there any certain threshold in R-squared or Pearson’s coefficient of correlation that can reject a linear model? Or usually, we try all the models we have and see which model will give us the best fit.
+> If you not3 that the residuals are unevenly distributed, you might conclude that you need a better model.    
+> You could of course still use a linear regression model for samples that do not correlate linearly, if you for example use a log-transform of the data. But to answer your question, there exist thresholds for the coefficients like the R^2 value, but they are only an indication and should not be taken as a rule. It is valuable to compare different models, but if you use a polynomial model, increasing its order into higher exponents gives a very good fit for any set of points if you use a high enough exponent, but then the curve becomes very messy between points, which is usually not desirable.   
+
+
