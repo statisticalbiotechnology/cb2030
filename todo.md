@@ -5,6 +5,9 @@
 ### FDR
 Colorize and label p-value histogram.
 
+# Linear model
+Consider adding Lasso and Ridge. Talk about permutation tests.
+
 ### Supervised learning
 
 ### Clustering
