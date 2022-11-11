@@ -14,10 +14,10 @@
 | L6 | Fri | 18/11 | 13-15 | LK | FB53 | Clustering |
 |    |     |       |       |     |    | |
 | L7 | Wed | 23/11 | 8-10 | LK | FB42 | Principal Component Analysis |
-| L8 | Fri | 25/11 | 10-12 | LK | K1 | Pathway Analysis |
+| L8 | Fri | 25/11 | 10-12 | LK | K1 | Variational Auto Encoders |
 |    |     |       |       |     |    | |
 | C2 | Mon | 28/11 | 8-12 | ME | Spelhallen, Sporthallen | Machine Learning |
-| L9 | Wed | 30/11 | 8-10 | LK | FB42 | Network Analysis? |
+| L9 | Wed | 30/11 | 8-10 | LK | FB42 | Pathway Analysis |
 | L10 | Thu | 1/12 | 8-10 | CZ | FB42 | Genome-scale metabolic models and Linear Programming |
 | L11 | Fri | 2/12 | 8-10 | CZ | FB42 | Flux balance analysis |
 |    |     |       |       |     |    | |

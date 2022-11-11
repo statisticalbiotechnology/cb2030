@@ -2,9 +2,11 @@
 
 ## Lectures
 
+### FDR
+Colorize and label p-value histogram.
+
 ### Supervised learning
 
-Consider to use "Hyperparameters and Model Validation" section, and remove the details of SVMs.
 ### Clustering
 
 Consider to remove the ref to EM in k-Means
@@ -20,7 +22,3 @@ Update the notebooks so that the following questions are answered:
 
 
 ## Feedback from students
-
-1. More organized lectures
-2. Video describing how to "play around with" each notebook
-3. Less questions to answer more thourougly in the labs.
