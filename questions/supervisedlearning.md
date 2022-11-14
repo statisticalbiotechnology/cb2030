@@ -1,5 +1,11 @@
 # Questions and Answers to Supervised Learning.
 
+### ROC curves
+A wikipedia etry on ROC-curves can be found [here](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
+
+1. I don't understand why a ROC score above 0.5 is seen as a good predictor?
+   > An uninformative predictor would give a score of 0.5, any performance better than that is better than expected by chance.
+
 ### Multiclass SVMs
 
 1. A support vector machine is used when the data has exactly two classes. Why can’t we use it to separate more than two sample groups? Wouldn’t we be able to do that by, for example, adding another separating hyperplane?
@@ -19,6 +25,13 @@ The jupyter notebook describes how to tune hyperparameters using GridSearch. The
 
 1. In the section describing support vector machines, they write that the tuning parameter that controls the hardness of the margin should be tuned using cross-validation or a similar procedure. How is cross-validation used to tune the parameter? How do we make the trade-off between the size of the margin and the hyperplane violations?
 
+
+### Model selection
+1. How is the kernel function determined? E.g. how do you find out which mathematical transformation to apply to get linearly-separable data?
+   > In the text by Noble it says that a kernel function can be done either using trial and error, starting from a simple SVM and then trying other standard kernel functions (these can potentially be limited  if one knows much about their data). It is also possible to select a kernel function using cross-validation on a fixed set of kernels, this is time consuming and does not always guarantee that another kernel function, not used in the cross-validation, could not be a better choice.
+
+
+
 ### Cross validation
 1. What is the applicatory benefit/limitations between the choices of 3-fold (or even 4-fold or 5 fold) cross validation, or implementing nested validation for training data sets?
    > Selecting a larger number of cross validation bins has the benefit of you traing the model on more data, but the drawback that you have to train more models, i.e. it is slower.
@@ -29,6 +42,12 @@ The jupyter notebook describes how to tune hyperparameters using GridSearch. The
 1. In the video (Cross Validation) it is stated that the training set is separated into three cross validation bins and that three different learners are trained and tested on the different bins. What exactly are the learners? Are they connected in some way and for example combined after training/testing of the set or are they used individually as three separate "sets"?
    > The outcome of the procedure are three separate classifiers, and their performance figures. There are different strategies for creating a final predictor: 1) Often a final classifier is trained based on all data. However, such a classifier should not be used for reporting performance. 2) One can select one of the predictors, either by random or by its performance. 3) One can use all predictors and use the majority vote between them as a final prediction.
 
+
+### Hyperplanes
+1. For the maximum margin hyperplanes, in the lecture is was mentioned that you need three datapoints to determine this. Does anyone understand why you need three instead of two? To me it seems like these planes are symmetrical from the center to the margin boundary, so if you know the margin boundary on one side, you also know it on the other side, implying that two datapoints are sufficient to draw this hyperplane with its margins.
+   > Indeed you only need two points to define a separating hyperplane, however, the *maximum separating* hyperplane will always be defined by three datapoints as long as there are more than two in the set. Try to draw the problem and you will see this.
+
+ 
 
 ### Kernels
 

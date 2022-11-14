@@ -318,3 +318,6 @@ There is a description of a multi-class classification problem in [VanderPlas](h
 Suppose one has two spread-out clusters, possibly growing into each other. Wouldn't it be possible to determine the centre of both clusters and construct a hyperplane based on the two centre points of each cluster?
 > Yes, there are classifiers using such methods, e.g. [Logistic Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
+
+
+
