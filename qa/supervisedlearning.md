@@ -1,5 +1,13 @@
 # Questions and Answers to Supervised Learning.
 
+
+## General machine learning
+
+5. What are the advantages and disadvantages of supervised learning compared to unsupervised and semi-supervised learning?
+   > To my understanding, the main advantage of unsupervised and semi-supervised learning is that these methods are less biased than supervised learning since they make conclusions/look for patterns inherent to the dataset rather than based on labels. The goal of supervised learning is to predict the output when it is given new data labelled in a similar way to the training dataset. Meanwhile, the goal of unsupervised learning is to find the patterns in unlabeled input data. Unsupervised learning is very useful for explanatory analysis, for example in clustering data points. 
+   > The main disadvantage of supervised learning is that we can have a high risk of overfitting the data, which would lead to disproportionate conclusions. On the other hand, unsupervised learning can lead to poor correlation/patternization between data points, which would not be a very useful analysis.
+
+
 ## Performance metrics
 1. At the end of the video lecture, the last thing you say is that everything above a ROC score of 0.5 would be seen as a good predictor. Intuitevely this feels as a low requirement for implementation of predictors, therefore I am wondering if this is true? Do you use predictors with a ROC score of example 0.6 in clinics? If yes, why is the ROC score allowed to be so close to random (0.5)?
   > No, you are right. A ROC score of 0.51 will often not be very valuable. I meant to say that a ROC score > 0.5 is a score that is better than a random prediction. Also, this is somewhat dependent on the research question. Sometimes one accept predictors with very low ROC score as other information is unavailable.
