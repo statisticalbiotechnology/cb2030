@@ -1,3 +1,12 @@
+1. General ML
+1. Over/Under fitting
+   * Examle Nearest Neighbour Classifier/Regression
+1. Validation methods
+1. Linear rooms/Hyperplanes
+1. Linear SVM formulation
+   * 1D case
+1. Notebook
+
 # Questions and Answers to Supervised Learning.
 
 ### ROC curves
