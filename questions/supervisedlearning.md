@@ -30,6 +30,7 @@ I am wondering how "different" are those solutions and if we couldn't apply the 
 
 
 ### Tuning of Hyper parameters
+
 The jupyter notebook describes how to tune hyperparameters using GridSearch. There is also a section in VanderPlas describing how to [select the best model](https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html#Validation-in-Practice:-Grid-Search). 
 
 1. In the section describing support vector machines, they write that the tuning parameter that controls the hardness of the margin should be tuned using cross-validation or a similar procedure. How is cross-validation used to tune the parameter? How do we make the trade-off between the size of the margin and the hyperplane violations?
@@ -70,6 +71,10 @@ The jupyter notebook describes how to tune hyperparameters using GridSearch. The
    So to answer your second question, the result would not be biased because the testing result from cross-validation is just an approximate performance of your model. Instead, cross-validation is a good way to detect overfitting and selection bias by comparing your model's approximate performance and actual performance. For your first question, I think cross-validation can be applied to any training set, but “3-fold” here is just an arbitrary number. It can also be five or other numbers. And there are also some other cross-validation methods, like Leave-one-out cross-validation, k-fold cross-validation, etc. Choosing the best cross-validation method on your dataset really depends on the underlying data distribution.
    Some useful material: (1) What is cross-validation: https://www.youtube.com/watch?v=fSytzGwwBVw; (2) How can cross-validation help us detect overfitting: https://elitedatascience.com/overfitting-in-machine-learning#examples; (3) Different CV methods and codes: https://medium.com/analytics-vidhya/a-complete-guide-to-choose-the-correct-cross-validation-technique-d70810a02f27
 
+1. Would an x-fold cross-validation (with an increasing number of x) not lead to a bias towards similar data sets, i.e. reducing the "learning impact" of a dissimilar data set?
+   > The normal view is that the it is not about having independent data sets, but independent data points.    
+   > Does not the increasement of folds create more variance between the learnings sets? Thus the the model has seen many more different sets, and are less likely to form a bias towards any of them. 
+
 ### Nested Cross-validation.
 
 1. In the video nested cross validation was described, however I don’t really understand why and when to use a nested cross validation over "regular" cross validation. 
@@ -93,6 +98,9 @@ The jupyter notebook describes how to tune hyperparameters using GridSearch. The
 
 1. Noble mentions that kernels provide a "mathematical formalism for combining different types of data", explaining that we could combine microarray data and MS data on a "joint kernel". How does it happen? 
    > One can combine several kernel functions into one meta-kernel function, which we can use for e.g. SVM training.
+
+1. To draw classifications, we have relied on the hyperplane - the equivalent of a line in higher-dimensional spaces. Are there classifiers that rely instead on curved separations instead? Or is that needlessly complicated, as hyperplanes can have "curved effects", whenever we use kernel functions (as seen in Fig 1k in Noble's paper).
+   > There are a plentiora of different types of supervise classifiers available. Many of them are implemented in [scikit-learn](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning). Some of them use linear separation, others operate by other principles. It is worth having a look at them. 
 
 ### Feature normalization
 [Feature normalization](https://en.wikipedia.org/wiki/Feature_scaling) is standard practice in most ML algorithms. It strives to give all features the same influence on the model by compensating for the difference in magnitude of different features.
