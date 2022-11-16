@@ -10,7 +10,7 @@
 | L4 | Fri | 11/11 | 10-12 | LK | U51 | Linear Models |
 |    |     |       |       |     |    | |
 | L5 | Wed | 16/11 | 8-10 | LK | FB42 | Supervised Learning |
-| C1 | Wed | 16/11 | 13-17 | ME | Röd | Hypothesis Testing |
+| C1 | Wed | 16/11 | 13-17 | ME | Frodo | Hypothesis Testing |
 | L6 | Fri | 18/11 | 13-15 | LK | FB53 | Clustering |
 |    |     |       |       |     |    | |
 | L7 | Wed | 23/11 | 8-10 | LK | FB42 | Principal Component Analysis |
