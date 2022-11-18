@@ -22,7 +22,7 @@
 | L11 | Fri | 2/12 | 8-10 | CZ | FB42 | Flux balance analysis |
 |    |     |       |       |     |    | |
 | L12 | Mon | 5/12 | 8-10 | CZ | FB53 | Application of genome-scale metabolic models |
-| C3 | Tue | 6/12 | 13-17 | Röd | MS | Metabolic Modelling |
+| C3 | Tue | 6/12 | 13-17 | Bilbo | MS | Metabolic Modelling |
 | L13 | Wed | 7/12 | 8-10 | CZ | FB42 |  Next-generation genome-scale metabolic modeling |
 | L14 | Fri | 9/12 | 10-12 | FE | FB52 | Gene Regulation 1 |
 |    |     |       |       |     |    | |
