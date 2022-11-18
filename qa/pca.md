@@ -1,5 +1,10 @@
 # Questions and Answers on Principal Component Analysis.
 
+## Errata
+
+2. At 11:58 in the youtube video lecture, the eigengenes are the columns in the u matrix. However in the slides before, I would make up that eigengenes are the rows in transposed v. What am I seeing incorrectly here?
+> Nice catch. I am just missspeaking. As a correlary you can see in the code that I am taking values from Vt. 
+
 ## What is PCA
 1. Is PCA considered as a kind of linear regression which shows the correlation between two variables?
  > No, not really. However, the principal component will show that the variance of some variables are better described as a linear combination of the variables. That is would be a sign of co-variation of the variables.
