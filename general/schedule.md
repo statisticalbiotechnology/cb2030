@@ -44,10 +44,7 @@ We used the following codes:
  | CZ | Cheng Zhang |
  | FE | Fredrik Edfors |
  | ME | Markus Ekvall |
- | LD | Leo Dahl |
+ | KJ | Krzysztof Jurdzinski |
  | MS | Mengnan Shi |
 
- ### Remaining issues
- 1. Date for reexam
- 2. Report cancelled lectures to admin
  
