@@ -8,7 +8,7 @@ Here we store selected questions and answers from previous years incarnations of
 
 - [Supervised Learning](supervisedlearning)  
 - [Clustering](clustering)
-- [PCA](pca)
 
+- [PCA](pca)
+- [Variational Auto Encoders](vae)
 - [Pathway Analysis](pathway)
-- [Network Analysis](network)
