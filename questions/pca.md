@@ -11,11 +11,7 @@ The nomenclature on these type of analysis is challenging, as there are multiple
 * In PCA one factorize data into principal components and principal axes, each pair have their amount of explained variance.
 * In SVD one factorize data into left and right eigenvectors, each pair has their own eigenvalue indicative of its magnitude.
 
-As we can flip the calculation of left and right eigenvalues (and principal components and principal axes) by [transposing](https://en.wikipedia.org/wiki/Transpose) the data matrix (e.g. flipping the columns to rows), the distinction seems to matter less. Hence Wall *et al.* instead names the vectors according to what they represent. E.g. the first eigensample describes the variation of the genes for a sample, and a eigengene describes variation of the samples for a gene. You can see a eigenesample as the readouts for a typical sample, or more preciesly you model each sample as a linear combination of a value and the eigensample. In analog, you model each gene as a linear combination of a value and the eigengene
-
-
-### Explained variance
-https://stats.stackexchange.com/questions/171539/percentage-of-variation-in-each-column-explained-by-each-svd-mode
+As we can flip the calculation of left and right eigenvalues (and principal components and principal axes) by [transposing](https://en.wikipedia.org/wiki/Transpose) the data matrix (e.g. flipping the columns to rows), the distinction seems to matter less. Hence Wall *et al.* instead names the vectors according to what they represent. E.g. the first eigensample describes the variation of the genes for a sample, and a eigengene describes variation of the samples for a gene. You can see a eigenesample as the readouts for a typical sample, or more preciesly you model each sample as a linear combination of a value and the eigensample. In analog, you model each gene as a linear combination of a value and the eigengene. The relation between an eigenvalues and the explained variance is given [here](https://stats.stackexchange.com/questions/171539/percentage-of-variation-in-each-column-explained-by-each-svd-mode).
 
 
 ### General properties of PCA 
