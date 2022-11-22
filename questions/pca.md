@@ -1,6 +1,11 @@
 ## Outline of lecture
-1. The direction that explains most variance.
-1. Eigensamples and Eigengeses
+1. Linear combinations and directions
+2. The direction that explains most variance.
+3. Eigensamples and Eigengenes
+4. Notebook
+5. Example applications
+   1. Slides
+   2. VDP
 
 # Questions and Answers on Principal Component Analysis.
 
