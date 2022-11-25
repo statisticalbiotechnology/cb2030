@@ -1,3 +1,11 @@
+## Outline
+3. Loss functions (again)
+1. Gradient descent
+2. Gradient calculations
+4. GPUs
+5. ANN optimization
+6. Latent spaces
+
 # Questions and Answers on Principal Component Analysis.
 
 ### Notation
