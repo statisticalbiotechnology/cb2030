@@ -4,6 +4,11 @@
 ### Pathway databases
 
 
+### Overlapping pathway definitions
+
+1. GSEA takes genesets as input. I was wondering what would happen if one gene falls into multiple genesets. Would the gene be included in the tests of all such sets?
+   > Yes, if a gene is in multiple gene sets it will be counted as a hit for all those gene sets. This can result in some gene sets being significant even though they may only have genes that are overlapping with other gene sets and has no other significant genes. There are also other types of overlap: is might be so that this gene set is part of a gene set network (a gene set in a gene set) or that another gene set has additional significant genes and thereby more significance. There are now different algorithms and methods that can look at the overlaps and discard gene sets whose significance is only due to its overlap with other gene sets. See e.g. this [method](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1571-6).
+
 
 ### ORA vs. GSEA
 GSA uses quantitative values as input, ORA don't. That is the main difference between the strategies.
