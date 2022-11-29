@@ -1,3 +1,9 @@
+
+### Outline 
+1. Pathway databases
+2. Over representation
+3. GSEA figures.
+
 # Questions and Answers on Pathway Analysis.
 
 
@@ -46,6 +52,16 @@ GSA uses quantitative values as input, ORA don't. That is the main difference be
 
 1. In the paper, they write that when the enrichment score is calculated, the magnitude of the increments depends on the correlation (or other ranking metrics) of the gene with the phenotype. What ranking metrics can be used? And how are the correlations/ranking metrics determined? 
    > The [GSEA user guide](https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html) section "Metrics for Ranking Genes" states that for categorical phenotypes, GSEA determines the gene's mean expression value for each phenotype and then calculate the differential expression between the two given phenotypes. The default metrics for calculating the differential expression is signal-to-noise: (μA-μB)/(σA+σB), which in their interpretation is the difference of mean divided by the sum of standard deviations. The larger this value is, the more distinct/correlated the expression of this gene is to the phenotype. The page suggests other weight metrics as well.
+
+1. "We addressed this issue by weighting the steps according to each gene’s
+correlation with a phenotype. We noticed that the use of weighted
+steps could cause the distribution of observed ES scores to be
+asymmetric in cases where many more genes are correlated with
+one of the two phenotypes."    
+Could anyone explain to me what is meant here with the asymmetric ES scores, and how that could be the result of using weighted steps? 
+   > By asymmetric they mean that they have more or less positive ES scores that negative ones.
+
+
 
 ### Over representation analysis (ORA)
 
