@@ -42,15 +42,15 @@
 ### Optimization
 
 * I also have another question regarding chapter 10.1 where it is stated that the most common method is to minimize the sum of squared residuals. Are there other approaches used that are better? Perhaps they need more computational power?
-> There is a method called Gradient Descent, where the solution for the linear system Ax - b = 0 is found by finding the global minima for the system. This has a lower computational cost, but can it needs many iterations to find the minima, or it can even "get stuck" in a local minima instead of a global. As far as I have understood, this method is based more on an optimization approach, where the Least-Square Method is based on finding the least possible residual value. 
+   > There is a method called Gradient Descent, where the solution for the linear system Ax - b = 0 is found by finding the global minima for the system. This has a lower computational cost, but can it needs many iterations to find the minima, or it can even "get stuck" in a local minima instead of a global. As far as I have understood, this method is based more on an optimization approach, where the Least-Square Method is based on finding the least possible residual value. 
 
 * In section 10.4 of the book they run simulated experiments to compute sampling distribution of the estimates to assess sampling errors. As we discussed before, another way of assessing bias in your samples is performing permutation testing to see if your current distribution is representable for your whole sample. Is one technique preferred over the other, or are they used for different applications?
-> Permutation testing is often seen as a method makes a minimal set assumptions of the data. However, both methods make sense.
+   > Permutation testing is often seen as a method makes a minimal set assumptions of the data. However, both methods make sense.
 
 ### ANOVA
 
 * As I interpret the notebook, the p-values are in the column Pr(>F). What does the F statistic mean in this case and how does it relate to p-values?
-> In an ANOVA the ratio between the explained and the unexplained variance (the sum of the residuals) follows a F-distribution. The higher the F-value, the lover the resulting p-value.
+   > In an ANOVA the ratio between the explained and the unexplained variance (the sum of the residuals) follows a F-distribution. The higher the F-value, the lover the resulting p-value.
 
 
 ### Model notation
