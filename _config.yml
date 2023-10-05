@@ -1,46 +1,14 @@
 theme: jekyll-theme-minimal
+baseurl: "/cb2030"
+remote_theme: pages-themes/dinky@v0.2.0
 title: "CB2030"
 description: "Here we store material for the Data Analysis part of the CB2030, Systems Biology course."
 logo: assets/image/kth_logo.png
-google_analytics: UA-150816058-1
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-relative-links
   - jekyll-jupyter-notebook
 relative_links:
   enabled: true
   collections: true
-include:
-  - README.md
-  - nb/clustering/readme.md
-  - nb/linear/readme.md
-  - nb/multiplehypo/readme.md
-  - nb/testing/readme.md
-  - nb/pca/readme.md
-  - nb/supervised/readme.md
-  - nb/enrichment/readme.md
-  - nb/readme.md
-  - nb/clustering/cluster_brca.ipynb
-  - nb/enrichment/gsea.ipynb
-  - nb/linear/KNAP2.ipynb
-  - nb/multiplehypo/qvalue.ipynb
-  - nb/pca/PCAofCarcinomas.ipynb
-  - nb/pca/PCAofMultiNormal.ipynb
-  - nb/supervised/supervisedML.ipynb
-  - qa/readme.md
-  - qa/testing.md
-  - qa/multiplehypothesistesting.md
-  - qa/linearmodels.md
-  - qa/supervisedlearning.md
-  - qa/network.md
-  - prep/readme.md
-  - prep/clustering.md
-  - prep/pca.md
-  - prep/pathway.md
-  - prep/supervised.md
-  - prep/hypothesistesting.md
-  - prep/linearmodels.md
-  - prep/multipletesting.md
-  - prep/network.md
-  - general/schedule.md
-  - lab/readme.md
