@@ -1,40 +1,40 @@
 # Schedule 2022
 
-| Code | Day  | Date  | Time_  | ID  | Location | The content of the Convocation |
+| Code | Day  | Date  | Time_  | Location | ID  | The content of the Convocation |
 |--------|-------|--------|---------------|------------|----|----------------------------------------|
-| L1 | Wed | 2/11 | 8-10 | All | FB42 | Introduction |
-| C0 | Thu | 3/11 | 13-17 | ME | Karmosin, Magenta | Software and Notebooks |
-| L2 | Fri | 4/11 | 8-10 | LK | FB42 | Hypothesis Testing |
+| L1 | Wed | 01/11 | 08-10 | FB42 | All | Introduction |
+| C0 | Thu | 02/11 | 13-17 | Karmosin, Vit, Magenta | LK | Software and Notebooks |
+| L2 | Fri | 03/11 | 08-10 | FB42 | LK | Hypothesis Testing |
 |    |     |       |       |     |    | |
-| L3 | Wed | 9/11 | 8-10 | LK | FB42 | Multiple Testing  |
-| L4 | Fri | 11/11 | 10-12 | LK | U51 | Linear Models |
+| L3 | Wed | 08/11 | 08-10 | FB42 | LK | Multiple Testing  |
+| L4 | Thu | 09/11 | 16-18 | FB42 | LK | Linear Models |
 |    |     |       |       |     |    | |
-| L5 | Wed | 16/11 | 8-10 | LK | FB42 | Supervised Learning |
-| C1 | Wed | 16/11 | 13-17 | ME | Frodo | Hypothesis Testing |
-| L6 | Fri | 18/11 | 13-15 | LK | FB53 | Clustering |
+| L5 | Wed | 15/11 | 08-10 | FB42 | LK | Supervised Learning |
+| C1 | Wed | 15/11 | 15-19 | Karmosin, Vit, Magenta | LK | Hypothesis Testing |
+| L6 | Thu | 16/11 | 08-10 | FB42 | LK | Clustering |
+| L7 | Fri | 17/11 | 13-15 | FB53 | LK | Principal Component Analysis |
 |    |     |       |       |     |    | |
-| L7 | Wed | 23/11 | 8-10 | LK | FB42 | Principal Component Analysis |
-| L8 | Fri | 25/11 | 10-12 | LK | K1 | Variational Auto Encoders |
+| L8 | Wed | 22/11 | 08-10 | FB42 | LK | Variational Auto Encoders |
+| L9 | Fri | 24/11 | 13-15 | FB53 | LK | Pathway Analysis |
 |    |     |       |       |     |    | |
-| C2 | Mon | 28/11 | 8-12 | ME | Bilbo | Machine Learning |
-| L9 | Wed | 30/11 | 8-10 | LK | FB42 | Pathway Analysis |
-| L10 | Thu | 1/12 | 8-10 | CZ | FB42 | Genome-scale metabolic models and Linear Programming |
-| L11 | Fri | 2/12 | 8-10 | CZ | FB42 | Flux balance analysis |
+| C2 | Mon | 27/11 | 08-12 | Röd, Grön | LK | Machine Learning |
+| LX | Wed | 29/11 | 08-10 | U41 | LK | Spare |
+| L10 | Thu | 30/11 | 08-10 | FB42 | CZ | Genome-scale metabolic models and Linear Programming |
+| L11 | Fri | 01/12 | 08-10 | FB42 | CZ | Flux balance analysis |
 |    |     |       |       |     |    | |
-| L12 | Mon | 5/12 | 8-10 | CZ | FB53 | Application of genome-scale metabolic models |
-| C3 | Tue | 6/12 | 13-17 | Bilbo | MS | Metabolic Modelling |
-| L13 | Wed | 7/12 | 8-10 | CZ | FB42 |  Next-generation genome-scale metabolic modeling |
-| L14 | Fri | 9/12 | 10-12 | FE | FB52 | Gene Regulation 1 |
+| L12 | Mon | 04/12 | 08-10 | FB42 | CZ | Application of genome-scale metabolic models |
+| L13 | Wed | 06/12 | 08-10 | FB42 | CZ | Next-generation genome-scale metabolic modeling |
+| C3 | Wed | 06/12 | 13-17 | Karmosin, Vit, Magenta | FE | Metabolic Modelling |
+| L14 | Fri | 08/12 | 10-12 | FB52 | FE | Gene Regulation 1 |
 |    |     |       |       |     |    | |
-| L15 | Mon | 12/12 | 8-10 | FE | FB52 | Gene Regulation 2 |
-| C4 | Mon | 12/12 | 10-15 | LD | Grå, Karmosin | Gene Regulation |
-| L16 | Wed | 14/12 | 8-10 | FE | FB52 | Gene Regulation 3 |
-| L17 | Wed | 14/12 | 13-15 | FE | FB52 | Gene Regulation 4 |
-| L18 | Fri | 16/12 | 10-12 | All | FD5 | Q&A |
+| L15 | Mon | 11/12 | 08-10 | FB52 | FE | Gene Regulation 2 |
+| C4 | Mon | 11/12 | 10-12 | Spelhallen, Sporthallen | LK | Gene Regulation |
+| CX | Mon | 11/12 | 13-15 | Spelhallen, Sporthallen | LK | Spare |
+| L16 | Wed | 13/12 | 08-10 | FB52 | FE | Gene Regulation 3 |
+| L17 | Wed | 13/12 | 13-15 | FB52 | LK | Gene Regulation 4 |
+| LX | Thu | 14/12 | 15-17 | W25 | All | Q&A |
+| LX | Fri | 15/12 | 10-12 | FD5 | LK | Spare |
 |    |     |       |       |     |    | |
-| Exam | Tue | 10/01 | 14-18 | All | FB51, FB53, FB55 |
-|    |     |       |       |     |    | |
-| Re-Exam | Thu | 13/04 | 8-12 | All | FB51 |
 
 We used the following codes:
 
