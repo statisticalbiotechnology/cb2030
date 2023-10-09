@@ -35,7 +35,7 @@
 
 ## Interpretation and Further Analysis:
 
-* Why are the p-values transformed using -np.log10(p)?
+* Why are the p-values transformed using `-np.log10(p)`?
 * What would be the next steps after obtaining the list of genes with their associated p-values and fold changes? How can the results guide further research or treatment strategies?
 * How would you approach multiple testing corrections given the number of genes tested for differential expression?
 
