@@ -19,7 +19,7 @@
 |    |     |       |       |     |    | |
 | C2 | Mon | 27/11 | 08-12 | Brun, Röd, Grön | LK | Machine Learning |
 | L10 | Wed | 29/11 | 08-10 | FD5  | CZ | Genome-scale metabolic models and Linear Programming |
-| L10 | Thu | 30/11 | 08-10 | FD5 | X | Spare |
+| LX | Thu | 30/11 | 08-10 | FD5 | X | Spare |
 | L11 | Fri | 01/12 | 08-10 | Q2 | CZ | Flux balance analysis |
 |    |     |       |       |     |    | |
 | L12 | Mon | 04/12 | 08-10 | M3 | CZ | Application of genome-scale metabolic models |
@@ -28,12 +28,11 @@
 | L14 | Fri | 08/12 | 10-12 | M3 | FE | Gene Regulation 1 |
 |    |     |       |       |     |    | |
 | L15 | Mon | 11/12 | 08-10 | FD5 | FE | Gene Regulation 2 |
-| C4 | Mon | 11/12 | 10-12 | Spelhallen, Sporthallen, Vit | FE | Gene Regulation |
-| CX | Mon | 11/12 | 13-15 | Spelhallen, Sporthallen, Vit | LK | Spare |
-| L16 | Wed | 13/12 | 08-10 | FD5 | FE | Gene Regulation 3 |
-| L17 | Wed | 13/12 | 13-15 | FR4 | LK | Gene Regulation 4 |
-| LX | Thu | 14/12 | 15-17 | M3 | All | Q&A |
-| LX | Fri | 15/12 | 10-12 | FD5 | LK | Spare |
+| C4 | Mon | 11/12 | 10-15 | Spelhallen, Sporthallen, Vit | FE | Gene Regulation |
+| LX | Wed | 13/12 | 08-10 | FD5 | X | Spare |
+| L16 | Wed | 13/12 | 13-15 | FR4 | FE | Gene Regulation 3 |
+| L17 | Thu | 14/12 | 15-17 | M3 | FE | Gene Regulation 4 |
+| L18 | Fri | 15/12 | 10-12 | FD5 | All | Q&A |
 |    |     |       |       |     |    | |
 | Exam | Tue | 9/1 | 14-18 | FA31, FB51 | All | Systems Biology |
 |----|----|----|----|----|----|----|
