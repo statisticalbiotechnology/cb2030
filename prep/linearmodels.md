@@ -9,3 +9,8 @@ As a preparation for the General Linear Models convocation, make yourself acquai
 
 
 [comment]: <> (https://towardsdatascience.com/introduction-to-linear-regression-in-python-c12a072bedf0)
+
+### Aditional/Alternative material
+
+1. StatQuest on [Linear Models](https://youtu.be/PaFPbb66DxQ)
+2. SimpleLearn on [Regression](https://www.youtube.com/watch?v=NUXdtN1W1FE)

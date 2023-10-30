@@ -10,3 +10,7 @@ As a preparation for the Hypothesis Testing convocation, make yourself acquainte
 4. Read previous years [questions and answers](../qa/testing) on the material
 
 
+### Aditional/Alternative material
+
+1. StatQuest on [Hypothesis testing](https://www.youtube.com/watch?v=0oc49DyA3hU) and [*p* values](https://www.youtube.com/watch?v=vemZtEM63GY)
+2. Khan Academy on [Hypothesis testing](https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample/more-significance-testing-videos/v/hypothesis-testing-and-p-values)
