@@ -9,7 +9,7 @@
 | L3 | Mon | 06/11 | 16-18 | FR4 | LK | Multiple Testing  |
 | L4 | Thu | 09/11 | 16-18 | FD5 | LK | Linear Models |
 |    |     |       |       |     |    | |
-| L5 | Mon | 15/11 | 08-10 | FR4 | LK | Supervised Learning |
+| L5 | Mon | 13/11 | 08-10 | FR4 | LK | Supervised Learning |
 | L6 | Wed | 15/11 | 08-10 | FD5 | LK | Clustering |
 | C1 | Wed | 15/11 | 15-19 | Grå, Karmosin, Vit, Magenta | LK | Hypothesis Testing |
 | L7 | Fri | 17/11 | 13-15 | FR4 | LK | Principal Component Analysis |
