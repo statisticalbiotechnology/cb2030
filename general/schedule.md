@@ -16,8 +16,7 @@
 |    |     |       |       |     |    | |
 | L8 | Wed | 22/11 | 08-10 | FD5 | LK | Variational Auto Encoders |
 | L9 | Fri | 24/11 | 13-15 | FD5 | LK | Pathway Analysis |
-|    |     |       |       |     |    | |
-Learning |
+|    |     |       |       |     |    |     |
 | L10 | Wed | 29/11 | 08-10 | FD5  | CZ | Genome-scale metabolic models and Linear Programming |
 | LX | Thu | 30/11 | 08-10 | FD5 | X | Spare |
 | C2 | Thu | 30/11 | 13-17 | Brun, Grå, Grön | LK | Machine Learning | 
