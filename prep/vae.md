@@ -6,9 +6,6 @@ As a preparation for the Variational Auto Encoders convocation, make yourself ac
 2. Read the Blog post on [VAE](https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73)
 3. Have a look at the example code in the jupyter [notebook](../nb/vae/readme.md)
 
-Slightly moderated versions of your questions will be posted [here](../questions/vae.md).
-
-
 Additional material:
 * If you want more details, on VAE, the original [preprint](https://arxiv.org/pdf/1312.6114.pdf) is nice.
 * A bit out of the context, but still relevant for the lecture, this [tool](https://playground.tensorflow.org/) illustrate the effects of architecture and regularization schemes have when training a ANN for different dataset. 

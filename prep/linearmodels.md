@@ -7,7 +7,5 @@ As a preparation for the General Linear Models convocation, make yourself acquai
 3. Read up Chapter 10.1-6 and 11.1-2 in Downey on [Regression](http://greenteapress.com/thinkstats2/html/thinkstats2011.html). Their associated code can be found [here](https://github.com/AllenDowney/ThinkStats2/blob/master/code/chap10ex.ipynb) and [here](https://github.com/AllenDowney/ThinkStats2/blob/master/code/chap11ex.ipynb)
 4. Investigate the jupyter notebook on [Linear Models](../nb/linear/readme.md)  
 
-Slightly moderated versions of your questions will be posted [here](../questions/linearmodels.md).
-
 
 [comment]: <> (https://towardsdatascience.com/introduction-to-linear-regression-in-python-c12a072bedf0)
