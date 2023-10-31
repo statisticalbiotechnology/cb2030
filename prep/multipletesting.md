@@ -11,4 +11,4 @@ As a preparation for the Multiple Hypothesis Testing convocation, make yourself 
 
 1. StatQuest on [FDR](https://youtu.be/K8LQSvtjcEo)
 2. Philip Andersson [An overview of FDRs](https://www.youtube.com/watch?v=3PVkfQRUGI4)
-
+3. Wikipedia on [Multiple comparisons](https://en.wikipedia.org/wiki/Multiple_comparisons_problem), [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction), and [*q* value](https://en.wikipedia.org/wiki/Q-value_(statistics))

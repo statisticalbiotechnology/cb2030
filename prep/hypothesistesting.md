@@ -10,7 +10,10 @@ As a preparation for the Hypothesis Testing convocation, make yourself acquainte
 4. Read previous years [questions and answers](../qa/testing) on the material
 
 
-### Aditional/Alternative material
+### Additional/Alternative material
 
 1. StatQuest on [Hypothesis testing](https://www.youtube.com/watch?v=0oc49DyA3hU) and [*p* values](https://www.youtube.com/watch?v=vemZtEM63GY)
 2. Khan Academy on [Hypothesis testing](https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample/more-significance-testing-videos/v/hypothesis-testing-and-p-values)
+4. Wikipedia entries for [*p* value](https://en.wikipedia.org/wiki/P-value), [*p* value falacy](https://en.wikipedia.org/wiki/Misuse_of_p-values), and [permutation tests](https://en.wikipedia.org/wiki/Permutation_test).
+3. Stackexchange comments on [Fisher vs. Neyman & Pearson framework](https://stats.stackexchange.com/questions/23142/when-to-use-fisher-and-neyman-pearson-framework)
+4. XKCD on [p-hacking](https://www.explainxkcd.com/wiki/index.php/882:_Significant)
