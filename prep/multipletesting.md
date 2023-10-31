@@ -4,7 +4,7 @@ As a preparation for the Multiple Hypothesis Testing convocation, make yourself 
 
 1. Watch the [Video Lecture on Multiple Hypothesis Testing](https://youtu.be/pD2PrY79V0U), and its [slides](slides/MultipleHypothesisTesting.pdf)
 2. Read up Storey&Tibshirani on [Statistical significance for genomewide studies](https://www.pnas.org/content/100/16/9440)
-4. Have a look at the example code in the jupyter [notebook](../nb/multiplehypo/)
+4. Have a look at the example code in the jupyter [notebook](../nb/multiplehypo/). There are associated study questions [here](../nb/multiplehypo/questions.md).
 5. Read previous years [questions and answers](../qa/multiplehypothesistesting) on the material  
 
 ### Aditional/Alternative material
