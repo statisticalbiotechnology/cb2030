@@ -21,7 +21,7 @@ Here you find the lab instructions for the computer excercises:
 
 ------
 
-## Lab 2 - Pathway Analysis and Machine Learning
+## Lab 2 - Machine Learning
 
 * [Lab2 notebook](Lab2.ipynb)
 
