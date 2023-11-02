@@ -2,10 +2,11 @@ name: cb2030-binder
 channels:
   - defaults
   - bioconda
+  - conda-forge
 dependencies:
   # Core
   - pip
-  - python
+  - python=3
   - jupyter
   # Lectures
   - statsmodels
@@ -19,9 +20,11 @@ dependencies:
   - ipywidgets
   # Lab 2
   - scikit-learn
-  - gseapy
   # Lab 3
-  - cobra
-  - escher
   - pytest
   - pytest-benchmark
+  - pip:
+    - cobra
+    - escher
+    - gseapy
+    - markupsafe==2.0.1
