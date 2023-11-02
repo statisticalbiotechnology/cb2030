@@ -3,7 +3,7 @@
 ## Installing the software
 
 1. Install Anaconda, you can download it [here](https://www.anaconda.com/products/individual).
-2. Download the files needed for the lab [here](https://github.com/statisticalbiotechnology/cb2030/tree/master/lab/Lab0).
+2. Download the files needed for the lab [here](https://github.com/statisticalbiotechnology/cb2030/) (Check the green "Code" field in top right corner or (better) write and execute "git clone https://github.com/statisticalbiotechnology/cb2030.git" in your command line (Linux/Mac/[Linux subsystem for Windows](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10)).
 3. Open Anaconda Navigator.
 4. Environments &#8594; Import.
 5. Select the `cb2030-labs-environment.yml` file. 
