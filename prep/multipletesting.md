@@ -4,8 +4,11 @@ As a preparation for the Multiple Hypothesis Testing convocation, make yourself 
 
 1. Watch the [Video Lecture on Multiple Hypothesis Testing](https://youtu.be/pD2PrY79V0U), and its [slides](slides/MultipleHypothesisTesting.pdf)
 2. Read up Storey&Tibshirani on [Statistical significance for genomewide studies](https://www.pnas.org/content/100/16/9440)
-4. Have a look at the example code in the jupyter [notebook](../nb/multiplehypo/)
+4. Have a look at the example code in the jupyter [notebook](../nb/multiplehypo/). There are associated study questions [here](../nb/multiplehypo/questions.md).
 5. Read previous years [questions and answers](../qa/multiplehypothesistesting) on the material  
 
-Slightly moderated versions of your questions will be posted [here](../questions/multiplehypothesistesting.md).
+### Aditional/Alternative material
 
+1. StatQuest on [FDR](https://youtu.be/K8LQSvtjcEo)
+2. Philip Andersson [An overview of FDRs](https://www.youtube.com/watch?v=3PVkfQRUGI4)
+3. Wikipedia on [Multiple comparisons](https://en.wikipedia.org/wiki/Multiple_comparisons_problem), [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction), and [*q* value](https://en.wikipedia.org/wiki/Q-value_(statistics))

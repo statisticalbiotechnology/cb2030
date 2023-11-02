@@ -7,6 +7,3 @@ As a preparation for the Clustering convocation, make yourself acquainted with t
 3. Read up VaderPlas on [Gaussian Mixture Models](https://jakevdp.github.io/PythonDataScienceHandbook/05.12-gaussian-mixtures.html) from beginning of section to the example.
 4. Investigate the jupyter notebook on [Clustering of Breast Cancer Data](../nb/clustering/readme.md)  
 
-Slightly moderated versions of your questions will be posted [here](../questions/clustering.md).
-
-

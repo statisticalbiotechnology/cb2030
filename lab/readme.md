@@ -9,6 +9,7 @@ Here you find the lab instructions for the computer excercises:
 * Files neded to perform the lab [here](https://github.com/statisticalbiotechnology/cb2030/tree/master/lab/Lab0)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab0%2FLab0.ipynb)
+[![CoLab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/https://nbviewer.jupyter.org/github/statisticalbiotechnology/cb2030/blob/master/nb/lab/Lab0.ipynb)
 
 ------
 
@@ -20,7 +21,7 @@ Here you find the lab instructions for the computer excercises:
 
 ------
 
-## Lab 2 - Pathway Analysis and Machine Learning
+## Lab 2 - Machine Learning
 
 * [Lab2 notebook](Lab2.ipynb)
 
