@@ -8,3 +8,7 @@ As a preparation for the Multiple Supervised Learning convocation, make yourself
 4. Investigate the jupyter notebook on [Supervised Learning](../nb/supervised/). There are associated study questions [here](../nb/supervised/questions.md).
 5. Read previous years [questions and answers](../qa/supervisedlearning) on the material  
 
+## Additional Material;
+
+1. StatQuest on [SVMs](https://www.youtube.com/watch?v=efR1C6CvhmE)
+2. SVMs in [2 minutes](https://www.youtube.com/watch?v=_YPScrckx28) 
