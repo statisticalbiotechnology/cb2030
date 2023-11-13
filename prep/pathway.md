@@ -8,3 +8,6 @@ approach for interpreting genome-wide
 expression profiles](http://software.broadinstitute.org/gsea/doc/subramanian_tamayo_gsea_pnas.pdf). Feel free to skip the "*Results*" section of the paper.
 1. Execute the example code in the jupyter [notebook](../nb/enrichment/)
 
+Additional Material:
+
+1. The [reactome database](https://reactome.org/)
