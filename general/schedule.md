@@ -18,19 +18,17 @@
 | L9 | Fri | 24/11 | 13-15 | FD5 | LK | Pathway Analysis |
 |    |     |       |       |     |    |     |
 | L10 | Wed | 29/11 | 08-10 | FD5  | CZ | Genome-scale metabolic models and Linear Programming |
-| LX | Thu | 30/11 | 08-10 | FD5 | X | Spare |
 | C2 | Thu | 30/11 | 13-17 | Brun, Grå, Grön | ME,YZ,KJ,MS  | Machine Learning | 
 | L11 | Fri | 01/12 | 08-10 | Q2 | CZ | Flux balance analysis |
 |    |     |       |       |     |    | |
 | L12 | Mon | 04/12 | 08-10 | M3 | CZ | Application of genome-scale metabolic models |
-| L13 | Wed | 06/12 | 08-10 | FD5 | CZ | Next-generation genome-scale metabolic modeling |
+| L13 | Wed | 06/12 | 08-10 | FD5 | FE | Protein Expression Analysis |
 | C3 | Wed | 06/12 | 13-17 | Grå, Karmosin, Vit, Magenta | MS, TS, KJ, YZ | Metabolic Modelling |
 | L14 | Fri | 08/12 | 10-12 | M3 | FE | The Concept of Gene Regulation |
 |    |     |       |       |     |    | |
 | L15 | Mon | 11/12 | 08-10 | FD5 | FE | Protein expression Quantitative Trait Loci (pQTL) |
 | C4 | Mon | 11/12 | 10-15 | Spelhallen, Sporthallen, Vit | TS,KJ,ME,YZ | Gene Regulation |
-| LX | Wed | 13/12 | 08-10 | FD5 | X | Spare |
-| L16 | Wed | 13/12 | 13-15 | FR4 | FE | Protein Expression Analysis |
+| L16 | Wed | 13/12 | 13-15 | FR4 | CZ | Next-generation genome-scale metabolic modeling |
 | L17 | Thu | 14/12 | 15-17 | M3 | FE | Seminar: Tissue Specificity and Data Annotation |
 | L18 | Fri | 15/12 | 10-12 | FD5 | All | Q&A |
 |    |     |       |       |     |    | |
