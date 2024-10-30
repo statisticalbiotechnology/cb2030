@@ -23,7 +23,7 @@ dependencies:
   # Lab 3
   - pytest
   - pytest-benchmark
-  - escher
   - pip:
+    - escher
     - cobra
     - markupsafe==2.0.1
