@@ -15,7 +15,7 @@ dependencies:
   - pandas
   - numpy
   - scipy
-  - seaborn
+  - seaborn==0.13.2
   - matplotlib
   - ipywidgets
   # Lab 2
@@ -25,6 +25,4 @@ dependencies:
   - pytest-benchmark
   - pip:
     - cobra
-    - escher
-    - gseapy
     - markupsafe==2.0.1
