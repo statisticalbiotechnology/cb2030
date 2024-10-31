@@ -2,7 +2,7 @@
 
 As a preparation for the Supervised Learning convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
 
-2. Read the sections in the Data Science Book on [Classification](https://kaell.se/dsbook/classification), and [Validation] and [Support vector machines](https://www.kaell.se/dsbook/supervised/xval.html).
+2. Read the sections in the Data Science Book on [Classification](https://kaell.se/dsbook/classification), and [Validation](https://www.kaell.se/dsbook/supervised/xval.html).
 5. Perform the assignments in Canvas
 
 ## Additional Material;
