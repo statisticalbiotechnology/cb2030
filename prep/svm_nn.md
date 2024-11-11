@@ -1,4 +1,4 @@
-## Preparations for lecture on SVMs an Neural Networks
+## Preparations for lecture on SVMs and Neural Networks
 
 As a preparation for the Supervised Learning convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
 
