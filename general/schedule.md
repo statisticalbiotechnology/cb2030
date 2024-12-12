@@ -35,7 +35,7 @@
 | L17 | Wed | 11/12 | 08-10 | FR4                          | FE    | Protein Expression Quantitative Trait Loci (pQTL)  | 
 | C4  | Wed | 11/12 | 13-17 | Brun, Grön, Vit              | FE    | Gene Modelling                                     |
 | L18 | Thu | 12/12 | 15-17 | FD5                          | FE    | Seminar: Tissue Specificity and Data Annotation    |
-| L19 | Fri | 13/12 | 13-15 | FD5                          | All   | Q&A                                                |
+| L19 | Tue | 7/1 | 10-12 | FD5                          | All   | Q&A                                                |
 |     |     |       |       |                              |       |                                                    |
 | Exam | Thu | 09/01 | 08-12 | FB42, FB55, FD41            | All   | Systems Biology                                    |
 
