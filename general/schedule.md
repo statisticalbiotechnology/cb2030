@@ -19,12 +19,12 @@
 | C2 | Thu | 20/11 | 08-12 | 5V1Grå,5V2Kar,5V3Vit| LK | Machine Learning |
 | L10 | Fri | 21/11 | 13-15 | FB52 | LK | Pathway Analysis |
 | | | | | | | |
-| L11 | Wed | 26/11 | 08-10 | FB42 | CZ | Genome-scale metabolic models and Linear Programming |
-| L12 | Thu | 27/11 | 15-17 | FD5 | CZ | Flux Balance Analysis |
-| L13 | Fri | 28/11 | 13-15 | FB52 | CZ | Application of Genome-scale Metabolic Models |
+| L11 | Wed | 26/11 | 08-10 | FB42 | AM | Genome-scale metabolic models and Linear Programming |
+| L12 | Thu | 27/11 | 15-17 | FD5 | AM | Flux Balance Analysis |
+| L13 | Fri | 28/11 | 13-15 | FB52 | AM | Application of Genome-scale Metabolic Models |
 | | | | | | | |
-| L14 | Wed | 03/12 | 08-10 | FD5 | CZ | Next-generation Genome-scale Metabolic Modeling |
-| C3 | Wed | 03/12 | 13-17 | 5O1Spe,5O2Spo | CZ | Metabolic Modelling |
+| L14 | Wed | 03/12 | 08-10 | FD5 | AM | Next-generation Genome-scale Metabolic Modeling |
+| C3 | Wed | 03/12 | 13-17 | 5O1Spe,5O2Spo | AM | Metabolic Modelling |
 | L15 | Thu | 04/12 | 15-17 | FD5 | FE | Protein Expression Analysis |
 | L16 | Fri | 05/12 | 13-15 | FB52 | FE | The Concept of Gene Regulation |
 | | | | | | | |
