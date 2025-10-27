@@ -10,8 +10,8 @@
 | L4 | Wed | 05/11 | 16-18 | TBA | LK | Hypothesis Testing |
 | L5 | Fri | 07/11 | 13-15 | M3 | LK | Multiple Testing |
 | | | | | | | |
-| L6 | Mon | 10/11 | 13-15 | FR4 | LK | Neural Networks |
-| L7 | Wed | 12/11 | 08-10 | FR4 | LK | Clustering |
+| L6 | Mon | 10/11 | 13-15 | FR4 | LK | Hypothesis Testing |
+| L7 | Wed | 12/11 | 08-10 | FR4 | LK | Multiple Testing |
 | C1 | Wed | 12/11 | 13-17 | 5O1Spe,5O2Spo | LK | Hypothesis Testing |
 | | | | | | | |
 | L8 | Mon | 17/11 | 10-12 | FB52 | LK | Principal Component Analysis |
