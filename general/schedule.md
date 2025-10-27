@@ -1,13 +1,13 @@
 # Schedule 2025
 
-| Code | Day | Date | Time | Location | ID | The content of the Convocation |
+| Code | Day | Date | Time | Location | ID | The topic of the Convocation |
 |------|-----|------|------|----------|----|---------------------------------|
 | L1 | Mon | 27/10 | 13-15 | FB42 | All | Introduction |
 | L2 | Thu | 30/10 | 15-17 | FB42 | LK | Regression Models |
-| L3 | Fri | 31/10 | 13-15 | M3 | LK | Classification Models;   Validation |
 | |  |  |  |  |  |  |
-| L4 | Mon | 03/11 | 14-16 | FR4 | LK | Hypothesis Testing |
+| L3 | Mon | 03/11 | 14-16 | FR4 | LK | Classification Models;   Validation |
 | C0 | Wed | 05/11 | 08-12 | 4V4Gul,4V6Bru | All | Software and Notebooks |
+| L4 | Wed | 05/11 | 16-18 | TBA | LK | Hypothesis Testing |
 | L5 | Fri | 07/11 | 13-15 | M3 | LK | Multiple Testing |
 | | | | | | | |
 | L6 | Mon | 10/11 | 13-15 | FR4 | LK | Neural Networks |
