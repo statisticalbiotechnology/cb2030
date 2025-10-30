@@ -7,8 +7,8 @@
 | |  |  |  |  |  |  |
 | L3 | Mon | 03/11 | 14-16 | FR4 | LK | Classification Models;   Validation |
 | C0 | Wed | 05/11 | 08-12 | 4V4Gul,4V6Bru | All | Software and Notebooks |
-| L4 | Wed | 05/11 | 16-18 | FB52 | LK | Hypothesis Testing |
-| L5 | Fri | 07/11 | 13-15 | M3 | LK | Multiple Testing |
+| L4 | Wed | 05/11 | 16-18 | FB52 | LK | SVMs and Neural Networks |
+| L5 | Fri | 07/11 | 13-15 | M3 | LK | Clustering |
 | | | | | | | |
 | L6 | Mon | 10/11 | 13-15 | FR4 | LK | Hypothesis Testing |
 | L7 | Wed | 12/11 | 08-10 | FR4 | LK | Multiple Testing |
