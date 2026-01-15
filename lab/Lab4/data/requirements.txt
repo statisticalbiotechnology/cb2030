@@ -86,7 +86,7 @@ jupyterlab_pygments==0.3.0
 jupyterlab_server==2.27.3
 jupyterlab_widgets==3.0.15
 kaleido==1.1.0
-keras==3.11.3
+keras==3.13.1
 kiwisolver==1.4.8
 lazy_loader==0.4
 legacy-api-wrap==1.4.1
