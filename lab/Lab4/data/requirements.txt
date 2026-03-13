@@ -205,7 +205,7 @@ texttable==1.7.0
 threadpoolctl==3.6.0
 tifffile==2025.6.11
 tinycss2==1.4.0
-tornado==6.5.1
+tornado==6.5
 tqdm==4.67.1
 traitlets==5.14.3
 types-python-dateutil==2.9.0.20250516
