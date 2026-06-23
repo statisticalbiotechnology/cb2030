@@ -1,47 +1,47 @@
-# Schedule 2025
+# Schedule 2026
 
 | Code | Day | Date | Time | Location | ID | The topic of the Convocation |
 |------|-----|------|------|----------|----|---------------------------------|
-| L1 | Mon | 27/10 | 13-15 | FB42 | All | Introduction |
-| L2 | Thu | 30/10 | 15-17 | FB42 | LK | Regression Models |
-| |  |  |  |  |  |  |
-| L3 | Mon | 03/11 | 14-16 | FR4 | LK | Classification Models;   Validation |
-| C0 | Wed | 05/11 | 08-12 | 4V4Gul,4V6Bru | All | Software and Notebooks |
-| L4 | Wed | 05/11 | 16-18 | FB52 | LK | SVMs and Neural Networks |
-| L5 | Thu | 06/11 | 16-18 | FD5 | LK | Clustering |
+| L1 | Mon | 26/10 | 10-12 | FB52 | All | Introduction |
+| L2 | Thu | 29/10 | 13-15 | FB52 | LK | Regression Models |
+| L3 | Fri | 30/10 | 13-15 | FB52 | LK | Classification Models;   Validation |
 | | | | | | | |
-| L6 | Mon | 10/11 | 13-15 | FR4 | LK | Hypothesis Testing |
-| L7 | Wed | 12/11 | 08-10 | FR4 | LK | Multiple Testing |
-| C1 | Wed | 12/11 | 13-17 | 5O1Spe,5O2Spo | LK | Hypothesis Testing |
+| L4 | Tue | 03/11 | 10-12 | FB52 | LK | SVMs and Neural Networks |
+| C0 | Wed | 04/11 | 08-12 | RB33 | All | Software and Notebooks |
+| L5 | Thu | 05/11 | 14-16 | FB52 | LK | Clustering |
 | | | | | | | |
-| L8 | Mon | 17/11 | 10-12 | FB52 | LK | Principal Component Analysis |
-| L9 | Wed | 19/11 | 08-10 | FB42 | LK | Auto Encoders |
-| C2 | Thu | 20/11 | 08-12 | 5V1Grå,5V2Kar,5V3Vit| LK | Machine Learning |
-| L10 | Fri | 21/11 | 13-15 | FB52 | LK | Pathway Analysis |
+| L6 | Tue | 10/11 | 10-12 | FB52 | LK | Hypothesis Testing |
+| L7 | Wed | 11/11 | 10-12 | FB53 | LK | Multiple Testing |
+| C1 | Thu | 12/11 | 13-17 | RB33 | LK | Hypothesis Testing |
 | | | | | | | |
-| L11 | Wed | 26/11 | 08-10 | FB42 | AM | Genome-scale metabolic models and Linear Programming |
-| L12 | Thu | 27/11 | 15-17 | FD5 | AM | Flux Balance Analysis |
-| L13 | Fri | 28/11 | 13-15 | FB52 | AM | Application of Genome-scale Metabolic Models |
+| L8 | Tue | 17/11 | 13-15 | FB42 | LK | Principal Component Analysis |
+| L9 | Wed | 18/11 | 08-10 | FB42 | LK | Auto Encoders |
+| L10 | Thu | 19/11 | 10-12 | FB53 | LK | Pathway Analysis |
+| C2 | Thu | 19/11 | 13-17 | RB33 | LK | Machine Learning |
 | | | | | | | |
-| L14 | Wed | 03/12 | 08-10 | FD5 | AM | Next-generation Genome-scale Metabolic Modeling |
-| C3 | Wed | 03/12 | 13-17 | 5O1Spe,5O2Spo | AM | Metabolic Modelling |
-| L15 | Thu | 04/12 | 15-17 | FD5 | FE | Protein Expression Analysis |
-| L16 | Fri | 05/12 | 13-15 | FB52 | FE | The Concept of Gene Regulation |
+| L11 | Tue | 24/11 | 10-12 | FB53 | TL | The basics of molecular QTL mapping |
+| L12 | Wed | 25/11 | 13-15 | FB53 | TL | Using molecular QTL data in disease interpretation |
+| L13 | Thu | 26/11 | 10-12 | FB53 | TL | Molecular interpretation of rare genetic variants |
 | | | | | | | |
-| L17 | Mon | 08/12 | 13-15 | FD5 | FE | Protein Expression Quantitative Trait Loci (pQTL) |
-| C4 | Thu | 11/12 | 15-19 | 5O1Spe,5O2Spo | FE | Gene Modelling |
-| L18 | Fri | 12/12 | 13-15 | FR4 | FE | Seminar: Tissue Specificity and Data Annotation |
+| C3 | Tue | 01/12 | 13-17 | RB33 | TL | TBD |
+| L14 | Wed | 02/12 | 10-12 | FB53 | TL | CRISPR methods to study gene regulation |
+| L15 | Thu | 03/12 | 10-12 | FB53 | SK | Single Cell 1 |
+| L16 | Fri | 04/12 | 10-12 | FB53 | SK | Single Cell 2 |
 | | | | | | | |
-| L19 | Wed | 07/01 | 10-12 | FR4 | All | Q&A |
-| Exam | Fri | 09/01 | 08-12 | FB51-53 | All | Systems Biology |
+| L17 | Tue | 08/12 | 10-12 | FB53 | SK | Single Cell 3 |
+| C4 | Wed | 09/12 | 13-17 | RB33 | SK | TBD |
+| L18 | Thu | 10/12 | 10-12 | FB53 | SK | Single Cell 4 |
+| L19 | Fri | 11/12 | 13-15 | FB53 | All | Q&A |
+| | | | | | | |
+| Exam | Mon | 11/01 | 08-12 | Oskar Kleins auditorium | All | Systems Biology |
 
 We used the following codes:
 
  | ID | Name |
  |----|------|
  | LK | Lukas Käll |
- | AM | Adil Mardinoglu |
- | FE | Fredrik Edfors |
+ | TL | Tuuli Lappalainen |
+ | SK | Simon Koplev |
  | KJ | Krzysztof Jurdzinski |
  | ME | Markus Ekvall |
  | MS | Mengnan Shi |
