@@ -1,7 +1,7 @@
 ## Prerequisites for the course
 
 The course reuires some background knowledge:
- * Bioinformatics corresponding to BB2441 Bioinformatics,
+ * Bioinformatics corresponding to BB2442 Bioinformatics,
  * Programming corresponding to BB1000 Programming in Python
     - If programming is challenging for you, I would recomend you to walk through  the Jake VanderPlas: [Whirlwind Tour of Python]( http://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/Index.ipynb)  
  * Statistics corresponding to SF1911 Statistics for Bioengineering 6.0 credits
