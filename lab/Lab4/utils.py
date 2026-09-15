@@ -153,11 +153,14 @@ def plot_location(data, pvalue_cutoff):
     significant_data["CHR_numeric"] = significant_data["CHR"].cat.codes
     significant_data["protein_chr_numeric"] = significant_data["protein_chr_name"].cat.codes
 
+    margin = 0.1  # 10% margin on each side for better visualization
+    scale = 1 - 2 * margin
+
     significant_data["CHR_normalized"] = significant_data["CHR_numeric"] + (
-        significant_data["BP"] / significant_data.groupby("CHR", observed=False)["BP"].transform("max")
+        margin + scale * (significant_data["BP"] / significant_data.groupby("CHR", observed=False)["BP"].transform("max"))
     )
     significant_data["protein_chr_normalized"] = significant_data["protein_chr_numeric"] + (
-        significant_data["protein_begin"] / significant_data.groupby("protein_chr_name", observed=False)["protein_begin"].transform("max")
+        margin + scale * (significant_data["protein_begin"] / significant_data.groupby("protein_chr_name", observed=False)["protein_begin"].transform("max"))
     )
 
     fig = px.scatter(
@@ -192,7 +195,7 @@ def plot_location(data, pvalue_cutoff):
             title="Protein Position",
             tickmode="array",
             tickvals=[val + 0.5 for val in chromosome_ticks_y.values()], 
-            ticktext=list(chromosome_ticks_y.keys()),
+            ticktext=list(reversed(list(chromosome_ticks_y.keys()))),
             side="right", 
             range=[0, len(chromosome_ticks_y)]
         ) 
