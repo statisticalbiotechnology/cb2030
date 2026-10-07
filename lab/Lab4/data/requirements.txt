@@ -159,7 +159,7 @@ pyzmq==26.4.0
 questionary==2.1.0
 rchitect==0.4.8
 referencing==0.36.2
-requests==2.32.3
+requests==2.32.4
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rich==14.1.0
