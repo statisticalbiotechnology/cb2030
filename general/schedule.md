@@ -17,7 +17,7 @@
 | C1 | Wed | 18/11 | 13-17 | [Gul](https://www.kth.se/places/room/id/daa4b32a-c7a1-4a65-a94f-e918d88a3ab6?l=en), [Spelhallen](https://www.kth.se/places/room/id/6fd6bf98-7e86-4b60-b069-24f2cb451af7?l=en), [Sporthallen](https://www.kth.se/places/room/id/7f7a2408-aa72-46be-b388-9fabdccd02ee?l=en) | LK | Hypothesis Testing |
 | L9 | Thu | 19/11 | 10-12 | [K1](https://www.kth.se/places/room/id/19814134-e285-49bc-9683-2f5c2edadbcf?l=en) | LK | Pathway Analysis |
 | C2 | Thu | 19/11 | 13-17 | [Grön](https://www.kth.se/places/room/id/8ba067f1-116b-4644-9742-a993a6a28742?l=en), [Brun](https://www.kth.se/places/room/id/d873230a-c0a9-4395-b32f-0b227d17e26f?l=en), [Grå](https://www.kth.se/places/room/id/feee792d-8f39-4b08-8da3-b7e6670ed638?l=en), [Karmosin](https://www.kth.se/places/room/id/bb275514-f5d3-4310-83e3-b8965e3aeb1b?l=en) | LK | Machine Learning |
-| L10 | Fri | 20/11 | 10-12 | [D2](https://www.kth.se/places/room/id/fc778271-7ea4-4a0e-9ee3-0e5a429c75e3?l=en) | LK | Auto Encoders |
+| L10 | Fri | 20/11 | 10-12 | [D2](https://www.kth.se/places/room/id/fc778271-7ea4-4a0e-9ee3-0e5a429c75e3?l=en) | LK | Flux Balance Analysis |
 | | | | | | | |
 | L11 | Tue | 24/11 | 10-12 | [M1](https://www.kth.se/places/room/id/ad02be6d-21e4-480d-9979-d335c6f10875?l=en) | TL | The basics of molecular QTL mapping |
 | L12 | Wed | 25/11 | 13-15 | [M3](https://www.kth.se/places/room/id/9485bc06-d8dc-4b3a-bf0e-ef7387c98b81?l=en) | TL | Using molecular QTL data in disease interpretation |
@@ -42,8 +42,8 @@ We used the following codes:
  | LK | Lukas Käll |
  | TL | Tuuli Lappalainen |
  | SK | Simon Koplev |
+ | KA | Konstantinidis Antonopoulos |
  | KJ | Krzysztof Jurdzinski |
- | ME | Markus Ekvall |
- | MS | Mengnan Shi |
- | TS | Thanadol Sutantiwanichkul |
+ | UC | Ulysse Castet |
  | YZ | Yuqi Zheng |
+ | ES | Emilio Skarwan |
