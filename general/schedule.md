@@ -22,7 +22,7 @@
 | L11 | Tue | 24/11 | 10-12 | [M1](https://www.kth.se/places/room/id/ad02be6d-21e4-480d-9979-d335c6f10875?l=en) | TL | Systems genetics and genetic architecture |
 | L12 | Wed | 25/11 | 13-15 | [M3](https://www.kth.se/places/room/id/9485bc06-d8dc-4b3a-bf0e-ef7387c98b81?l=en) | TL | Molecular effects of genetic variation : molQTLs |
 | L13 | Thu | 26/11 | 13-15 | [M3](https://www.kth.se/places/room/id/9485bc06-d8dc-4b3a-bf0e-ef7387c98b81?l=en) | TL | Molecular effects of genetic variation : CRISPR and deep learning models |
-| C3 | Fri | 27/11 | 08-12 | [Q1](https://www.kth.se/places/room/id/87f255a1-95f0-4932-b38e-16b6e609a8b0?l=en) | SK | TBD |
+| C3 | Fri | 27/11 | 08-12 | [M1](https://www.kth.se/places/room/id/ad02be6d-21e4-480d-9979-d335c6f10875?l=en) | SK | TBD |
 | | | | | | | |
 | L14 | Wed | 02/12 | 10-12 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | SK | Single Cell 1 |
 | L15 | Thu | 03/12 | 15-17 | [M3](https://www.kth.se/places/room/id/9485bc06-d8dc-4b3a-bf0e-ef7387c98b81?l=en) | SK | Single Cell 2 |
