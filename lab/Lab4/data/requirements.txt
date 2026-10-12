@@ -1,6 +1,0 @@
-# Packages needed to run Lab4.ipynb
-numpy>=2
-pandas>=2
-plotly>=6
-nbformat>=5
-notebook>=7.5

@@ -37,9 +37,3 @@ Here you find the lab instructions for the computer exercises:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab3%2FLab3.ipynb)
 
-------
-
-## Lab 4 - Gene regulation
-
-* [Link to the lab](https://thanadol.shinyapps.io/CB2030/)
-
