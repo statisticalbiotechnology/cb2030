@@ -1,15 +1,15 @@
 # Lab instructions
 
-Here you find the lab instructions for the computer excercises:
+Here you find the lab instructions for the computer exercises:
 
 ## Lab 0 - Getting your software ready
 
 * Instructions on how to install the software [here](Lab0/)
 * [Lab0 notebook](Lab0/Lab0.ipynb)
-* Files neded to perform the lab [here](https://github.com/statisticalbiotechnology/cb2030/tree/master/lab/Lab0)
+* Files needed to perform the lab [here](https://github.com/statisticalbiotechnology/cb2030/tree/master/lab/Lab0)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab0%2FLab0.ipynb)
-[![CoLab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/https://nbviewer.jupyter.org/github/statisticalbiotechnology/cb2030/blob/master/nb/lab/Lab0.ipynb)
+[![CoLab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/statisticalbiotechnology/cb2030/blob/master/lab/Lab0/Lab0.ipynb)
 
 ------
 
@@ -30,6 +30,8 @@ Here you find the lab instructions for the computer excercises:
 ------
 
 ## Lab 3 - Genome-scale Metabolic Modeling
+
+*Not given this year.*
 
 * [Lab3 notebook](Lab3/Lab3.ipynb)
 

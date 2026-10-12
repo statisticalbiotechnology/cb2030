@@ -6,24 +6,18 @@ channels:
 dependencies:
   # Core
   - pip
-  - python=3
+  - python=3.12
   - jupyter
   # Lectures
   - statsmodels
   - networkx
+  - gseapy
   # Lab 1
   - pandas
   - numpy
   - scipy
   - seaborn==0.13.2
   - matplotlib
-  - ipywidgets
+  - ipywidgets>=8
   # Lab 2
   - scikit-learn
-  # Lab 3
-  - pytest
-  - pytest-benchmark
-  - pip:
-    - escher
-    - cobra
-    - markupsafe==2.0.1
