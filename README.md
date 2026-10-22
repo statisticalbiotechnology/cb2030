@@ -7,7 +7,7 @@ This site contains some of the material of the course CB2030, including:
 * the [prerequisites](https://statisticalbiotechnology.github.io/cb2030/general/prerequisites) in terms of knowledge for the course  
 * instruction for the [preparations](prep/) needed before each questions and answer session  
 * previous years [questions and answers](qa/)
-* the jupyter [notebooks](nb/)  
+* the course book, [Data Science for Biotechnology Students](https://www.kaell.se/dsbook)  
 * the [lab instructions](lab/)
 
 If you are inside the github repository you can reach the html version of the text [here](https://statisticalbiotechnology.github.io/cb2030/)

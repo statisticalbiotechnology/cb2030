@@ -3,7 +3,7 @@
 As a preparation for the Multiple Hypothesis Testing convocation, make yourself acquainted with the material below.
 
 1. Read the chapter on [Multiple Testing](https://www.kaell.se/dsbook/multiple)
-1. Read the chapter on its [application](https://www.kaell.se/dsbook/qvalue). There are associated study questions [here](../nb/multiplehypo/questions.md).
+1. Read the chapter on its [application](https://www.kaell.se/dsbook/qvalue).
 
 ### Aditional/Alternative material
 

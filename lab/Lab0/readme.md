@@ -48,9 +48,13 @@ If you have encountered any problems during the software installation, or have a
 ---
 
 
+### Appendix: KTH JupyterHub
+
+If for any reason you cannot install and run Jupyter notebooks on your computer, you can run them on the KTH JupyterHub, no installation needed. Sign in with your hub account, and the material is copied into your own workspace. Following a link again later updates the material **without** discarding the changes you have made. Click the KTH JupyterHub icon next to each lab in the [lab instructions](../), or [open all the labs in JupyterLab](https://nbserv.duckdns.org/hub/user-redirect/git-pull?repo=https://github.com/statisticalbiotechnology/cb2030&urlpath=lab/tree/cb2030/lab&branch=master).
+
 ### Appendix: Binder
 
-If for any reason you cannot install and run Jupyter notebooks on your computer, there is the possibility to run them on the cloud, through a service called Binder.
+As a last resort, you can run the notebooks on the cloud through a service called Binder.
 
 All you have to do is click this respective icon for the notebook you want: ![Binder](https://mybinder.org/badge_logo.svg)
 

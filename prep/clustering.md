@@ -2,7 +2,7 @@
 
 As a preparation for the Clustering convocation, make yourself acquainted with the material below.
 
-1. Read the chapter on [Clustering](https://www.kaell.se/dsbook/cluster) and [Cluster analysis of single cells](https://www.kaell.se/dsbook/cluster-pbmc). There are associated study questions [here](../nb/clustering/questions.md) for the later chapter.  
+1. Read the chapter on [Clustering](https://www.kaell.se/dsbook/cluster) and [Cluster analysis of single cells](https://www.kaell.se/dsbook/cluster-pbmc).  
 
 ## Additional Material:
 

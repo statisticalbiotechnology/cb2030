@@ -6,7 +6,6 @@ As a preparation for this convocation, make yourself acquainted with the materia
 2. Read the examples,[4](https://www.kaell.se/dsbook/multireg) and [5](https://www.kaell.se/dsbook/kpna2), and execute them using the launch button on the top-bar of the book.
 
 [comment]: <> (https://towardsdatascience.com/introduction-to-linear-regression-in-python-c12a072bedf0)
-[comment]: <> (4. Investigate the jupyter notebook on [Linear Models](../nb/linear/). There are associated study questions [here](../nb/linear/questions.md).)  
 
 ### Aditional/Alternative material
 
