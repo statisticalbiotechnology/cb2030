@@ -1,5 +1,15 @@
 # Lab instructions
 
+## How the computer exercises work
+
+The computer exercises should be carried out in teams of two students. You will be responsible for finding your collaborator yourselves. Please inform the team members in Canvas. During the exercise, you will, together with your lab partner, answer a set of questions. When your team finishes the tasks in the lab instruction, you should contact a TA and go through your team’s answers and code with the TA. If the TA finds you have satisfactorily answered the questions, you will get a Pass on the exercise. The lab also includes additional questions for those who want to delve deeper into the topic.
+
+Due to the set-up of these exercises, you must participate on-site. If you cannot participate on-site, you must contact the TAs to book an appointment for your reporting.
+
+Exercise instructions and datasets will be provided via Canvas and on this page.
+
+------
+
 Here you find the lab instructions for the computer exercises:
 
 ## Lab 0 - Getting your software ready
