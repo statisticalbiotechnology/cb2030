@@ -1,6 +1,6 @@
 ## Preparations for lecture on General Linear Models
 
-As a preparation for the General Linear Models convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
+As a preparation for the General Linear Models convocation, make yourself acquainted with the material below.
 
 1. Watch the [Video Lecture on Linear Models](https://www.youtube.com/watch?v=F9qB1FBNZ3k), and its [slides](slides/LinearModels.pdf)
 2. Read the [Simple Linear regression](https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html#Simple-Linear-Regression) subsection in VanderPlas. (Skip the other subsection of the chapter.)

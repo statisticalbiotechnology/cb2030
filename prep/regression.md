@@ -1,10 +1,9 @@
 ## Preparations for lecture on Regression
 
-As a preparation for this convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
+As a preparation for this convocation, make yourself acquainted with the material below.
 
 1. Read the chapters [2](https://www.kaell.se/dsbook/linear) and [3](https://www.kaell.se/dsbook/regularization) in the data science book.
 2. Read the examples,[4](https://www.kaell.se/dsbook/multireg) and [5](https://www.kaell.se/dsbook/kpna2), and execute them using the launch button on the top-bar of the book.
-3. Perform the assignments in Canvas
 
 [comment]: <> (https://towardsdatascience.com/introduction-to-linear-regression-in-python-c12a072bedf0)
 [comment]: <> (4. Investigate the jupyter notebook on [Linear Models](../nb/linear/). There are associated study questions [here](../nb/linear/questions.md).)  
