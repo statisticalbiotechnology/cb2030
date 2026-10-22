@@ -2,8 +2,8 @@
 
 As a preparation for the Multiple Hypothesis Testing convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
 
-1. Read the chapter on [Multiple Testing](https://www.kaell.se/dsbook/statistics/multiple.html)
-1. Read the chapter on its [application](https://www.kaell.se/dsbook/statistics/qvalue.html). There are associated study questions [here](../nb/multiplehypo/questions.md).
+1. Read the chapter on [Multiple Testing](https://www.kaell.se/dsbook/multiple)
+1. Read the chapter on its [application](https://www.kaell.se/dsbook/qvalue). There are associated study questions [here](../nb/multiplehypo/questions.md).
 
 ### Aditional/Alternative material
 

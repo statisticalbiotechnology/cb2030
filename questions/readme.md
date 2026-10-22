@@ -10,5 +10,4 @@ Here we keep the the questions and answers from the seminar
 - [Clustering](clustering)
 
 - [PCA](pca)
-- [VAE](vae)
 - [Pathway Analysis](pathway)

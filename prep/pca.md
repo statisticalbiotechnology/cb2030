@@ -2,8 +2,7 @@
 
 As a preparation for the Principal Component Analysis convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
 
-1. Read the chapters on [Principal Component Analysis](https://www.kaell.se/dsbook/unsupervised/pca.html) and [PCA analysis of two lung cancer sets
-](https://www.kaell.se/dsbook/unsupervised/PCAofCarcinomas.html)
+1. Read the chapters on [Principal Component Analysis](https://www.kaell.se/dsbook/pca) and [PCA of single cells](https://www.kaell.se/dsbook/pca-pbmc)
 4. Perform the relevant tasks in Canvas.
 
 ## Additional material

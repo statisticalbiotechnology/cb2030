@@ -2,8 +2,8 @@
 
 As a preparation for the Supervised Learning convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
 
-2. Read the sections in the Data Science Book on [SVMs](https://www.kaell.se/dsbook/supervised/svm.html), and [Neural Networks](https://www.kaell.se/dsbook/supervised/mlp.html).
-4. Investigate the jupyter notebook on [Classification](https://www.kaell.se/dsbook/supervised/supervisedML.html). 
+2. Read the sections in the Data Science Book on [SVMs](https://www.kaell.se/dsbook/svm), and [Neural Networks](https://www.kaell.se/dsbook/mlp).
+4. Investigate the jupyter notebook on [Classification](https://www.kaell.se/dsbook/supervisedml). 
 5. Perform the assignments in Canvas
 
 ## Additional Material;

@@ -2,8 +2,8 @@
 
 As a preparation for the Hypothesis Testing convocation, make yourself acquainted with the material below, and subsequently complete any tasks assigned to you in canvas.
 
-2. Read the sections in the Data Science Book on [Hypothesis Testing](https://www.kaell.se/dsbook/statistics/significance.html).
-3. Investigate the jupyter notebook on [Differential expression anlaysis of the TCGA breast cancer set](https://www.kaell.se/dsbook/statistics/testing.html). If you want some study questions we provide some [here](../nb/testing/questions.md)  
+2. Read the sections in the Data Science Book on [Hypothesis Testing](https://www.kaell.se/dsbook/significance).
+3. Investigate the jupyter notebook on [Differential expression anlaysis of the TCGA breast cancer set](https://www.kaell.se/dsbook/testing). If you want some study questions we provide some [here](../nb/testing/questions.md)  
 5. Perform the assignments in Canvas
 
 

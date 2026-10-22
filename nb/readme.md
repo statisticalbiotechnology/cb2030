@@ -8,7 +8,6 @@ Here you can find jupyter notebooks for the Seminars on
 * [Supervised Machine Learning](supervised/readme.md)  
 * [Clustering](clustering/readme.md)  
 * [PCA](pca/readme.md)  
-* [VAE](vae/readme.md)  
 * [Pathway Analysis](enrichment/readme.md)  
 
 ## On-line usage

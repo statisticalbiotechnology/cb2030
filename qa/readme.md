@@ -10,5 +10,4 @@ Here we store selected questions and answers from previous years incarnations of
 - [Clustering](clustering)
 
 - [PCA](pca)
-- [Variational Auto Encoders](vae)
 - [Pathway Analysis](pathway)

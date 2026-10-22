@@ -11,5 +11,5 @@ Here we keep the material to prepare for the questions and answers lectures
 - [Multiple Testing](multipletesting.md)
 
 - [Principal Component Analysis](pca.md)
-- [Variational Auto Encoder](vae.md)  
 - [Pathway Analysis](pathway.md)  
+- [Flux Balance Analysis](fba.md)  
