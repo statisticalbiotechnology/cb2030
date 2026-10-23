@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CB2030 Introduction</title>
+  <meta name="description" content="CB2030 Systems Biology, lecture L1: introduction to the course.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/white.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+
+  <style>
+    :root {
+      --kth-blue: #1954a6;
+      --ink: #1d1d1f;
+      --muted: #5b5f66;
+      --green: #b6d7a8;
+      --green-line: #4c8a3a;
+      --blue-box: #cfe2f3;
+      --blue-line: #3d6fa8;
+      --rule: #d6dbe3;
+      --r-main-font: "Open Sans", Helvetica, Arial, sans-serif;
+      --r-heading-font: "Open Sans", Helvetica, Arial, sans-serif;
+      --r-main-color: var(--ink);
+      --r-heading-color: var(--kth-blue);
+      --r-link-color: var(--kth-blue);
+      --r-link-color-hover: #0d3a78;
+      --r-main-font-size: 30px;
+      --r-heading-text-transform: none;
+      --r-heading-font-weight: 600;
+      --r-heading-letter-spacing: 0;
+      --r-heading2-size: 1.55em;
+    }
+    html, body { background: #fff; }
+
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { height: 100%; padding: 8px 24px; box-sizing: border-box; }
+    .reveal h2 { margin-bottom: 0.7em; }
+    .reveal p { margin: 0 0 0.6em; line-height: 1.4; }
+    .reveal ul, .reveal ol { margin: 0 0 0.6em 1.2em; }
+    .reveal li { margin: 0.18em 0; line-height: 1.35; }
+    .reveal li > ul { margin-top: 0.1em; font-size: 0.85em; }
+    .reveal a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .reveal .small { font-size: 0.7em; }
+    .reveal .muted { color: var(--muted); }
+    .reveal .source { position: absolute; bottom: 40px; left: 24px; right: 24px; font-size: 0.5em; color: var(--muted); }
+    .reveal .source a { color: var(--muted); word-break: break-all; }
+
+    /* Title and section slides */
+    .reveal section.title-slide { display: flex !important; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .reveal section.title-slide h1 { font-size: 2.3em; font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 0.4em; }
+    .reveal section.title-slide .sub { font-size: 1.2em; color: var(--muted); margin-bottom: 1em; }
+    .reveal section.title-slide img.logo { width: 150px; margin: 0; }
+
+    /* Footer shown on content slides */
+    .deck-footer { position: fixed; left: 24px; bottom: 14px; display: flex; align-items: center; gap: 10px; font: 13px "Open Sans", sans-serif; color: var(--muted); z-index: 10; }
+    .deck-footer img { width: 26px; height: 26px; }
+    .title .deck-footer { display: none; }
+    .reveal .slide-number { background: none; color: var(--muted); font: 13px "Open Sans", sans-serif; bottom: 14px; right: 90px; }
+    .reveal .slide-number a { text-decoration: none; }
+
+    /* Outline */
+    .outline li strong { color: var(--kth-blue); }
+
+
+    /* Teachers */
+    .teachers { display: grid; grid-template-columns: 120px 640px; gap: 26px 28px; align-items: center; margin: 1em auto 0; width: max-content; }
+
+    /* Figures */
+    .reveal figure { margin: 0; text-align: center; }
+    .reveal figure img { margin: 0; }
+    .fig-svg { display: block; margin: 0 auto; }
+    .fig-svg text { font-family: "Open Sans", sans-serif; fill: var(--ink); }
+    .systems { display: flex; justify-content: space-around; align-items: flex-end; margin-top: 1.2em; }
+    .systems figure img { height: 280px; width: auto; object-fit: contain; }
+    .systems figcaption { font-weight: 700; margin-top: 0.6em; }
+
+    /* Tables */
+    .reveal table { border-collapse: collapse; font-size: 0.8em; margin: 0.8em 0 0; }
+    .reveal table th, .reveal table td { border: 1px solid var(--rule); padding: 0.45em 0.8em; text-align: left; vertical-align: top; }
+    .reveal table thead th { background: #f3f6fa; border-bottom: 2px solid var(--kth-blue); }
+    .cmp { width: 100%; }
+    .cmp td:not(:first-child), .cmp th:not(:first-child) { width: 14%; }
+
+    /* Exam slide */
+    .exam { display: grid; grid-template-columns: 500px 1fr 220px; gap: 32px; align-items: center; margin-top: 0.6em; }
+    .points { display: grid; grid-template-columns: 170px 170px 110px; gap: 10px 14px; font-size: 0.6em; text-align: center; }
+    .points .box { border: 2px solid; border-radius: 14px; display: flex; flex-direction: column; justify-content: center; line-height: 1.25; padding: 6px; }
+    .points .green { background: var(--green); border-color: var(--green-line); }
+    .points .blue { background: var(--blue-box); border-color: var(--blue-line); }
+    .points .stack { display: grid; gap: 8px; }
+    .points .stack .box { border-radius: 8px; }
+    .points .sum { display: flex; flex-direction: column; justify-content: center; text-align: left; line-height: 1.25; }
+    .points .dash { grid-column: 1 / -1; border-top: 2px dashed var(--muted); margin: 4px 0; }
+    .points .total { grid-column: 1 / 3; margin-top: 6px; }
+    .exam p { font-size: 0.85em; }
+    .grades { font-size: 0.62em !important; margin: 0 !important; }
+    .grades td, .grades th { padding: 0.25em 0.7em !important; }
+    .grades td:last-child { text-align: right; color: var(--ink); }
+
+    /* Quotes */
+    .reveal blockquote.policy { width: auto; margin: 0; padding: 0.2em 0 0.2em 1em; border-left: 5px solid var(--kth-blue); box-shadow: none; background: none; font-style: normal; font-size: 0.8em; }
+    .reveal blockquote.policy p { margin-bottom: 0.7em; }
+
+    .jml li b { color: var(--kth-blue); }
+
+    /* Teachers (slide 5) */
+    .teachers .avatar { position: relative; overflow: hidden; width: 120px; height: 120px; border-radius: 50%; background: var(--kth-blue); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.1em; }
+    .teachers .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: 50% 20%; background: #fff; max-width: none; max-height: none; }
+    .teachers .avatar:has(img) { background: #fff; }
+    .teachers .teacher b { display: block; font-size: 1.05em; }
+    .teachers .teacher span { color: var(--muted); font-size: 0.8em; line-height: 1.3; display: block; }
+    .reveal .tas { font-size: 0.6em; color: var(--muted); margin-top: 1.4em; }
+
+    /* Examination cards */
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 0.4em 0 1em; }
+    .cards > div { padding: 0.7em 0.9em; border-radius: 10px; background: #f3f6fa; border-top: 5px solid var(--kth-blue); }
+    .cards b { display: block; color: var(--kth-blue); font-size: 1.05em; }
+    .cards span { font-size: 0.8em; }
+
+    /* Computer exercise flow */
+    .reveal ol.flow { list-style: none; margin: 0.4em 0 1em; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; counter-reset: step; }
+    .reveal ol.flow li { position: relative; margin: 0; padding: 0.7em 0.8em 0.8em; border-radius: 10px; background: #f3f6fa; border-top: 5px solid var(--kth-blue); font-size: 0.72em; line-height: 1.35; counter-increment: step; }
+    .reveal ol.flow li b:first-child { display: block; font-size: 1.2em; color: var(--kth-blue); margin-bottom: 0.3em; }
+    .reveal ol.flow li b:first-child::before { content: counter(step) ". "; }
+    .reveal ol.flow li + li::before { content: "→"; position: absolute; left: -38px; top: 40%; font-size: 1.6em; color: var(--muted); }
+    .reveal ol.flow .pass { color: #1e7a34; }
+
+    .reveal .cite { font-size: 0.5em; color: var(--muted); margin-top: 0.5em; }
+
+    /* Emergence: Anderson */
+    .reveal blockquote.big-quote { width: auto; margin: 0.2em 0 0.9em; padding: 0; box-shadow: none; background: none; font-size: 1.25em; font-style: italic; color: var(--ink); }
+    .levels { display: block; margin: 0 auto; }
+    .levels .lvl-label text { font-family: "Open Sans", sans-serif; font-size: 28px; font-weight: 600; fill: var(--ink); text-anchor: middle; }
+    .levels .lvl-arrow line { stroke: #1954a6; stroke-width: 7; marker-end: url(#lvl-head); }
+
+    /* Live demos */
+    .demo { display: flex; gap: 28px; align-items: flex-start; }
+    .demo canvas { width: 860px; height: 520px; border-radius: 8px; background: #f6f8fb; touch-action: none; flex: none; }
+    .demo-controls { display: flex; flex-direction: column; gap: 12px; width: 300px; font-size: 0.7em; }
+    .demo-controls button { font: inherit; text-align: left; padding: 0.45em 0.9em; border-radius: 8px; border: 2px solid var(--kth-blue); background: #fff; color: var(--kth-blue); cursor: pointer; }
+    .demo-controls button.toggle.on { background: var(--kth-blue); color: #fff; }
+    .demo-controls button.action { border-color: var(--rule); color: var(--ink); margin-top: 6px; }
+
+    #life canvas { cursor: crosshair; }
+    .reveal .life-rules { font-size: 0.85em; color: var(--muted); margin-top: 1em; line-height: 1.8; }
+
+    /* Mentimeter word clouds */
+    .reveal .menti-question { color: var(--muted); font-style: italic; margin-top: -0.6em; }
+    .reveal figure.cloud img { display: block; margin: 0.6em auto 0; max-width: 1100px; max-height: 500px; }
+
+    /* Repressilator */
+    .rep-row { display: flex; align-items: center; gap: 24px; margin-bottom: 4px; }
+    .circuit { width: 260px; height: 236px; flex: none; }
+    .circuit text { font-family: "Open Sans", sans-serif; font-size: 22px; fill: var(--ink); }
+    .circuit .repress { fill: none; stroke: var(--ink); stroke-width: 3; marker-end: url(#tbar); }
+    .rep-chart { width: 900px; height: 272px; flex: none; }
+    .rep-chart .axis { stroke: var(--rule); stroke-width: 1; }
+    .rep-chart .axis-label { font-family: "Open Sans", sans-serif; font-size: 16px; fill: var(--muted); }
+    .rep-chart .trace { fill: none; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="deck-footer"><img src="img/kth_logo.png" alt="">CB2030 · Systems Biology</div>
+  <div class="slides">
+
+    <!-- 1 -->
+    <section class="title-slide" data-state="title">
+      <h1>Introduction to the course<br>Systems Biology</h1>
+      <p class="sub">CB2030</p>
+      <img class="logo" src="img/kth_logo.png" alt="KTH logo">
+    </section>
+
+    <!-- 2 -->
+    <section>
+      <h2>Welcome!</h2>
+      <p>Outline of this lecture (L1)</p>
+      <ul class="outline">
+        <li>Three views on Systems Biology</li>
+        <li>Expectations on the course (Mentimeter exercise)</li>
+        <li><strong>Break</strong></li>
+        <li>Overview of course PM</li>
+      </ul>
+    </section>
+
+    <!-- 4 -->
+    <section class="title-slide" data-state="title">
+      <h1>My view on Systems Biology</h1>
+      <p class="sub">Lukas Käll</p>
+      <img class="logo" src="img/kth_logo.png" alt="KTH logo">
+    </section>
+
+    <!-- 5 -->
+    <section>
+      <h2>CB2030 – Systems Biology</h2>
+      <div class="teachers">
+        <div class="avatar">LK<img src="img/teacher_lk.png" alt="Lukas Käll" onerror="this.remove()"></div>
+        <div class="teacher"><b>Lukas Käll</b><span>Machine Learning and Statistics<br>Network Biology and Metabolic Engineering</span></div>
+        <div class="avatar">SK<img src="img/teacher_sk.jpg" alt="Simon Koplev" onerror="this.remove()"></div>
+        <div class="teacher"><b>Simon Koplev</b><span>Multicellular transcriptional systems</span></div>
+        <div class="avatar">TL<img src="img/teacher_tl.jpg" alt="Tuuli Lappalainen" onerror="this.remove()"></div>
+        <div class="teacher"><b>Tuuli Lappalainen</b><span>Systems genetics of human disease</span></div>
+      </div>
+      <p class="tas"><b>Teaching assistants:</b> Krzysztof Jurdziński, Yuqi Zheng, Ulysse Castet, Konstantinos Antonopoulos, Anna Hensel, Amin Saeidi Kelishami, Cassandra Wivegg, Andrei Tertienko</p>
+    </section>
+
+    <!-- 6 -->
+    <section>
+      <h2>A definition of a System</h2>
+      <svg class="fig-svg" viewBox="40 125 770 295" width="1100" role="img" aria-label="A closed boundary with an arrow going in, labelled Input, and an arrow coming out, labelled Output">
+        <defs>
+          <marker id="red-head" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="3" markerHeight="3" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#e4261c"/>
+          </marker>
+        </defs>
+        <image href="img/system.png" x="128" y="140" width="552" height="266"/>
+        <line x1="136" y1="170" x2="203" y2="212" stroke="#e4261c" stroke-width="10" marker-end="url(#red-head)"/>
+        <line x1="616" y1="262" x2="668" y2="210" stroke="#e4261c" stroke-width="10" marker-end="url(#red-head)"/>
+        <text x="58" y="205" font-size="22" font-weight="700">Input</text>
+        <text x="694" y="250" font-size="22" font-weight="700">Output</text>
+      </svg>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <h2>A human cell – a system</h2>
+      <svg class="fig-svg" viewBox="180 128 520 330" width="860" role="img" aria-label="Schematic human cell with the number of molecular species of each kind">
+        <defs>
+          <marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#1d1d1f"/>
+          </marker>
+        </defs>
+        <image href="img/cell.png" x="330" y="222" width="185" height="227"/>
+        <g stroke="#1d1d1f" stroke-width="2" marker-end="url(#head)">
+          <line x1="395" y1="193" x2="425" y2="266"/>
+          <line x1="307" y1="224" x2="370" y2="242"/>
+          <line x1="522" y1="233" x2="507" y2="276"/>
+          <line x1="304" y1="377" x2="347" y2="367"/>
+          <line x1="541" y1="374" x2="487" y2="381"/>
+        </g>
+        <g font-size="20">
+          <text x="332" y="152">DNA</text>
+          <text x="332" y="176">3·10⁹ base pairs</text>
+          <text x="193" y="220">mRNA</text>
+          <text x="193" y="244">10⁶ species</text>
+          <text x="508" y="196">(Phospho-)Lipids</text>
+          <text x="508" y="220">10³ species?</text>
+          <text x="193" y="392">Proteins</text>
+          <text x="193" y="416">10⁹ species?</text>
+          <text x="551" y="391">Metabolites</text>
+          <text x="551" y="415">10³ species?</text>
+        </g>
+      </svg>
+      <aside class="notes">
+        <ul>
+          <li>29,740 RNA genes; 148,792 gene transcripts; 21,257 protein-coding genes</li>
+          <li>Prediction of the features' behaviour is not reliable enough</li>
+          <li>All the mechanisms are not fully understood</li>
+          <li>Epigenetics</li>
+          <li>Can handle problems that computer scientists are struggling with today</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- 8 -->
+    <section>
+      <h2>Other examples of systems</h2>
+      <div class="systems">
+        <figure><img src="img/city.png" alt="Map of Stockholm"><figcaption>City</figcaption></figure>
+        <figure><img src="img/patient.png" alt="Leonardo da Vinci's Vitruvian Man"><figcaption>Patient</figcaption></figure>
+        <figure><img src="img/organ.png" alt="Cross-section of a heart"><figcaption>Organ</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section>
+      <h2>Turing Machine</h2>
+      <figure><img src="img/turing_machine.png" alt="Turing machine: a tape of infinite length with symbols, a read/write head and a finite control" style="width: 900px; margin-top: 1em;"></figure>
+      <p class="cite">Turing, “On computable numbers, with an application to the Entscheidungsproblem”, <i>Proc. London Math. Soc.</i> s2-42:230–265 (1936)</p>
+    </section>
+
+    <!-- 10 -->
+    <section>
+      <h2>Information processing in cells and computers</h2>
+      <table class="cmp">
+        <thead><tr><th></th><th>CPU</th><th>GPU</th><th>Cell</th></tr></thead>
+        <tbody>
+          <tr><td>Processes information</td><td>In serial</td><td>In parallel</td><td>In parallel</td></tr>
+          <tr><td>Aborts processes that get stuck</td><td>No</td><td>No</td><td>Yes</td></tr>
+          <tr><td>Number of simultaneous processes</td><td>1–8</td><td>1000s</td><td>millions</td></tr>
+        </tbody>
+      </table>
+      <p class="cite">Bennett, “The thermodynamics of computation – a review”, <i>Int. J. Theor. Phys.</i> 21:905–940 (1982)</p>
+    </section>
+
+    <!-- new: emergence -->
+    <section>
+      <h2>More is different</h2>
+      <blockquote class="big-quote">“At each level of complexity entirely new properties appear.”</blockquote>
+      <svg class="levels" viewBox="0 0 1000 280" width="1060" role="img" aria-label="Four levels of complexity: an atom for physics, a molecule for chemistry, a cell for biology and a brain for psychology">
+        <defs>
+          <marker id="lvl-head" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#1954a6"/>
+          </marker>
+        </defs>
+        <g class="lvl-arrow">
+          <line x1="216" y1="115" x2="258" y2="115"/>
+          <line x1="469" y1="115" x2="511" y2="115"/>
+          <line x1="723" y1="115" x2="765" y2="115"/>
+        </g>
+
+        <!-- Physics: atom -->
+        <g transform="translate(120 115)">
+          <g fill="none" stroke="#1954a6" stroke-width="3">
+            <ellipse rx="88" ry="30"/>
+            <ellipse rx="88" ry="30" transform="rotate(60)"/>
+            <ellipse rx="88" ry="30" transform="rotate(120)"/>
+          </g>
+          <g stroke="#fff" stroke-width="2">
+            <circle cx="0" cy="-12" r="10" fill="#eb6834"/>
+            <circle cx="-11" cy="-3" r="10" fill="#86b6ef"/>
+            <circle cx="11" cy="-3" r="10" fill="#eb6834"/>
+            <circle cx="-6" cy="10" r="10" fill="#eb6834"/>
+            <circle cx="7" cy="10" r="10" fill="#86b6ef"/>
+            <circle cx="0" cy="0" r="10" fill="#86b6ef"/>
+          </g>
+          <g fill="#1954a6" stroke="#fff" stroke-width="2">
+            <circle cx="-82.7" cy="-10.3" r="8"/>
+            <circle cx="44" cy="76.2" r="8"/>
+            <circle cx="44" cy="-76.2" r="8"/>
+          </g>
+        </g>
+
+        <!-- Chemistry: molecule (phenol, ball and stick) -->
+        <g transform="translate(373 120)">
+          <g stroke="#52514e" stroke-width="6" stroke-linecap="round">
+            <path d="M39,22.5 L0,45 L-39,22.5 L-39,-22.5 L0,-45 L39,-22.5 Z" fill="none"/>
+            <line x1="39" y1="22.5" x2="64" y2="37"/>
+            <line x1="0" y1="45" x2="0" y2="74"/>
+            <line x1="-39" y1="22.5" x2="-64" y2="37"/>
+            <line x1="-39" y1="-22.5" x2="-64" y2="-37"/>
+            <line x1="39" y1="-22.5" x2="64" y2="-37"/>
+            <line x1="0" y1="-45" x2="0" y2="-78"/>
+            <line x1="0" y1="-78" x2="26" y2="-93"/>
+          </g>
+          <circle r="22" fill="none" stroke="#52514e" stroke-width="3"/>
+          <g fill="#fff" stroke="#52514e" stroke-width="2.5">
+            <circle cx="64" cy="37" r="9"/>
+            <circle cx="0" cy="74" r="9"/>
+            <circle cx="-64" cy="37" r="9"/>
+            <circle cx="-64" cy="-37" r="9"/>
+            <circle cx="64" cy="-37" r="9"/>
+            <circle cx="26" cy="-93" r="9"/>
+          </g>
+          <g fill="#0d366b" stroke="#fff" stroke-width="2">
+            <circle cx="39" cy="22.5" r="14"/>
+            <circle cx="0" cy="45" r="14"/>
+            <circle cx="-39" cy="22.5" r="14"/>
+            <circle cx="-39" cy="-22.5" r="14"/>
+            <circle cx="0" cy="-45" r="14"/>
+            <circle cx="39" cy="-22.5" r="14"/>
+          </g>
+          <circle cx="0" cy="-78" r="14" fill="#e34948" stroke="#fff" stroke-width="2"/>
+        </g>
+
+        <!-- Biology: cell -->
+        <g transform="translate(627 115)">
+          <path d="M-86,0 C-90,-48 -45,-74 5,-72 C55,-70 92,-40 88,4 C84,48 45,74 -5,72 C-55,70 -82,40 -86,0 Z" fill="#e8f1fc" stroke="#1954a6" stroke-width="4"/>
+          <g fill="none" stroke="#3987e5" stroke-width="3" stroke-linecap="round">
+            <path d="M-56,-30 C-48,-50 -20,-56 4,-46"/>
+            <path d="M-60,-16 C-58,-36 -30,-48 -6,-38"/>
+            <path d="M-50,34 C-34,50 -6,50 12,38"/>
+          </g>
+          <circle cx="-14" cy="-2" r="30" fill="#86b6ef" stroke="#1954a6" stroke-width="3"/>
+          <circle cx="-6" cy="-8" r="9" fill="#1c5cab"/>
+          <g fill="#f7c4a8" stroke="#eb6834" stroke-width="3">
+            <rect x="34" y="-46" width="40" height="20" rx="10" transform="rotate(-25 54 -36)"/>
+            <rect x="34" y="18" width="40" height="20" rx="10" transform="rotate(20 54 28)"/>
+          </g>
+          <g fill="none" stroke="#eb6834" stroke-width="2">
+            <path d="M42,-36 l5,-6 l5,6 l5,-6 l5,6" transform="rotate(-25 54 -36)"/>
+            <path d="M42,28 l5,-6 l5,6 l5,-6 l5,6" transform="rotate(20 54 28)"/>
+          </g>
+          <g fill="#3987e5">
+            <circle cx="30" cy="-8" r="4"/>
+            <circle cx="42" cy="2" r="3"/>
+            <circle cx="22" cy="48" r="4"/>
+            <circle cx="-44" cy="52" r="3"/>
+          </g>
+        </g>
+
+        <!-- Psychology: brain (side view, facing left) -->
+        <g transform="translate(880 112)">
+          <path d="M8,44 C10,60 12,72 10,92 L28,92 C26,72 28,58 32,44 Z" fill="#f2b8c9" stroke="#b8406b" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M34,42 C38,64 74,68 84,48 C88,38 80,28 66,32 C56,36 44,40 34,42 Z" fill="#f2b8c9" stroke="#b8406b" stroke-width="3" stroke-linejoin="round"/>
+          <g fill="none" stroke="#b8406b" stroke-width="2" stroke-linecap="round">
+            <path d="M44,48 C56,52 68,50 78,42"/>
+            <path d="M48,56 C60,59 70,56 78,50"/>
+          </g>
+          <path d="M-80,18 C-94,-28 -60,-74 -4,-76 C48,-78 90,-48 88,-4 C87,20 74,36 54,40 L22,43 C2,45 -10,52 -26,50 C-50,48 -72,40 -80,18 Z" fill="#f9d6e2" stroke="#b8406b" stroke-width="4" stroke-linejoin="round"/>
+          <g fill="none" stroke="#b8406b" stroke-width="3" stroke-linecap="round">
+            <path d="M6,-74 C-2,-54 14,-38 2,-14"/>
+            <path d="M-50,22 C-26,8 8,12 40,0"/>
+            <path d="M-62,-36 C-48,-50 -36,-28 -20,-46"/>
+            <path d="M-70,-6 C-56,-20 -42,0 -28,-14"/>
+            <path d="M-34,-62 C-30,-46 -16,-56 -14,-36"/>
+            <path d="M28,-62 C38,-44 54,-54 60,-34"/>
+            <path d="M24,-26 C38,-16 50,-32 66,-18"/>
+            <path d="M50,10 C60,14 70,6 80,10"/>
+            <path d="M-36,36 C-22,28 -8,38 6,30"/>
+          </g>
+        </g>
+
+        <g class="lvl-label">
+          <text x="120" y="262">Physics</text>
+          <text x="373" y="262">Chemistry</text>
+          <text x="627" y="262">Biology</text>
+          <text x="880" y="262">Psychology</text>
+        </g>
+      </svg>
+      <p class="cite">P. W. Anderson, “More is different”, <i>Science</i> 177:393 (1972)</p>
+      <aside class="notes">Anderson: “Psychology is not applied biology, nor is biology applied chemistry.” Knowing the laws of the parts does not let you reconstruct the behaviour of the whole.</aside>
+    </section>
+
+    <!-- new: Game of Life demo (demos.js) -->
+    <section id="life">
+      <h2>Game of Life</h2>
+      <div class="demo">
+        <canvas width="1720" height="1040" data-prevent-swipe aria-label="Conway's Game of Life; click or drag to add live cells"></canvas>
+        <div class="demo-controls">
+          <button class="toggle on" data-action-toggle="run">Pause</button>
+          <button class="action" data-action="step">Step</button>
+          <button class="action" data-action="random">Random</button>
+          <button class="action" data-action="gun">Glider gun</button>
+          <button class="action" data-action="clear">Clear</button>
+          <p class="life-rules">Born with 3 neighbours<br>Survives with 2 or 3</p>
+        </div>
+      </div>
+      <p class="cite">Conway's Game of Life, in Gardner, “Mathematical Games”, <i>Scientific American</i> 223 (1970)</p>
+      <aside class="notes">
+        A grid of cells, each alive or dead. Every generation, a dead cell with exactly three live neighbours comes alive, and a live cell with two or three live neighbours survives; all others die.
+        From a random start, still lifes, blinking oscillators and gliders that travel across the grid appear. None of these is in the rules.
+        The glider gun emits a new glider every 30 generations. The Game of Life is even Turing complete: a universal computer can be built from it. Click or drag on the grid to add cells.
+      </aside>
+    </section>
+
+    <!-- new: flocking demo (demos.js) -->
+    <section id="flocking">
+      <h2>Flocking</h2>
+      <div class="demo">
+        <canvas width="1720" height="1040" data-prevent-swipe aria-label="Simulated flock of birds"></canvas>
+        <div class="demo-controls">
+          <button class="toggle on" data-rule="sep">Separation</button>
+          <button class="toggle on" data-rule="ali">Alignment</button>
+          <button class="toggle on" data-rule="coh">Cohesion</button>
+          <button class="action" data-action="scatter">Scatter</button>
+        </div>
+      </div>
+      <p class="cite">Reynolds, “Flocks, herds and schools”, <i>SIGGRAPH</i> 1987</p>
+      <aside class="notes">
+        Each bird only sees its neighbours and follows three rules: separation (don't crowd), alignment (fly the way your neighbours fly), cohesion (move towards your neighbours).
+        No bird knows the shape of the flock. Switch rules off one at a time: without alignment there is no common direction; without cohesion the flock dissolves; without separation it collapses into clumps.
+      </aside>
+    </section>
+
+    <!-- 12 -->
+    <section>
+      <h2 style="font-size: 1.05em;">Emergism: Spontaneous oscillations in a communicating cell population</h2>
+      <figure><img src="img/wang_tang_2019.png" alt="a: cells coupled through a shared displacement; b: a cell whose activity a is coupled to other cells through a shared signal concentration s" style="height: 520px;"></figure>
+      <p class="small muted" style="text-align: right; margin-top: -1.2em;">[Wang &amp; Tang, <i>Nat Commun</i> 2019]</p>
+      <aside class="notes">Wang &amp; Tang, “Emergence of collective oscillations in adaptive cells”, Nat Commun 10 (2019), doi:10.1038/s41467-019-13573-9. Cells that respond to changes in a shared signal can drive collective oscillations.</aside>
+    </section>
+
+    <!-- new: repressilator (charts drawn by demos.js) -->
+    <section id="repressilator">
+      <h2>The repressilator</h2>
+      <svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+        <defs>
+          <marker id="tbar" viewBox="0 0 4 18" refX="2" refY="9" markerWidth="4" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M2,0 L2,18" stroke="#1d1d1f" stroke-width="3"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="rep-row">
+        <svg class="circuit" viewBox="0 0 220 200" role="img" aria-label="One gene that represses itself">
+          <path d="M 122 112 C 168 40, 52 40, 98 112" class="repress"/>
+          <circle cx="110" cy="128" r="16" fill="#52514e"/>
+          <text x="110" y="180" text-anchor="middle"><tspan font-style="italic">X</tspan></text>
+        </svg>
+        <svg class="rep-chart" id="rep-one" role="img" aria-label="The protein level of a single self-repressing gene settles to a constant value"></svg>
+      </div>
+      <div class="rep-row">
+        <svg class="circuit" viewBox="0 0 220 200" role="img" aria-label="Three genes in a ring: lacI represses tetR, tetR represses cI, cI represses lacI">
+          <line x1="121" y1="51"  x2="155" y2="110" class="repress"/>
+          <line x1="145" y1="132" x2="77"  y2="132" class="repress"/>
+          <line x1="65"  y1="113" x2="99"  y2="54"  class="repress"/>
+          <circle cx="110" cy="32"  r="16" fill="#2a78d6"/>
+          <circle cx="167" cy="132" r="16" fill="#eb6834"/>
+          <circle cx="53"  cy="132" r="16" fill="#1baf7a"/>
+          <text x="140" y="24"  font-style="italic">lacI</text>
+          <text x="167" y="176" text-anchor="middle" font-style="italic">tetR</text>
+          <text x="53"  y="176" text-anchor="middle" font-style="italic">cI</text>
+        </svg>
+        <svg class="rep-chart" id="rep-ring" role="img" aria-label="In the three-gene ring the protein levels of lacI, tetR and cI oscillate out of phase"></svg>
+      </div>
+      <p class="cite">Elowitz &amp; Leibler, <i>Nature</i> 403:335 (2000)</p>
+      <aside class="notes">
+        Top: one gene repressing itself settles to a steady level. Bottom: three repressors in a ring (lacI ⊣ tetR ⊣ cI ⊣ lacI) oscillate, although no single gene oscillates.
+        Built in E. coli with a GFP readout; the period (hours) is longer than the cell cycle. Simulated with the Elowitz &amp; Leibler model (α = 216, α₀ = 0.216, β = 5, n = 2), same parameters in both panels.
+      </aside>
+    </section>
+
+    <!-- course PM (Course_PM_CB2030_ht26_v1) -->
+    <section>
+      <h2>Aim of the course</h2>
+      <p>After passing the course, you should be able to:</p>
+      <ol style="font-size: 0.85em;">
+        <li>Describe widely used statistical and computational techniques employed to investigate data from high-throughput techniques for measuring biopolymers.</li>
+        <li>Explain the theory of state-of-the-art tools/algorithms for combining data from high-throughput molecular biology experiments.</li>
+        <li>Choose appropriate machine learning strategies for processing molecular biology data.</li>
+        <li>Apply network biology tools for interpreting data.</li>
+        <li>Interpret the results of these analyses in a biologically or medically relevant context.</li>
+        <li>Reflect over the choice of methods and tools and how it influences the outcome of the analyses.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>The modules of the course</h2>
+      <p>The course is organized in 4 modules:</p>
+      <ol>
+        <li>Machine Learning and Statistics – LK</li>
+        <li>Network Biology and Metabolic Engineering – LK</li>
+        <li>Multicellular transcriptional systems – SK</li>
+        <li>Systems genetics of human disease – TL</li>
+      </ol>
+      <p>There is also an introductory lecture. In total 18 lectures and 4 computer exercises.</p>
+    </section>
+
+    <!-- 35 -->
+    <section>
+      <h2>Prerequisites</h2>
+      <p>The following courses, or equivalent, are recommended:</p>
+      <ul>
+        <li>Bioinformatics corresponding to BB2441 Bioinformatics</li>
+        <li>Programming corresponding to BB1000 Programming in Python</li>
+        <li>Probability theory corresponding to SF1911 Statistics for Bioengineering, 6.0 credits</li>
+        <li>Knowledge of modern omics experiments corresponding to BB2255 Applied Gene Technology</li>
+      </ul>
+      <p>We provide some reading recommendations on Canvas, if you feel you lag behind in programming or statistics.</p>
+    </section>
+
+    <!-- 39 -->
+    <section>
+      <h2>Course Literature</h2>
+      <ul style="list-style: none; margin-left: 0; font-size: 0.85em;">
+        <li style="margin-bottom: 0.9em;">Lukas Käll, “Data Science for Biotechnology Students”, available under open license from: <a href="https://www.kaell.se/dsbook">https://www.kaell.se/dsbook</a></li>
+        <li style="margin-bottom: 0.9em;">Jake VanderPlas, “Python Data Science Handbook, Essential Tools for Working with Data”, O'Reilly Media, available under MIT license from: <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">https://jakevdp.github.io/PythonDataScienceHandbook/</a></li>
+      </ul>
+      <p style="font-size: 0.85em;">Additional articles or other resources may be specified during the course. Detailed reading assignments will be provided during the course.</p>
+    </section>
+
+    <!-- replaces 37-38: question-driven seminars -->
+    <section>
+      <h2>Question-driven seminars</h2>
+      <p>Lectures L2–L18 are given as question-driven seminars.</p>
+      <ol class="flow">
+        <li><b>Prepare</b>Go through the preparatory material before the lecture.</li>
+        <li><b>Attend</b>Be present at the lecture.</li>
+        <li><b>Answer</b>Answer more than 75&nbsp;% of the questions in the quiz app during the lecture.</li>
+      </ol>
+      <ul style="font-size: 0.8em;">
+        <li>Each attended lecture gives 0.5 activity points, up to 8 points (16 lectures). No points for offline answers.</li>
+        <li>Quiz app: <a href="https://quizbinf.serve.scilifelab.se">quizbinf.serve.scilifelab.se</a></li>
+        <li>L19 is a questions and answers session, where you can pose questions to prepare for the exam.</li>
+      </ul>
+    </section>
+
+    <!-- 40 -->
+    <section>
+      <h2>Computer Exercises</h2>
+      <p>Four computer exercises (LAB1, 2.5 hp, Pass/Fail):</p>
+      <ul>
+        <li>C1: Hypothesis Testing</li>
+        <li>C2: Machine Learning</li>
+        <li>C3, C4: Multicellular transcriptional systems</li>
+      </ul>
+      <p style="font-size: 0.85em;">C0 (Software and Notebooks) is a voluntary session for getting your software running.</p>
+      <p style="font-size: 0.85em;">The exercises are preferably carried out on the computers in the lab hall, but you are allowed to use your own computer.</p>
+    </section>
+
+    <!-- new: how the computer exercises work -->
+    <section>
+      <h2>How the computer exercises work</h2>
+      <ol class="flow">
+        <li><b>Team up</b>Two students per team. Find your partner and register the team in Canvas.</li>
+        <li><b>Answer the questions</b>Work through the lab instruction together with your partner.</li>
+        <li><b>Go through it with a TA</b>Your team's answers and code. Satisfactory answers give a <b class="pass">Pass</b>.</li>
+      </ol>
+      <ul style="font-size: 0.8em;">
+        <li>Additional questions for those who want to delve deeper (no points)</li>
+        <li>Participation is on-site. If you cannot be there, book a reporting appointment with the TAs.</li>
+        <li>Instructions and datasets: Canvas and <a href="https://statisticalbiotechnology.github.io/cb2030/lab/">statisticalbiotechnology.github.io/cb2030/lab/</a></li>
+      </ul>
+    </section>
+
+    <!-- new: examination and credits -->
+    <section>
+      <h2>Examination</h2>
+      <div class="cards">
+        <div><b>TEN1 – Written exam</b><span>5.0 hp · grades A–E, Fx, F</span></div>
+        <div><b>LAB1 – Computer exercises</b><span>2.5 hp · grades P, F</span></div>
+      </div>
+      <ul style="font-size: 0.85em;">
+        <li>To get a final grade you must pass the written exam (A–E) <em>and</em> get a Pass on the computer exercises.</li>
+        <li>Your final grade is the grade on your written exam.</li>
+        <li>With an Fx you may request a complementary assignment; if satisfactory, the grade is changed to E.</li>
+        <li><b>Sign up for the written exam in advance!</b></li>
+      </ul>
+    </section>
+
+    <!-- 42 -->
+    <section>
+      <h2>Exam</h2>
+      <p style="font-size: 0.85em;">A 4-hour written exam; you may use a calculator. Part A: 12 multiple-choice questions, 2 p each. Part B: 3 essay questions, 5 p each.</p>
+      <div class="exam">
+        <div class="points" role="img" aria-label="Part A: exam part A max 24 points plus quiz activity points max 8, in total max 32 points. Part B: exam part B max 15 points. Total max 47 points.">
+          <div class="box green">Exam – Part A<br>Max 24 p</div>
+          <div class="stack">
+            <div class="box green">Quiz points<br>Max 8 p</div>
+          </div>
+          <div class="sum">Part A<br>Max 32 p</div>
+          <div class="dash"></div>
+          <div class="box blue" style="height: 58px;">Exam – Part B<br>Max 15 p</div>
+          <div></div>
+          <div class="sum">Part B<br>Max 15 p</div>
+          <div class="total">Total Max 47 p</div>
+        </div>
+        <div>
+          <p>At least 16 points on Part A (including activity points) are needed to pass. Below that, Part B is not corrected.</p>
+          <p>If you pass Part A, your grade is set by the total of Part A, Part B and activity points.</p>
+        </div>
+        <table class="grades">
+          <thead><tr><th>Grade</th><th>Min points</th></tr></thead>
+          <tbody>
+            <tr><td>E</td><td>16</td></tr>
+            <tr><td>D</td><td>22</td></tr>
+            <tr><td>C</td><td>31</td></tr>
+            <tr><td>B</td><td>36</td></tr>
+            <tr><td>A</td><td>42</td></tr>
+            <tr><td>Max</td><td>47</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 43 -->
+    <section>
+      <h2>Use of Generative AI</h2>
+      <p>All use of generative AI is prohibited in the course's examination and graded assignments, as it may negatively affect your ability to meet the course's learning objectives.</p>
+      <ul style="font-size: 0.85em;">
+        <li>All examinations, computer exercises and graded assignments must be carried out without the help of generative AI.</li>
+        <li>All submissions must be completely human-generated.</li>
+        <li>This includes all debugging of code.</li>
+      </ul>
+      <p style="font-size: 0.85em;">You are fully responsible for everything you submit and must be able to defend and explain it without the support of generative AI. Unauthorized use may result in disciplinary action.</p>
+      <p class="small muted">Run the labs in Jupyter Notebook – editors such as VS Code and Colab have AI assistants built in.</p>
+    </section>
+
+    <!-- new: practical information -->
+    <section>
+      <h2>Practical information</h2>
+      <ul style="font-size: 0.9em;">
+        <li><b>Canvas</b> is used for all communication, including updates to the course PM. Log in at <a href="https://canvas.kth.se/">canvas.kth.se</a> and look for the CB2030 event.</li>
+        <li><b>Schedule:</b> <a href="https://statisticalbiotechnology.github.io/cb2030/general/schedule">statisticalbiotechnology.github.io/cb2030/general/schedule</a></li>
+        <li><b>Contact:</b> course coordinator Lukas Käll, <a href="mailto:lukas.kall@scilifelab.se">lukas.kall@scilifelab.se</a>. Check Canvas first; your question may already be answered there.</li>
+        <li><b>Disability:</b> you may receive support from <a href="https://www.kth.se/en/student/studentliv/funktionsnedsattning">Funka</a>. Tell the teachers about your needs; Funka does not inform them automatically.</li>
+      </ul>
+    </section>
+
+    <!-- 44 -->
+    <section>
+      <h2>From KTH’s Ethical policy</h2>
+      <blockquote class="policy">
+        <p>“KTH has core values based on democracy, the equal value of all people, human rights and freedoms and a free and open discussion. <b>Equality between men and women and the prevention of all types of discrimination</b> is both a quality issue and a given part of KTH’s core values. <b>Equality and diversity among employees and students</b> is also an important resource for KTH.</p>
+        <p>KTH’s activities are based on the conviction that education and research can and should contribute to better living conditions and to an <b>ecologically, socially and financially sustainable social development</b>. As a technical university, KTH has a special responsibility for developing and conveying knowledge that is necessary for promoting such a sustainable development.”</p>
+      </blockquote>
+      <p class="source">Source: <a href="https://intra.kth.se/polopoly_fs/1.831693.1600688459!/Ethical_Policy.pdf">https://intra.kth.se/polopoly_fs/1.831693.1600688459!/Ethical_Policy.pdf</a></p>
+    </section>
+
+    <!-- 45 -->
+    <section>
+      <h2>JML</h2>
+      <ul class="jml">
+        <li>JML:
+          <ul style="font-size: 1em; list-style: '– ';">
+            <li><b>J</b>ämställdhet (gender equality)</li>
+            <li><b>M</b>ångfald (diversity)</li>
+            <li><b>L</b>ika villkor (equal opportunities/conditions)</li>
+          </ul>
+        </li>
+        <li style="margin-top: 0.8em;">Acronym used at KTH to describe work for change</li>
+      </ul>
+      <p class="source"><a href="https://www.kth.se/om/equality/jamstalldhet-mangfald-och-lika-villkor-1.840259">https://www.kth.se/om/equality/jamstalldhet-mangfald-och-lika-villkor-1.840259</a></p>
+    </section>
+
+    <!-- 46 -->
+    <section>
+      <h2>KTH’s Code of Conduct for All Students and Teachers</h2>
+      <ul style="font-size: 0.85em;">
+        <li>I consider all people to be of equal value.</li>
+        <li>Equal treatment at KTH implies a respectful and inclusive work and study environment free from harassment, sexual harassment, discrimination and offensive behavior. I have a responsibility to treat others with respect.</li>
+        <li>I maintain a professional approach in all meetings and in all my communication.</li>
+        <li>I am aware that discrimination, harassment, sexual harassment and victimization, as well as any contravention of KTH’s core values and guidelines, may be grounds for disciplinary action.</li>
+      </ul>
+      <p class="source"><a href="https://www.kth.se/en/student/studentliv/studentratt/uppforandekod-for-studenter-1.796562">https://www.kth.se/en/student/studentliv/studentratt/uppforandekod-for-studenter-1.796562</a></p>
+    </section>
+
+    <!-- 47 -->
+    <section>
+      <h2>Open discussion and respect</h2>
+      <ul>
+        <li>Please remember to treat each other with respect</li>
+        <li>Open discussion climate in the classroom
+          <ul>
+            <li>All questions are relevant</li>
+            <li>Please give feedback and ask questions</li>
+          </ul>
+        </li>
+        <li>Be mindful of how you give and take space</li>
+        <li>Rotate responsibilities in project groups</li>
+        <li>No one is perfect, both students and teachers need space to develop</li>
+      </ul>
+    </section>
+
+
+    <!-- Mentimeter responses from earlier years -->
+    <section>
+      <h2>Responses from 2019</h2>
+      <figure class="cloud"><img src="img/menti_2019.png" alt="Word cloud of student answers from 2019"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2020</h2>
+      <figure class="cloud"><img src="img/menti_2020.png" alt="Word cloud of student answers from 2020"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2021</h2>
+      <figure class="cloud"><img src="img/menti_2021.png" alt="Word cloud of student answers from 2021"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2024</h2>
+      <figure class="cloud"><img src="img/menti_2024.png" alt="Word cloud of student answers from 2024"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2025</h2>
+      <p class="menti-question">“3 words that I believe describe the concept of Systems Biology”</p>
+      <figure class="cloud"><img src="img/menti_2025.png" alt="Word cloud of student answers from 2025"></figure>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    center: false,
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'fade',
+    plugins: [RevealNotes]
+  });
+</script>
+<script src="demos.js"></script>
+</body>
+</html>

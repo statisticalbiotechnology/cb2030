@@ -42,8 +42,5 @@ We used the following codes:
  | LK | Lukas Käll |
  | TL | Tuuli Lappalainen |
  | SK | Simon Koplev |
- | KA | Konstantinidis Antonopoulos |
- | KJ | Krzysztof Jurdzinski |
- | UC | Ulysse Castet |
- | YZ | Yuqi Zheng |
- | ES | Emilio Skarwan |
+
+Teaching assistants (lab-handledare): Krzysztof Jurdziński, Yuqi Zheng, Ulysse Castet, Konstantinos Antonopoulos, Anna Hensel, Amin Saeidi Kelishami, Cassandra Wivegg, Andrei Tertienko
