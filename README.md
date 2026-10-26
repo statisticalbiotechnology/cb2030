@@ -9,6 +9,7 @@ This site contains some of the material of the course CB2030, including:
 * previous years [questions and answers](qa/)
 * the course book, [Data Science for Biotechnology Students](https://www.kaell.se/dsbook)  
 * the [lab instructions](lab/)
+* the [lecture slides](lect/)
 
 If you are inside the github repository you can reach the html version of the text [here](https://statisticalbiotechnology.github.io/cb2030/)
 

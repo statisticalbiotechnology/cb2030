@@ -11,11 +11,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/white.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 
   <style>
     :root {
-      --kth-blue: #1954a6;
+      --kth-blue: #004791;
+      --kth-navy: #000061;
+      --kth-light-blue: #def0ff;
       --ink: #1d1d1f;
       --muted: #5b5f66;
       --green: #b6d7a8;
@@ -23,15 +25,15 @@
       --blue-box: #cfe2f3;
       --blue-line: #3d6fa8;
       --rule: #d6dbe3;
-      --r-main-font: "Open Sans", Helvetica, Arial, sans-serif;
-      --r-heading-font: "Open Sans", Helvetica, Arial, sans-serif;
+      --r-main-font: Figtree, Arial, sans-serif;
+      --r-heading-font: Figtree, Arial, sans-serif;
       --r-main-color: var(--ink);
       --r-heading-color: var(--kth-blue);
       --r-link-color: var(--kth-blue);
-      --r-link-color-hover: #0d3a78;
+      --r-link-color-hover: var(--kth-navy);
       --r-main-font-size: 30px;
       --r-heading-text-transform: none;
-      --r-heading-font-weight: 600;
+      --r-heading-font-weight: 700;
       --r-heading-letter-spacing: 0;
       --r-heading2-size: 1.55em;
     }
@@ -47,20 +49,22 @@
     .reveal a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .reveal .small { font-size: 0.7em; }
     .reveal .muted { color: var(--muted); }
-    .reveal .source { position: absolute; bottom: 40px; left: 24px; right: 24px; font-size: 0.5em; color: var(--muted); }
+    .reveal .source { position: absolute; bottom: 62px; left: 24px; right: 24px; font-size: 0.5em; color: var(--muted); }
     .reveal .source a { color: var(--muted); word-break: break-all; }
 
-    /* Title and section slides */
+    /* Title and section slides: KTH "title plate" (logo centred at top, title in the
+       middle, subtitle centred at the bottom, white on KTH blue) */
     .reveal section.title-slide { display: flex !important; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-    .reveal section.title-slide h1 { font-size: 2.3em; font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 0.4em; }
-    .reveal section.title-slide .sub { font-size: 1.2em; color: var(--muted); margin-bottom: 1em; }
-    .reveal section.title-slide img.logo { width: 150px; margin: 0; }
+    .reveal section.title-slide h1 { font-size: 2.4em; font-weight: 700; color: #fff; line-height: 1.15; margin: 0; }
+    .reveal section.title-slide .sub { position: absolute; left: 0; right: 0; bottom: 64px; margin: 0; font-size: 1em; color: #fff; }
+    .reveal section.title-slide img.logo { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); width: 120px; margin: 0; }
+    .title .reveal .slide-number { color: var(--kth-light-blue); }
 
     /* Footer shown on content slides */
-    .deck-footer { position: fixed; left: 24px; bottom: 14px; display: flex; align-items: center; gap: 10px; font: 13px "Open Sans", sans-serif; color: var(--muted); z-index: 10; }
-    .deck-footer img { width: 26px; height: 26px; }
+    .deck-footer { position: fixed; left: 24px; bottom: 10px; display: flex; align-items: center; gap: 10px; font: 13px Figtree, Arial, sans-serif; color: var(--muted); z-index: 10; }
+    .deck-footer img { width: 40px; height: 40px; }
     .title .deck-footer { display: none; }
-    .reveal .slide-number { background: none; color: var(--muted); font: 13px "Open Sans", sans-serif; bottom: 14px; right: 90px; }
+    .reveal .slide-number { background: none; color: var(--muted); font: 13px Figtree, Arial, sans-serif; bottom: 14px; right: 90px; }
     .reveal .slide-number a { text-decoration: none; }
 
     /* Outline */
@@ -74,7 +78,7 @@
     .reveal figure { margin: 0; text-align: center; }
     .reveal figure img { margin: 0; }
     .fig-svg { display: block; margin: 0 auto; }
-    .fig-svg text { font-family: "Open Sans", sans-serif; fill: var(--ink); }
+    .fig-svg text { font-family: Figtree, Arial, sans-serif; fill: var(--ink); }
     .systems { display: flex; justify-content: space-around; align-items: flex-end; margin-top: 1.2em; }
     .systems figure img { height: 280px; width: auto; object-fit: contain; }
     .systems figcaption { font-weight: 700; margin-top: 0.6em; }
@@ -135,8 +139,8 @@
     /* Emergence: Anderson */
     .reveal blockquote.big-quote { width: auto; margin: 0.2em 0 0.9em; padding: 0; box-shadow: none; background: none; font-size: 1.25em; font-style: italic; color: var(--ink); }
     .levels { display: block; margin: 0 auto; }
-    .levels .lvl-label text { font-family: "Open Sans", sans-serif; font-size: 28px; font-weight: 600; fill: var(--ink); text-anchor: middle; }
-    .levels .lvl-arrow line { stroke: #1954a6; stroke-width: 7; marker-end: url(#lvl-head); }
+    .levels .lvl-label text { font-family: Figtree, Arial, sans-serif; font-size: 28px; font-weight: 600; fill: var(--ink); text-anchor: middle; }
+    .levels .lvl-arrow line { stroke: #004791; stroke-width: 7; marker-end: url(#lvl-head); }
 
     /* Live demos */
     .demo { display: flex; gap: 28px; align-items: flex-start; }
@@ -156,10 +160,10 @@
     .vs { display: flex; justify-content: center; align-items: flex-end; gap: 48px; margin-top: 0.4em; }
     .vs figcaption { font-weight: 600; font-size: 0.75em; margin-top: 0.4em; }
     .measure { display: block; margin: 0.2em auto 0; }
-    .measure text { font-family: "Open Sans", sans-serif; }
+    .measure text { font-family: Figtree, Arial, sans-serif; }
     .measure .omics text { font-size: 26px; font-weight: 600; fill: var(--ink); }
     .measure .axis { font-size: 20px; fill: var(--muted); }
-    .measure .arr { stroke: #1954a6; stroke-width: 4; marker-end: url(#m-head); }
+    .measure .arr { stroke: #004791; stroke-width: 4; marker-end: url(#m-head); }
     .measure .arr.big { stroke-width: 8; }
     .reveal table.roadmap { width: 100%; font-size: 0.85em; }
     .reveal table.roadmap td:last-child { color: var(--kth-blue); font-weight: 700; white-space: nowrap; }
@@ -171,24 +175,24 @@
     /* Repressilator */
     .rep-row { display: flex; align-items: center; gap: 24px; margin-bottom: 4px; }
     .circuit { width: 260px; height: 236px; flex: none; }
-    .circuit text { font-family: "Open Sans", sans-serif; font-size: 22px; fill: var(--ink); }
+    .circuit text { font-family: Figtree, Arial, sans-serif; font-size: 22px; fill: var(--ink); }
     .circuit .repress { fill: none; stroke: var(--ink); stroke-width: 3; marker-end: url(#tbar); }
-    .rep-chart { width: 900px; height: 272px; flex: none; }
+    .rep-chart { width: 846px; height: 256px; flex: none; }
     .rep-chart .axis { stroke: var(--rule); stroke-width: 1; }
-    .rep-chart .axis-label { font-family: "Open Sans", sans-serif; font-size: 16px; fill: var(--muted); }
+    .rep-chart .axis-label { font-family: Figtree, Arial, sans-serif; font-size: 16px; fill: var(--muted); }
     .rep-chart .trace { fill: none; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
   </style>
 </head>
 <body>
 <div class="reveal">
-  <div class="deck-footer"><img src="img/kth_logo.png" alt="">CB2030 · Systems Biology</div>
+  <div class="deck-footer"><img src="img/kth_logo_navy.svg" alt="">CB2030 · Systems Biology</div>
   <div class="slides">
 
     <!-- 1 -->
-    <section class="title-slide" data-state="title">
+    <section class="title-slide" data-state="title" data-background-color="#004791">
+      <img class="logo" src="img/kth_logo_white.svg" alt="KTH logo">
       <h1>Introduction to the course<br>Systems Biology</h1>
       <p class="sub">CB2030</p>
-      <img class="logo" src="img/kth_logo.png" alt="KTH logo">
     </section>
 
     <!-- 2 -->
@@ -204,10 +208,10 @@
     </section>
 
     <!-- 4 -->
-    <section class="title-slide" data-state="title">
+    <section class="title-slide" data-state="title" data-background-color="#004791">
+      <img class="logo" src="img/kth_logo_white.svg" alt="KTH logo">
       <h1>My view on Systems Biology</h1>
       <p class="sub">Lukas Käll</p>
-      <img class="logo" src="img/kth_logo.png" alt="KTH logo">
     </section>
 
     <!-- 5 -->
@@ -307,7 +311,7 @@
       <svg class="levels" viewBox="0 0 1000 280" width="1060" role="img" aria-label="Four levels of complexity: an atom for physics, a molecule for chemistry, a cell for biology and a brain for psychology">
         <defs>
           <marker id="lvl-head" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#1954a6"/>
+            <path d="M0,0 L10,5 L0,10 z" fill="#004791"/>
           </marker>
         </defs>
         <g class="lvl-arrow">
@@ -318,7 +322,7 @@
 
         <!-- Physics: atom -->
         <g transform="translate(120 115)">
-          <g fill="none" stroke="#1954a6" stroke-width="3">
+          <g fill="none" stroke="#004791" stroke-width="3">
             <ellipse rx="88" ry="30"/>
             <ellipse rx="88" ry="30" transform="rotate(60)"/>
             <ellipse rx="88" ry="30" transform="rotate(120)"/>
@@ -331,7 +335,7 @@
             <circle cx="7" cy="10" r="10" fill="#86b6ef"/>
             <circle cx="0" cy="0" r="10" fill="#86b6ef"/>
           </g>
-          <g fill="#1954a6" stroke="#fff" stroke-width="2">
+          <g fill="#004791" stroke="#fff" stroke-width="2">
             <circle cx="-82.7" cy="-10.3" r="8"/>
             <circle cx="44" cy="76.2" r="8"/>
             <circle cx="44" cy="-76.2" r="8"/>
@@ -372,13 +376,13 @@
 
         <!-- Biology: cell -->
         <g transform="translate(627 115)">
-          <path d="M-86,0 C-90,-48 -45,-74 5,-72 C55,-70 92,-40 88,4 C84,48 45,74 -5,72 C-55,70 -82,40 -86,0 Z" fill="#e8f1fc" stroke="#1954a6" stroke-width="4"/>
+          <path d="M-86,0 C-90,-48 -45,-74 5,-72 C55,-70 92,-40 88,4 C84,48 45,74 -5,72 C-55,70 -82,40 -86,0 Z" fill="#e8f1fc" stroke="#004791" stroke-width="4"/>
           <g fill="none" stroke="#3987e5" stroke-width="3" stroke-linecap="round">
             <path d="M-56,-30 C-48,-50 -20,-56 4,-46"/>
             <path d="M-60,-16 C-58,-36 -30,-48 -6,-38"/>
             <path d="M-50,34 C-34,50 -6,50 12,38"/>
           </g>
-          <circle cx="-14" cy="-2" r="30" fill="#86b6ef" stroke="#1954a6" stroke-width="3"/>
+          <circle cx="-14" cy="-2" r="30" fill="#86b6ef" stroke="#004791" stroke-width="3"/>
           <circle cx="-6" cy="-8" r="9" fill="#1c5cab"/>
           <g fill="#f7c4a8" stroke="#eb6834" stroke-width="3">
             <rect x="34" y="-46" width="40" height="20" rx="10" transform="rotate(-25 54 -36)"/>
@@ -558,7 +562,7 @@
       <svg class="measure" viewBox="0 0 1170 450" width="1150" role="img" aria-label="A cell measured with genomics, transcriptomics, proteomics and metabolomics, giving a data matrix of about 20 000 genes by 100 samples">
         <defs>
           <marker id="m-head" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#1954a6"/>
+            <path d="M0,0 L10,5 L0,10 z" fill="#004791"/>
           </marker>
         </defs>
         <image href="img/cell.png" x="10" y="45" width="280" height="343"/>
@@ -1080,12 +1084,14 @@
     </section>
 
     <!-- Simon's view on Systems Biology -->
-    <section class="title-slide" data-state="title">
+    <section class="title-slide" data-state="title" data-background-color="#004791">
+      <img class="logo" src="img/kth_logo_white.svg" alt="KTH logo">
       <h1>Simon Koplev</h1>
     </section>
 
     <!-- course PM (Course_PM_CB2030_ht26_v1) -->
-    <section class="title-slide" data-state="title">
+    <section class="title-slide" data-state="title" data-background-color="#004791">
+      <img class="logo" src="img/kth_logo_white.svg" alt="KTH logo">
       <h1>Walkthrough of Course PM</h1>
     </section>
 

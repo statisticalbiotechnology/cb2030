@@ -47,7 +47,7 @@
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#1954a6';
+      ctx.fillStyle = '#004791';
       for (let y = 0; y < ROWS; y++)
         for (let x = 0; x < COLS; x++)
           if (a[(y + M) * C + x + M]) ctx.fillRect(x * CELL + 1, y * CELL + 1, CELL - 2, CELL - 2);
@@ -136,7 +136,7 @@
     function draw() {
       ctx.setTransform(scale, 0, 0, scale, 0, 0);
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = '#1954a6';
+      ctx.fillStyle = '#004791';
       for (let i = 0; i < N; i++) {
         const a = Math.atan2(vy[i], vx[i]), c = Math.cos(a), s = Math.sin(a);
         ctx.beginPath();
