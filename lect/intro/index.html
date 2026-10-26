@@ -153,6 +153,24 @@
     #life canvas { cursor: crosshair; }
     .reveal .life-rules { font-size: 0.85em; color: var(--muted); margin-top: 1em; line-height: 1.8; }
 
+    /* Collective oscillations (Wang & Tang) */
+    .wt-fig { display: block; margin: 0.4em auto 0; }
+    .wt-fig text { font-family: Figtree, Arial, sans-serif; font-size: 30px; font-weight: 700; fill: #91230d; }
+    .reveal p.wt-take { font-size: 0.85em; margin: 0.6em 0 0; }
+
+    /* Game of Life rules */
+    .gol-rules { display: grid; grid-template-columns: auto auto; justify-content: center; gap: 30px 110px; margin-top: 0.4em; }
+    .gol-rules figure { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin: 0; }
+    .gol-rules figcaption { text-align: left; font-size: 0.8em; line-height: 1.3; white-space: nowrap; }
+    .gol-rules figcaption b { color: var(--kth-blue); margin-right: 0.4em; }
+    .gol-rules figcaption span { color: var(--muted); }
+    .gol-bitmap .alive { fill: var(--kth-blue); }
+    .gol-bitmap .dead { fill: #eef2f7; }
+    .gol-bitmap .ctx { opacity: 0.3; }
+    .gol-bitmap .focus { fill: none; stroke: var(--ink); stroke-width: 4; }
+    .gol-bitmap .gol-arrow { stroke: var(--muted); stroke-width: 5; fill: none; }
+    .gol-bitmap .gol-head { fill: var(--muted); }
+
     /* Video clips */
     .reveal video.clip { display: block; margin: 0.4em auto 0; width: 720px; height: auto; border-radius: 8px; }
 
@@ -167,6 +185,23 @@
     .measure .arr.big { stroke-width: 8; }
     .reveal table.roadmap { width: 100%; font-size: 0.85em; }
     .reveal table.roadmap td:last-child { color: var(--kth-blue); font-weight: 700; white-space: nowrap; }
+
+    /* Generative AI learning penalty charts */
+    .aichart { display: block; margin: 0 auto; }
+    .aichart text { font-family: Figtree, Arial, sans-serif; }
+    .aichart .ptitle { font-size: 24px; font-weight: 700; fill: var(--ink); }
+    .aichart .tick { font-size: 18px; fill: var(--muted); }
+    .aichart .axis { font-size: 20px; fill: var(--muted); }
+    .aichart .grid { stroke: #e6e6e6; stroke-width: 1; }
+    .aichart .base { stroke: #a5a5a5; stroke-width: 1.5; }
+    .aichart .zero { stroke: #a5a5a5; stroke-width: 2; stroke-dasharray: 6 5; }
+    .aichart .never { fill: none; stroke: #8a8f98; stroke-width: 3; stroke-dasharray: 9 6; stroke-linejoin: round; }
+    .aichart .ai { fill: none; stroke: #e86a58; stroke-width: 3.5; stroke-linejoin: round; }
+    .aichart .ai-dot { fill: #e86a58; stroke: #fff; stroke-width: 2; }
+    .aichart .effect { font-size: 30px; font-weight: 700; fill: var(--ink); dominant-baseline: middle; }
+    .aichart .lab { font-size: 20px; font-weight: 600; fill: var(--ink); }
+    .aichart .note { font-size: 20px; fill: var(--muted); font-style: italic; }
+    .reveal p.ergo { font-weight: 700; color: var(--kth-blue); font-size: 0.85em; margin: 0.3em 0 0; }
 
     /* Mentimeter word clouds */
     .reveal .menti-question { color: var(--muted); font-style: italic; margin-top: -0.6em; }
@@ -433,6 +468,123 @@
       <aside class="notes">Anderson: “Psychology is not applied biology, nor is biology applied chemistry.” Knowing the laws of the parts does not let you reconstruct the behaviour of the whole.</aside>
     </section>
 
+    <!-- new: rules of the Game of Life -->
+    <section>
+      <h2>Rules of the Game of Life</h2>
+      <p>Each cell looks at its 8 neighbours. All cells update at the same time.</p>
+      <div class="gol-rules">
+        <figure>
+          <figcaption><b>Born</b><span>exactly 3 neighbours</span></figcaption>
+          <svg class="gol-bitmap" viewBox="-4 -4 374 146" width="423" height="165" role="img" aria-label="A dead cell with three live neighbours comes alive">
+          <rect class="alive" x="2" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="2" width="42" height="42" rx="4"/>
+          <rect class="alive" x="94" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="2" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="94" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="2" y="94" width="42" height="42" rx="4"/>
+          <rect class="alive" x="48" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead" x="94" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="46" y="46" width="46" height="46" rx="6"/>
+          <path class="gol-arrow" d="M156,69.0 H200"/><path class="gol-head" d="M198,58.0 L214,69.0 L198,80.0 Z"/>
+          <rect class="alive ctx" x="230" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="276" y="2" width="42" height="42" rx="4"/>
+          <rect class="alive ctx" x="322" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="230" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive" x="276" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="322" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="230" y="94" width="42" height="42" rx="4"/>
+          <rect class="alive ctx" x="276" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="322" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="274" y="46" width="46" height="46" rx="6"/>
+          </svg>
+        </figure>
+        <figure>
+          <figcaption><b>Survives</b><span>2 or 3 neighbours</span></figcaption>
+          <svg class="gol-bitmap" viewBox="-4 -4 374 146" width="423" height="165" role="img" aria-label="A live cell with two live neighbours stays alive">
+          <rect class="alive" x="2" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="94" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="2" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive" x="48" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="94" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="2" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="94" width="42" height="42" rx="4"/>
+          <rect class="alive" x="94" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="46" y="46" width="46" height="46" rx="6"/>
+          <path class="gol-arrow" d="M156,69.0 H200"/><path class="gol-head" d="M198,58.0 L214,69.0 L198,80.0 Z"/>
+          <rect class="alive ctx" x="230" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="276" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="322" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="230" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive" x="276" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="322" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="230" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="276" y="94" width="42" height="42" rx="4"/>
+          <rect class="alive ctx" x="322" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="274" y="46" width="46" height="46" rx="6"/>
+          </svg>
+        </figure>
+        <figure>
+          <figcaption><b>Dies of loneliness</b><span>0 or 1 neighbour</span></figcaption>
+          <svg class="gol-bitmap" viewBox="-4 -4 374 146" width="423" height="165" role="img" aria-label="A live cell with one live neighbour dies">
+          <rect class="dead" x="2" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="94" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="2" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive" x="48" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive" x="94" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="2" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead" x="94" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="46" y="46" width="46" height="46" rx="6"/>
+          <path class="gol-arrow" d="M156,69.0 H200"/><path class="gol-head" d="M198,58.0 L214,69.0 L198,80.0 Z"/>
+          <rect class="dead ctx" x="230" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="276" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="322" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="230" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="276" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive ctx" x="322" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="230" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="276" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="322" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="274" y="46" width="46" height="46" rx="6"/>
+          </svg>
+        </figure>
+        <figure>
+          <figcaption><b>Dies of overcrowding</b><span>4 or more neighbours</span></figcaption>
+          <svg class="gol-bitmap" viewBox="-4 -4 374 146" width="423" height="165" role="img" aria-label="A live cell with four live neighbours dies">
+          <rect class="alive" x="2" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="2" width="42" height="42" rx="4"/>
+          <rect class="alive" x="94" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead" x="2" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive" x="48" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="94" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive" x="2" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead" x="48" y="94" width="42" height="42" rx="4"/>
+          <rect class="alive" x="94" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="46" y="46" width="46" height="46" rx="6"/>
+          <path class="gol-arrow" d="M156,69.0 H200"/><path class="gol-head" d="M198,58.0 L214,69.0 L198,80.0 Z"/>
+          <rect class="alive ctx" x="230" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="276" y="2" width="42" height="42" rx="4"/>
+          <rect class="alive ctx" x="322" y="2" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="230" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead" x="276" y="48" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="322" y="48" width="42" height="42" rx="4"/>
+          <rect class="alive ctx" x="230" y="94" width="42" height="42" rx="4"/>
+          <rect class="dead ctx" x="276" y="94" width="42" height="42" rx="4"/>
+          <rect class="alive ctx" x="322" y="94" width="42" height="42" rx="4"/>
+          <rect class="focus" x="274" y="46" width="46" height="46" rx="6"/>
+          </svg>
+        </figure>
+      </div>
+      <aside class="notes">
+        The fate of the centre cell (outlined) in the next generation depends only on how many of its eight neighbours are alive now.
+        A dead cell comes alive with exactly three live neighbours. A live cell survives with two or three, and dies with fewer (loneliness) or more (overcrowding).
+        That is the whole rule set. Everything on the next slide follows from it.
+      </aside>
+    </section>
+
     <!-- new: Game of Life demo (demos.js) -->
     <section id="life">
       <h2>Game of Life</h2>
@@ -474,14 +626,6 @@
       </aside>
     </section>
 
-    <!-- 12 -->
-    <section>
-      <h2 style="font-size: 1.05em;">Emergism: Spontaneous oscillations in a communicating cell population</h2>
-      <figure><img src="img/wang_tang_2019.png" alt="a: cells coupled through a shared displacement; b: a cell whose activity a is coupled to other cells through a shared signal concentration s" style="height: 520px;"></figure>
-      <p class="small muted" style="text-align: right; margin-top: -1.2em;">[Wang &amp; Tang, <i>Nat Commun</i> 2019]</p>
-      <aside class="notes">Wang &amp; Tang, “Emergence of collective oscillations in adaptive cells”, Nat Commun 10 (2019), doi:10.1038/s41467-019-13573-9. Cells that respond to changes in a shared signal can drive collective oscillations.</aside>
-    </section>
-
     <!-- new: repressilator (charts drawn by demos.js) -->
     <section id="repressilator">
       <h2>The repressilator</h2>
@@ -518,6 +662,22 @@
       <aside class="notes">
         Top: one gene repressing itself settles to a steady level. Bottom: three repressors in a ring (lacI ⊣ tetR ⊣ cI ⊣ lacI) oscillate, although no single gene oscillates.
         Built in E. coli with a GFP readout; the period (hours) is longer than the cell cycle. Simulated with the Elowitz &amp; Leibler model (α = 216, α₀ = 0.216, β = 5, n = 2), same parameters in both panels.
+      </aside>
+    </section>
+
+    <!-- 12 -->
+    <section>
+      <h2 style="font-size: 1.25em;">Spontaneous oscillations in a communicating cell population</h2>
+      <svg class="wt-fig" viewBox="0 0 997 350" width="1110" height="390" role="img" aria-label="A yeast cell's internal network sets its activity a, which releases a shared signal s, acetaldehyde, into the medium; s feeds back on this cell and on other cells">
+        <image href="img/wang_tang_2019.png" x="0" y="0" width="997" height="299"/>
+        <text x="680" y="338" text-anchor="middle">s = acetaldehyde</text>
+      </svg>
+      <p class="wt-take">Each yeast cell senses and secretes acetaldehyde. Alone, a cell is quiet; above a critical cell density, the whole population oscillates.</p>
+      <p class="cite">Figure: Wang &amp; Tang, “Emergence of collective oscillations in adaptive cells”, <i>Nat Commun</i> 10:5613 (2019), CC BY 4.0</p>
+      <aside class="notes">
+        Yeast glycolysis, one of the paper's examples. Each cell's glycolysis responds to acetaldehyde (via its NAD/NADH balance) and releases acetaldehyde into the medium, where it is diluted and degraded.
+        The cells adapt: they respond to changes in the acetaldehyde level rather than to the level itself, so they react slightly ahead of the signal. That lead compensates the lag of the medium, and with enough cells the amplification beats the loss.
+        Above a critical density the quiet state becomes unstable and the population oscillates together (dynamical quorum sensing). No cell oscillates on its own: the rhythm is a property of the population and its shared medium. Contrast with the repressilator, where the oscillation is wired inside one cell.
       </aside>
     </section>
 
@@ -1089,6 +1249,33 @@
       <h1>Simon Koplev</h1>
     </section>
 
+    <!-- Mentimeter responses from earlier years -->
+    <section>
+      <h2>Responses from 2019</h2>
+      <figure class="cloud"><img src="img/menti_2019.png" alt="Word cloud of student answers from 2019"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2020</h2>
+      <figure class="cloud"><img src="img/menti_2020.png" alt="Word cloud of student answers from 2020"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2021</h2>
+      <figure class="cloud"><img src="img/menti_2021.png" alt="Word cloud of student answers from 2021"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2024</h2>
+      <figure class="cloud"><img src="img/menti_2024.png" alt="Word cloud of student answers from 2024"></figure>
+    </section>
+
+    <section>
+      <h2>Responses from 2025</h2>
+      <p class="menti-question">“3 words that I believe describe the concept of Systems Biology”</p>
+      <figure class="cloud"><img src="img/menti_2025.png" alt="Word cloud of student answers from 2025"></figure>
+    </section>
+
     <!-- course PM (Course_PM_CB2030_ht26_v1) -->
     <section class="title-slide" data-state="title" data-background-color="#004791">
       <img class="logo" src="img/kth_logo_white.svg" alt="KTH logo">
@@ -1237,6 +1424,141 @@
       </div>
     </section>
 
+    <!-- from the CB2442 introduction: the generative AI learning penalty -->
+    <section>
+      <h2>The LLM ate my homework …</h2>
+      <svg class="aichart" viewBox="0 0 1200 460" width="1140" height="437" role="img" aria-label="Pupils who start using generative AI raise their homework scores by 18 percent, but their closed-book exam scores fall by 20 percent within six months; pupils not using AI stay at about 100.">
+      <g class="legend"><line class="ai" x1="70" x2="110" y1="20" y2="20"/><text class="lab" x="120" y="27">AI users</text><line class="never" x1="240" x2="280" y1="20" y2="20"/><text class="lab" x="290" y="27">Not using AI</text></g>
+      <text class="ptitle" x="70" y="70">Homework score</text>
+      <line class="grid" x1="70" x2="470" y1="360.0" y2="360.0"/>
+      <text class="tick" x="60" y="366.0" text-anchor="end">80</text>
+      <line class="grid" x1="70" x2="470" y1="300.0" y2="300.0"/>
+      <text class="tick" x="60" y="306.0" text-anchor="end">90</text>
+      <line class="grid" x1="70" x2="470" y1="240.0" y2="240.0"/>
+      <text class="tick" x="60" y="246.0" text-anchor="end">100</text>
+      <line class="grid" x1="70" x2="470" y1="180.0" y2="180.0"/>
+      <text class="tick" x="60" y="186.0" text-anchor="end">110</text>
+      <line class="grid" x1="70" x2="470" y1="120.0" y2="120.0"/>
+      <text class="tick" x="60" y="126.0" text-anchor="end">120</text>
+      <text class="tick" x="70.0" y="418" text-anchor="middle">-10</text>
+      <text class="tick" x="170.0" y="418" text-anchor="middle">-5</text>
+      <text class="tick" x="270.0" y="418" text-anchor="middle">0</text>
+      <text class="tick" x="370.0" y="418" text-anchor="middle">5</text>
+      <text class="tick" x="470.0" y="418" text-anchor="middle">10</text>
+      <line class="zero" x1="270.0" x2="270.0" y1="96.0" y2="390"/>
+      <line class="base" x1="70" x2="470" y1="390" y2="390"/>
+      <polyline class="never" points="70.0,242.0 90.0,241.4 110.0,240.5 130.0,239.9 150.0,239.6 170.0,239.0 190.0,238.6 210.0,238.3 230.0,238.0 250.0,237.6 270.0,237.4 290.0,237.4 310.0,237.5 330.0,237.5 350.0,237.5 370.0,237.7 390.0,237.8 410.0,237.8 430.0,237.8 450.0,238.0 470.0,238.4"><title>Students not using AI</title></polyline>
+      <polyline class="ai" points="70.0,242.2 90.0,241.3 110.0,240.6 130.0,240.2 150.0,239.6 170.0,238.7 190.0,238.6 210.0,238.4 230.0,238.3 250.0,238.2 270.0,238.5 290.0,214.1 310.0,187.0 330.0,160.1 350.0,140.2 370.0,131.5 390.0,129.3 410.0,128.2 430.0,127.8 450.0,128.2 470.0,128.5"><title>AI users</title></polyline>
+      <circle class="ai-dot" cx="70.0" cy="242.2" r="4.5"><title>Month -10: 99.6</title></circle>
+      <circle class="ai-dot" cx="90.0" cy="241.3" r="4.5"><title>Month -9: 99.8</title></circle>
+      <circle class="ai-dot" cx="110.0" cy="240.6" r="4.5"><title>Month -8: 99.9</title></circle>
+      <circle class="ai-dot" cx="130.0" cy="240.2" r="4.5"><title>Month -7: 100.0</title></circle>
+      <circle class="ai-dot" cx="150.0" cy="239.6" r="4.5"><title>Month -6: 100.1</title></circle>
+      <circle class="ai-dot" cx="170.0" cy="238.7" r="4.5"><title>Month -5: 100.2</title></circle>
+      <circle class="ai-dot" cx="190.0" cy="238.6" r="4.5"><title>Month -4: 100.2</title></circle>
+      <circle class="ai-dot" cx="210.0" cy="238.4" r="4.5"><title>Month -3: 100.3</title></circle>
+      <circle class="ai-dot" cx="230.0" cy="238.3" r="4.5"><title>Month -2: 100.3</title></circle>
+      <circle class="ai-dot" cx="250.0" cy="238.2" r="4.5"><title>Month -1: 100.3</title></circle>
+      <circle class="ai-dot" cx="270.0" cy="238.5" r="4.5"><title>Month 0: 100.2</title></circle>
+      <circle class="ai-dot" cx="290.0" cy="214.1" r="4.5"><title>Month 1: 104.3</title></circle>
+      <circle class="ai-dot" cx="310.0" cy="187.0" r="4.5"><title>Month 2: 108.8</title></circle>
+      <circle class="ai-dot" cx="330.0" cy="160.1" r="4.5"><title>Month 3: 113.3</title></circle>
+      <circle class="ai-dot" cx="350.0" cy="140.2" r="4.5"><title>Month 4: 116.6</title></circle>
+      <circle class="ai-dot" cx="370.0" cy="131.5" r="4.5"><title>Month 5: 118.1</title></circle>
+      <circle class="ai-dot" cx="390.0" cy="129.3" r="4.5"><title>Month 6: 118.5</title></circle>
+      <circle class="ai-dot" cx="410.0" cy="128.2" r="4.5"><title>Month 7: 118.6</title></circle>
+      <circle class="ai-dot" cx="430.0" cy="127.8" r="4.5"><title>Month 8: 118.7</title></circle>
+      <circle class="ai-dot" cx="450.0" cy="128.2" r="4.5"><title>Month 9: 118.6</title></circle>
+      <circle class="ai-dot" cx="470.0" cy="128.5" r="4.5"><title>Month 10: 118.6</title></circle>
+      <text class="effect" x="484.0" y="128.5">+18%</text>
+      <text class="ptitle" x="680" y="70">Exam score</text>
+      <line class="grid" x1="680" x2="1080" y1="360.0" y2="360.0"/>
+      <text class="tick" x="670" y="366.0" text-anchor="end">80</text>
+      <line class="grid" x1="680" x2="1080" y1="300.0" y2="300.0"/>
+      <text class="tick" x="670" y="306.0" text-anchor="end">90</text>
+      <line class="grid" x1="680" x2="1080" y1="240.0" y2="240.0"/>
+      <text class="tick" x="670" y="246.0" text-anchor="end">100</text>
+      <line class="grid" x1="680" x2="1080" y1="180.0" y2="180.0"/>
+      <text class="tick" x="670" y="186.0" text-anchor="end">110</text>
+      <line class="grid" x1="680" x2="1080" y1="120.0" y2="120.0"/>
+      <text class="tick" x="670" y="126.0" text-anchor="end">120</text>
+      <text class="tick" x="680.0" y="418" text-anchor="middle">-10</text>
+      <text class="tick" x="780.0" y="418" text-anchor="middle">-5</text>
+      <text class="tick" x="880.0" y="418" text-anchor="middle">0</text>
+      <text class="tick" x="980.0" y="418" text-anchor="middle">5</text>
+      <text class="tick" x="1080.0" y="418" text-anchor="middle">10</text>
+      <line class="zero" x1="880.0" x2="880.0" y1="96.0" y2="390"/>
+      <line class="base" x1="680" x2="1080" y1="390" y2="390"/>
+      <polyline class="never" points="680.0,241.4 700.0,241.6 720.0,241.0 740.0,240.4 760.0,239.5 780.0,238.4 800.0,237.7 820.0,236.8 840.0,235.4 860.0,233.9 880.0,233.3 900.0,233.2 920.0,233.0 940.0,232.6 960.0,232.3 980.0,232.4 1000.0,232.2 1020.0,232.4 1040.0,232.6 1060.0,232.1 1080.0,232.2"><title>Students not using AI</title></polyline>
+      <polyline class="ai" points="680.0,240.2 700.0,240.1 720.0,239.6 740.0,239.1 760.0,237.7 780.0,237.4 800.0,236.9 820.0,235.7 840.0,234.7 860.0,233.6 880.0,241.5 900.0,250.8 920.0,284.9 940.0,307.9 960.0,336.3 980.0,350.8 1000.0,354.1 1020.0,354.1 1040.0,352.3 1060.0,349.7 1080.0,350.2"><title>AI users</title></polyline>
+      <circle class="ai-dot" cx="680.0" cy="240.2" r="4.5"><title>Month -10: 100.0</title></circle>
+      <circle class="ai-dot" cx="700.0" cy="240.1" r="4.5"><title>Month -9: 100.0</title></circle>
+      <circle class="ai-dot" cx="720.0" cy="239.6" r="4.5"><title>Month -8: 100.1</title></circle>
+      <circle class="ai-dot" cx="740.0" cy="239.1" r="4.5"><title>Month -7: 100.2</title></circle>
+      <circle class="ai-dot" cx="760.0" cy="237.7" r="4.5"><title>Month -6: 100.4</title></circle>
+      <circle class="ai-dot" cx="780.0" cy="237.4" r="4.5"><title>Month -5: 100.4</title></circle>
+      <circle class="ai-dot" cx="800.0" cy="236.9" r="4.5"><title>Month -4: 100.5</title></circle>
+      <circle class="ai-dot" cx="820.0" cy="235.7" r="4.5"><title>Month -3: 100.7</title></circle>
+      <circle class="ai-dot" cx="840.0" cy="234.7" r="4.5"><title>Month -2: 100.9</title></circle>
+      <circle class="ai-dot" cx="860.0" cy="233.6" r="4.5"><title>Month -1: 101.1</title></circle>
+      <circle class="ai-dot" cx="880.0" cy="241.5" r="4.5"><title>Month 0: 99.8</title></circle>
+      <circle class="ai-dot" cx="900.0" cy="250.8" r="4.5"><title>Month 1: 98.2</title></circle>
+      <circle class="ai-dot" cx="920.0" cy="284.9" r="4.5"><title>Month 2: 92.5</title></circle>
+      <circle class="ai-dot" cx="940.0" cy="307.9" r="4.5"><title>Month 3: 88.7</title></circle>
+      <circle class="ai-dot" cx="960.0" cy="336.3" r="4.5"><title>Month 4: 84.0</title></circle>
+      <circle class="ai-dot" cx="980.0" cy="350.8" r="4.5"><title>Month 5: 81.5</title></circle>
+      <circle class="ai-dot" cx="1000.0" cy="354.1" r="4.5"><title>Month 6: 81.0</title></circle>
+      <circle class="ai-dot" cx="1020.0" cy="354.1" r="4.5"><title>Month 7: 81.0</title></circle>
+      <circle class="ai-dot" cx="1040.0" cy="352.3" r="4.5"><title>Month 8: 81.3</title></circle>
+      <circle class="ai-dot" cx="1060.0" cy="349.7" r="4.5"><title>Month 9: 81.7</title></circle>
+      <circle class="ai-dot" cx="1080.0" cy="350.2" r="4.5"><title>Month 10: 81.6</title></circle>
+      <text class="effect" x="1094.0" y="350.2">−20%</text>
+      <text class="note" x="262.0" y="108.0" text-anchor="end">AI use starts</text>
+      <text class="lab ai-lab" x="420.0" y="159.0" text-anchor="middle">AI users</text>
+      <text class="lab no-lab" x="470.0" y="264.0" text-anchor="end">Not using AI</text>
+      <text class="lab ai-lab" x="1030.0" y="379.2" text-anchor="middle">AI users</text>
+      <text class="lab no-lab" x="1080.0" y="210.0" text-anchor="end">Not using AI</text>
+      <text class="axis" x="605" y="452" text-anchor="middle">Months since starting to use generative AI</text>
+      <text class="axis" transform="translate(14 240) rotate(-90)" text-anchor="middle">Score (100 = average)</text>
+      </svg>
+      <p class="cite">26,811 pupils aged 12–18, followed for 30 months. Source: Strömberg, Lei &amp; Wu, “The generative AI learning penalty: evidence from Chinese secondary education”, <a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:21577">CEPR DP 21577</a> (2026). Redrawn from the paper’s Fig. 2.</p>
+      <aside class="notes">Chinese secondary school pupils, staggered adoption of generative AI (difference-in-differences). Homework scores rise by 18% and completion time drops by 30%, but closed-book exam scores fall by 20% within six months. High-stakes entrance exams fall by 18–24%, with the full penalty after about two years.</aside>
+    </section>
+
+    <section>
+      <h2>Rightly used, there is nothing bad with an LLM</h2>
+      <svg class="aichart" viewBox="0 0 1100 460" width="1012" height="423" role="img" aria-label="Median exam score against homework completion time. AI users who finish their homework in under 45 minutes score about 70 to 78; from 55 to 75 minutes AI users and non-users score the same, about 100.">
+      <g class="legend"><line class="ai" x1="90" x2="130" y1="20" y2="20"/><text class="lab" x="140" y="27">AI users</text><line class="never" x1="260" x2="300" y1="20" y2="20"/><text class="lab" x="310" y="27">Not using AI</text></g>
+      <line class="grid" x1="90" x2="1040" y1="390.0" y2="390.0"/>
+      <text class="tick" x="80" y="396.0" text-anchor="end">60</text>
+      <line class="grid" x1="90" x2="1040" y1="288.5" y2="288.5"/>
+      <text class="tick" x="80" y="294.5" text-anchor="end">80</text>
+      <line class="grid" x1="90" x2="1040" y1="186.9" y2="186.9"/>
+      <text class="tick" x="80" y="192.9" text-anchor="end">100</text>
+      <line class="grid" x1="90" x2="1040" y1="85.4" y2="85.4"/>
+      <text class="tick" x="80" y="91.4" text-anchor="end">120</text>
+      <text class="tick" x="90.0" y="418" text-anchor="middle">20</text>
+      <text class="tick" x="236.2" y="418" text-anchor="middle">30</text>
+      <text class="tick" x="382.3" y="418" text-anchor="middle">40</text>
+      <text class="tick" x="528.5" y="418" text-anchor="middle">50</text>
+      <text class="tick" x="674.6" y="418" text-anchor="middle">60</text>
+      <text class="tick" x="820.8" y="418" text-anchor="middle">70</text>
+      <text class="tick" x="966.9" y="418" text-anchor="middle">80</text>
+      <line class="base" x1="90" x2="1040" y1="390" y2="390"/>
+      <polyline class="never" points="547.0,235.0 556.4,256.2 559.7,252.7 567.9,227.6 582.8,213.9 594.2,212.8 601.8,211.4 614.3,205.4 623.5,203.8 632.8,202.4 652.8,195.1 664.1,191.9 684.6,188.0 696.4,186.9 717.0,187.1 725.8,186.9 736.1,186.5 756.8,185.4 768.6,185.0 789.1,182.9 798.8,181.2 808.1,180.0 828.7,178.3 839.9,175.1 860.1,168.7 871.5,166.0 891.4,169.9 899.7,165.5 919.1,161.1 925.0,156.7 933.2,131.9 942.2,133.0 950.1,158.9 953.2,163.9 961.1,143.1 973.9,139.0 987.1,137.4 995.1,116.5"><title>Students not using AI</title></polyline>
+      <polyline class="ai" points="133.8,333.8 148.5,342.4 163.1,230.7 177.7,262.6 192.3,317.1 206.9,329.3 221.5,321.5 236.2,298.9 250.8,307.6 265.4,326.9 280.0,323.5 294.6,328.2 309.2,326.2 323.8,330.4 338.5,330.4 353.1,311.1 367.7,312.8 382.3,312.8 396.9,320.3 411.5,319.9 426.2,318.4 440.8,306.2 455.4,295.6 470.0,285.4 484.6,276.4 499.2,264.5 513.8,247.5 528.5,232.8 543.1,217.7 557.7,211.9 572.3,207.8 586.9,205.5 601.5,201.3 616.2,200.0 630.8,197.4 645.4,194.4 660.0,193.2 674.6,191.4 689.2,189.6 703.8,187.1 718.5,185.0 733.1,186.2 747.7,186.5 762.3,183.0 776.9,180.7 791.5,181.7 806.2,178.9 820.8,179.7 835.4,174.3 850.0,175.9 864.6,175.3 879.2,179.6 893.8,187.2 908.5,161.2 937.7,88.1"><title>AI users</title></polyline>
+      <text class="lab ai-lab" x="250.8" y="268.2">AI users</text>
+      <text class="lab no-lab" x="616.2" y="247.8">Not using AI</text>
+      <text class="note" x="294.6" y="374.8" text-anchor="middle">Outsourced homework</text>
+      <text class="note" x="718.5" y="136.2" text-anchor="middle">Same effort, same exam score</text>
+      <text class="axis" x="565" y="452" text-anchor="middle">Homework completion time (minutes)</text>
+      <text class="axis" transform="translate(24 225) rotate(-90)" text-anchor="middle">Exam score (median)</text>
+      </svg>
+      <p class="ergo">Ergo: All use of generative AI is prohibited in the course's examination and graded assignments.</p>
+      <p class="cite">26,811 pupils aged 12–18; median monthly exam score by homework completion time. Source: Strömberg, Lei &amp; Wu, “The generative AI learning penalty: evidence from Chinese secondary education”, <a href="https://econpapers.repec.org/RePEc:cpr:ceprdp:21577">CEPR DP 21577</a> (2026). Redrawn from the paper’s Fig. 5.</p>
+      <aside class="notes">The losses are concentrated among the roughly 80% of AI users whose behaviour looks like homework outsourcing: very short completion time and high homework scores. AI users who spend as long on their homework as non-users score the same on the exams. The penalty comes from skipping the work, not from the tool itself.</aside>
+    </section>
+
     <!-- 43 -->
     <section>
       <h2>Use of Generative AI</h2>
@@ -1314,34 +1636,6 @@
         <li>Rotate responsibilities in project groups</li>
         <li>No one is perfect, both students and teachers need space to develop</li>
       </ul>
-    </section>
-
-
-    <!-- Mentimeter responses from earlier years -->
-    <section>
-      <h2>Responses from 2019</h2>
-      <figure class="cloud"><img src="img/menti_2019.png" alt="Word cloud of student answers from 2019"></figure>
-    </section>
-
-    <section>
-      <h2>Responses from 2020</h2>
-      <figure class="cloud"><img src="img/menti_2020.png" alt="Word cloud of student answers from 2020"></figure>
-    </section>
-
-    <section>
-      <h2>Responses from 2021</h2>
-      <figure class="cloud"><img src="img/menti_2021.png" alt="Word cloud of student answers from 2021"></figure>
-    </section>
-
-    <section>
-      <h2>Responses from 2024</h2>
-      <figure class="cloud"><img src="img/menti_2024.png" alt="Word cloud of student answers from 2024"></figure>
-    </section>
-
-    <section>
-      <h2>Responses from 2025</h2>
-      <p class="menti-question">“3 words that I believe describe the concept of Systems Biology”</p>
-      <figure class="cloud"><img src="img/menti_2025.png" alt="Word cloud of student answers from 2025"></figure>
     </section>
   </div>
 </div>
