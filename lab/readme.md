@@ -18,7 +18,6 @@ Here you find the lab instructions for the computer exercises:
 * [Lab0 notebook](Lab0/Lab0.ipynb)
 * Files needed to perform the lab [here](https://github.com/statisticalbiotechnology/cb2030/tree/master/lab/Lab0)
 
-[![KTH JupyterHub](https://img.shields.io/badge/launch-KTH%20JupyterHub-F37626?logo=jupyter&logoColor=white)](https://nbserv.duckdns.org/hub/user-redirect/git-pull?repo=https://github.com/statisticalbiotechnology/cb2030&urlpath=lab/tree/cb2030/lab/Lab0/Lab0.ipynb&branch=master)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab0%2FLab0.ipynb)
 
 ------
@@ -27,7 +26,6 @@ Here you find the lab instructions for the computer exercises:
 
 * [Lab1 notebook](Lab1.ipynb)
 
-[![KTH JupyterHub](https://img.shields.io/badge/launch-KTH%20JupyterHub-F37626?logo=jupyter&logoColor=white)](https://nbserv.duckdns.org/hub/user-redirect/git-pull?repo=https://github.com/statisticalbiotechnology/cb2030&urlpath=lab/tree/cb2030/lab/Lab1.ipynb&branch=master)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab1.ipynb)
 
 ------
@@ -36,7 +34,6 @@ Here you find the lab instructions for the computer exercises:
 
 * [Lab2 notebook](Lab2.ipynb)
 
-[![KTH JupyterHub](https://img.shields.io/badge/launch-KTH%20JupyterHub-F37626?logo=jupyter&logoColor=white)](https://nbserv.duckdns.org/hub/user-redirect/git-pull?repo=https://github.com/statisticalbiotechnology/cb2030&urlpath=lab/tree/cb2030/lab/Lab2.ipynb&branch=master)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab2.ipynb)
 
 ------
@@ -47,6 +44,5 @@ Here you find the lab instructions for the computer exercises:
 
 * [Lab3 notebook](Lab3/Lab3.ipynb)
 
-[![KTH JupyterHub](https://img.shields.io/badge/launch-KTH%20JupyterHub-F37626?logo=jupyter&logoColor=white)](https://nbserv.duckdns.org/hub/user-redirect/git-pull?repo=https://github.com/statisticalbiotechnology/cb2030&urlpath=lab/tree/cb2030/lab/Lab3/Lab3.ipynb&branch=master)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab3%2FLab3.ipynb)
 

@@ -48,9 +48,9 @@ If you have encountered any problems during the software installation, or have a
 ---
 
 
-### Appendix: KTH JupyterHub
+### Appendix: The course JupyterHub
 
-If for any reason you cannot install and run Jupyter notebooks on your computer, you can run them on the KTH JupyterHub, no installation needed. Sign in with your hub account, and the material is copied into your own workspace. Following a link again later updates the material **without** discarding the changes you have made. Click the KTH JupyterHub icon next to each lab in the [lab instructions](../), or [open all the labs in JupyterLab](https://nbserv.duckdns.org/hub/user-redirect/git-pull?repo=https://github.com/statisticalbiotechnology/cb2030&urlpath=lab/tree/cb2030/lab&branch=master).
+If you cannot install and run Jupyter notebooks on your own computer, you can use the course's JupyterHub instead. It is a single server shared by everyone on the course, not a KTH-wide service, so please use it only if your own computer doesn't work. Sign in with your hub account, and the material is copied into your own workspace. Following the link again later updates the material **without** discarding the changes you have made. [Open the labs on the course JupyterHub](https://nbserv.duckdns.org/hub/user-redirect/git-pull?repo=https://github.com/statisticalbiotechnology/cb2030&urlpath=lab/tree/cb2030/lab&branch=master).
 
 ### Appendix: Binder
 
