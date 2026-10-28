@@ -35,14 +35,3 @@ Here you find the lab instructions for the computer exercises:
 * [Lab2 notebook](Lab2.ipynb)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab2.ipynb)
-
-------
-
-## Lab 3 - Genome-scale Metabolic Modeling
-
-*Not given this year.*
-
-* [Lab3 notebook](Lab3/Lab3.ipynb)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/statisticalbiotechnology/cb2030/master?filepath=%2Flab%2FLab3%2FLab3.ipynb)
-
