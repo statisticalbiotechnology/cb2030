@@ -8,10 +8,10 @@
 | L3 | Fri | 30/10 | 13-15 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | LK | Classification Models;   Validation |
 | | | | | | | |
 | L4 | Wed | 04/11 | 08-10 | [K1](https://www.kth.se/places/room/id/19814134-e285-49bc-9683-2f5c2edadbcf?l=en) | LK | SVMs and Neural Networks |
-| L5 | Thu | 05/11 | 14-16 | [M3](https://www.kth.se/places/room/id/9485bc06-d8dc-4b3a-bf0e-ef7387c98b81?l=en) | LK | Clustering |
+| L5 | Fri | 06/11 | 15-17 | TBA | LK | Clustering |
 | | | | | | | |
-| L6 | Tue | 10/11 | 13-15 | [M3](https://www.kth.se/places/room/id/9485bc06-d8dc-4b3a-bf0e-ef7387c98b81?l=en) | LK | Hypothesis Testing |
-| L7 | Wed | 11/11 | 10-12 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | LK | Multiple Testing |
+| L6 | Wed | 11/11 | 10-12 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | LK | Hypothesis Testing |
+| L7 | Thu | 12/11 | 15-17 | TBA | LK | Multiple Testing |
 | | | | | | | |
 | L8 | Tue | 17/11 | 13-15 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | LK | Principal Component Analysis |
 | C1 | Wed | 18/11 | 13-17 | [Gul](https://www.kth.se/places/room/id/daa4b32a-c7a1-4a65-a94f-e918d88a3ab6?l=en), [Spelhallen](https://www.kth.se/places/room/id/6fd6bf98-7e86-4b60-b069-24f2cb451af7?l=en), [Sporthallen](https://www.kth.se/places/room/id/7f7a2408-aa72-46be-b388-9fabdccd02ee?l=en) | LK | Hypothesis Testing |
