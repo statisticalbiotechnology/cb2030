@@ -6,10 +6,10 @@ Here we keep the material to prepare for the questions and answers lectures
 - [Classification, Valdiation](class.md)
 - [SVMs, Neural Networks](svm_nn.md)
 - [Clustering](clustering.md)  
+- [Principal Component Analysis](pca.md)
 
 - [Hypothesis Testing](hypothesistesting.md)  
 - [Multiple Testing](multipletesting.md)
 
-- [Principal Component Analysis](pca.md)
 - [Pathway Analysis](pathway.md)  
 - [Flux Balance Analysis](fba.md)  

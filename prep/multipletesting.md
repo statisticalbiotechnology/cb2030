@@ -4,6 +4,7 @@ As a preparation for the Multiple Hypothesis Testing convocation, make yourself 
 
 1. Read the chapter on [Multiple Testing](https://www.kaell.se/dsbook/multiple)
 1. Read the chapter on its [application](https://www.kaell.se/dsbook/qvalue).
+1. Read the chapter on [Checking q values against a known truth](https://www.kaell.se/dsbook/iprg).
 
 ### Aditional/Alternative material
 
