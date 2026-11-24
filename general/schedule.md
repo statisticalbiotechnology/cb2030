@@ -31,7 +31,6 @@
 | C4 | Mon | 07/12 | 13-17 | [Gul](https://www.kth.se/places/room/id/daa4b32a-c7a1-4a65-a94f-e918d88a3ab6?l=en), [Spelhallen](https://www.kth.se/places/room/id/6fd6bf98-7e86-4b60-b069-24f2cb451af7?l=en), [Sporthallen](https://www.kth.se/places/room/id/7f7a2408-aa72-46be-b388-9fabdccd02ee?l=en) | SK | Single-cell integration exercise |
 | L17 | Tue | 08/12 | 10-12 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | LK | Pathway Analysis |
 | L18 | Thu | 10/12 | 10-12 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | LK | Flux Balance Analysis |
-| L19 | Fri | 11/12 | 13-15 | [FD5](https://www.kth.se/places/room/id/b33ec1d2-0671-4141-9bdb-46b13e6deb50?l=en) | All | Q&A |
 | | | | | | | |
 | Exam | Mon | 11/01 | 08-12 | [FR4](https://www.kth.se/places/room/id/bf3eca73-10f2-4b10-b551-c1362d9b4570?l=en) (Oskar Kleins auditorium) | All | Systems Biology |
 
